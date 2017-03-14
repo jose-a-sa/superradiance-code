@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, twoside]{Thesis} % The default font size and one-sided printing (no margin offsets)
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+
+\usepackage{lipsum}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT VARIABLES
+%----------------------------------------------------------------------------------------
+\thesistitle{Superradiance} % Your thesis title \ttitle
+\thesistype{Master's Thesis} % Your thesis type Doctoral Thesis or Masters Thesis \ttype
+\supervisor[mailto:joao.rosa@fc.up.pt]{João \textsc{Rosa}} % Your supervisor's name \supname \supnamenolink
+\cosupervisor[mailto:orfeu.bertolami@fc.up.pt]{Orfeu \textsc{Bertolami}} % Your supervisor's name \cosupname \cosupnamenolink
+\examiner{} % Your examiner's name \examname
+\degree{Master of Science} % Your degree name \degreename 
+\authors[mailto:jose.sa@fc.up.pt]{José \textsc{Sá}} % Your name \authornames \authornamesnolink
+\addresses{} % Your address \addressname
+\subject{} % Your subject area \subjectname
+\keywords{} % Keywords for your thesis \keywordnames 
+\university[http://www.up.pt]{Universidade do Porto} % Your university's name \univname \univnamenolink
+\UNIVERSITY[http://www.up.pt]{UNIVERSIDADE DO PORTO} % Your university's name in capitals \UNIVNAME \UNIVNAMEnolink             
+\department[http://dfa.fc.up.pt]{Departamento de Física e Astronomia} % Your department's name \deptname \deptnamenolink
+\DEPARTMENT[http://dfa.fc.up.pt]{DEPARTAMENTO DE FÍSICA E ASTRONOMIA} % Your department's name in capitals \DEPTNAME \DEPTNAMEnolink            
+%\group{} % Your research group's name \groupname \groupnamenolink            
+%\GROUP[]{} % Your research group's name in capitals \GROUPNAME \GROUPNAMEnolink   
+\faculty[http://www.fc.up.pt]{Faculdade de Ciências da Universidade do Porto} % Your faculty's name \facname \facnamenolink
+\FACULTY[http://www.fc.up.pt]{FACULDADE DE CIÊNCIAS DA UNIVERSIDADE DO PORTO} % Your faculty's name in capitals \FACNAME \FACNAMEnolink         
+
+
+%----------------------------------------------------------------------------------------
+%	NOTATION VARIABLES
+%----------------------------------------------------------------------------------------
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\sts}[3][]{ {}_{#2} #3_{#1} }
+
+
+
+%----------------------------------------------------------------------------------------
+%	NOTATION VARIABLES
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.3} % Line spacing of 1.3
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\maketitle
+
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+\quotepage{Nunes da Silva}{
+	Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism.
+}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+\acknowledgements{ \addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+	
+	The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+	
+}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{
+	%\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+	
+	The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+	
+	\lipsum[2-3]
+}
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE (PORTUGUESE)
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Resumo}
+
+\abstract[title=Resumo,degree={Mestre de Ciência},connector=por]{
+	\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+	
+	Tradução em português do ``Abstract" escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco  \ldots
+	
+	\lipsum[2-3]
+}
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Write out the Table of Contents
+
+\listoffigures % Write out the List of Figures
+
+%\listoftables % Write out the List of Tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+
+\listofabbreviations{rl} % Include a list of Abbreviations (a table of two columns)
+{
+\textbf{GR}		& \textbf{G}eneral \textbf{R}elativity \\
+\textbf{BH}		& \textbf{B}lack \textbf{H}ole \\
+\textbf{SWSH}	& \textbf{S}pin-\textbf{W}eighted \textbf{S}pheroidal \textbf{H}armonic \\
+
+\hspace*{0.8in} & \hspace*{5in}
+}
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%\listofconstants{lrcl} % a four column table
+%{
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+%% Constant Name & Symbol & $=$ & Constant Value (with units) \\
+%}
+%\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+%\listofsymbols{lll} % a three column table
+%{
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+%% Symbol & Name & Unit \\
+%
+%& & \\ % Gap to separate the Roman symbols from the Greek
+%
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+%
+%% Symbol & Name & Unit \\
+%}
+
+%----------------------------------------------------------------------------------------
+%	NOTATION
+%----------------------------------------------------------------------------------------
+\addtocontents{toc}{\vspace{1em}}
+
+\addtotoc{Notation and Conventions}
+\chapter*{Notation and Conventions}
+
+\section*{Units}
+
+Text random and a new citation \cite{Starobinsky1973}
+
+
+\section*{Tensors and relativity related}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+%\setstretch{1.3} % Return the line spacing back to 1.3
+%
+%\dedicatory{For/Dedicated to/To my\ldots} % Dedication text
+%
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%
+%\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\addtocontents{toc}{\vspace{1em}}
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.~\textsc{#1}}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection~\textsc{#1}}}
+\fancyhead[LO,RE]{\leftmark}
+
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2} 
+%\input{Chapters/Chapter3}
+%\input{Chapters/Chapter4} 
+%\input{Chapters/Chapter5} 
+%\input{Chapters/Chapter6} 
+%\input{Chapters/Chapter7} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+\input{Appendices/AppendixA}
+%\input{Appendices/AppendixB}
+%\input{Appendices/AppendixC}
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+
+\fancyhead[LO,RE]{\textsc{Bibliography}}
+
+\bibliographystyle{unsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+
+\nocite{Reference9,Reference8,Reference7,Reference6,Reference5,Reference4}
+
+\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}
