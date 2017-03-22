@@ -168,8 +168,10 @@
 %----------------------------------------------------------------------------------------
 \addtocontents{toc}{\vspace{1em}}
 
-\addtotoc{Notation and Conventions}
-\chapter*{Notation and Conventions}
+\newcommand\notationname{Notation and Conventions}
+\addtotoc{\notationname}
+\chapter*{\notationname}
+\fancyhead[LO]{\textsc{\notationname}}
 
 \section*{Units}
 
@@ -177,6 +179,8 @@ Text random and a new citation \cite{Starobinsky1973}
 
 
 \section*{Tensors and relativity related}
+
+\lipsum[1-10]
 
 \cleardoublepage
 
@@ -201,8 +205,8 @@ Text random and a new citation \cite{Starobinsky1973}
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.~\textsc{#1}}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection~\textsc{#1}}}
-\fancyhead[LO,RE]{\leftmark}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~\textsc{#1}}}
+\fancyhead[LO]{\leftmark}
 
 \input{Chapters/Chapter1}
 \input{Chapters/Chapter2} 

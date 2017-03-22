@@ -88,6 +88,7 @@
 \pagestyle{fancy}
 \fancyheadoffset[L]{0pt}
 \fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textsc{\ttitle}}
 \fancyfoot{}
 
 %----------------------------------------------------------------------------------------
@@ -303,7 +304,9 @@
 \renewcommand\tableofcontents{
 \btypeout{\contentsname}
 \addtotoc{\contentsname}
-\fancyhead[LO,RE]{\textsc{\contentsname}}
+
+\fancyhead[LO]{\textsc{\contentsname}}
+
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
@@ -326,7 +329,9 @@
 \renewcommand\listoffigures{
 \btypeout{\listfigurename}
 \addtotoc{\listfigurename}
-\fancyhead[LO,RE]{\textsc{\listfigurename}}
+
+\fancyhead[LO]{\textsc{\listfigurename}}
+
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
@@ -348,7 +353,9 @@
 \renewcommand\listoftables{
 \btypeout{\listtablename}
 \addtotoc{\listtablename}
-\fancyhead[LO,RE]{\textsc{\listtablename}}
+
+\fancyhead[LO]{\textsc{\listtablename}}
+
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
@@ -372,8 +379,10 @@
 \newcommand\listofabbreviations[2]{
 \btypeout{\listabbreviationname}
 \addtotoc{\listabbreviationname}
-\fancyhead[LO,RE]{\textsc{\listabbreviationname}}
-    \chapter*{\listabbreviationname
+
+\fancyhead[LO]{\textsc{\listabbreviationname}}
+
+\chapter*{\listabbreviationname
       \@mkboth{\MakeUppercase\listabbreviationname}{\MakeUppercase\listabbreviationname}}
 	\begin{longtable}[c]{#1}#2\end{longtable}\par
 \cleardoublepage
@@ -388,8 +397,10 @@
 \newcommand\listofconstants[2]{
 \btypeout{\listconstantsname}
 \addtotoc{\listconstantsname}
-\fancyhead[LO,RE]{\textsc{\listconstantsname}}
-    \chapter*{\listconstantsname
+
+\fancyhead[LO]{\textsc{\listconstantsname}}
+
+\chapter*{\listconstantsname
       \@mkboth{\MakeUppercase\listconstantsname}{\MakeUppercase\listconstantsname}}
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
@@ -403,10 +414,12 @@
 \newcommand\listofsymbols[2]{
 \btypeout{\listsymbolsname}
 \addtotoc{\listsymbolsname}
-\fancyhead[LO,RE]{\textsc{\listsymbolsname}}
-    \chapter*{\listsymbolsname
-      \@mkboth{
-          \MakeUppercase\listsymbolsname}{\MakeUppercase\listsymbolsname}}
+
+\fancyhead[LO]{\textsc{\listsymbolsname}}
+
+\chapter*{\listsymbolsname
+  \@mkboth{
+      \MakeUppercase\listsymbolsname}{\MakeUppercase\listsymbolsname}}
 \begin{longtable}[c]{#1}#2\end{longtable}\par
     \cleardoublepage
 }
