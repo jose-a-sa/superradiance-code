@@ -235,7 +235,7 @@
  		\\[2.5cm]
  		
  		\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}
- 		\\[0.3cm] \textit{in the} \\[0.4cm]
+ 		\\[0.3cm] \textit{at the} \\[0.4cm]
  		\facname \\
 		\deptname
 		\\[2cm]
