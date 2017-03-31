@@ -2,7 +2,7 @@
 Github repository of my master thesis latex files
 
 ## Keywords
-- Kinnersley tetrad
+Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 
 ## Task Lists
 - Master git
