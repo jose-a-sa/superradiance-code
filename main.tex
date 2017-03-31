@@ -11,6 +11,9 @@
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
+
+
 \hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 
 %%% FONT PACKAGES
@@ -19,6 +22,8 @@
 \usepackage{mathpazo}
 
 \usepackage{lipsum}
+
+\newcommand*{\defaultlinespacing}{\setstretch{1.5}}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
@@ -51,6 +56,7 @@
 
 
 
+
 %----------------------------------------------------------------------------------------
 %	NOTATION VARIABLES
 %----------------------------------------------------------------------------------------
@@ -58,7 +64,7 @@
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\setstretch{1.5} % Line spacing of 1.3
+\defaultlinespacing % Line spacing of 1.5
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -108,7 +114,7 @@
 \abstract[title=Resumo,degree={Mestre de Ciência},connector=por]{
 	\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 	
-	Tradução em português do ``Abstract'' escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
+	Tradução em português do ``Abstract'' escrito em inglês mais a cima.~\cite{Teukolsky1974} A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
 	
 	\lipsum[2-3]
 }
@@ -140,7 +146,7 @@
 \hspace*{0.8in} & \hspace*{5in}
 }
 
-\setstretch{1.5} % Return the line spacing back to 1.3
+\defaultlinespacing % Return the line spacing back to 1.3
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
@@ -182,7 +188,7 @@
 
 \section*{Units}
 
-Text random and a new citation \cite{Starobinsky1973}
+Text random and a new citation~\cite{Starobinsky1973}
 
 
 \section*{Tensors and relativity related}
@@ -246,9 +252,7 @@ Text random and a new citation \cite{Starobinsky1973}
 
 \fancyhead[LO,RE]{\textsc{Bibliography}}
 
-\bibliographystyle{unsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-
-\nocite{Reference9, Reference8, Reference7, Reference6, Reference5, Reference4}
+\nocite{*}
 
 \bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
