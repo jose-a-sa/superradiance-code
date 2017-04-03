@@ -6,11 +6,13 @@ Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 
 ## Task Lists
 - Master git
-    - [x] fetch (get change from remote to compare **SAFER**)
+    - [ ] fetch (get change from remote to compare **SAFER**)
     - [x] pull (fetch + merge)
     - [x] push (to remote repo)
     - [x] sync
     - [ ] checkout
+- Chapters
+    - [ ] some text on BHs
 - Appendices
     - [ ] some text on SWSHs
 - Complete bibliografy
