@@ -1,26 +1,31 @@
 # Superradiance
 Github repository of my master thesis latex files
 
+
 ## Keywords
 Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 
+
 ## Task Lists
-- Master git
+- **Master git**
     - [ ] fetch (get change from remote to compare **SAFER**)
     - [x] pull (fetch + merge)
     - [x] push (to remote repo)
     - [x] sync
     - [ ] checkout
-- Chapters
-    - [ ] some text on BHs
-- Appendices
-    - [ ] some text on SWSHs
-- Complete bibliografy
+- **Thesis**
+    - _Chapters_
+        - [ ] some text on BHs
+    - _Appendices_
+        - [ ] some text on SWSHs
+- **Paper**
+    - [ ] add .tex file
+- **Bibliografy**
     - [x] Add some references to test bib style
     - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
 
 
-# Contents
+# Thesis Contents
 
 ## Chapters
 1. Introduction
