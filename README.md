@@ -11,16 +11,17 @@ Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
     - [x] push (to remote repo)
     - [x] sync
     - [ ] checkout
-- Chapters
-    - [ ] some text on BHs
-- Appendices
-    - [ ] some text on SWSHs
-- Complete bibliografy
-    - [x] Add some references to test bib style
-    - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
+- Thesis
+    - Chapters
+        - [ ] some text on BHs
+    - Appendices
+        - [ ] some text on SWSHs
+    - Complete bibliografy
+        - [x] Add some references to test bib style
+        - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
 
 
-# Contents
+# Thesus Contents
 
 ## Chapters
 1. Introduction
