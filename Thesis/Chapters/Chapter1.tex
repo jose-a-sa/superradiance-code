@@ -14,9 +14,9 @@ If you are writing a thesis (or will be in the future) and its subject is techni
 
 %----------------------------------------------------------------------------------------
 
-\section{Learning \LaTeX{}}
+\section{Learning \LaTeX}
 
-\LaTeX{} is not a WYSIWYG (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \textit{italic text for emphasis}, I write the `$\backslash$\texttt{textit}\{\}' command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a ``mark-up'' language, very much like HTML.
+\LaTeX is not a WYSIWYG (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \textit{italic text for emphasis}, I write the `$\backslash$\texttt{textit}$\lbrace\rbrace$' command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a ``mark-up'' language, very much like HTML.
 
 \subsection{A (not so short) Introduction to \LaTeX{}}
 
@@ -50,7 +50,7 @@ MacTeX includes a dedicated \LaTeX{} IDE (Integrated Development Environment) ca
 
 \section{Getting Started with this Template}
 
-If you are familiar with \LaTeX{}, then you can familiarise yourself with the contents of the Zip file and the directory structure and then place your own information into the `\texttt{Thesis.cls}' file. Section \ref{FillingFile} on page \pageref{FillingFile} tells you how to do this. Make sure you read section \ref{ThesisConventions} about thesis conventions to get the most out of this template and then get started with the `\texttt{Thesis.tex}' file straightaway.
+If you are familiar with \LaTeX{}, then you can familiarise yourself with the contents of the Zip file and the directory structure and then place your own information into the `\texttt{Thesis.cls}' file. Section~\ref{FillingFile} on page~\pageref{FillingFile} tells you how to do this. Make sure you read section~\ref{ThesisConventions} about thesis conventions to get the most out of this template and then get started with the `\texttt{Thesis.tex}' file straightaway.
 
 If you are new to \LaTeX{} it is recommended that you carry on reading through the rest of the information in this document.
 
@@ -97,7 +97,7 @@ Included are also several files, most of them are plain text and you can see the
 
 \textbf{Bibliography.bib} -- this is an important file that contains all the bibliographic information and references that you will be citing in the thesis for use with BibTeX. You can write it manually, but there are reference manager programs available that will create and manage it for you. Bibliographies in \LaTeX{} are a large subject and you may need to read about BibTeX before starting with this.
 
-\textbf{Thesis.cls} -- this is an important file. It is the style file that tells \LaTeX{} how to format the thesis. You will also need to open this file in a text editor and fill in your own information (such as name, department, institution). Luckily, this is not too difficult and is explained in section \ref{FillingFile} on page \pageref{FillingFile}.
+\textbf{Thesis.cls} -- this is an important file. It is the style file that tells \LaTeX{} how to format the thesis. You will also need to open this file in a text editor and fill in your own information (such as name, department, institution). Luckily, this is not too difficult and is explained in section~\ref{FillingFile} on page~\pageref{FillingFile}.
 
 \textbf{Thesis.pdf} -- this is your beautifully typeset thesis (in the PDF file format) created by \LaTeX{}.
 
@@ -216,12 +216,12 @@ Also look in the source file. Putting this code into the source file produces th
 		\includegraphics{Figures/Electron.pdf}
 		\rule{35em}{0.5pt}
 	\caption[An Electron]{An electron (artist's impression).}
-	\label{fig:Electron}
+\label{fig:Electron}
 \end{figure}
 
 Sometimes figures don't always appear where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good!
 
-Figures usually should have labels just in case you need to refer to them (such as in Figure \ref{fig:Electron}). The `$\backslash$\texttt{caption}' command contains two parts, the first part, inside the square brackets is the title that will appear in the `List of Figures', and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
+Figures usually should have labels just in case you need to refer to them (such as in Figure~\ref{fig:Electron}). The `$\backslash$\texttt{caption}' command contains two parts, the first part, inside the square brackets is the title that will appear in the `List of Figures', and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
 
 The `$\backslash$\texttt{rule}' command is optional and simply puts an aesthetic horizontal line below the image. If you do this for one image, do it for all of them.
 
@@ -256,9 +256,9 @@ All equations you write (which are not in the middle of paragraph text) are auto
 
 \section{Sectioning and Subsectioning}
 
-You should break your thesis up into nice, bite-sized sections and subsections. \LaTeX{} automatically builds a table of Contents by looking at all the `$\backslash$\texttt{chapter}$\{\}$', `$\backslash$\texttt{section}$\{\}$' and `$\backslash$\texttt{subsection}$\{\}$' commands you write in the source.
+You should break your thesis up into nice, bite-sized sections and subsections. \LaTeX{} automatically builds a table of Contents by looking at all the `$\backslash$\texttt{chapter}$\lbrace\rbrace$', `$\backslash$\texttt{section}$\lbrace\rbrace$' and `$\backslash$\texttt{subsection}$\lbrace\rbrace$' commands you write in the source.
 
-The table of Contents should only list the sections to three (3) levels. A `$\backslash$\texttt{chapter}$\{\}$' is level one (1). A `$\backslash$\texttt{section}$\{\}$' is level two (2) and so a `$\backslash$\texttt{subsection}$\{\}$' is level three (3). In your thesis it is likely that you will even use a `$\backslash$\texttt{subsubsection}$\{\}$', which is level four (4). Adding all these will create an unnecessarily cluttered table of Contents and so you should use the `$\backslash$\texttt{subsubsection$^{*}\{\}$}' command instead (note the asterisk). The asterisk ($^{*}$) tells \LaTeX{} to omit listing the subsubsection in the Contents, keeping it clean and tidy.
+The table of Contents should only list the sections to three (3) levels. A `$\backslash$\texttt{chapter}$\lbrace\rbrace$' is level one (1). A `$\backslash$\texttt{section}$\lbrace\rbrace$' is level two (2) and so a `$\backslash$\texttt{subsection}$\lbrace\rbrace$' is level three (3). In your thesis it is likely that you will even use a `$\backslash$\texttt{subsubsection}$\lbrace\rbrace$', which is level four (4). Adding all these will create an unnecessarily cluttered table of Contents and so you should use the `$\backslash$\texttt{subsubsection$^{*}\lbrace\rbrace$}' command instead (note the asterisk). The asterisk ($^{*}$) tells \LaTeX{} to omit listing the subsubsection in the Contents, keeping it clean and tidy.
 
 %----------------------------------------------------------------------------------------
 
