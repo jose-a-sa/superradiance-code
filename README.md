@@ -7,16 +7,14 @@ Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 
 
 ## Task Lists
-
 - **Thesis**
     - _Chapters_
         - [ ] some text on BHs
     - _Appendices_
         - [ ] some text on SWSHs
-
 - **Paper**
     - [x] add .tex file
-    
+    - [ ] some text on BHs and superradiance
 - **Bibliografy**
     - [x] Add some references to test bib style
     - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
