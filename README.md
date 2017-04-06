@@ -7,19 +7,16 @@ Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 
 
 ## Task Lists
-- **Master git**
-    - [ ] fetch (get change from remote to compare **SAFER**)
-    - [x] pull (fetch + merge)
-    - [x] push (to remote repo)
-    - [x] sync
-    - [ ] checkout
+
 - **Thesis**
     - _Chapters_
         - [ ] some text on BHs
     - _Appendices_
         - [ ] some text on SWSHs
+
 - **Paper**
-    - [ ] add .tex file
+    - [x] add .tex file
+    
 - **Bibliografy**
     - [x] Add some references to test bib style
     - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
@@ -28,7 +25,7 @@ Kinnersley tetrad, Newman-Penrose formalism, Kerr background,...
 # Thesis Contents
 
 ## Chapters
-1. Introduction
+1. Introduction (or together with math intro)
 2. Math introduction
     * Tetrad formalism
     * Newman-Penrose formalism
