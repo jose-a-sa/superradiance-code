@@ -14,6 +14,14 @@
 
 
 ## Task Lists
+- **Calculations and study topics**
+    - [x] Schwarzschild and Kerr black-hole
+    - [x] Tetrad and Newman-Penrose formalism
+    - [x] Maxwell equations and Teukolsky master equation
+    - [x] Near/far assymptotics of TME (radial part)
+    - [x] Gain/Loss factor _Z_ for small _c_
+    - [ ] Numerical part
+    - [ ] Relate in/out flux
 - **Thesis**
     - _Chapters_
         - [ ] some text on BHs
@@ -22,7 +30,7 @@
 - **Paper**
     - [x] add .tex file
     - [ ] some text on BHs and superradiance
-- **Bibliografy**
+- **Bibliography**
     - [x] Add some references to test bib style
     - [ ] if time, learn how to create my own bib style (based on _apsrev4-1.bst_)
 
