@@ -236,9 +236,10 @@
  		
  		\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}
  		\\[0.3cm] \textit{at the} \\[0.4cm]
- 		\facname \\
-		\deptname
-		\\[2cm]
+ 		\ifdefined\facnamenolink \facname \\ \fi
+    \ifdefined\deptnamenolink \deptname \\ \fi
+    \ifdefined\groupnamenolink \groupname \\ \fi
+    \bigskip\bigskip\bigskip
  		% Faculty name and department name
  		{\large \today} \\[4cm] % Date
  		%\includegraphics{Logo} % University/department logo - uncomment to place it
@@ -274,8 +275,9 @@
     \bigskip
     {\huge{\textit{\absEnvTitle}} \par}
     \bigskip
-    {\normalsize \facname \par} % Faculty name
-    {\normalsize \deptname \par} % Department name
+    \ifdefined\facnamenolink {\normalsize \facname \par} \fi % Faculty name
+    \ifdefined\deptnamenolink {\normalsize \deptname \par} \fi % Dept. name
+    \ifdefined\groupnamenolink {\normalsize \groupname \par} \fi % Group name
     \bigskip
     {\normalsize \absEnvDegree\par} % Degree name
     \bigskip
@@ -455,7 +457,7 @@
 %----------------------------------------------------------------------------------------
 \newcommand\dedicatory[1]{
 \btypeout{Dedicatory}
-\thispagestyle{plain}
+\thispagestyle{empty}
 \null\vfil
 \vskip 60\p@
 \begin{center}{\Large \sl #1}\end{center}
