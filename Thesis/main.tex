@@ -20,6 +20,8 @@
 % - mathpazo ( palatino for Computer Modern on math )
 \usepackage{mathpazo}
 
+\usepackage{pdfpages}
+
 \usepackage{lipsum}
 
 \newcommand*{\defaultlinespacing}{\setstretch{1.5}}
@@ -68,6 +70,7 @@
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
+\includepdf[pages=-, offset=75 -75]{Titlepages/file.pdf}
 
 \maketitle
 
