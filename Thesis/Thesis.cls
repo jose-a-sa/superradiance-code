@@ -172,24 +172,142 @@
 %----------------------------------------------------------------------------------------
 %	THESIS RELATED COMMANDS
 %----------------------------------------------------------------------------------------
-\newcommand*{\supervisor}[2][]{\def\supnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\supname{#2}}{\def\supname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\cosupervisor}[2][]{\def\cosupnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\cosupname{#2}}{\def\cosupname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\thesistitle}[1]{\def\ttitle{#1}}
-\newcommand*{\thesistype}[1]{\def\ttype{#1}}
-\newcommand*{\examiner}[2][]{\def\examnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\examname{#2}}{\def\examname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\degree}[1]{\def\degreename{#1}}
-\newcommand*{\authors}[2][]{\def\authornamesnolink{#2}\ifthenelse{\equal{#1}{}}{\def\authornames{#2}}{\def\authornames{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\addresses}[1]{\def\addressnames{#1}}
-\newcommand*{\university}[2][]{\def\univnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\univname{#2}}{\def\univname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\UNIVERSITY}[2][]{\def\UNIVNAMEnolink{#2}\ifthenelse{\equal{#1}{}}{\def\UNIVNAME{#2}}{\def\UNIVNAME{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\department}[2][]{\def\deptnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\deptname{#2}}{\def\deptname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\DEPARTMENT}[2][]{\def\DEPTNAMEnolink{#2}\ifthenelse{\equal{#1}{}}{\def\DEPTNAME{#2}}{\def\DEPTNAME{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\group}[2][]{\def\groupnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\groupname{#2}}{\def\groupname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\GROUP}[2][]{\def\GROUPNAMEnolink{#2}\ifthenelse{\equal{#1}{}}{\def\GROUPNAME{#2}}{\def\GROUPNAME{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\faculty}[2][]{\def\facnamenolink{#2}\ifthenelse{\equal{#1}{}}{\def\facname{#2}}{\def\facname{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\FACULTY}[2][]{\def\FACNAMEnolink{#2}\ifthenelse{\equal{#1}{}}{\def\FACNAME{#2}}{\def\FACNAME{\texorpdfstring{\href{#1}{#2}}{#2}}}}
-\newcommand*{\subject}[1]{\def\subjectname{#1}}
-\newcommand*{\keywords}[1]{\def\keywordnames{#1}}
+
+\newcommand*{\supervisor}[2][]{
+  \def\supnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\supname{#2}
+  }{
+    \def\supname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\cosupervisor}[2][]{
+  \def\cosupnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\cosupname{#2}
+  }{
+    \def\cosupname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\thesistitle}[1]{
+  \def\ttitle{#1}
+  \hypersetup{pdftitle={\ttitle}}
+}
+
+\newcommand*{\thesistype}[1]{
+  \def\ttype{#1}
+}
+
+\newcommand*{\examiner}[2][]{
+  \def\examnamenolink{#2}
+  \ifthenelse{ \equal{#1}{}}{
+    \def\examname{#2}
+  }{
+    \def\examname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\degree}[1]{
+  \def\degreename{#1}
+}
+
+\newcommand*{\authors}[2][]{
+  \def\authornamesnolink{#2}
+  \hypersetup{pdfauthor=\authornamesnolink}
+  \ifthenelse{\equal{#1}{}}{
+    \def\authornames{#2}
+  }{
+    \def\authornames{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\addresses}[1]{
+  \def\addressnames{#1}
+}
+
+\newcommand*{\university}[2][]{
+  \def\univnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\univname{#2}
+  }{
+    \def\univname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\UNIVERSITY}[2][]{
+  \def\UNIVNAMEnolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\UNIVNAME{#2}
+  }{
+    \def\UNIVNAME{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\department}[2][]{
+  \def\deptnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\deptname{#2}
+  }{
+    \def\deptname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\DEPARTMENT}[2][]{
+  \def\DEPTNAMEnolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\DEPTNAME{#2}
+  }{
+    \def\DEPTNAME{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\group}[2][]{
+  \def\groupnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\groupname{#2}
+  }{
+    \def\groupname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\GROUP}[2][]{
+  \def\GROUPNAMEnolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\GROUPNAME{#2}
+  }{
+    \def\GROUPNAME{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\faculty}[2][]{
+  \def\facnamenolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\facname{#2}
+  }{
+    \def\facname{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\FACULTY}[2][]{
+  \def\FACNAMEnolink{#2}
+  \ifthenelse{\equal{#1}{}}{
+    \def\FACNAME{#2}
+  }{
+    \def\FACNAME{\texorpdfstring{\href{#1}{#2}}{#2}}
+  }
+}
+
+\newcommand*{\subject}[1]{
+  \def\subjectname{#1}
+  \hypersetup{pdfsubject=\subjectname}
+}
+
+\newcommand*{\keywords}[1]{
+  \def\keywordnames{#1}
+  \hypersetup{pdfkeywords=\keywordnames}
+}
 
 
 %----------------------------------------------------------------------------------------
@@ -200,12 +318,6 @@
 
 \renewcommand\maketitle{
 	
-% PDF meta-data
-\hypersetup{pdftitle={\ttitle}}
-\hypersetup{pdfsubject=\subjectname}
-\hypersetup{pdfauthor=\authornames}
-\hypersetup{pdfkeywords=\keywordnames}
-
 % TITLE PAGE
 \thispagestyle{empty}
 \begin{titlepage}
