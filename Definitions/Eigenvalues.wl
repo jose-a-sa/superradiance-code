@@ -1,5 +1,3 @@
-(* ::Package:: *)
-
 \[ScriptH][l_] := ((l^2 - (kp + km)^2)*(l^2 - (kp - km)^2)*(l^2 - s^2))/
      (2*(l^2 - 1/4)*l^3)
  
@@ -54,4 +52,14 @@ EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)),
           ((1 + l)^2 - s^2)*((2 + l)^2 - s^2))/(4*l*(1 + l)^6*(2 + l)^3*
           (3 + l)*(3 + 2*l)*(-1/4 + (1 + l)^2)*(-1/4 + (2 + l)^2)))}
  
-Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2};
+Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2}
+ 
+EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative, 
+     \[ScriptM]_Integer, (\[ScriptC]_)?NumberQ, M_Integer:100] := 
+    FindRoot[ContinuedFractionK[\[Beta][n]/(\[Gamma][n + 1]*\[Alpha][n + 1]), 
+         {n, 0, M}]^(-1) /. (LeaverCoef /. Rule\[Kappa]pm /. 
+        {m -> \[ScriptM], l -> \[ScriptL], s -> \[ScriptS], 
+         c -> \[ScriptC]}), {A, \[ScriptL]*(\[ScriptL] + 1) - 
+        \[ScriptS]*(\[ScriptS] + 1) - ((2*\[ScriptM]*\[ScriptS])*\[ScriptC])/
+         (\[ScriptL]*(\[ScriptL] + 1))}] /; \[ScriptL] >= 
+      Max[Abs[\[ScriptS]], Abs[\[ScriptM]]]
