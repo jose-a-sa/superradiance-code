@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
-GetZFile[s_Integer, (l_Integer)?NonNegative, m_Integer] := 
-    StringJoin["Data/", StringRiffle[{"Z", s, l, m}, "_"], ".csv"] /; 
+GetZFile[s_Integer, (l_Integer)?NonNegative, m_Integer,diff_String:""] := 
+    StringJoin["Data/", StringRiffle[{"Z", s, l, m, diff}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
  
 GetZFileBCP[(s_Integer)?NonPositive, (l_Integer)?NonNegative, m_Integer] := 
