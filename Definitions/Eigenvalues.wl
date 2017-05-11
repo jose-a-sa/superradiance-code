@@ -112,11 +112,20 @@ EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)),
 Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2}
  
 EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative, 
-      \[ScriptM]_Integer, (\[ScriptC]_)?NumberQ, M_Integer:100] /; 
+     \[ScriptM]_Integer, (\[ScriptC]_Real)?Negative, M_Integer:150] := 
+    EigenLeaver[\[ScriptS], \[ScriptL], -\[ScriptM], -\[ScriptC], M]
+ 
+EigenLeaver[(\[ScriptS]_Integer)?Negative, (\[ScriptL]_Integer)?NonNegative, 
+     \[ScriptM]_Integer, \[ScriptC]_Real, M_Integer:150] := 
+    EigenLeaver[-\[ScriptS], \[ScriptL], \[ScriptM], \[ScriptC], M]
+ 
+EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative, 
+      \[ScriptM]_Integer, \[ScriptC]_Real, M_Integer:150] /; 
      \[ScriptL] >= Max[Abs[\[ScriptS]], Abs[\[ScriptM]]] := 
-    A /. FindRoot[Fold[\[Beta][#2 - 1] - (\[Alpha][#2 - 1]*\[Gamma][#2])/
-           #1 & , 1, Reverse[Range[M]]] /. (LeaverCoef /. Rule\[Kappa]pm /. 
-        {m -> \[ScriptM], l -> \[ScriptL], s -> \[ScriptS], 
-         c -> \[ScriptC]}), {A, \[ScriptL]*(\[ScriptL] + 1) - 
-        \[ScriptS]*(\[ScriptS] + 1) - ((2*\[ScriptM]*\[ScriptS])*\[ScriptC])/
-         (\[ScriptL]*(\[ScriptL] + 1))}]
+    \[ScriptS]*(\[ScriptS] + 1) + A /. 
+     Quiet[FindRoot[Fold[\[Beta][#2 - 1] - (\[Alpha][#2 - 1]*\[Gamma][#2])/
+            #1 & , 1, Reverse[Range[M]]] /. (LeaverCoef /. Rule\[Kappa]pm /. 
+         {m -> \[ScriptM], l -> \[ScriptL], s -> \[ScriptS], 
+          c -> \[ScriptC]}), {A, Table[c^(i - 1), {i, Length[EigenCoef]}] . 
+          Simplify[EigenCoef /. Rule\[Kappa]pm /. {m -> \[ScriptM], 
+             s -> \[ScriptS]}] /. {l -> \[ScriptL], c -> \[ScriptC]}}]]
