@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 GetZFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
-    StringJoin["Data/", StringRiffle[{"Z", s, l, m, diff}, "_"], ".csv"] /; 
+    StringJoin["Data/", StringRiffle[{"Z", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
  
 
