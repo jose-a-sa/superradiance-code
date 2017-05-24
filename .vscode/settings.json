@@ -5,7 +5,7 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "Others": true,
+        "Other": true,
         "**/*.lnk": true,
         "**/*.blg": true,
         "**/*.aux": true,
