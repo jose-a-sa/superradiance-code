@@ -15,3 +15,8 @@ GetZFileBCP[(s_Integer)?NonPositive, (l_Integer)?NonNegative, m_Integer] :=
 GetSWSHEigenFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
     StringJoin["Data/", StringRiffle[{"SWSH", "EV", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
+
+
+Get\[Phi]File[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
+    StringJoin["Data/", StringRiffle[{"YinZoutCoef", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
+     l >= Max[Abs[s], Abs[m]]
