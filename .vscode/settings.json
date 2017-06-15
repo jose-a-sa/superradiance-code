@@ -14,5 +14,7 @@
         "**/*.fls": true,
         "**/*.toc": true,
         "**/*.out": true
-    }
+    },
+
+    "editor.minimap.enabled": false
 }
