@@ -13,7 +13,8 @@
         "**/*.lof": true,
         "**/*.fls": true,
         "**/*.toc": true,
-        "**/*.out": true
+        "**/*.out": true,
+        "**/*.fdb_latexmk": true
     },
 
     "editor.minimap.enabled": false
