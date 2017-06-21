@@ -1,10 +1,16 @@
+(* ::Package:: *)
+
 \[ScriptH][l_] := ((l^2 - (kp + km)^2)*(l^2 - (kp - km)^2)*(l^2 - s^2))/
      (2*(l^2 - 1/4)*l^3)
  
+
+
 LeaverCoef = {\[Alpha][p_] -> -2*(1 + p)*(1 + 2*km + p), 
      \[Beta][p_] -> -A - c^2 + (km + kp + p - s)*(1 + km + kp + p + s) - 
        2*c*(1 + 2*km + 2*p + s), \[Gamma][p_] -> 2*c*(km + kp + p + s)}
  
+
+
 EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)), 
      -1 - ((-(-km + kp)^2 + l^2)*(-(km + kp)^2 + l^2)*(l^2 - s^2))/
        (2*l^3*(-1/4 + l^2)) + ((-(-km + kp)^2 + (1 + l)^2)*
@@ -109,8 +115,12 @@ EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)),
        (16*(1 + l)^4*(2 + l)^3*(3 + 2*l)^2*(-1/4 + (1 + l)^2)*
         (-1/4 + (2 + l)^2))}
  
+
+
 Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2}
  
+
+
 EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative, 
      \[ScriptM]_Integer, (\[ScriptC]_Real)?Negative, M_Integer:150] := 
     EigenLeaver[\[ScriptS], \[ScriptL], -\[ScriptM], -\[ScriptC], M]
@@ -129,3 +139,8 @@ EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative,
           c -> \[ScriptC]}), {A, Table[c^(i - 1), {i, Length[EigenCoef]}] . 
           Simplify[EigenCoef /. Rule\[Kappa]pm /. {m -> \[ScriptM], 
              s -> \[ScriptS]}] /. {l -> \[ScriptL], c -> \[ScriptC]}}]]
+
+
+Clear@SpinWeightedSphericalHarmonicsY;
+SpinWeightedSphericalHarmonicsY[s_,\[ScriptL]_,m_]:=Function[{\[Theta],\[Phi]},SpinWeightedSphericalHarmonicsY[s,\[ScriptL],m,\[Theta],\[Phi]]];
+SpinWeightedSphericalHarmonicsY[s_,\[ScriptL]_,m_,\[Theta]_,\[Phi]_]:=(-1)^(m+\[ScriptL]-s) Sqrt[((1+2 \[ScriptL]) (-m+\[ScriptL])! (m+\[ScriptL])!)/(4 \[Pi] (-s+\[ScriptL])! (s+\[ScriptL])!)] Sin[\[Theta]/2]^(2 \[ScriptL]) Sum[ (-1)^-r E^(I m \[Phi]) Binomial[-s+\[ScriptL],r] Binomial[s+\[ScriptL],-m+r+s] Cot[\[Theta]/2]^(-m+2 r+s),{r,0,-s+\[ScriptL]}];
