@@ -67,10 +67,11 @@
 %	MARGINS & GEOMETRY
 %----------------------------------------------------------------------------------------
 \usepackage[a4paper,
-	top=1.2in,
-	outer=1.1in,
-	inner=1.5in,
-	bottom=1.2in
+  bindingoffset=0.9cm,
+	top=3.0cm,
+	outer=2.6cm,
+	inner=2.6cm,
+	bottom=2.8cm
 ]{geometry}
                     
 \raggedbottom
@@ -370,10 +371,12 @@
 \newcommand*\absEnvTitlePage{Abstract Page}
 \newcommand*\absEnvDegree{\degreename}
 \newcommand*\absEnvConnector{by}
-\define@key{absEnv}{title}{\renewcommand*\absEnvTitle{#1}} 
+\newcommand*\absEnvThesisTitle{\ttitle}
+\define@key{absEnv}{title}{\renewcommand*\absEnvTitle{#1}}
+\define@key{absEnv}{thesistitle}{\renewcommand*\absEnvThesisTitle{#1}} 
 \define@key{absEnv}{titlepage}{\renewcommand*\absEnvTitlePage{#1}}
 \define@key{absEnv}{degree}{\renewcommand*\absEnvDegree{#1}}
-\define@key{absEnv}{connector}{\renewcommand*\absEnvConnector{#1}}
+\define@key{absEnv}{nameconnector}{\renewcommand*\absEnvConnector{#1}}
 
 \newenvironment{abstract}[1][]
 {	
@@ -393,7 +396,7 @@
     \bigskip
     {\normalsize \absEnvDegree\par} % Degree name
     \bigskip
-    {\normalsize\bf \ttitle \par} % Thesis title
+    {\normalsize\bf \absEnvThesisTitle \par} % Thesis title
     \medskip
     {\normalsize \absEnvConnector\space \authornames \par} % Author name
     \bigskip
