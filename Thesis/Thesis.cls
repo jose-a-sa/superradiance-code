@@ -67,10 +67,11 @@
 %	MARGINS & GEOMETRY
 %----------------------------------------------------------------------------------------
 \usepackage[a4paper,
-	top=1.2in,
-	outer=1.1in,
-	inner=1.5in,
-	bottom=1.2in
+  bindingoffset=0.9cm,
+	top=3.0cm,
+	outer=2.6cm,
+	inner=2.6cm,
+	bottom=2.8cm
 ]{geometry}
                     
 \raggedbottom

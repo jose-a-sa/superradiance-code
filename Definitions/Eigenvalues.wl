@@ -139,8 +139,3 @@ EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative,
           c -> \[ScriptC]}), {A, Table[c^(i - 1), {i, Length[EigenCoef]}] . 
           Simplify[EigenCoef /. Rule\[Kappa]pm /. {m -> \[ScriptM], 
              s -> \[ScriptS]}] /. {l -> \[ScriptL], c -> \[ScriptC]}}]]
-
-
-Clear@SpinWeightedSphericalHarmonicsY;
-SpinWeightedSphericalHarmonicsY[s_,\[ScriptL]_,m_]:=Function[{\[Theta],\[Phi]},SpinWeightedSphericalHarmonicsY[s,\[ScriptL],m,\[Theta],\[Phi]]];
-SpinWeightedSphericalHarmonicsY[s_,\[ScriptL]_,m_,\[Theta]_,\[Phi]_]:=(-1)^(m+\[ScriptL]-s) Sqrt[((1+2 \[ScriptL]) (-m+\[ScriptL])! (m+\[ScriptL])!)/(4 \[Pi] (-s+\[ScriptL])! (s+\[ScriptL])!)] Sin[\[Theta]/2]^(2 \[ScriptL]) Sum[ (-1)^-r E^(I m \[Phi]) Binomial[-s+\[ScriptL],r] Binomial[s+\[ScriptL],-m+r+s] Cot[\[Theta]/2]^(-m+2 r+s),{r,0,-s+\[ScriptL]}];
