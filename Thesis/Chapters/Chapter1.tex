@@ -18,32 +18,53 @@ On the contrary, superradiant scattering could indeed occur for bosonic fields.
 
 Further calculations from Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing surface rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ which satisfies
 \begin{align}
-    \omega - m \Omega < 0 ~,
+    \omega - m \Omega < 0
     \label{eq:superradiant-condition}
 \end{align}
 where $m$ is the usual azimuthal number of the monochromatic plane wave relative to the rotation axis. 
-Condition~\eqref{eq1:superradiant-condition} was to become one of the most important results of (rotational) superradiance as it presents itself in multiple examples in the literature, \emph{i.e.} Vavilov-Cherekov effect and anomalous Doppler effect.
+Condition~\eqref{eq:superradiant-condition} was to become one of the most important results of (rotational) superradiance as it presents itself in multiple examples in the literature, \emph{i.e.} Vavilov-Cherekov effect and anomalous Doppler effect.
 
 %----------------------------------------------------------------------------------------
 
-\section{Klein paradox} 
+\section{Klein paradox as a first example} 
 
 \subsection{Fermions}
 
-Following chronologically, Klein used Dirac equation to study electrons in a step potential potential~\cite{Klein1929}.
-This equation states
+For a minimally coupled electromagnetic potential, the usual partial derivative in the Dirac equation becomes $D_\mu = \partial_\mu + i e A_\mu$ in order to preserve gauge invariance of the theory. Thus
 \begin{align}
-    (\gamma^\mu \partial_\mu - m ) \Psi = 0 ~,
+    ( i \gamma^\mu D_\mu - m ) \Psi = 0
     \label{eq:dirac}
 \end{align}
-where $m$ is the electron mass and $\lbrace \gamma_\mu, \gamma_\nu \rbrace = 2 \eta_{\mu\nu}$.
-The problem can be greatly simplified by considering in the pseudo-Euclidean space $\mathbb{E}^{1,1}$, for which a valid representation of the gamma matrices is
+where $m$ is the fermion mass.
+The problem is greatly simplified by considering flat space-time in (1+1)-dimentions, for which a valid representation of the gamma matrices is
 \begin{align}
-    \gamma^0 = \begin{pmatrix*}[r] i & 0 \\ 0 & -i \end{pmatrix*} ~, \quad 
-    \gamma^1 = \begin{pmatrix*}[r] 0 & i~ \\ -i & 0~ \end{pmatrix*} ~.
+    \gamma^0 = \left(\begin{array}{cr} 1 & 0 \\  0 & -1 \end{array}\right) \qquad 
+    \gamma^1 = \left(\begin{array}{cr} 0 & 1 \\ -1 & 0 \end{array}\right)
     \label{eq:gamma1+1}
 \end{align}
-Furthrmore will be used the ansatz $\Psi= e^{-i \omega t} \psi$
+
+Following chronologically, Klein~\cite{Klein1929} used Dirac equation to study electrons in a step potential $A(x) = V\,\theta(x) ~\dd t$, for $V>0$ constant and plane wave solutions $\Psi= e^{-i E t} \psi$. For $x<0$, the solution can be divided as incident and reflected, taking the form
+\begin{align}
+    \psi_\mathrm{inc}(x) = \mathcal{I}\, e^{i k x} \left(\begin{array}{c} 1 \\ \cfrac{k}{E+m} \end{array}\right) \qquad
+    \psi_\mathrm{refl}(x) = \mathcal{R}\, e^{- i k x} \left(\begin{array}{c} 1 \\ \cfrac{-k}{E+m} \end{array}\right)
+\end{align}
+while for $x>0$, the transmitted wave function is written as 
+\begin{align}
+    \psi_\mathrm{trans}(x) = \mathcal{T}\, e^{i q x} \left(\begin{array}{c} 1 \\ \cfrac{q}{ E - e V + m} \end{array}\right)
+\end{align}
+where $q = [(E-e V)^2 - m^2]^{1/2}$, by solving the eigenvalue problem. 
+Writing the continuity condition for the complete solution at the barrier $x=0$, determines the coefficients
+\begin{align}
+    \mathcal{I} + \mathcal{R} &= \mathcal{T} \\
+    \mathcal{I} - \mathcal{R} &= r\, \mathcal{T}
+\end{align}
+with
+\begin{align}
+    r = \frac{q}{k}\,\frac{E+m}{E-e V+m}
+\end{align}
+
+
+
 
 \subsection{Bosons}
 
