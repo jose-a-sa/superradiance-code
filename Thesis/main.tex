@@ -8,6 +8,7 @@
 
 \documentclass[11pt, twoside]{Thesis} % The default font size and one-sided printing (no margin offsets)
 
+
 \usepackage{pdfpages}
 
 \graphicspath{{Figures/}} % Specifies the directory where pictures are stored
@@ -21,16 +22,15 @@
 % - fourier
 % - mathpazo ( palatino for Computer Modern on math )
 \usepackage{mathpazo}
+\setstretch{1.5}
 
 \usepackage{lipsum}
-
-\newcommand*{\defaultlinespacing}{\setstretch{1.5}}
-\newcommand*{\listlinespacing}{\setstretch{1.7}}
 
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT VARIABLES
 %----------------------------------------------------------------------------------------
+
 \thesistitle{Superradiance} % Your thesis title \ttitle
 \thesistype{Master's Thesis} % Your thesis type Doctoral Thesis or Masters Thesis \ttype
 \supervisor[mailto:joao.rosa@fc.up.pt]{João \textsc{Rosa}} % Your supervisor's name \supname \supnamenolink
@@ -53,6 +53,7 @@
 %----------------------------------------------------------------------------------------
 %	NOTATION VARIABLES
 %----------------------------------------------------------------------------------------
+
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\sts}[3][]{ {}_{#1} #2_{#3} }
 
@@ -62,21 +63,18 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-
 \pagestyle{empty}
 \includepdf[page={1},pagecommand={},scale=1]{Front/fcup}
 \cleardoublepage
 \includepdf[page={2},pagecommand={},scale=1]{Front/fcup}
 \cleardoublepage
 
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
-\defaultlinespacing % Line spacing of 1.5
 
 \maketitle
 
@@ -95,10 +93,8 @@
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\acknowledgements{\addtocontents{toc}{\vspace{0.8em}} % Add a gap in the Contents, for aesthetics
-	
+\acknowledgements{ % Add a gap in the Contents, for aesthetics
 	The acknowledgements and the people to thank go here, don't forget to include your project advisors\ldots
-
 }
 
 
@@ -106,42 +102,30 @@
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
-\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+\begin{abstract}
 
-\abstract
-{
-	\addtocontents{toc}{} % Add a gap in the Contents, for aesthetics
-	
 	The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
 	
-	\lipsum[2]
-}
+\end{abstract}
 
-\cleardoublepage
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE (PORTUGUESE)
 %----------------------------------------------------------------------------------------
 
-\addtotoc{Resumo}
-
-\abstract[
+\begin{abstract}[
 	thesistitle={Nome da tese em português},
 	title={Resumo},
 	degree={Mestre de Ciência},
 	nameconnector={por}]
-{	
-	\addtocontents{toc}{\vspace{0.8em}} % Add a gap in the Contents, for aesthetics
-	
-	Tradução em português do ``Abstract'' escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
-	
-	\lipsum[2]
-}
 
-\cleardoublepage
+Tradução em português do ``Abstract'' escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
+	
+\end{abstract}
+
 
 %----------------------------------------------------------------------------------------
-%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%	LIST OF CONTENTS/FIGURES/TABLES
 %----------------------------------------------------------------------------------------
 
 \tableofcontents % Write out the Table of Contents
@@ -150,83 +134,51 @@
 
 %\listoftables % Write out the List of Tables
 
-\addtocontents{toc}{\vspace{0.8em}}
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
 
-\listlinespacing % This makes the following tables easier to read
-
-\listofabbreviations{r@{\hskip 0.4in}l} % Include a list of Abbreviations (a table of two columns)
-{
-	\textbf{QM}		& \textbf{Q}uantum \textbf{M}echanics \\
-	\textbf{BH}		& \textbf{B}lack \textbf{H}ole \\
-	\textbf{GR}		& \textbf{G}eneral \textbf{R}elativity \\
-	\textbf{SWSH}	& \textbf{S}pin-\textbf{W}eighted \textbf{S}pheroidal \textbf{H}armonic \\
-	\hspace*{0.9in} & \hspace*{5in}
-}
-
-\defaultlinespacing % Return the line spacing back to 1.3
-
+\begin{glossary}
+	\abbrev{QM}{Quantum Mechanics}
+	\abbrev{BH}{Black Hole}
+	\abbrev{GR}{General Relativity}
+	\abbrev{SWSH}{Spin-Weighted Spheroidal Harmonic}
+\end{glossary}
 
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
 
-% \listlinespacing % This makes the following tables easier to read
-
-% \listofconstants{r@{\hskip 0.4in}lcl} % a four column table
-% {
-% 	Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-% 	% Constant Name & Symbol & $=$ & Constant Value (with units) \\
-% }
-
-% \defaultlinespacing % Return the line spacing back to default
+% \begin{listofcontants}
+% 	\const{My little ponny test of magical rainbow}{$mn/mp$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
+% 	\const{Vaccuum permeability test of magical rainbow for a specific case of condensed matter physics}{$\epsilon_0$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
+% 	\const{Speed of Light test of magical rainbow}{$c$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
+% 	\const{Speed of Light test of magical rainbow}{$c$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
+% \end{listofcontants}
 
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
 
-% \listlinespacing % This makes the following tables easier to read
-
-% \listofsymbols{l@{\hskip 0.4in}l@{\hskip 0.4in}l} % a three column table
-% {
-% 	$a$ & distance & m \\
-% 	$P$ & power & W (Js$^{-1}$) \\
-% 	% Symbol & Name & Unit \\
-
-% 	& & \\ % Gap to separate the Roman symbols from the Greek
-
-% 	$\omega$ & angular frequency & rads$^{-1}$ \\
-
-% 	% Symbol & Name & Unit \\
-% }
-
-% \defaultlinespacing % Return the line spacing back to default
-
+% \begin{listofsymbols}
+% 	\symb{$F_{\mu\nu}$}{Maxwell tensor}{F}
+% 	\symb{$a$}{distance}{m}
+% 	\\
+% 	\symb{$\omega$}{angular frequency}{rads$^{-1}$}
+% \end{listofsymbols}
 
 %----------------------------------------------------------------------------------------
 %	NOTATION
 %----------------------------------------------------------------------------------------
 
 \newcommand\notationname{Notation and Conventions}
-
 \addtotoc{\notationname}
-\chapter*{\notationname}
 \fancyhead[LO]{\textsc{\notationname}}
 
-\section*{Units}
-
-Text random and a new citation
-
-\section*{Tensors and GR related}
-
-\lipsum[3]
-
-\cleardoublepage
+\input{Chapters/Notation}
 
 
 %----------------------------------------------------------------------------------------
@@ -235,16 +187,12 @@ Text random and a new citation
 
 % \dedicatory{For/Dedicated to/To my\ldots} % Dedication text
 
-% \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-
 % \cleardoublepage
 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
-
-\addtocontents{toc}{\vspace{0.8em}}
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
 
@@ -264,15 +212,11 @@ Text random and a new citation
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
-\addtocontents{toc}{\vspace{0.8em}} % Add a gap in the Contents, for aesthetics
-
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
 \input{Appendices/AppendixA}
 %\input{Appendices/AppendixB}
 %\input{Appendices/AppendixC}
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 
 \backmatter
 
@@ -280,10 +224,10 @@ Text random and a new citation
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\label{Bibliography}
 
+\label{Bibliography}
 \fancyhead[LO]{\textsc{Bibliography}}
 
-\bibliography{../Bibliography.bib} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{../Bibliography.bib} % The references are stored in the file "Bibliography.bib"
 
 \end{document}

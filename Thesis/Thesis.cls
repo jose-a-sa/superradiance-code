@@ -4,7 +4,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{Thesis}
-              [2007/22/02 v1.0
+              [2017/04/15 v1.1
    LaTeX document class]
 \def\baseclass{book}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseclass}}
@@ -48,14 +48,17 @@
   \space \number\year
 } % \today of the form "Month Year"
 
+\newcommand\addvspacetoc[1]{\addtocontents{toc}{\vspace{#1}}}
 
 %----------------------------------------------------------------------------------------
 %	PARAGRAPHS
 %----------------------------------------------------------------------------------------
-\usepackage{setspace}
+\usepackage[nodisplayskipstretch]{setspace}
 \onehalfspacing
+\setstretch{1.4}
 %\setlength{\parindent}{15pt}
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
 
 %----------------------------------------------------------------------------------------
 %	CHAPTERS & SECTIONS
@@ -69,8 +72,8 @@
 \usepackage[a4paper,
   bindingoffset=0.9cm,
 	top=3.0cm,
-	outer=2.6cm,
-	inner=2.6cm,
+	outer=2.5cm,
+	inner=2.5cm,
 	bottom=2.8cm
 ]{geometry}
                     
@@ -382,6 +385,7 @@
 {	
   \setkeys{absEnv}{#1}
   \btypeout{\absEnvTitlePage}
+  \addtotoc{\absEnvTitle}
   \thispagestyle{plain}
   \null\vfil
   \begin{center}
@@ -491,54 +495,92 @@
 %----------------------------------------------------------------------------------------
 %	LIST OF ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\newcommand\listabbreviationname{Abbreviations}
-\usepackage{longtable}
-\newcommand\listofabbreviations[2]{
-\btypeout{\listabbreviationname}
-\addtotoc{\listabbreviationname}
+\usepackage{xparse,l3regex,longtable}
+\ExplSyntaxOn
+\NewDocumentCommand{\boldcapitals}{ m }
+ {
+  \pouya_boldfirst:n { #1 }
+ }
+\cs_new_protected:Npn \pouya_boldfirst:n #1
+ {
+  \tl_set:Nn \l_pouya_input_tl { #1 }
+  \regex_replace_once:nnN { \A(.*?[A-Za-z]) } { \c{textbf}\cB\{ \1 \cE\} } \l_pouya_input_tl
+  \regex_replace_all:nnN { (\s) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
+  \regex_replace_all:nnN { (\-) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
+  \tl_use:N \l_pouya_input_tl
+ }
+\ExplSyntaxOff
 
-\fancyhead[LO]{\textsc{\listabbreviationname}}
+\newcommand\glossaryname{Abbreviations}
 
-\chapter*{\listabbreviationname
-      \@mkboth{\MakeUppercase\listabbreviationname}{\MakeUppercase\listabbreviationname}}
-	\begin{longtable}[c]{#1}#2\end{longtable}\par
-\cleardoublepage
+\renewenvironment{glossary}[1][]
+{	
+  \btypeout{\glossaryname}
+  \addtotoc{\glossaryname}
+  \fancyhead[LO]{\textsc{\glossaryname}}
+  \chapter*{\glossaryname
+      \@mkboth{\MakeUppercase\glossaryname}{\MakeUppercase\glossaryname}}
+  \setlength{\tabcolsep}{0.1cm}
+	\begin{longtable}[c]{r@{\hskip 1cm}l}
+}
+{
+    \hspace*{2.3cm} & \hspace*{13cm}
+  \end{longtable}\par
+  \cleardoublepage
 }
 
+\newcommand\abbrev[2]{
+  \vspace{0.15cm} \textbf{#1}	& \boldcapitals{#2} \\
+}
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 \newcommand\listconstantsname{Physical Constants}
-\usepackage{longtable}
-\newcommand\listofconstants[2]{
-\btypeout{\listconstantsname}
-\addtotoc{\listconstantsname}
 
-\fancyhead[LO]{\textsc{\listconstantsname}}
-
-\chapter*{\listconstantsname
+\newenvironment{listofcontants}[1][]
+{	
+  \btypeout{\listconstantsname}
+  \addtotoc{\listconstantsname}
+  \fancyhead[LO]{\textsc{\listconstantsname}}
+  \chapter*{\listconstantsname
       \@mkboth{\MakeUppercase\listconstantsname}{\MakeUppercase\listconstantsname}}
-\begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+  \setlength{\tabcolsep}{0.1cm}
+	\begin{longtable}[c]{llcl} 
+}
+{
+    \const[\phantom{$=$}]{}{\phantom{$mp/mn$}}{}
+  \end{longtable}\par
+  \cleardoublepage
+}
+
+\newcommand\const[4][$=$]{
+  	\vspace{0.15cm}\hspace{0.4cm}\parbox{7cm}{\vspace{0.15cm}\setstretch{1} #2}\hspace{0.8cm} & #3 & #1 & \parbox{6cm}{\setstretch{1} #4} \\
 }
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 \newcommand\listsymbolsname{Symbols}
-\usepackage{longtable}
-\newcommand\listofsymbols[2]{
-\btypeout{\listsymbolsname}
-\addtotoc{\listsymbolsname}
 
-\fancyhead[LO]{\textsc{\listsymbolsname}}
+\newenvironment{listofsymbols}[1][]
+{	
+  \btypeout{\listsymbolsname}
+  \addtotoc{\listsymbolsname}
+  \fancyhead[LO]{\textsc{\listsymbolsname}}
+  \chapter*{\listsymbolsname
+      \@mkboth{\MakeUppercase\listsymbolsname}{\MakeUppercase\listsymbolsname}}
+  \setlength{\tabcolsep}{0.1cm}
+	\begin{longtable}[c]{l@{\hskip 2cm}l@{\hskip 2cm}l} 
+}
+{
+    \symb{\phantom{$d$}}{\phantom{distance}}{\phantom{m}}
+  \end{longtable}\par
+  \cleardoublepage
+}
 
-\chapter*{\listsymbolsname
-  \@mkboth{
-      \MakeUppercase\listsymbolsname}{\MakeUppercase\listsymbolsname}}
-\begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+\newcommand\symb[3]{
+  	\vspace{0.15cm}#1 & #2 & #3 \\
 }
 
 
