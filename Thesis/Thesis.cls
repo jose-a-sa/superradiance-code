@@ -386,8 +386,8 @@
   \setkeys{absEnv}{#1}
   \btypeout{\absEnvTitlePage}
   \addtotoc{\absEnvTitle}
-  \thispagestyle{plain}
-  \null\vfil
+  \pagestyle{empty}
+  \vspace*{\fill}
   \begin{center}
     \setlength{\parskip}{0pt}
     {\normalsize \UNIVNAME \par} % University name in capitals
@@ -407,8 +407,9 @@
   \end{center}
 }
 {
-  \vfil\vfil\vfil\null
+  \vspace*{\fill}\vspace*{\fill}\vspace*{\fill}\vspace*{\fill}
   \cleardoublepage
+  \pagestyle{fancy}
 }
 
 %----------------------------------------------------------------------------------------
@@ -513,7 +514,7 @@
 
 \newcommand\glossaryname{Abbreviations}
 
-\renewenvironment{glossary}[1][]
+\renewenvironment{glossary}
 {	
   \btypeout{\glossaryname}
   \addtotoc{\glossaryname}
@@ -538,7 +539,7 @@
 %----------------------------------------------------------------------------------------
 \newcommand\listconstantsname{Physical Constants}
 
-\newenvironment{listofcontants}[1][]
+\newenvironment{listofcontants}
 {	
   \btypeout{\listconstantsname}
   \addtotoc{\listconstantsname}
@@ -563,7 +564,7 @@
 %----------------------------------------------------------------------------------------
 \newcommand\listsymbolsname{Symbols}
 
-\newenvironment{listofsymbols}[1][]
+\newenvironment{listofsymbols}
 {	
   \btypeout{\listsymbolsname}
   \addtotoc{\listsymbolsname}
@@ -587,40 +588,56 @@
 %----------------------------------------------------------------------------------------
 %	QUOTATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
+
 \newcommand\quotepage[2]{
-\thispagestyle{empty} % Remove page number
-\null\vfill % Add some space to move the quote down the page a bit
-\textit{``#2"}
-\begin{flushright}#1\end{flushright}
-\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
-\cleardoublepage % Start a new page
+  \thispagestyle{empty} % Remove page number
+  \null\vfill % Add some space to move the quote down the page a bit
+  \textit{``#2"}
+  \begin{flushright}#1\end{flushright}
+  \vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+  \cleardoublepage % Start a new page
 }
+
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\newcommand\acknowledgements[1]{
-\btypeout{Acknowledgements}
-\addtotoc{Acknowledgements}
-\thispagestyle{plain}
-\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
-{\normalsize #1}
-\vfil\vfil\null
-\cleardoublepage
+
+\newenvironment{acknowledgements}
+{
+  \btypeout{Acknowledgements}
+  \addtotoc{Acknowledgements}
+  \pagestyle{empty}
+  \begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
+  \vspace{0.3cm}
+  \normalsize\normalfont
 }
+{
+  \vfil\vfil\null
+  \cleardoublepage
+  \pagestyle{fancy}
+}
+
 
 %----------------------------------------------------------------------------------------
 %	DEDICATORY PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\newcommand\dedicatory[1]{
-\btypeout{Dedicatory}
-\thispagestyle{empty}
-\null\vfil
-\vskip 60\p@
-\begin{center}{\Large \sl #1}\end{center}
-\vfil\null
-\cleardoublepage
+
+\newenvironment{dedicatory}
+{
+  \btypeout{Dedicatory}
+  \thispagestyle{empty}
+  \null\vfil
+  \vskip 60\p@
+  \begin{center}
+    \Large \sl
 }
+{
+  \end{center}
+  \vfil\null
+  \cleardoublepage
+}
+
 
 \renewcommand\backmatter{
   \if@openright
@@ -628,7 +645,5 @@
   \else
     \clearpage
   \fi
-  \addtotoc{\bibname}
-  \btypeout{\bibname}
   \@mainmatterfalse}
 \endinput

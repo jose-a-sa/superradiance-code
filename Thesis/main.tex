@@ -61,6 +61,7 @@
 %----------------------------------------------------------------------------------------
 %	DOCUMENT
 %----------------------------------------------------------------------------------------
+
 \begin{document}
 
 \pagestyle{empty}
@@ -69,12 +70,12 @@
 \includepdf[page={2},pagecommand={},scale=1]{Front/fcup}
 \cleardoublepage
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \maketitle
 
@@ -93,10 +94,11 @@
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\acknowledgements{ % Add a gap in the Contents, for aesthetics
-	The acknowledgements and the people to thank go here, don't forget to include your project advisors\ldots
-}
+\begin{acknowledgements}
+	\lipsum[1-10]
+\end{acknowledgements}
 
+\addvspacetoc{0.3cm}
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
@@ -119,7 +121,7 @@
 	degree={Mestre de Ciência},
 	nameconnector={por}]
 
-Tradução em português do ``Abstract'' escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
+	Tradução em português do ``Abstract'' escrito em inglês mais a cima. A página é centrada vertical  e horizontalmente, podendo espandir para o espaço superior da página em branco \ldots
 	
 \end{abstract}
 
@@ -128,12 +130,15 @@ Tradução em português do ``Abstract'' escrito em inglês mais a cima. A pági
 %	LIST OF CONTENTS/FIGURES/TABLES
 %----------------------------------------------------------------------------------------
 
+\addvspacetoc{0.3cm}
+
 \tableofcontents % Write out the Table of Contents
 
 \listoffigures % Write out the List of Figures
 
-%\listoftables % Write out the List of Tables
+% \listoftables % Write out the List of Tables
 
+\addvspacetoc{0.3cm}
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -170,6 +175,7 @@ Tradução em português do ``Abstract'' escrito em inglês mais a cima. A pági
 % 	\symb{$\omega$}{angular frequency}{rads$^{-1}$}
 % \end{listofsymbols}
 
+
 %----------------------------------------------------------------------------------------
 %	NOTATION
 %----------------------------------------------------------------------------------------
@@ -185,14 +191,16 @@ Tradução em português do ``Abstract'' escrito em inglês mais a cima. A pági
 %	DEDICATORY
 %----------------------------------------------------------------------------------------
 
-% \dedicatory{For/Dedicated to/To my\ldots} % Dedication text
-
-% \cleardoublepage
+% \begin{dedicatory}
+% 	For/Dedicated to/To my\ldots
+% \end{dedicatory}
 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
+
+\addvspacetoc{0.3cm}
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
 
@@ -224,10 +232,12 @@ Tradução em português do ``Abstract'' escrito em inglês mais a cima. A pági
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
+\addvspacetoc{0.5cm}
+\addtotoc{Bibliography}
 
-\label{Bibliography}
 \fancyhead[LO]{\textsc{Bibliography}}
 
 \bibliography{../Bibliography.bib} % The references are stored in the file "Bibliography.bib"
+
 
 \end{document}
