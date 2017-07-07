@@ -368,7 +368,7 @@
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\usepackage{keyval}
+\usepackage{keyval,etoolbox}
 
 \newcommand*\absEnvTitle{Abstract}
 \newcommand*\absEnvTitlePage{Abstract Page}
