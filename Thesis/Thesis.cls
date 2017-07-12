@@ -386,7 +386,7 @@
   \setkeys{absEnv}{#1}
   \btypeout{\absEnvTitlePage}
   \addtotoc{\absEnvTitle}
-  \pagestyle{empty}
+  \thispagestyle{empty}
   \vspace*{\fill}
   \begin{center}
     \setlength{\parskip}{0pt}
@@ -409,7 +409,6 @@
 {
   \vspace*{\fill}\vspace*{\fill}\vspace*{\fill}\vspace*{\fill}
   \cleardoublepage
-  \pagestyle{fancy}
 }
 
 %----------------------------------------------------------------------------------------
@@ -497,20 +496,20 @@
 %	LIST OF ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 \usepackage{xparse,l3regex,longtable}
-\ExplSyntaxOn
-\NewDocumentCommand{\boldcapitals}{ m }
- {
-  \pouya_boldfirst:n { #1 }
- }
-\cs_new_protected:Npn \pouya_boldfirst:n #1
- {
-  \tl_set:Nn \l_pouya_input_tl { #1 }
-  \regex_replace_once:nnN { \A(.*?[A-Za-z]) } { \c{textbf}\cB\{ \1 \cE\} } \l_pouya_input_tl
-  \regex_replace_all:nnN { (\s) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
-  \regex_replace_all:nnN { (\-) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
-  \tl_use:N \l_pouya_input_tl
- }
-\ExplSyntaxOff
+% \ExplSyntaxOn
+% \NewDocumentCommand{\boldcapitals}{ m }
+%  {
+%   \pouya_boldfirst:n { #1 }
+%  }
+% \cs_new_protected:Npn \pouya_boldfirst:n #1
+%  {
+%   \tl_set:Nn \l_pouya_input_tl { #1 }
+%   \regex_replace_once:nnN { \A(.*?[A-Za-z]) } { \c{textbf}\cB\{ \1 \cE\} } \l_pouya_input_tl
+%   \regex_replace_all:nnN { (\s) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
+%   \regex_replace_all:nnN { (\-) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
+%   \tl_use:N \l_pouya_input_tl
+%  }
+% \ExplSyntaxOff
 
 \newcommand\glossaryname{Abbreviations}
 
@@ -531,7 +530,7 @@
 }
 
 \newcommand\abbrev[2]{
-  \vspace{0.15cm} \textbf{#1}	& \boldcapitals{#2} \\
+  \vspace{0.15cm} \textbf{#1}	& #2 \\
 }
 
 %----------------------------------------------------------------------------------------
