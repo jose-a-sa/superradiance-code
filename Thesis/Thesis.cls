@@ -386,7 +386,7 @@
   \setkeys{absEnv}{#1}
   \btypeout{\absEnvTitlePage}
   \addtotoc{\absEnvTitle}
-  \thispagestyle{empty}
+  \pagestyle{empty}
   \vspace*{\fill}
   \begin{center}
     \setlength{\parskip}{0pt}
@@ -409,6 +409,7 @@
 {
   \vspace*{\fill}\vspace*{\fill}\vspace*{\fill}\vspace*{\fill}
   \cleardoublepage
+  \pagestyle{fancy}
 }
 
 %----------------------------------------------------------------------------------------
