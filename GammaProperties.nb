@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     23421,        717]
-NotebookOptionsPosition[     20518,        638]
-NotebookOutlinePosition[     20887,        654]
-CellTagsIndexPosition[     20844,        651]
+NotebookDataLength[     20988,        636]
+NotebookOptionsPosition[     18327,        563]
+NotebookOutlinePosition[     18694,        579]
+CellTagsIndexPosition[     18651,        576]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -559,87 +559,12 @@ Cell[BoxData[
    3.7014309346070375`*^9}, {3.7014309751234245`*^9, 
    3.70143099136423*^9}},ExpressionUUID->"8c4605d0-590e-4b66-9f9b-\
 b60eb6e64bb3"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"ParallelTable", "[", 
-    RowBox[{
-     RowBox[{"Limit", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{
-         FractionBox[
-          RowBox[{"Gamma", "[", 
-           RowBox[{
-            RowBox[{"-", "2"}], "l"}], "]"}], 
-          RowBox[{"Gamma", "[", 
-           RowBox[{
-            RowBox[{"-", "l"}], "-", "1"}], "]"}]], 
-         FractionBox[
-          RowBox[{"Gamma", "[", "l", "]"}], 
-          RowBox[{"Gamma", "[", 
-           RowBox[{
-            RowBox[{"2", "l"}], "+", "2"}], "]"}]]}], "/.", 
-        RowBox[{"{", 
-         RowBox[{"l", "\[Rule]", 
-          RowBox[{"\[ScriptL]", "+", "\[Epsilon]"}]}], "}"}]}], ",", 
-       RowBox[{"\[Epsilon]", "\[Rule]", "0"}]}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"\[ScriptL]", ",", "1", ",", "20"}], "}"}]}], "]"}], "//", 
-   RowBox[{
-    RowBox[{"FindSequenceFunction", "[", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"Range", "[", 
-          RowBox[{"1", ",", "20"}], "]"}], ",", "#"}], "}"}], 
-       "\[Transpose]"}], ",", "l"}], "]"}], "&"}]}], "//", 
-  RowBox[{
-   RowBox[{"FullSimplify", "[", 
-    RowBox[{"#", ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"l", "\[Element]", "Integers"}], ",", 
-       RowBox[{"l", "\[GreaterEqual]", "0"}]}], "}"}]}], "]"}], 
-   "&"}]}]], "Input",
- CellChangeTimes->{{3.701431017324233*^9, 
-  3.701431023255886*^9}},ExpressionUUID->"0a3a2bac-bb7c-4141-bf50-\
-94b3f035e555"],
-
-Cell[BoxData[
- FractionBox[
-  RowBox[{
-   SuperscriptBox[
-    RowBox[{"(", 
-     RowBox[{"-", "1"}], ")"}], 
-    RowBox[{"1", "+", "l"}]], " ", 
-   SuperscriptBox["4", 
-    RowBox[{
-     RowBox[{"-", "1"}], "-", 
-     RowBox[{"2", " ", "l"}]}]], " ", 
-   RowBox[{"(", 
-    RowBox[{"1", "+", "l"}], ")"}], " ", "\[Pi]"}], 
-  RowBox[{"l", " ", 
-   RowBox[{"Gamma", "[", 
-    RowBox[{
-     FractionBox["1", "2"], "+", "l"}], "]"}], " ", 
-   RowBox[{"Gamma", "[", 
-    RowBox[{
-     FractionBox["3", "2"], "+", "l"}], "]"}]}]]], "Output",
- CellChangeTimes->{{3.701431007735326*^9, 
-  3.701431027111229*^9}},ExpressionUUID->"52f0f76f-5bfa-44f5-84b2-\
-8087987b78f0"]
 }, Open  ]]
 },
-WindowSize->{1920, 986},
-WindowMargins->{{1911, Automatic}, {Automatic, -9}},
+WindowSize->{1920, 976},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
 CellContext->Notebook,
-FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -710,14 +635,8 @@ Cell[15241, 460, 691, 22, 87, "Output", "ExpressionUUID" -> \
 Cell[CellGroupData[{
 Cell[15969, 487, 1525, 47, 69, "Input", "ExpressionUUID" -> \
 "05662223-a8a9-4048-8519-be7d3f0e71ef"],
-Cell[17497, 536, 814, 24, 120, "Output", "ExpressionUUID" -> \
+Cell[17497, 536, 814, 24, 87, "Output", "ExpressionUUID" -> \
 "8c4605d0-590e-4b66-9f9b-b60eb6e64bb3"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[18348, 565, 1491, 46, 69, "Input", "ExpressionUUID" -> \
-"0a3a2bac-bb7c-4141-bf50-94b3f035e555"],
-Cell[19842, 613, 660, 22, 87, "Output", "ExpressionUUID" -> \
-"52f0f76f-5bfa-44f5-84b2-8087987b78f0"]
 }, Open  ]]
 }
 ]

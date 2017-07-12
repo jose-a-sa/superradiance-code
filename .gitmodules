@@ -1,3 +1,6 @@
 [submodule "Code"]
 	path = Code
 	url = https://github.com/jose-a-sa/swsh-c.git
+[submodule "Front"]
+	path = Thesis/Front
+	url = https://github.com/jose-a-sa/fcup-thesis.git

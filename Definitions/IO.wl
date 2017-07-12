@@ -13,7 +13,7 @@ GetZFileBCP[(s_Integer)?NonPositive, (l_Integer)?NonNegative, m_Integer] :=
 
 
 GetSWSHEigenFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
-    StringJoin["Data/", StringRiffle[{"SWSH", "EV", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
+    StringJoin["Data/", "SWSH-Eigenvalues/", StringRiffle[{"SWSH", "EV", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
 
 

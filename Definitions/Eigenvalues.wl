@@ -1,16 +1,10 @@
-(* ::Package:: *)
-
 \[ScriptH][l_] := ((l^2 - (kp + km)^2)*(l^2 - (kp - km)^2)*(l^2 - s^2))/
      (2*(l^2 - 1/4)*l^3)
  
-
-
 LeaverCoef = {\[Alpha][p_] -> -2*(1 + p)*(1 + 2*km + p), 
      \[Beta][p_] -> -A - c^2 + (km + kp + p - s)*(1 + km + kp + p + s) - 
        2*c*(1 + 2*km + 2*p + s), \[Gamma][p_] -> 2*c*(km + kp + p + s)}
  
-
-
 EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)), 
      -1 - ((-(-km + kp)^2 + l^2)*(-(km + kp)^2 + l^2)*(l^2 - s^2))/
        (2*l^3*(-1/4 + l^2)) + ((-(-km + kp)^2 + (1 + l)^2)*
@@ -115,12 +109,8 @@ EigenCoef = {l + l^2 - s*(1 + s), (-2*m*s^2)/(l*(1 + l)),
        (16*(1 + l)^4*(2 + l)^3*(3 + 2*l)^2*(-1/4 + (1 + l)^2)*
         (-1/4 + (2 + l)^2))}
  
-
-
 Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2}
  
-
-
 EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative, 
      \[ScriptM]_Integer, (\[ScriptC]_Real)?Negative, M_Integer:150] := 
     EigenLeaver[\[ScriptS], \[ScriptL], -\[ScriptM], -\[ScriptC], M]
