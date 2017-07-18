@@ -1,21 +1,28 @@
 % !TEX root = ../main.tex
 
 \chapter{Superradiance} % Main chapter title
-\label{Chapter1} 
+\label{Chapter1}
 
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
 
-The first appearance of the concept of \emph{superradiance} was in 1954, when Dicke~\cite{Dicke1954} showed that a gas could be excited by a pulse into ``superradiant states'' from thermal equilibrium and then emit coherent radiation.
+The first appearance of the concept of \emph{superradiance} was in 1954, in a publication by Dicke~\cite{Dicke1954}, and it is defined as the assemble of processes which result in amplified radiation. In particular, he showed that a gas could be excited by a pulse into ``superradiant states'' from thermal equilibrium and then emit coherent radiation.
 
-Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing surface rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ which satisfies
+Almost two decades later, Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing cylinder rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ if
 \begin{align}
-    \omega - m\, \Omega < 0
+    \omega < m\, \Omega
     \label{eq:superradiance}
 \end{align}
-where $m$ is the usual azimuthal number of the monochromatic plane wave relative to the rotation axis. 
-Condition~\eqref{eq:superradiance} was to become one of the most important results of (rotational) superradiance as it presents itself in multiple examples in the literature, \emph{i.e.} Vavilov-Cherekov effect and anomalous Doppler effect.
+would be satisfied, where $m$ is the usual azimuthal number of the monochromatic plane wave relative to the rotation axis.
+In his study, he observed that superradiance was associated with dissipation of rotational energy from the absorbing object, possibly due to spontaneous pair creation at the surface. 
+
+Condition~\eqref{eq:superradiance} was to become one of the most important results of rotational superradiance, as it presented itself in multiple examples, including in black hole (BH) physics, particularly in the case of the Kerr~\cite{Kerr19XX} solution. 
+Furthermore, attempts of quantising (scalar/fermionic/...) fields in the Kerr geometry by Starovinsky and others, as well as thermodynamic analysis of the problem, laid seminal grounds to the discovery of BH evaporation by Hawking. 
+
+%----------------------------------------------------------------------------------------
+
+\section{Klein paradox as a first example}
 
 Actually, radiation amplification can be traced to birth of Quantum Mechanics, in the beginnings of the 20th century. 
 First studies of the Dirac equation by Klein~\cite{Klein1929} revealed the possibility of electrons propagating in a region with a sufficiently large potential barrier without the expected dampening from non-relativistic QM tunnel effect.
@@ -23,6 +30,88 @@ Due to some confusion, this result was wrongly interpreted by some authors as fe
 The problem was named \emph{Klein paradox} by Sauter~\cite{Sauter1931} and this misleading result was due to a incorrect calculation of the group velocities of the reflected and transmitted waves. 
 Today, it is known that fermionic currents cannot be amplified for this particular problem~\cite{Manogue1988}, result that was correctly obtained by Klein in is original paper. 
 On the contrary, superradiant scattering can indeed occur for bosonic fields.
+
+\subsection{Bosons}
+
+The equation that governs bosonic wave function is the Klein-Gordon equation, which for a minimally coupled electromagnetic potential takes the form
+\begin{align}
+    (D^\mu D_\mu - m^2) \Phi = 0 ~,
+\end{align}
+the usual partial derivative in the becomes $D_\mu = \partial_\mu + i e A_\mu$. 
+
+The problem is greatly simplified by considering flat space-time in (1+1)-dimensions and step potential $A(x) = V\,\theta(x) ~\dd t$, for $V>0$ constant and wave solutions $\Phi= e^{-i \omega t} \phi$.
+For $x<0$, the solution can be divided as incident and reflected, taking the form
+\begin{align}
+    \phi_\mathrm{inc}(x) = \mathcal{I}\, e^{i k x}  ~, \qquad
+    \phi_\mathrm{refl}(x) = \mathcal{R}\, e^{- i k x} ~,
+\end{align}
+in which the dispersion relation states that $k=\sqrt{\omega^2-m^2}$. For $x>0$, the transmitted wave is naturally given by 
+\begin{align}
+    \psi_\mathrm{inc}(x) = \mathcal{T}\, e^{i q x}  ~,
+\end{align}
+but in this case the root sign for the momentum must be carefully chosen so that the group velocity of the transmitted wave matches of the incoming wave, \textit{i.e.}
+\begin{align}
+    \left.\frac{\partial \omega}{\partial p}\right|_{p=q} = \frac{q}{\omega - e V} > 0 ~,
+\end{align}
+therefore we must have that
+\begin{align}
+    q = \mathrm{sgn}(\omega - e V) \sqrt{ (\omega - e V)^2 - m^2 } ~.
+\end{align}
+
+After obtaining the continuity relations at the barrier, $x=0$, we follow by computing the ratios of the transmitted and reflected currents relative to the incident one, which yields
+\begin{align}
+    \frac{j_\mathrm{refl}}{j_\mathrm{inc}} = - \left|\frac{\mathcal{R}}{\mathcal{I}}\right|^2 = -\left|\frac{1-r}{1+r}\right|^2  ~, \qquad \frac{j_\mathrm{trans}}{j_\mathrm{inc}} = \Re(r) \left|\frac{\mathcal{T}}{\mathcal{I}}\right|^2 = \frac{4\, \Re(r)}{|1+r|^2} ~,
+\end{align}
+written as a function of the coefficient 
+\begin{align}
+    r = \frac{q}{k} = \mathrm{sgn}(\omega - e V)  \sqrt{\frac{(\omega - e V)^2 - m^2}{\omega^2 - m^2}} ~.
+\end{align}
+Hence, for $r<0$, in the case of strong potential limit, $e V > \omega + m > 2 m$, the reflected current is larger (in magnitude) than the incident wave and therefore we have superradiance. Also, the transmitted current becomes negative. Even though superradiance and spontaneous pair creation are two distinct phenomena, this result is usually interpreted using the latter as follows: all incident particles are fully reflected as well as some extra due to pair creation at the boundary, while the resultant anti-particles are transmitted in the opposite direction, accounting for the change of sign in the current, due to the opposite charge they carry.
+
+
+
+
+\subsection{Fermions}
+
+For a minimally coupled electromagnetic potential, the usual partial derivative in the Dirac equation becomes $D_\mu = \partial_\mu + i e A_\mu$ in order to preserve gauge invariance of the theory. Thus
+\begin{align}
+    ( i \gamma^\mu D_\mu - m ) \Psi = 0
+    \label{eq:dirac}
+\end{align}
+where $m$ is the fermion mass.
+The problem is greatly simplified by considering flat space-time in (1+1)-dimensions, for which a valid representation of the gamma matrices is
+\begin{align}
+    \gamma^0 = \left(\begin{array}{cr} 1 & 0 \\  0 & -1 \end{array}\right) \qquad 
+    \gamma^1 = \left(\begin{array}{cr} 0 & 1 \\ -1 & 0 \end{array}\right)
+    \label{eq:gamma1+1}
+\end{align}
+
+Following chronologically, Klein~\cite{Klein1929} used Dirac equation to study electrons in a step potential $A(x) = V\,\theta(x) ~\dd t$, for $V>0$ constant and plane wave solutions $\Psi= e^{-i E t} \psi$. For $x<0$, the solution can be divided as incident and reflected, taking the form
+\begin{align}
+    \psi_\mathrm{inc}(x) = \mathcal{I}\, e^{i k x} \left(\begin{array}{c} 1 \\ \cfrac{k}{E+m} \end{array}\right) \qquad
+    \psi_\mathrm{refl}(x) = \mathcal{R}\, e^{- i k x} \left(\begin{array}{c} 1 \\ \cfrac{-k}{E+m} \end{array}\right)
+\end{align}
+while for $x>0$, the transmitted wave function is written as 
+\begin{align}
+    \psi_\mathrm{trans}(x) = \mathcal{T}\, e^{i q x} \left(\begin{array}{c} 1 \\ \cfrac{q}{ E - e V + m} \end{array}\right)
+\end{align}
+where $q = [(E-e V)^2 - m^2]^{1/2}$, by solving the eigenvalue problem. Defining
+\begin{align}
+    r = \frac{q}{k}\,\frac{E+m}{E-e V+m} ~,
+\end{align}
+we can write the continuity condition for the complete solution at the barrier $x=0$
+\begin{align}
+    \mathcal{I} + \mathcal{R} = \mathcal{T} ~,\qquad \mathcal{I} - \mathcal{R} = r\, \mathcal{T} ~,
+\end{align}
+which determines the coefficients. The computation of the Dirac currents yields
+\begin{align}
+    \frac{j_\mathrm{trans}}{j_\mathrm{inc}} = \frac{4 \,\Re(r)}{|1+r|^2}  ~,\qquad \frac{j_\mathrm{refl}}{j_\mathrm{inc}} = - \left|\frac{1-r}{1+r}\right|^2 ~, 
+\end{align}
+with conservation of probabilities currents assured
+\begin{align}
+    j_\mathrm{inc} + j_\mathrm{refl} + j_\mathrm{trans} = 0 
+\end{align}
+
 
 %----------------------------------------------------------------------------------------
 
