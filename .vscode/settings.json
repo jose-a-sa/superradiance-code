@@ -19,5 +19,7 @@
         "**/*.fdb_latexmk": true
     },
 
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+
+    "gitlens.blame.line.enabled": false
 }

@@ -7,18 +7,18 @@
 
 \section{Introduction}
 
-The first appearance of the concept of \emph{superradiance} was in 1954, in a publication by Dicke~\cite{Dicke1954}, and it is defined as the assemble of processes which result in amplified radiation. In particular, he showed that a gas could be excited by a pulse into ``superradiant states'' from thermal equilibrium and then emit coherent radiation.
+What is superradiance ? 
 
-Almost two decades later, Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing cylinder rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ if
+Why superradiance in Kerr ? Gravitational waves \ldots \\
+
+Historically, the first appearance of the concept of \emph{superradiance} was in 1954, in a publication by Dicke~\cite{Dicke1954}, and it is defined as the assemble of processes which result in amplified radiation. In particular, he showed that a gas could be excited by a pulse into ``superradiant states'' from thermal equilibrium and then emit coherent radiation. Almost two decades later, Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing cylinder rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ if
 \begin{align}
     \omega < m\, \Omega
     \label{eq:superradiance}
 \end{align}
 would be satisfied, where $m$ is the usual azimuthal number of the monochromatic plane wave relative to the rotation axis.
-In his study, he observed that superradiance was associated with dissipation of rotational energy from the absorbing object, possibly due to spontaneous pair creation at the surface. 
-
-Condition~\eqref{eq:superradiance} was to become one of the most important results of rotational superradiance, as it presented itself in multiple examples, including in black hole (BH) physics, particularly in the case of the Kerr~\cite{Kerr19XX} solution. 
-Furthermore, attempts of quantising (scalar/fermionic/...) fields in the Kerr geometry by Starovinsky and others, as well as thermodynamic analysis of the problem, laid seminal grounds to the discovery of BH evaporation by Hawking. 
+In his study, he observed that superradiance was associated with dissipation of rotational energy from the absorbing object, possibly due to spontaneous pair creation at the surface. Condition~\eqref{eq:superradiance} was to become one of the most important results of rotational superradiance, as it presented itself in multiple examples, including in black hole (BH) physics, particularly in the case of the Kerr~\cite{Kerr19XX} solution. 
+Furthermore, attempts of quantising (scalar/fermionic/\ldots) fields in the Kerr geometry by Starovinsky and others, as well as thermodynamic analysis of the problem, laid seminal grounds to the discovery of BH evaporation by Hawking. 
 
 %----------------------------------------------------------------------------------------
 
@@ -28,6 +28,7 @@ Actually, radiation amplification can be traced to birth of Quantum Mechanics, i
 First studies of the Dirac equation by Klein~\cite{Klein1929} revealed the possibility of electrons propagating in a region with a sufficiently large potential barrier without the expected dampening from non-relativistic QM tunnel effect.
 Due to some confusion, this result was wrongly interpreted by some authors as fermionic superradiance, as if the reflected current by the barrier could be greater than the incident current. 
 The problem was named \emph{Klein paradox} by Sauter~\cite{Sauter1931} and this misleading result was due to a incorrect calculation of the group velocities of the reflected and transmitted waves. 
+
 Today, it is known that fermionic currents cannot be amplified for this particular problem~\cite{Manogue1988}, result that was correctly obtained by Klein in is original paper. 
 On the contrary, superradiant scattering can indeed occur for bosonic fields.
 
@@ -49,7 +50,7 @@ in which the dispersion relation states that $k=\sqrt{\omega^2-m^2}$. For $x>0$,
 \begin{align}
     \psi_\mathrm{inc}(x) = \mathcal{T}\, e^{i q x}  ~,
 \end{align}
-but in this case the root sign for the momentum must be carefully chosen so that the group velocity of the transmitted wave matches of the incoming wave, \textit{i.e.}
+but in this case the root sign for the momentum must be carefully chosen so that the group velocity sign of the transmitted wave matches of the incoming wave, \textit{i.e.}
 \begin{align}
     \left.\frac{\partial \omega}{\partial p}\right|_{p=q} = \frac{q}{\omega - e V} > 0 ~,
 \end{align}
@@ -66,10 +67,9 @@ written as a function of the coefficient
 \begin{align}
     r = \frac{q}{k} = \mathrm{sgn}(\omega - e V)  \sqrt{\frac{(\omega - e V)^2 - m^2}{\omega^2 - m^2}} ~.
 \end{align}
-Hence, for $r<0$, in the case of strong potential limit, $e V > \omega + m > 2 m$, the reflected current is larger (in magnitude) than the incident wave and therefore we have superradiance. Also, the transmitted current becomes negative. Even though superradiance and spontaneous pair creation are two distinct phenomena, this result is usually interpreted using the latter as follows: all incident particles are fully reflected as well as some extra due to pair creation at the boundary, while the resultant anti-particles are transmitted in the opposite direction, accounting for the change of sign in the current, due to the opposite charge they carry.
+Hence, in the case of strong potential limit, $e V > \omega + m \gtrsim 2 m$, we may have $r<0$ real and the reflected current is larger (in magnitude) than the incident wave and therefore we have superradiance. Also, the transmitted current becomes negative. 
 
-
-
+Even though superradiance and spontaneous pair creation are two distinct phenomena, this result is usually interpreted using the latter as follows: all incident particles are fully reflected as well as some extra due to pair creation at the boundary, while the resultant anti-particles are transmitted in the opposite direction, accounting for the change of sign in the current, due to the opposite charge they carry.
 
 \subsection{Fermions}
 
@@ -111,12 +111,6 @@ with conservation of probabilities currents assured
 \begin{align}
     j_\mathrm{inc} + j_\mathrm{refl} + j_\mathrm{trans} = 0 
 \end{align}
-
-
-%----------------------------------------------------------------------------------------
-
-
-
 
 %----------------------------------------------------------------------------------------
 
