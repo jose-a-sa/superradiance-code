@@ -167,7 +167,7 @@
         stringstyle=\color[rgb]{0.7,0,0} }
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
-   colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
+   colorlinks,citecolor=green,urlcolor=blue,linkcolor=red,
    pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \pdfstringdefDisableCommands{
    \let\\\space
@@ -330,7 +330,9 @@
  		\textsc{\Large \ttype}		\\[0.5cm] % Thesis type
  		
  		\HRule \\[0.4cm] % Horizontal line
- 		{\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
+    \begin{minipage}{0.85\textwidth}
+      \setstretch{1.2} \centering \huge \bfseries \ttitle
+    \end{minipage}\\[0.5cm] % Thesis title
  		\HRule \\[1.2cm] % Horizontal line
  		
  		\begin{minipage}[t]{0.4\textwidth}
