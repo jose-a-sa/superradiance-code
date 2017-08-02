@@ -55,7 +55,6 @@
 %----------------------------------------------------------------------------------------
 \usepackage[nodisplayskipstretch]{setspace}
 \onehalfspacing
-\setstretch{1.4}
 %\setlength{\parindent}{15pt}
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 
@@ -131,7 +130,8 @@
 %----------------------------------------------------------------------------------------
 \newcommand{\fref}[1]{Figure~\ref{#1}}
 \newcommand{\tref}[1]{Table~\ref{#1}}
-\newcommand{\eref}[1]{Equation~\ref{#1}}
+\newcommand{\eref}[1]{Equation~(\ref{#1})}
+\renewcommand{\eqref}[1]{Eq.~(\ref{#1})}
 \newcommand{\cref}[1]{Chapter~\ref{#1}}
 \newcommand{\sref}[1]{Section~\ref{#1}}
 \newcommand{\aref}[1]{Appendix~\ref{#1}}
@@ -498,21 +498,7 @@
 %----------------------------------------------------------------------------------------
 %	LIST OF ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\usepackage{xparse,l3regex,longtable}
-% \ExplSyntaxOn
-% \NewDocumentCommand{\boldcapitals}{ m }
-%  {
-%   \pouya_boldfirst:n { #1 }
-%  }
-% \cs_new_protected:Npn \pouya_boldfirst:n #1
-%  {
-%   \tl_set:Nn \l_pouya_input_tl { #1 }
-%   \regex_replace_once:nnN { \A(.*?[A-Za-z]) } { \c{textbf}\cB\{ \1 \cE\} } \l_pouya_input_tl
-%   \regex_replace_all:nnN { (\s) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
-%   \regex_replace_all:nnN { (\-) (.?[A-Z]) } { \1  \c{textbf}\cB\{ \2 \cE\} } \l_pouya_input_tl
-%   \tl_use:N \l_pouya_input_tl
-%  }
-% \ExplSyntaxOff
+\usepackage{longtable}
 
 \newcommand\glossaryname{Abbreviations}
 
