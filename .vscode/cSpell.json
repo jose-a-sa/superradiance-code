@@ -8,8 +8,7 @@
     "words": [
         "superradiance",
         "fermionic",
-        "invariance",
-        "conservated"
+        "invariance"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.

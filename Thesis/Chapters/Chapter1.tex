@@ -8,26 +8,26 @@
 \section{Introduction}
 
 The first direct observation of GWs by the Laser Interferometer Gravitational Wave Observatory (LIGO) was in 2015 and latter announced in 2016.
-The recorded event matched the signature predictions of GR for a binary system of BHs merging together in a inward spiral into a single BH.
-These observations demonstrated not only the existence of GWs but also existence of binary stellar-mass BH systems and also these systems can merge in a time less than the known Universe age.
-Since then, two more similar events were detected, which assured the inauguration of a new era of GW cosmology.
+The recorded event matched the signature predictions of GR for a binary system of BHs merging together in a inward spiral into a single BH~\cite{Abbott2016}.
+These observations demonstrated not only the existence of GWs but also existence of binary stellar-mass BH systems and that these systems could merge in a time less than the known Universe age.
+Since then, two more similar events were detected, which assured the inauguration of a new era of GW cosmology. 
 
 Naturally, this sparked new interest in the study of binary systems and GW-related phenomena.
-One of these phenomena is the possibility of amplification in waves under certain conditions, when scattered off rotating and/or charged BHs, which can occur for scalar, electromagnetic and gravitational bosonic waves.
-Such effect is one of many that encompass a wide range of phenomena generally known as \emph{superradiance}. 
+One of these phenomena is the possibility of amplification in waves scattered off rotating and/or charged BHs, which can occur under certain conditions for scalar, electromagnetic and gravitational bosonic waves.
+Such effect is one of many that encompass a wide range of phenomena generally known as \emph{superradiance}. \textbf{(How the study of superradiant scattering can be useful)}
 
-As the study of all bosonic waves is reduced to the study of the same master equation (as we will see later), this work will focus primarily on the study of EM waves in the case of a neutral rotating BH.
-Said choice is the most interesting from a astrophysical point of view, considering that any charged BH should be neutralized by the surrounding interstellar plasma, due to the nature of EM interactions. \textbf{(How the study of superradiant scattering can be useful for probing GR)}
+As all bosonic waves can be reduced to the study of the same master equation (as we will see later), this work will focus primarily on electromagnetic waves in the case of a neutral rotating BH.
+Said choice is the most interesting from a astrophysical point of view, considering that any charged BH should be ``quickly'' neutralized by the surrounding interstellar plasma, due to the nature of EM interactions.
 
 Historically, the first appearance of the concept of superradiance was in 1954, in a publication by Dicke~\cite{Dicke1954}.
 He showed that a gas could be excited by a pulse into ``superradiant states'' from thermal equilibrium and then emit coherent radiation.
-Almost two decades later, Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing cylinder rotating with an angular velocity $\Omega$ could scatter incident wave with frequency $\omega$ if
+Almost two decades later, Zel'dovich~\cite{Zeldovich1971,Zeldovich1972} showed that a absorbing cylinder rotating with an angular velocity $\Omega$ could scatter an incident wave, $\psi \sim e^{-i \omega t + i m \phi}$, with frequency $\omega$ if
 \begin{align}
     \omega < m\, \Omega
-    \label{eq:superradiance}
+    \label{eq1:superradiance}
 \end{align}
 would be satisfied, where $m$ is the usual azimuthal number of the monochromatic plane wave relative to the rotation axis.
-In his study, he noticed that superradiance was related with dissipation of rotational energy from the absorbing object, possibly due to spontaneous pair creation at the surface. 
+In his work, he noticed that superradiance was related with dissipation of rotational energy from the absorbing object, possibly due to spontaneous pair creation at the surface. 
 Hawking later showed that the presence of a strong electromagnetic or gravitational fields could indeed generate bosonic and fermionic pairs spontaneously. This result was possible by the efforts of Starobinsky and Deruelle~\cite{Starobinsky1973a,Starobinsky1973b,Deruelle1974,Deruelle1975}, which also laid the groundwork necessary for the discovery of BH evaporation.
 
 %----------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ First studies of the Dirac equation by Klein~\cite{Klein1929} revealed the possi
 Due to some confusion, this result was wrongly interpreted by some authors as fermionic superradiance, as if the reflected current by the barrier could be greater than the incident current. 
 The problem was named \emph{Klein paradox} by Sauter~\cite{Sauter1931} and this misleading result was due to a incorrect calculation of the group velocities of the reflected and transmitted waves. 
 
-Today, it is known that fermionic currents cannot be amplified for this particular problem~\cite{Klein1929,Manogue1988}, result that was correctly obtained by Klein in is original paper. 
+Today, it is known that fermionic currents cannot be amplified for this particular problem~\cite{Manogue1988,Klein1929}, result that was correctly obtained by Klein in is original paper. 
 On the contrary, superradiant scattering can indeed occur for bosonic fields.
 
 \subsection{Bosons}
@@ -47,7 +47,7 @@ On the contrary, superradiant scattering can indeed occur for bosonic fields.
 The equation that governs bosonic wave function is the Klein-Gordon equation, which for a minimally coupled electromagnetic potential takes the form
 \begin{align}
     (D^\nu D_\nu - \mu^2) \Phi = 0 ~,
-    \label{eq:KleinGordon}
+    \label{eq1:KleinGordon}
 \end{align}
 where the usual partial derivative becomes $D_\nu = \partial_\nu + i e A_\nu$ and $\mu$ is the boson mass.
 
@@ -56,33 +56,33 @@ For $x<0$, the solution can be divided as incident and reflected, taking the for
 \begin{align}
     \phi_\mathrm{inc}(x) = \mathcal{I}\, e^{i k x}  ~, \qquad
     \phi_\mathrm{refl}(x) = \mathcal{R}\, e^{- i k x} ~,
-    \label{eq:KGsolneg}
+    \label{eq1:KGsolneg}
 \end{align}
 in which the dispersion relation states that $k=\sqrt{\omega^2-\mu^2}$. For $x>0$, the transmitted wave is naturally given by 
 \begin{align}
     \psi_\mathrm{inc}(x) = \mathcal{T}\, e^{i q x}  ~,
-    \label{eq:KGsolpos}
+    \label{eq1:KGsolpos}
 \end{align}
 but in this case the root sign for the momentum must be carefully chosen so that the group velocity sign of the transmitted wave matches of the incoming wave~\cite{Manogue1988}, \textit{i.e.}
 \begin{align}
     \left.\frac{\partial \omega}{\partial p}\right|_{p=q} = \frac{q}{\omega - e V} > 0 ~,
-    \label{eq:KGphasev}
+    \label{eq1:KGphasev}
 \end{align}
 therefore we must have that
 \begin{align}
     q = \mathrm{sgn}(\omega - e V) \sqrt{ (\omega - e V)^2 - \mu^2 } ~.
-    \label{eq:KGq}
+    \label{eq1:KGq}
 \end{align}
 
 After obtaining the continuity relations at the barrier, $x=0$, we follow by computing the ratios of the transmitted and reflected currents relative to the incident one, which yield
 \begin{align}
     \frac{j_\mathrm{refl}}{j_\mathrm{inc}} = - \left|\frac{\mathcal{R}}{\mathcal{I}}\right|^2 = -\left|\frac{1-r}{1+r}\right|^2  ~, \qquad \frac{j_\mathrm{trans}}{j_\mathrm{inc}} = \Re(r) \left|\frac{\mathcal{T}}{\mathcal{I}}\right|^2 = \frac{4\, \Re(r)}{|1+r|^2} ~,
-    \label{eq:KGcurrents}
+    \label{eq1:KGcurrents}
 \end{align}
 written as a function of the coefficient 
 \begin{align}
     r = \frac{q}{k} = \mathrm{sgn}(\omega - e V)  \sqrt{\frac{(\omega - e V)^2 - \mu^2}{\omega^2 - \mu^2}} ~.
-    \label{eq:KGr}
+    \label{eq1:KGr}
 \end{align}
 Hence, in the case of strong potential limit, $e V > \omega + \mu > 2 \mu$, we may have $r<0$ real and the reflected current is larger (in magnitude) than the incident wave and therefore we have amplification.
 
@@ -91,34 +91,34 @@ Hence, in the case of strong potential limit, $e V > \omega + \mu > 2 \mu$, we m
 Dirac noticed the that Klein-Gordon equation masked internal degrees of freedom, so he devised is own equation which describe fermions. Considering that scalar potentials do not have any impact on spin orientation~\cite{Itzykson2012}, we need only to consider half of the spinor components in Dirac equation
 \begin{align}
     ( i \gamma^\nu D_\nu - \mu ) \Psi = 0 ~,
-    \label{eq:Dirac}
+    \label{eq1:Dirac}
 \end{align}
 where $\mu$ is the fermion mass, for which a valid representation of the gamma matrices is
 \begin{align}
     \gamma^0 = \left(\begin{array}{cr} 1 & 0 \\  0 & -1 \end{array}\right) ~,\qquad 
     \gamma^1 = \left(\begin{array}{cr} 0 & 1 \\ -1 &  0 \end{array}\right) ~.
-    \label{eq:Gamma1+1}
+    \label{eq1:Gamma1+1}
 \end{align}
 Probing wave solutions $\Psi= e^{-i\omega t} \psi$, the incident and reflected solutions are
 \begin{align}
     \psi_\mathrm{inc}(x) = \mathcal{I}\, e^{i k x} \left(\begin{array}{c} 1 \\ \cfrac{k}{\omega+\mu} \end{array}\right) ~,\qquad
     \psi_\mathrm{refl}(x) = \mathcal{R}\, e^{- i k x} \left(\begin{array}{c} 1 \\ \cfrac{-k}{\omega+\mu} \end{array}\right) ~,
-    \label{eq:Diracsolneg}   
+    \label{eq1:Diracsolneg}   
 \end{align}
 while for $x>0$, the transmitted wave function is written as 
 \begin{align}
     \psi_\mathrm{trans}(x) = \mathcal{T}\, e^{i q x} \left(\begin{array}{c} 1 \\ \cfrac{q}{ \omega - e V + \mu} \end{array}\right) ~,
-    \label{eq:Diracsolpos} 
+    \label{eq1:Diracsolpos} 
 \end{align}
-where was followed the same procedure as before, obtaining the same results from \eqref{eq:KGphasev} through (\ref{eq:KGcurrents}). As a result of the structure of the spinor components, the coefficient at~\eqref{eq:KGr} is modified to
+where was followed the same procedure as before, obtaining the same results from \eqref{eq1:KGphasev} through (\ref{eq1:KGcurrents}). As a result of the structure of the spinor components, the coefficient at~\eqref{eq1:KGr} is modified to
 \begin{align}
     r = \mathrm{sgn}(\omega - e V) \frac{\omega+\mu}{\omega-e V+\mu} \sqrt{\frac{(\omega - e V)^2 - \mu^2}{\omega^2 - \mu^2}} ~,
-    \label{eq:Diracr} 
+    \label{eq1:Diracr} 
 \end{align}
 and now, in the same region, $\omega > \mu$, superradiance does not occur.
 
 Even though superradiance and spontaneous pair creation are two distinct phenomena, this result is usually interpreted using the latter, from a QFT stand point. 
-All incident particles are completely reflected, as well as some extra due to pair creation at the barrier as a result of stimulation by the incident radiation and the presence of a strong electromagnetic field, while the resultant anti-particles are transmitted in the opposite direction, accounting for the change of sign in the transmitted current in~\eqref{eq:KGcurrents}, owing to the opposite charge they carry. 
+All incident particles are completely reflected, as well as some extra due to pair creation at the barrier as a result of stimulation by the incident radiation and the presence of a strong electromagnetic field, while the resultant anti-particles are transmitted in the opposite direction, accounting for the change of sign in the transmitted current in~\eqref{eq1:KGcurrents}, owing to the opposite charge they carry. 
 This also explains the undamped transmission part.
 
 One may think that this difference between bosons and fermions arises from the potential barrier shape, but work by other authors~\cite{Sauter1931,Manogue1988,Winter1959} shows that only the difference between the asymptotic values of the potential at infinity is essential for the process. 
@@ -132,9 +132,11 @@ The minimum necessary energy for this to occur, $2\mu$, leaves evidence that sup
 
 \section{Black hole superradiance}
 
-Among many other cases of radiation amplification, the most interesting one is called \emph{rotational superradiance}. As the name suggests, it occurs in the presence of rotating objects, as is the famous example of Zel'dovich cylinder.
+\textbf{Differentiating Kerr mathematics vs. physics}
 
-Condition~\eqref{eq:superradiance} was to become one of the most important results of rotational superradiance, as it presented itself in multiple examples, including in BH physics, particularly in the case of the Kerr solution.
+Among many other cases of radiation amplification, the phenomena worked out throughout this work is an example of \emph{rotational superradiance}. As the name suggests, it occurs in the presence of rotating objects, as is the famous example of Zel'dovich cylinder. In this case, the object in question is a Kerr black hole. This geometry is the simplest solution for a static but non-stationary BH, which breaks spherical symmetry.
+
+Condition~\eqref{eq1:superradiance} was to become one of the most important results of rotational superradiance, as it presented itself in multiple examples, including in BH physics, particularly in the case of the Kerr solution.
 
 
 %----------------------------------------------------------------------------------------
