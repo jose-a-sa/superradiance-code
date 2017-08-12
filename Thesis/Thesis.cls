@@ -130,7 +130,7 @@
 %----------------------------------------------------------------------------------------
 \newcommand{\fref}[1]{Figure~\ref{#1}}
 \newcommand{\tref}[1]{Table~\ref{#1}}
-\newcommand{\eref}[1]{Equation~(\ref{#1})}
+\newcommand{\eref}[1]{(\ref{#1})}
 \renewcommand{\eqref}[1]{Eq.~(\ref{#1})}
 \newcommand{\cref}[1]{Chapter~\ref{#1}}
 \newcommand{\sref}[1]{Section~\ref{#1}}
