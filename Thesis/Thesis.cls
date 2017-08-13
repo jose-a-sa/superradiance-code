@@ -450,6 +450,9 @@
 %----------------------------------------------------------------------------------------
 %	LIST OF FIGURES PAGE DESIGN
 %----------------------------------------------------------------------------------------
+\usepackage[titles]{tocloft}
+\renewcommand\cftfigafterpnum{\vskip8pt\par}
+
 \renewcommand\listoffigures{
 \btypeout{\listfigurename}
 \addtotoc{\listfigurename}
@@ -474,6 +477,8 @@
 %----------------------------------------------------------------------------------------
 %	LIST OF TABLES PAGE DESIGN
 %----------------------------------------------------------------------------------------
+\renewcommand\cfttabafterpnum{\vskip8pt\par}
+
 \renewcommand\listoftables{
 \btypeout{\listtablename}
 \addtotoc{\listtablename}
