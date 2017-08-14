@@ -170,7 +170,7 @@ which implies that $r(x,y,z)$ is implicitly given by
 \end{align}
 This condition deserves a more in-depth analysis.
 For increasing $r$, the surfaces obeying~\eqref{eq2:rConditionKChild} approximates perfect spheres as the geometry get more and more flat, as is observed in~\eref{eq2:KerrChild}. Minkowsky flat space is also guaranteed for $M=0$.
-On the other hand, as we approach the singularity on $z=0$ and $x^2+y^2 = a^2$, rotation effects deform the surfaces into oblate spheroids (for the strict inequality, the singularity is removable).
+On the other hand, as we approach the singularity on $z=0$ and $x^2+y^2 = a^2$, rotation effects deform the surfaces into oblate spheroids (for the strict inequality, $\theta\ne\pi/2$).
 Such remarks are visually demonstrated in~\fref{fig2:kerrchild}.
 
 \begin{figure}[h]
@@ -182,7 +182,7 @@ Such remarks are visually demonstrated in~\fref{fig2:kerrchild}.
     \begin{subfigure}[c]{0.35\textwidth}
         \includegraphics[width=\textwidth]{kerrchild3d}
     \end{subfigure}
-    \caption{Contour plots of the surface $r(x,y,z)$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Child ``cartesian'' coordinates. The left plot is the intersection with $z=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves, representing orthogonal constant $\theta(x,y,z)$ hypersufaces, become asymptotically affine.}\label{fig2:kerrchild}
+    \caption{Contour plots of the surface $r(x,y,z)$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Child ``cartesian'' coordinates. The left plot is the intersection with $z=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves representing orthogonal constant $\theta(x,y,z)$ hypersufaces, become asymptotically affine.}\label{fig2:kerrchild}
 \end{figure}
 
 Even thought both metrics $r>0$, there is no mathematical reason to restrict $r$ strictly to positive values.
@@ -236,13 +236,13 @@ otherwise $\Delta$ would lack any real roots and would lead to a essential \emph
 The surface at $r=r_{-}$, on the other hand, is called a Cauchy horizon.
 In GR, a spacelike surface containing all initial conditions of spacetime (Cauchy surface) would suffice to predict all past and future events, but a Cauchy horizon separates the domain of validity of such initial conditions.
 Despite no information ever escaping the event horizon, it is still possible to predict events inside $r_{-} < r < r_{+}$, but such thing it is not guaranteed after crossing the Cauchy horizon.
-Due to this and some other unphysical features (for example, closed timelike curves and instabilities under perturbations), we need only to focus on the region outside the event horizon $r>r_{+}$, since only information on that region is physically reachable from a stationary observer point of view.
+Due to this and some other unphysical features (for example, closed timelike curves and instabilities under perturbations), we need only to focus on the region outside the event horizon $r>r_{+}$, since only information on that region is physically reachable from a asymptotic observer point of view.
 
 Event tough most of the Kerr BH basic properties were demonstrated, there is still no result so far showing some kind of rotation.
-First, consider the quantities $\xi_\alpha u^\alpha$, where $u^\alpha$ is the four-velocity and $\xi^\alpha$ is a Killing field. 
-Being aware of the geodesic equation, $u^\beta \nabla_\beta u^\alpha = 0$, it is easy to show that this quantity is conserved along geodesics, \emph{i.e.}
+First, consider the quantity $\xi\cdot u = \xi_\alpha u^\alpha$, where $u^\alpha$ is the four-velocity and $\xi^\alpha$ is any Killing field. 
+Being aware of the geodesic equation, $u^\beta \nabla_\beta u^\alpha = 0$, it is easy to show that this quantity is conserved along geodesics,
 \begin{align}
-    u^\beta \nabla_\beta ( \xi_\alpha u^\alpha ) = u^\alpha u^\beta \nabla_\beta \xi_\alpha = \frac{u^\alpha u^\beta }{2} ( \nabla_\alpha \xi_\beta + \nabla_\beta \xi_\alpha ) = 0 ~,
+    u^\beta \nabla_\beta ( \xi_\alpha u^\alpha ) = u^\alpha u^\beta \nabla_\beta \xi_\alpha = \frac{u^\alpha u^\beta }{2} \left( \nabla_\alpha \xi_\beta + \nabla_\beta \xi_\alpha \right) = 0 ~,
     \label{eq2:geodesicKilling}
 \end{align}
 due to Killing~\eqref{eq2:killing}.
@@ -264,13 +264,18 @@ specified for the equatorial plane $\theta=\pi/2$. The final equation for the ge
     \Omega = \frac{\dot{\phi}}{\dot{t}} = - \frac{g_{t\phi}}{g_{\phi\phi}} = \frac{2 a M}{r^3 + a^2 (2 M+r)} ~.
     \label{eq2:angMomentumZAMO}
 \end{align}
-Asymptotically we obtain $\Omega\to0$, coincident with a static observer measurement, but for a finite distance, observers are forced to co-rotate with the BH. 
+Asymptotically we obtain $\Omega\to0$, but for a finite distance, observers are forced to co-rotate with the BH. 
 Particularly, at the event horizon, $r=r_+$, one finds that
 \begin{align}
-    \Omega_H = \frac{a}{2 M r_+} = \frac{a}{2 M (M+\sqrt{M^2-a^2})} ~.
+    \Omega_H = \frac{a}{2 M r_+} = \frac{a}{2 M \left(M+\sqrt{M^2-a^2}\right)} ~.
     \label{eq2:angMomentumH}
 \end{align}
-The field Killing vector $\xi = k + \Omega_H m$ is a special linear combination that is also a null vector normal to the event horizon, $\xi^\flat=\xi_\alpha \dd x^\alpha \propto \dd r$ and $\xi^2 = 0$ at $r=r_+$, which can be written in BL coordinates as $\xi = \partial_t + \Omega_H \partial_\phi$.
+A special linear combination of Killing vector fields,
+\begin{align}
+    \xi = k + \Omega_H m ~,
+    \label{eq2:KillingXi}
+\end{align}
+is also a null vector normal to the event horizon, $\xi^\flat=\xi_\alpha \dd x^\alpha \propto \dd r$ and $\xi^2 = 0$ at $r=r_+$, which can be written in BL coordinates as $\xi = \partial_t + \Omega_H \partial_\phi$.
 Hence, on the outer horizon the integral curves of this vector obey $\xi^\alpha \partial_\alpha (\phi - \Omega_H t) = 0$, resulting in $\phi \propto \Omega_H t$.
 Since null geodesics on the horizon follow curves generated by the Killing vector $\xi$, then we say that the BH is ``rotating'' with angular velocity $\Omega_H$.
 
@@ -308,14 +313,14 @@ Notice that a static observer moves in a timelike curve with $(r,\theta,\phi)$ c
         \includegraphics[width=\textwidth]{geodKerr_90_-5}
         \caption{~$a=0.9 M$, ~$\ell<0$}
     \end{subfigure}
-    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicT} and~\eref{eq2:geodesicPhi}, for $r(0)=20 M$, with emphasis on $\ell\ne0$. Even starting with opposite angular momentum, the Kerr  geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dashed).}
+    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicT} and~\eref{eq2:geodesicPhi}, for $r(0)=20 M$, with emphasis on $\ell\ne0$. Even starting with opposite angular momentum, the Kerr  geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dotted).}
     \label{fig2:geodesics}
 \end{figure}
 
 Despite BHs being always thought as ``perfect absorvers'' due to casual separation of the horizon, but the ergoregion is a region that allows energy extraction from the BH, through the Penrose process, an intrinsic feature of rotating BHs.
 Much like spontaneous pair creation and amplification at discontinuities are related but distinct effects, the Penrose process allows for a better understating of superradiance and why it is relevance in GR. Considering a particle with rest mass $\mu$ and four-momentum $p^\alpha = \mu u^\alpha$, we may identify the constant of motion 
 \begin{align}
-    \varepsilon = - k_\alpha p^\alpha = -\mu g_{tt} p^t - g_{t\phi} p^\phi  ~.
+    \varepsilon = - k \cdot p = -\mu g_{tt} p^t - g_{t\phi} p^\phi  ~.
     \label{eq2:PenroseE0}
 \end{align}
 as it's energy, as measured by a stationary observer at infinity, due to relations~\eref{eq2:geodesicConsts}. As shown above the Killing vector is asymptotically timelike but is spacelike inside the ergoregion, thus $g_{tt}>0$. Since the geodesic is future-directed, $p^0 = \mu u^0 >0$ and the energy beyond the ergosurface needs not to be positive. Suppose, by any means, that such particle manages to decay inside the ergoregion into two other, with momenta $p_1$ and $p_2$, such that $p=p_1+p_2$. Contracting with $k$, implies that $\varepsilon = \varepsilon_1+\varepsilon_2$. Supposing that the first of the particles has negative energy, $\epsilon_1<0$, then 
@@ -325,12 +330,33 @@ as it's energy, as measured by a stationary observer at infinity, due to relatio
 \end{align}
 I can be shown that the particle with negative energy (bounded) must fall into the BH while the other may escape the ergoregion, with greater energy than the particle sent in. Energy is conserved by making the BH absorb the particle with negative energy, therefore resulting in a net energy extraction.
 
+\begin{figure}[h]
+    \centering
+    \vspace{0.5cm}
+    \includegraphics[width=0.65\textwidth]{ergoPenrose}
+    \caption{Illustration of the Penrose process, with ergoregion (dotted) and event horizon regions parameterized in Kerr-Child cartesian coordinates.}
+    \label{fig2:penroseProcess}
+\end{figure}
+
+To understand the limits of the Penrose process, we use the fact that a stationary observer near the horizon, must follow orbits of $\xi$, given by~\eqref{eq2:KillingXi}. 
+Even tought a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $-\xi \cdot  p_1 \le 0$. Considering that the BH will have a variation of mass and angular momentum $\delta M =\varepsilon_1$, $\delta J = \ell_1$, where $\ell_1 = m \cdot p_1$ is the particle angular momentum. As a result,
+\begin{align}
+    \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
+\end{align}
+which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. For this process to occur (and therefore superradiance), we must have a rotating BH, which is guaranteed to have a ergoregion. 
 
 From now on, all results will be provided using BL coordinates.
 
 \section{Newman-Penrose formalism}
 
+Study of gravitational and electromagnetic perturbations in a BH background were performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's. Despite it's simplicity, the procedure involved was already considerable algebraically tedious. In the Kerr case, the metric was far more complicated, making the problem almost untreatable.
+
+Fortunately, the NP formalism provides an alternative method of studying perturbation.
+Results as a natural introduction of spinor techniques into GR, following the introduction of a null complex tetrad basis. The full set of NP equations is a system of first-order coupled equations linking the tetrad, the resultant connection (spin coefficients) and projections of the field tensors.  
+
 \subsection{Kinnersly tetrad}
+
+
 \subsection{Spin coefficients}
 \subsection{Maxwell equations}
 
