@@ -1,26 +1,43 @@
 % !TEX root = ../main.tex
 
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
-\chapter{Spin-weighted spherical harmonics} % Main appendix title
+\chapter{Tetrad techniques} % Main chapter title
+\label{AppendixTetrad}
 
-SWSHs play an important role BH physics and was first introduced by Teukolsky when considering non-scalar wave perturbations on a Kerr background, obtaining a separable master equation in four dimensions. After the usual change of coordinates, the polar differential equation goes as 
-\begin{equation}
-	\frac{1}{S} \frac{\dd}{\dd x} \left( (1-x^2) \, \frac{\dd S}{\dd x} \right) + (c x)^2 - 2 c s x  -\frac{(m + s x)^2}{1 - x^2} + s  = - \lambda
-\label{eqA:diffSWSH}
-\end{equation}
-with $x=\cos\theta$, where $\lambda$ is the eigenvalue for a given SWSH solution. Periodic boundary conditions on the azimuthal wave function constrains $m$ to the integers.   
+The standard way of expressing quantities in GR was to use a local coordinate basis. This corresponds to use
+\begin{align}
+   \frac{\partial}{\partial x^\mu} \qquad ( x^\mu = t,r,\theta,\varphi )
+\end{align}
+as our vector basis. One-form basis can be defined the usual way. The tetrad formalism allows for an alternative choice of a \emph{noncoordinate} basis, by introducing a set of linear independent four-vectors, 
+\begin{align}
+    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad ( a = 1,2,3,4 ) ~.
+ \end{align}
+We will use Greek alphabet ($\alpha,\beta,\gamma,\dots$) for the coordinate components and the Latin alphabet ($a,b,c,\dots$) for the tetrad components.
 
-\section{Connection with spheroidal harmonics}
+Given any tensor field, we project it to the tetrad frame to obtain its tetrad components,
+\begin{align}
+    A_{a} = (e_a)^\mu A_{\mu} ~.
+\end{align}
+We may invert this expression, by defining the inverse tetrad, $(e^a)_\mu$,
+\begin{align}
+    e_a \cdot e^b = (e_a)^\mu (e^b)_\mu = (e_a)^\mu (e^b)^\nu g_{\mu\nu} = \delta_a{}^b ~,
+\end{align}
+such that invariant quantities remain unchanged, \emph{i.e}
+\begin{align}
+    A^2 = A^\mu A_\mu = A^a (e_a)^\mu \, A_b (e^b)_\mu = A^a A_a~.
+\end{align}
+We can then substitute the manifold metric for
+\begin{align}
+    \eta_{ab} = e_a \cdot e_b = g_{\mu\nu} (e_a)^\mu (e_b)^\nu ~,
+\end{align}
+which can be used for raising/lowering tetrad indices and to contract tetrad components.
+By analyzing the underlying symmetries of spacetime, one may choose a basis makes the components of $\eta_{ab}$ constant.
 
-By setting $s=0$ (scalar) and $c=0$ (spherical), then it's clear that~\eqref{eqA:diffSWSH} appears as a generalization of the spherical harmonics equation. In this last case, the solution are given by the associated Legendre polynomials, $P^m_\ell (x)$, for which the eigenvalue is $\ell(\ell+1)$, restricted to the condition of $|m| \le \ell$. The closed form for spherical harmonics, after normalization, is
-\begin{equation}
-	\sts[0]{Y^m}{\ell}(x)= (-1)^{m} \sqrt{\frac{(2\ell +1)}{4\pi} \frac{(\ell -m)!}{(\ell +m)!}} \, P_\ell^m (x)
-\label{eqA:SH}
-\end{equation}
-where $P_{\ell}^{m}$ are the associated Legendre polynomials which can be obtained using the famous Rodrigues' formula.
-
-\section{Spin raising/lowering differential operators}
-
-\section{Generalized addition of angular momentum formula}
-
-\section{Some useful harmonics}
+The analogy with the coordinate basics breaks when applying the derivative, 
+\begin{align}
+    A_{a,b} = (e_b)^\mu \nabla_\mu A_{a} = (e_a)^\mu (e_b)^\nu A_{\mu ; \nu} + (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu A^c ~,
+\end{align}
+due to extra terms resultant of the tetrad derivatives. These terms can be written using the spin connection
+\begin{align}
+    \gamma_{cab} = (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu ~,
+\end{align}  
+which is antisymmetric in the first two indices, $\gamma_{(ca)b}=0$, due to the metric compatibility of the covariant derivative, $\nabla_\mu g_{\nu\rho} = 0$. 

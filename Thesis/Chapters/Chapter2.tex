@@ -31,7 +31,7 @@ Despite their simplicity, they enjoy some very fascinating nontrivial properties
 One of which is the existence of an event horizon, a surface that separates two causally disconnected regions of spacetime.
 
 The underlying technique behind the study of superradiance is the linearization of Einstein and/or Maxwell equations around know BHs in stationary equilibrium.
-These perturbations will obey a series of partial differential equations whose dynamical variables are components of the Weyl tensor, $C_{\mu\nu\Sigma\sigma}$, or the Maxwell field tensor, $F_{\mu\nu}$.
+These perturbations will obey a series of partial differential equations whose dynamical variables are components of the Weyl tensor, $C_{\mu\nu\rho\sigma}$, or the Maxwell field tensor, $F_{\mu\nu}$.
 Thanks to the NP formalism we will be able to decouple and separate the equations for both GWs and EM waves, revealing decoupled variables which contain all the information needed about the nontrivial perturbations, instead of working with all components of the field tensors.
 
 For the gravitational case, a straightforward way of obtaining a linearized theory is to consider a background stationary BH solution, $g_{\mu\nu}{}^B$, and then expanding the field equations~\eref{eq2:vacuumGR} using the metric $\tilde{g}_{\mu\nu} = g_{\mu\nu}{}^B + h_{\mu\nu}$, keeping only terms with are $\mathcal{O}(h_{\mu\nu})$. As a result we are left with a wave equation in the given background. 
@@ -81,7 +81,7 @@ A vector field $\xi$ that obeys
 \end{align}
 is called a Killing field. Locally, this expression reduces to $\nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu = 0$.
 
-A \emph{stationary} solution implies the existence of a Killing vector $k$ that is asymptotically timelike, $k^2<0$, therefore allows us to normalize our vector such that $k^2 \rightarrow -1$. 
+A \emph{stationary} solution implies the existence of a Killing vector $k$ that is asymptotically timelike, $k^2>0$, therefore allows us to normalize our vector such that $k^2 \rightarrow 1$. 
 Unlike the case of the static spacetime, a stationary metric does not show invariance under reversal of the time coordinate, which is natural considering a system with angular momentum. 
 Futhermore, a solution is also \emph{axisymmetric}, due to the presence of a asymptotically spacelike Killing field $m$ whose integral curves are closed.
 A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[k , m] = 0$, \emph{i.e.} rotations along with the axis of symmetry commute with time translations. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
@@ -101,8 +101,8 @@ These quantities are defined by taking the geodesics to regions space that are a
 In the case of Kerr solution, we have two Killing vectors, $k$ and $m$, which are naturally associated with the total mass $M$ and angular momentum $J$ of the BH, respectively.
 This is usually done by evaluating the Komar integrals~\cite{Heusler1996, Wald2010}, which can be written a covariant way as
 \begin{alignat}{6}
-    M = &&\, -\frac{1}{8 \pi} & \int_{S^2_\infty} \star \dd k^\flat \,& = &&\, \frac{1}{4} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
-    J = &&\, \frac{1}{16 \pi} & \int_{S^2_\infty} \star \dd m^\flat \,& = &&\, - \frac{1}{8} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
+    M = &&\, \frac{1}{8 \pi} & \int_{S^2_\infty} \star \dd k^\flat \,& = &&\, -\frac{1}{4} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
+    J = &&\, - \frac{1}{16 \pi} & \int_{S^2_\infty} \star \dd m^\flat \,& = &&\, \frac{1}{8} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
 \end{alignat}
 where the usual notation $k^\flat = g(k, \,\cdot\,) = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form, and the operator $\star : \Omega^{p}(\mathcal{M})\to\Omega^{4-p}(\mathcal{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step is assumed~\eref{eq2:tPhiKilling} and~\eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
@@ -121,13 +121,13 @@ From this assumption, using GR spinor techniques and only then imposing the Kill
 Kerr's metric appear in his original paper in the form
 \begin{align}
     \begin{split}
-        ds^2 = &- \left(1 - \frac{2 M r}{\Sigma^2} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
-        &+ 2  (\dd v - a \sin^2\theta \dd \chi )  (\dd r - a \sin^2\theta \dd \chi ) \\
-        &+ \Sigma^2 (\dd \theta^2 + \sin^2\theta \dd \chi^2 ) ~,
+        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
+        & - 2  (\dd v - a \sin^2\theta \dd \chi )  (\dd r - a \sin^2\theta \dd \chi ) \\
+        & - \rho^2 (\dd \theta^2 + \sin^2\theta \dd \chi^2 ) ~,
     \end{split}
     \label{eq2:KerrIngoingEF}
 \end{align}
-where $a$ is a parameter, $M$ is the Komar mass and $\Sigma^2 = r^2 + a^2 \cos^2\theta$. Naturally the time Killing vector is $\partial_v$ and $\partial_\chi$ is the axial field, entailing that $J = a M$.
+where $a$ is a parameter, $M$ is the Komar mass and $\rho^2 = r^2 + a^2 \cos^2\theta$. Naturally the time Killing vector is $\partial_v$ and $\partial_\chi$ is the axial field, entailing that $J = a M$.
 
 Taking the limit of $a\to0$, we reduce the metric to the Schwarzschild solution in ingoing Eddington-Finkelstein (EF) coordinates, $(v,r,\theta,\chi)$, which are useful to study ingoing (to the horizon) geodesics and remove the horizon coordinate singularity.
 When a given metric has singularities it is not trivial to identify if is a physical singularity or if it is an artifact resultant of choice of the chart, removable by a better choice of coordinates. 
@@ -138,22 +138,22 @@ Since any BH is just a vacuum solution, then the Ricci scalar vanishes, $R=0$, s
     R_{\alpha\beta\gamma\delta} R^{\alpha\beta\gamma\delta} = \frac{48 M (r^2 - a^2\cos^2\theta) \left[ (r^2 - a^2\cos^2\theta) ^2 - 16 r^2 M^2 a^2\cos^2\theta \right] }{(r^2 + a^2\cos^2\theta)^6} ~,
     \label{eq2:KerrKretschmann}
 \end{align}
-that clearly diverges for $\Sigma^2=0$.
+that clearly diverges for $\rho^2=0$.
 The Schwarzschild singularity, $r=0$, is replaced with the Kerr singularity $(r,\theta)=(0,\pi/2)$.
 It is not clear what is the geometry of the Kerr singularity if we interpret $r$ and $\theta$ as being part of the ordinary spherical coordinates.
-Although the metric is singular, considering $(t,r,\theta)$ constant and then the limit of $r\to0$ through the equatorial plane, the metric
+Although the metric is singular, we can draw some insight considering $(r,\theta)$ constant and then the limit of $r\to0$ through the equatorial plane,
 \begin{align}
-    {ds^2}\rvert_{\mathrm{singularity}} \sim a^2 \dd \chi^2 ~
+    {ds^2}\rvert_{\mathrm{singularity}} \sim \dd v^2 - a^2 \dd \chi^2 ~.
     \label{eq2:KerrKretschmann}
 \end{align}
-is reduced to the line element of the circle, $S^1$, confirming a \emph{ring singularity} of radius $a$.
-This result implies that we may only reach the singularity $\Sigma^2=0$, by approaching the Kerr BH through the equatorial plane. 
+Hence the metric is reduced to the line element of the circle, $S^1$, confirming a \emph{ring singularity} of radius $a$.
+This result implies that we may only reach the singularity $\rho^2=0$, by approaching the Kerr BH through the equatorial plane. 
 
 The Kerr-Child ``cartesian'' form, 
 \begin{align}
     \begin{split}
-        ds^2 = &- \dd \tilde{t}^2 + \dd x^2 + \dd y^2 + \dd z^2 \\
-        &+ \frac{2 M r^3}{r^4 + a^2 z^2} \left[ \dd \tilde{t} + \frac{r (x \dd x + y \dd y) + a ( y \dd x - x \dd y)}{r^2+a^2} + \frac{z}{r} \dd z \right]^2 ~,
+        ds^2 = & \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
+        & - \frac{2 M r^3}{r^4 + a^2 z^2} \left[ \dd \tilde{t} + \frac{r (x \dd x + y \dd y) + a ( y \dd x - x \dd y)}{r^2+a^2} + \frac{z}{r} \dd z \right]^2 ~,
     \end{split}
     \label{eq2:KerrChild}
 \end{align}
@@ -197,8 +197,8 @@ This gives mathematical access to new spacetime regions, even tough most of them
 Considering the problem in hand, the most suitable coordinates for work with the NP formalism, are the Boyer-Linquist coordinates
 \begin{align}
     \begin{split}
-        ds^2 = &- \left(\dd t - \frac{2 M r}{\Sigma^2} \right) \dd t^2 - 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\Sigma^2} \dd t \dd \varphi \\
-        &+ \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\Sigma^2} \sin^2\theta \dd\varphi^2 + \frac{\Sigma^2}{\Delta} \dd r^2 + \Sigma^2 \dd \theta^2 ~,
+        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
+        &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2 ~,
     \end{split}
     \label{eq2:KerrBL}
 \end{align}
@@ -250,7 +250,7 @@ Being aware of the geodesic equation, $u^\beta \nabla_\beta u^\alpha = 0$, it is
 due to Killing~\eqref{eq2:killing}.
 As a result, geodesics of a free particle in Kerr geometry will be characterized by two constants
 \begin{align}
-    -E &=  k^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~, \qquad L = m^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~,
+    E &=  k^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~, \qquad -L = m^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~,
     \label{eq2:geodesicConsts}
 \end{align}
 where $\tau$ is the affine parameter fo the geodesic.
@@ -290,7 +290,7 @@ The surface is characterized when the Killing vector $k^\mu$ becomes spacelike, 
     \label{eq2:KerrErgo}
 \end{align}
 This region lies outside the event horizon if $a\ne0$, then being defined as $r_+< r < r_{\mathrm{ergo}}(\theta)$.
-Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)$ constant, \emph{i.e.} with tangent vector proportional to $k^\mu$, therefore such observer cannot exist inside because the time Killing vector becomes spacelike, otherwise it would violate causality. We can see that $u^2=g_{\alpha\beta}u^\alpha u^\beta = g_{tt} (u^t)^2 + 2 g_{t\varphi} u^t u^\varphi +  g_{\varphi\varphi} (u^\varphi)^2 < 0$ only occurs when $g_{t\varphi} u^\varphi < 0$, as all other components are positive. Inside the ergoregion, $g_{t\varphi}<0$, therefore all observers are forced to rotate in the same direction as the BH.
+Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)$ constant, \emph{i.e.} with tangent vector proportional to $k^\mu$, therefore such observer cannot exist inside because the time Killing vector becomes spacelike, otherwise it would violate causality. We can see that $u^2=g_{\alpha\beta}u^\alpha u^\beta = g_{tt} (u^t)^2 + 2 g_{t\varphi} u^t u^\varphi +  g_{\varphi\varphi} (u^\varphi)^2 > 0$ only occurs when $g_{t\varphi} u^\varphi > 0$, as all other therms are positive. Inside the ergoregion, $g_{t\varphi}>0$, therefore all observers are forced to rotate in the same direction as the BH.
 
 \begin{figure}[h]
     \centering
@@ -315,7 +315,7 @@ Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)
         \includegraphics[width=\textwidth]{geodKerr_90_-5}
         \caption{~$a=0.9 M$, ~$L<0$}
     \end{subfigure}
-    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicT} and~\eref{eq2:geodesicPhi}, for $r(0)=20 M$, with emphasis on $L\ne0$. Even starting with opposite angular momentum, the Kerr  geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dotted).}
+    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicT} and~\eref{eq2:geodesicPhi}, for $r(0)=20 M$, with emphasis on $L\ne0$. Even starting with opposite angular momentum, the Kerr geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dotted).}
     \label{fig2:geodesics}
 \end{figure}
 
@@ -324,13 +324,13 @@ Much like spontaneous pair creation and amplification at discontinuities are rel
 
 Considering a particle with rest mass $\mu$ and four-momentum $p^\alpha = \mu u^\alpha$, we may identify the constant of motion 
 \begin{align}
-    E = - k \cdot p = -\mu g_{tt} p^t - g_{t\varphi} p^\varphi  ~.
+    E = k \cdot p = \mu g_{tt} p^t + g_{t\varphi} p^\varphi  ~.
     \label{eq2:PenroseE0}
 \end{align}
-as it's energy, as measured by a stationary observer at infinity, due to relations~\eref{eq2:geodesicConsts}. As shown above, the Killing vector is asymptotically timelike but is spacelike inside the ergoregion, thus $g_{tt}>0$. For a future-directed geodesic, $p^0 = \mu u^0 >0$, the energy beyond the ergosurface needs not to be positive. Suppose, by any means, that such particle manages to decay inside the ergoregion into two other, with momenta $p_1$ and $p_2$. Contracting with $k$, implies that $E = E_1+E_2$. Supposing that the first of the particles has negative energy, $E_1<0$, then 
+as it's energy measured by a stationary observer at infinity, due to relations~\eref{eq2:geodesicConsts}. As shown above, the Killing vector is asymptotically timelike but is spacelike inside the ergoregion, thus $g_{tt}<0$. For a future-directed geodesic, $p^0 = \mu u^0 > 0$, the energy beyond the ergosurface needs not to be positive. Suppose, by any means, that such particle manages to decay inside the ergoregion into two other, with momenta $p_1$ and $p_2$. Contracting with $k$, implies that $E = E_1+E_2$. Supposing that the first of the particles has negative energy, $E_1<0$, then 
 \begin{align}
     E_2 = E + |E_1| > E ~.
-    \label{eq2:PenroseE0}
+    \label{eq2:PenroseE2}
 \end{align}
 I can be shown that the particle with negative energy (bounded) must fall into the BH while the other may escape the ergoregion, with greater energy than the particle sent in. Energy is conserved by making the BH absorb the particle with negative energy, therefore resulting in a net energy extraction.
 
@@ -343,29 +343,79 @@ I can be shown that the particle with negative energy (bounded) must fall into t
 \end{figure}
 
 To understand the limits of the Penrose process, we use the fact that a stationary observer near the horizon, must follow orbits of $\xi$, given by~\eqref{eq2:KillingXi}. 
-Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $-\xi \cdot  p_1 \le 0$. Considering that the BH will have a variation of mass and angular momentum $\delta M =E_1$, $\delta J = L_1$, where $L_1 = m \cdot p_1$ is the particle angular momentum. As a result,
+Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $\xi \cdot  p_1 \le 0$. The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delta J = L_1$, where $L_1 = m \cdot p_1$ is the particle angular momentum. As a result,
 \begin{align}
     \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
 \end{align}
-which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. For this process to occur (and therefore superradiance), we must have a rotating BH, which is guaranteed to have a ergoregion. 
-
-From now on, all results will be provided using BL coordinates.
+which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. For this process to occur (and therefore superradiance), we must have a rotating BH, which is guaranteed to have a ergoregion.
 
 \section{Newman-Penrose formalism}
 
 Study of gravitational and electromagnetic perturbations in a BH background were performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's. Despite it's simplicity, the procedure involved was already considerable algebraically tedious. In the Kerr case, the metric was far more complicated, making the problem almost untreatable.
 
 Fortunately, the NP formalism provides an alternative method of studying perturbations.
-Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis. 
-The full set of NP equations is a system of first-order coupled equations linking the tetrad, the resultant connection (spin coefficients) and projections of the field tensors.  
+Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis. Penrose believed that the light-cone was essential element of the spacetime, thus the importance of finding null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
+\begin{align}
+    l^2 = n^2 = m^2 = \bar{m}^2 = 0 ~,
+\end{align}
+orthogonality conditions of NP formalism require
+\begin{align}
+    l \cdot m = l \cdot \bar{m} = n \cdot m = n \cdot \bar{m} = 0 ~.
+\end{align}
+Still we are left with the ambiguity raised by multiplication of scalar functions to each vector, therefore its customary to impose normalization conditions to the basis,
+\begin{align}
+    l \cdot n = 1 ~, \qquad m \cdot \bar{m} = -1 ~.
+\end{align}
+This formalism is a special case of tetrad calculus, where we can identify $(e_1,e_2,e_3,e_4)=(l,n,m,\bar{m})$. The metric for the tetrad components, $\eta_{ab}$, is defined by all restrictions above, which imply that the coordinate metric must take the form
+\begin{align}
+    g_{\mu\nu} = l_{(\mu} n_{\nu)} - m_{(\mu} \bar{m}_{\nu)} ~.
+\end{align}
 
-Due to the amount of components of the spin connection this subsection will follow a different notation.
+\subsection{Kinnersley tetrad}
 
-\subsection{Kinnersly tetrad}
+The Riemann tensor may have up to twenty non-vanishing components.
+We know that ten of these are present in the symmetric Ricci tensor, that is intrinsically connected to matter and energy.
+The other components are pure gravitational degrees of freedom and are encoded in the Weyl tensor.
+It becomes the most useful object when the Ricci tensor vanishes, such as vacuum solutions and source-free gravitational waves.
+In order to remove the Ricci tensor degrees of freedom, the tensor must be constructed trace-free,
+\begin{align}
+    \eta^{ad} C_{abcd} = C_{1bc2} + C_{1bc2} - C_{3bc4} - C_{4bc3} = 0 ~. 
+\end{align}
+Together with the other symmetries inherited from the Riemann tensor, for instance the first Bianchi identity, $C_{a[bcd]}=0$, it is possible to vanish some components and rewrite others such that only ten degrees of freedom remain.
+As a result, in NP formalism the Weyl tensor can be represented by five complex scalars, usually chosen as~\cite{Chandrasekhar1998} 
+\begin{align}
+    \begin{split}
+        \Psi_0 &= - C_{1313} = - C_{\mu\nu\rho\sigma} l^\mu m^\nu l^\rho m^\sigma ~,\qquad
+        ~\Psi_1 = - C_{1213} = - C_{\mu\nu\rho\sigma} l^\mu n^\nu l^\rho m^\sigma ~,\\
+        \Psi_2 &= - C_{1342} = - C_{\mu\nu\rho\sigma} l^\mu m^\nu \bar{m}^\rho n^\sigma ~,\qquad
+        \Psi_3 = - C_{1242} = - C_{\mu\nu\rho\sigma} l^\mu n^\nu \bar{m}^\rho n^\sigma ~,\\
+        \Psi_4 &= - C_{2424} = - C_{\mu\nu\rho\sigma} n^\mu \bar{m}^\nu n^\rho \bar{m}^\sigma ~.
+    \end{split}
+\end{align}
+The complex conjugates can be obtained by doing the replacement $3\leftrightarrow 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$.
 
+BHs solutions belong to the ``type D'' of Petrov's classification of spacetimes, which was a major restriction necessary to Kerr's discovery.
+Solutions are classified by obtaining all null principal directions of the Weyl tensor. For BH spacetimes, $l$ and $n$ are chosen such that they are the two doubly-degenerate principal vectors, 
+\begin{align}
+    C_{\mu\nu\rho[\sigma} l_{\varepsilon]} l^\nu l^\rho = 0 ~, \qquad C_{\mu\nu\rho[\sigma} n_{\varepsilon]} n^\nu n^\rho = 0  ~.
+\end{align}
+In NP formalism terms, these spacetime are characterized by
+\begin{align}
+    \Psi_0=\Psi_1=0 ~,\qquad \Psi_3=\Psi_4=0 ~,
+\end{align}
+respectively.
+Fields $l$ and $n$ are invariant under a subgroup of Lorentz transformations that rotate the tetrad frame, up to multiplication of scalar functions.
+These rotations maintain the light-cone structure intact and are useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}.
 
-\subsection{Spin coefficients}
+-~Introduce  Kinnersly tetrat (cite)
+
+-~Confirm null directions and compute $\Psi_2$.
+
+-~Talk about the perturbations in NP formalism
+
 \subsection{Maxwell equations}
+
+-~Project Mawell equations and derive everyting (use notes)
 
 
 \cleardoublepage

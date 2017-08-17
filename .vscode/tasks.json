@@ -16,22 +16,6 @@
             "problemMatcher": []
         },
         {
-            "taskName": "Generate Plots",
-            "type": "process",
-            "command": "C:/Program Files/Wolfram Research/Mathematica/11.1/wolframscript.exe",
-            "args": [
-                "-file",
-                ".vscode/autogenPlots.wl"
-            ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "dedicated"
-            },
-            "problemMatcher": []
-        },
-        {
             "taskName": "Compile Front",
             "type": "shell",
             "command": "cd Thesis/Front; xelatex -interaction=nonstopmode -file-line-error main",
@@ -54,7 +38,7 @@
                 "panel": "dedicated"
             },
             "problemMatcher": [],
-            "dependsOn": ["Generate Plots", "Compile Front"]
+            "dependsOn": ["Compile Front"]
         }
     ]
 }
