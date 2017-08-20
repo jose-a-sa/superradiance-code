@@ -1,7 +1,9 @@
 % !TEX root = ../main.tex
 
-\chapter{Tetrad techniques} % Main chapter title
+\chapter{Newman-Penrose equations} % Main chapter title
 \label{AppendixTetrad}
+
+\section{Tetrad techniques}
 
 The standard way of expressing quantities in GR was to use a local coordinate basis. This corresponds to use
 \begin{align}
@@ -13,9 +15,9 @@ as our vector basis. One-form basis can be defined the usual way. The tetrad for
  \end{align}
 We will use Greek alphabet ($\alpha,\beta,\gamma,\dots$) for the coordinate components and the Latin alphabet ($a,b,c,\dots$) for the tetrad components.
 
-Given any tensor field, we project it to the tetrad frame to obtain its tetrad components,
+Given any tensor field $F_{\mu\nu}$, we project it to the tetrad frame to obtain its tetrad components,
 \begin{align}
-    A_{a} = (e_a)^\mu A_{\mu} ~.
+    F_{ab} = (e_a)^\mu (e_b)^\nu F_{\mu\nu} ~.
 \end{align}
 We may invert this expression, by defining the inverse tetrad, $(e^a)_\mu$,
 \begin{align}
@@ -31,6 +33,8 @@ We can then substitute the manifold metric for
 \end{align}
 which can be used for raising/lowering tetrad indices and to contract tetrad components.
 By analyzing the underlying symmetries of spacetime, one may choose a basis makes the components of $\eta_{ab}$ constant.
+
+\section{Spin coefficients}
 
 The analogy with the coordinate basics breaks when applying the derivative, 
 \begin{align}

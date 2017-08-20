@@ -34,7 +34,12 @@ The underlying technique behind the study of superradiance is the linearization 
 These perturbations will obey a series of partial differential equations whose dynamical variables are components of the Weyl tensor, $C_{\mu\nu\rho\sigma}$, or the Maxwell field tensor, $F_{\mu\nu}$.
 Thanks to the NP formalism we will be able to decouple and separate the equations for both GWs and EM waves, revealing decoupled variables which contain all the information needed about the nontrivial perturbations, instead of working with all components of the field tensors.
 
-For the gravitational case, a straightforward way of obtaining a linearized theory is to consider a background stationary BH solution, $g_{\mu\nu}{}^B$, and then expanding the field equations~\eref{eq2:vacuumGR} using the metric $\tilde{g}_{\mu\nu} = g_{\mu\nu}{}^B + h_{\mu\nu}$, keeping only terms with are $\mathcal{O}(h_{\mu\nu})$. As a result we are left with a wave equation in the given background. 
+For the gravitational case, a straightforward way of obtaining a linearized theory is to consider a background stationary BH solution, $g_{\mu\nu}{}^B$, and then expanding the field equations~\eref{eq2:vacuumGR} using the metric 
+\begin{align}
+    g_{\mu\nu} = g_{\mu\nu}{}^B + h_{\mu\nu}{}^P ~,
+    \label{eq2:metricBP}
+\end{align}
+keeping only terms with are $\mathcal{O}(h_{\mu\nu}{}^B)$. The indices $B$ and $P$ refer to the background and perturbations, respectively. As a result we are left with a wave equation in the given background. 
 
 Particularly, in this work we will focus on (massless, neutral) electromagnetic waves and perturbations are performed including EM interactions through the Maxwell action
 \begin{align}
@@ -99,11 +104,11 @@ with the same holding true for $k$, hence we can write $g_{\alpha\beta} = g_{\al
 One of the major applications of Killing vectors is to find conserved charges associated with the motion along a geodesic spanned by field.
 These quantities are defined by taking the geodesics to regions space that are asymptotical flat, where the geometry does not affect the observer.
 In the case of Kerr solution, we have two Killing vectors, $k$ and $m$, which are naturally associated with the total mass $M$ and angular momentum $J$ of the BH, respectively.
-This is usually done by evaluating the Komar integrals~\cite{Heusler1996, Wald2010}, which can be written a covariant way as
-\begin{alignat}{6}
-    M = &&\, \frac{1}{8 \pi} & \int_{S^2_\infty} \star \dd k^\flat \,& = &&\, -\frac{1}{4} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
-    J = &&\, - \frac{1}{16 \pi} & \int_{S^2_\infty} \star \dd m^\flat \,& = &&\, \frac{1}{8} & \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
-\end{alignat}
+This is usually done by evaluating the Komar integrals~\cite{Heusler1996, Wald2010}, which can be written in a covariant way as
+\begin{align}
+    M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd k^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
+    J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd m^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
+\end{align}
 where the usual notation $k^\flat = g(k, \,\cdot\,) = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form, and the operator $\star : \Omega^{p}(\mathcal{M})\to\Omega^{4-p}(\mathcal{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step is assumed~\eref{eq2:tPhiKilling} and~\eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
 According to the widely accepted of \emph{no-hair conjecture}~\cite{Carter1971}, these two quantities completely define a stationary (neutral) BH. 
@@ -118,16 +123,16 @@ Simply using stationary and axisymmetric symmetries and then solving Einstein eq
 Kerr success originated in of Petrov's classification of spacetimes, which used the algebraic properties of the Weyl tensor to distinguish the solutions in 3 types, along with some subcases.
 He assumed that his solution would have the same classification as Schwarzschild's, associated with the geometry of isolated central objects, such as stars and BHs. 
 From this assumption, using GR spinor techniques and only then imposing the Killing vectors in~\eqref{eq2:tPhiKilling} was possible to find a new solution. 
-Kerr's metric appear in his original paper in the form
+Kerr's metric appear in his original paper~\cite{Kerr1963} in the form
 \begin{align}
     \begin{split}
-        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
+        ds^2 = & \left(1 - \frac{2 M r}{\Sigma} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
         & - 2  (\dd v - a \sin^2\theta \dd \chi )  (\dd r - a \sin^2\theta \dd \chi ) \\
-        & - \rho^2 (\dd \theta^2 + \sin^2\theta \dd \chi^2 ) ~,
+        & - \Sigma (\dd \theta^2 + \sin^2\theta \dd \chi^2 ) ~,
     \end{split}
     \label{eq2:KerrIngoingEF}
 \end{align}
-where $a$ is a parameter, $M$ is the Komar mass and $\rho^2 = r^2 + a^2 \cos^2\theta$. Naturally the time Killing vector is $\partial_v$ and $\partial_\chi$ is the axial field, entailing that $J = a M$.
+where $a$ is a parameter, $M$ is the Komar mass and $\Sigma = r^2 + a^2 \cos^2\theta$. Naturally the time Killing vector is $\partial_v$ and $\partial_\chi$ is the axial field, entailing that $J = a M$.
 
 Taking the limit of $a\to0$, we reduce the metric to the Schwarzschild solution in ingoing Eddington-Finkelstein (EF) coordinates, $(v,r,\theta,\chi)$, which are useful to study ingoing (to the horizon) geodesics and remove the horizon coordinate singularity.
 When a given metric has singularities it is not trivial to identify if is a physical singularity or if it is an artifact resultant of choice of the chart, removable by a better choice of coordinates. 
@@ -138,7 +143,7 @@ Since any BH is just a vacuum solution, then the Ricci scalar vanishes, $R=0$, s
     R_{\alpha\beta\gamma\delta} R^{\alpha\beta\gamma\delta} = \frac{48 M (r^2 - a^2\cos^2\theta) \left[ (r^2 - a^2\cos^2\theta) ^2 - 16 r^2 M^2 a^2\cos^2\theta \right] }{(r^2 + a^2\cos^2\theta)^6} ~,
     \label{eq2:KerrKretschmann}
 \end{align}
-that clearly diverges for $\rho^2=0$.
+that clearly diverges for $\Sigma=0$.
 The Schwarzschild singularity, $r=0$, is replaced with the Kerr singularity $(r,\theta)=(0,\pi/2)$.
 It is not clear what is the geometry of the Kerr singularity if we interpret $r$ and $\theta$ as being part of the ordinary spherical coordinates.
 Although the metric is singular, we can draw some insight considering $(r,\theta)$ constant and then the limit of $r\to0$ through the equatorial plane,
@@ -147,17 +152,17 @@ Although the metric is singular, we can draw some insight considering $(r,\theta
     \label{eq2:KerrKretschmann}
 \end{align}
 Hence the metric is reduced to the line element of the circle, $S^1$, confirming a \emph{ring singularity} of radius $a$.
-This result implies that we may only reach the singularity $\rho^2=0$, by approaching the Kerr BH through the equatorial plane. 
+This result implies that we may only reach the singularity $\Sigma=0$, by approaching the Kerr BH through the equatorial plane. 
 
-The Kerr-Child ``cartesian'' form, 
+The Kerr-Child theory provides the ``cartesian'' form~\cite{Teukolsky2015}, 
 \begin{align}
     \begin{split}
-        ds^2 = & \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
+        ds^2 = & \, \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
         & - \frac{2 M r^3}{r^4 + a^2 z^2} \left[ \dd \tilde{t} + \frac{r (x \dd x + y \dd y) + a ( y \dd x - x \dd y)}{r^2+a^2} + \frac{z}{r} \dd z \right]^2 ~,
     \end{split}
     \label{eq2:KerrChild}
 \end{align}
-is useful to really observe the ring singularity.
+which is particularly useful to understand the singularity geometry.
 In this metric, $r$ is no longer a coordinate but a function of this chart coordinates $(\tilde{t},x,y,z)$.
 We can relate the The Kerr-Child metric to the original Kerr solution, using
 \begin{align}
@@ -183,7 +188,7 @@ Such remarks are visually demonstrated in~\fref{fig2:kerrchild}.
     \begin{subfigure}[c]{0.35\textwidth}
         \includegraphics[width=\textwidth]{kerrchild3d}
     \end{subfigure}
-    \caption{Contour plots of the surface $r(x,y,z)$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Child ``cartesian'' coordinates. The left plot is the intersection with $z=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves representing orthogonal constant $\theta(x,y,z)$ hypersufaces, become asymptotically affine.}\label{fig2:kerrchild}
+    \caption{Contour plots of the surface $r(x,y,z)/a$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Child ``cartesian'' coordinates. The left plot is the intersection with $z=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves representing orthogonal constant $\theta(x,y,z)$ hypersufaces, become asymptotically affine.}\label{fig2:kerrchild}
 \end{figure}
 
 Even though Kerr-Child metric takes $r>0$ values, there is no mathematical reason to restrict $r$ strictly to positive values.
@@ -194,11 +199,11 @@ This gives mathematical access to new spacetime regions, even tough most of them
 
 \subsection{Boyer-Linquist coordinates}
 
-Considering the problem in hand, the most suitable coordinates for work with the NP formalism, are the Boyer-Linquist coordinates
+Considering the problem in hand, the most suitable coordinates for work with the NP formalism, are the Boyer-Linquist coordinates~\cite{Boyer1967},
 \begin{align}
     \begin{split}
-        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
-        &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2 ~,
+        ds^2 = & \left(1 - \frac{2 M r}{\Sigma} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\Sigma} \dd t \dd \varphi \\
+        &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\Sigma} \sin^2\theta \dd\varphi^2 - \frac{\Sigma}{\Delta} \dd r^2 - \Sigma \dd \theta^2 ~,
     \end{split}
     \label{eq2:KerrBL}
 \end{align}
@@ -218,7 +223,7 @@ Time inversion symmetry is characteristic of static Schwarzschild spacetime, but
 Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\to(-t,-\varphi)$, also known as the \emph{circular condition}, an intuitive notion from physical systems with angular momentum.
 This discrete symmetry eliminates most of the off-diagonal components of the BL metric, $g_{tr} = g_{\varphi r} = g_{t \theta} = g_{\varphi \theta} = 0$, making it the simplest to perform calculations.
 
-Now, to study the possible horizons of Kerr BH, the one-form $n = \dd r$, defines normal vectors to constant radial hypersurfaces.
+Now, to study the possible horizons of Kerr BH, we will consider the one-form $n = \dd r$ that defines normal vectors to constant radial hypersurfaces.
 It is easy to show that $n^2 = g^{rr}$, which implies that $n$ is null when $\Delta=0$, defining horizons at 
 \begin{align}
     r_\pm = M \pm \sqrt{M^2 - a^2} ~,
@@ -255,13 +260,17 @@ As a result, geodesics of a free particle in Kerr geometry will be characterized
 \end{align}
 where $\tau$ is the affine parameter fo the geodesic.
 These quantities can be interpreted the energy per mass and angular momentum per mass of the particle, respectively.
-Due to the circular form of the BL metric, the metric components of the coordinates $(t,\varphi)$ define a product decomposition, providing the separation of previous equations, 
+Due to the circular form of the BL metric, the metric components of the coordinates $(t,\varphi)$ define a product decomposition, providing the separation of previous equations,
+\begin{subequations}
 \begin{align}
     \dot{t} &= \frac{1}{\Delta} \left[ (r^2+a^2 +\frac{2 M a^2}{r})E - \frac{2 M a}{r} L \right] ~, \label{eq2:geodesicT} \\
     \dot{\varphi} &= \frac{1}{\Delta} \left[ \frac{2 M a}{r} E +\left( 1- \frac{2 M}{r} \right) L \right]  ~,
     \label{eq2:geodesicPhi}
 \end{align}
-specified for the equatorial plane $\theta=\pi/2$. The final equation for the geodesic is provided by the line element (\ref{eq2:KerrBL}), which becomes also a first order ODE, after the substitution of $\dot{t}$ and $\dot{\varphi}$. Consider now a zero angular momentum observer (ZAMO) infalling radially, with $L=0$, then we can get the angular velocity $\Omega$, as measured at infinity
+\end{subequations}
+specified for the equatorial plane $\theta=\pi/2$. The final equation for the geodesic is provided by the line element (\ref{eq2:KerrBL}), which becomes also a first order ODE, after the substitution of $\dot{t}$ and $\dot{\varphi}$. 
+
+Consider now a zero angular momentum observer (ZAMO) infalling radially, with $L=0$, then we can get the angular velocity $\Omega$, as measured at infinity
 \begin{align}
     \Omega = \frac{\dot{\varphi}}{\dot{t}} = - \frac{g_{t\varphi}}{g_{\varphi\varphi}} = \frac{2 a M}{r^3 + a^2 (2 M+r)} ~.
     \label{eq2:angMomentumZAMO}
@@ -324,7 +333,7 @@ Much like spontaneous pair creation and amplification at discontinuities are rel
 
 Considering a particle with rest mass $\mu$ and four-momentum $p^\alpha = \mu u^\alpha$, we may identify the constant of motion 
 \begin{align}
-    E = k \cdot p = \mu g_{tt} p^t + g_{t\varphi} p^\varphi  ~.
+    E = k \cdot p = \mu_0 ( g_{tt} p^t + g_{t\varphi} p^\varphi ) ~.
     \label{eq2:PenroseE0}
 \end{align}
 as it's energy measured by a stationary observer at infinity, due to relations~\eref{eq2:geodesicConsts}. As shown above, the Killing vector is asymptotically timelike but is spacelike inside the ergoregion, thus $g_{tt}<0$. For a future-directed geodesic, $p^0 = \mu u^0 > 0$, the energy beyond the ergosurface needs not to be positive. Suppose, by any means, that such particle manages to decay inside the ergoregion into two other, with momenta $p_1$ and $p_2$. Contracting with $k$, implies that $E = E_1+E_2$. Supposing that the first of the particles has negative energy, $E_1<0$, then 
@@ -338,12 +347,12 @@ I can be shown that the particle with negative energy (bounded) must fall into t
     \centering
     \vspace{0.5cm}
     \includegraphics[width=0.65\textwidth]{ergoPenrose}
-    \caption{Illustration of the Penrose process, with ergoregion (dotted) and event horizon regions parameterized in Kerr-Child cartesian coordinates.}
+    \caption{Illustration of the Penrose process, with ergoregion (dotted) and event horizon surfaces parameterized in Kerr-Child cartesian coordinates.}
     \label{fig2:penroseProcess}
 \end{figure}
 
 To understand the limits of the Penrose process, we use the fact that a stationary observer near the horizon, must follow orbits of $\xi$, given by~\eqref{eq2:KillingXi}. 
-Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $\xi \cdot  p_1 \le 0$. The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delta J = L_1$, where $L_1 = m \cdot p_1$ is the particle angular momentum. As a result,
+Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $\xi \cdot  p_1 \le 0$. The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delta J = L_1$, where $L_1 = -m \cdot p_1$ is the particle angular momentum. As a result,
 \begin{align}
     \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
 \end{align}
@@ -353,7 +362,7 @@ which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quan
 
 Study of gravitational and electromagnetic perturbations in a BH background were performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's. Despite it's simplicity, the procedure involved was already considerable algebraically tedious. In the Kerr case, the metric was far more complicated, making the problem almost untreatable.
 
-Fortunately, the NP formalism provides an alternative method of studying perturbations.
+Fortunately, the NP formalism~\cite{Newman1962} provides an alternative method of studying perturbations.
 Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis. Penrose believed that the light-cone was essential element of the spacetime, thus the importance of finding null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
 \begin{align}
     l^2 = n^2 = m^2 = \bar{m}^2 = 0 ~,
@@ -368,7 +377,7 @@ Still we are left with the ambiguity raised by multiplication of scalar function
 \end{align}
 This formalism is a special case of tetrad calculus, where we can identify $(e_1,e_2,e_3,e_4)=(l,n,m,\bar{m})$. The metric for the tetrad components, $\eta_{ab}$, is defined by all restrictions above, which imply that the coordinate metric must take the form
 \begin{align}
-    g_{\mu\nu} = l_{(\mu} n_{\nu)} - m_{(\mu} \bar{m}_{\nu)} ~.
+    g_{\mu\nu} = l_{\mu} n_{\nu} + n_{\mu} l_{\nu} - m_{\mu} \bar{m}_{\nu} - \bar{m}_{\mu} m_{\nu} ~.
 \end{align}
 
 \subsection{Kinnersley tetrad}
@@ -382,40 +391,76 @@ In order to remove the Ricci tensor degrees of freedom, the tensor must be const
     \eta^{ad} C_{abcd} = C_{1bc2} + C_{1bc2} - C_{3bc4} - C_{4bc3} = 0 ~. 
 \end{align}
 Together with the other symmetries inherited from the Riemann tensor, for instance the first Bianchi identity, $C_{a[bcd]}=0$, it is possible to vanish some components and rewrite others such that only ten degrees of freedom remain.
-As a result, in NP formalism the Weyl tensor can be represented by five complex scalars, usually chosen as~\cite{Chandrasekhar1998} 
+As a result, in NP formalism the Weyl tensor can be represented by five complex scalars, usually chosen as
 \begin{align}
     \begin{split}
-        \Psi_0 &= - C_{1313} = - C_{\mu\nu\rho\sigma} l^\mu m^\nu l^\rho m^\sigma ~,\qquad
-        ~\Psi_1 = - C_{1213} = - C_{\mu\nu\rho\sigma} l^\mu n^\nu l^\rho m^\sigma ~,\\
-        \Psi_2 &= - C_{1342} = - C_{\mu\nu\rho\sigma} l^\mu m^\nu \bar{m}^\rho n^\sigma ~,\qquad
-        \Psi_3 = - C_{1242} = - C_{\mu\nu\rho\sigma} l^\mu n^\nu \bar{m}^\rho n^\sigma ~,\\
-        \Psi_4 &= - C_{2424} = - C_{\mu\nu\rho\sigma} n^\mu \bar{m}^\nu n^\rho \bar{m}^\sigma ~.
+        \psi_0 &= - C_{1313} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta l^\gamma m^\delta ~,\qquad
+        ~\psi_1 = - C_{1213} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta l^\gamma m^\delta ~,\\
+        \psi_2 &= - C_{1342} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta \bar{m}^\gamma n^\delta ~,\qquad
+        \psi_3 = - C_{1242} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta \bar{m}^\gamma n^\delta ~,\\
+        \psi_4 &= - C_{2424} = - C_{\alpha\beta\gamma\delta}\, n^\alpha \bar{m}^\beta n^\gamma \bar{m}^\delta ~.
     \end{split}
 \end{align}
-The complex conjugates can be obtained by doing the replacement $3\leftrightarrow 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$.
+The complex conjugates can be obtained by doing the replacement $3\leftrightarrow 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. 
+Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$. 
+It is clear that the values these five complex scalars take is completely dependent on the choice of tetrad frame. 
 
-BHs solutions belong to the ``type D'' of Petrov's classification of spacetimes, which was a major restriction necessary to Kerr's discovery.
-Solutions are classified by obtaining all null principal directions of the Weyl tensor. For BH spacetimes, $l$ and $n$ are chosen such that they are the two doubly-degenerate principal vectors, 
+BH solutions are ``type D'' spacetimes according to Petrov's classification, which was a major restriction necessary to the discovery of Kerr's metric.
+For BH spacetimes it is possible to find two doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $l$ and $n$.
+These yield
 \begin{align}
-    C_{\mu\nu\rho[\sigma} l_{\varepsilon]} l^\nu l^\rho = 0 ~, \qquad C_{\mu\nu\rho[\sigma} n_{\varepsilon]} n^\nu n^\rho = 0  ~.
+    C_{\mu\alpha\beta[\nu} l_{\rho]} l^\alpha l^\beta = 0 ~, \qquad C_{\mu\alpha\beta[\nu} l_{\rho]} n^\alpha n^\beta = 0  ~.
 \end{align}
-In NP formalism terms, these spacetime are characterized by
+In NP formalism terms, this implies, respectively,
 \begin{align}
-    \Psi_0=\Psi_1=0 ~,\qquad \Psi_3=\Psi_4=0 ~,
+    \psi_0=\psi_1=0 ~,\qquad \psi_3=\psi_4=0 ~.
 \end{align}
-respectively.
-Fields $l$ and $n$ are invariant under a subgroup of Lorentz transformations that rotate the tetrad frame, up to multiplication of scalar functions.
-These rotations maintain the light-cone structure intact and are useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}.
 
--~Introduce  Kinnersly tetrat (cite)
+Finding the principal directions may not be trivial, but we can apply successive local transformations of the six-parameter Lorentz group in order to rotate the tetrad vectors. 
+This procedure allows for the simplification of the Weyl tensor by vanishing NP scalars, ``locking'' the orientation of the tetrad frame~\cite{Chandrasekhar1998}.
+Weyl scalar $\psi_2$ becomes invariant under boosts in the principal directions.
+These keep the light-cone structure intact by maintaining the direction of $l$ and $n$ unchanged (up to multiplication of scalar functions), being useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}. 
+Kinnersly solved type D vaccum field equations~\cite{Kinnersley1969}, finding a suitable tetrad 
+\begin{align}
+    \begin{split}
+        l =& \left(\frac{r^2+a^2}{\Delta}, \, 1, \,0, \,\frac{a}{\Delta} \right) ~, \\
+        n =& \frac{1}{2 \Sigma} \Bigr( r^2+a^2, \,-\Delta, \,0 , \,a \Bigr) ~, \\
+        m =& \frac{1}{ \sqrt{2} \bar{\rho}^2 } \Bigr( i a \sin\theta, \,0, \,1, \, i \csc\theta \Bigr) ~,
+    \end{split}
+\end{align}
+where $\bar{\rho} = r + i a \cos\theta$ and $\Sigma = \bar{\rho} \bar{\rho}^*$.
 
--~Confirm null directions and compute $\Psi_2$.
-
--~Talk about the perturbations in NP formalism
+The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{ab[cd \rvert e ]} = 0$, and~\eqref{eq2:maxwellEM}.
+To study of GWs, instead of perturbing the background metric, NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and all NP scalars.
+Weyl NP scalar do not vanish for GW perturbations, now yielding $\psi_i = \psi_i{}^P$, except for $i=2$, where $\psi_2 = \psi_2{}^B+\psi_2{}^P$.
+The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
 
 \subsection{Maxwell equations}
 
--~Project Mawell equations and derive everyting (use notes)
+We will focus with more detail on EM perturbations with a fixed background because is a simpler procedure and leads to the same master equation as GW perturbations. Thus, we consider all Maxwell equation in NP formalism,
+\begin{align}
+    F_{[ab \rvert c]} = 0 ~,\qquad \eta^{bc} F_{ab \rvert c} = 0 ~.
+    \label{eq2:maxwellFabEqs}
+\end{align}
+The Mawell tensor $F_{\mu\nu}$ has a total of six components which encodes the vector quantities of the electric and the magnetic fields. We may reduce the equation using three complex NP scalars,
+\begin{align}
+    \begin{split}
+        \phi_0 &= F_{13} = F_{\alpha\beta} l^\alpha m^\beta ~,\qquad
+        \phi_1 = \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} (l^\alpha n^\beta + \bar{m}^\alpha m^\beta) ~,\\
+        \phi_2 &= F_{42} = F_{\alpha\beta} \bar{m}^\alpha n^\beta ~.
+    \end{split}
+    \label{eq2:maxwellNPphi}
+\end{align}
+Considering all posible combinations of NP indices in~\eref{eq2:maxwellFabEqs}, we obtain eight equations, double the amount of necessary relations. 
+This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are included in these equations. It is possible to eliminate every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, obtaining the equations
+\begin{subequations}
+    \begin{align}
+      \phi_{0\rvert 2} &= \phi_{1 \rvert 3} ~,\\
+      \phi_{2\rvert 1} &= \phi_{1 \rvert 4} ~,\\
+      \phi_{0\rvert 4} &= \phi_{1 \rvert 1} ~,\\
+      \phi_{2\rvert 3} &= \phi_{1 \rvert 2} ~.
+    \end{align}
+\end{subequations}
 
 
 \cleardoublepage
