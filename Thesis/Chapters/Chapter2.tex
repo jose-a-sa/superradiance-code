@@ -358,12 +358,12 @@ Although a particle may have negative energy as measured from an asymptotic obse
 \end{align}
 which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. For this process to occur (and therefore superradiance), we must have a rotating BH, which is guaranteed to have a ergoregion.
 
-\section{Newman-Penrose formalism}
+\section{Newman-Penrose equations}
 
 Study of gravitational and electromagnetic perturbations in a BH background were performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's. Despite it's simplicity, the procedure involved was already considerable algebraically tedious. In the Kerr case, the metric was far more complicated, making the problem almost untreatable.
 
 Fortunately, the NP formalism~\cite{Newman1962} provides an alternative method of studying perturbations.
-Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis. Penrose believed that the light-cone was essential element of the spacetime, thus the importance of finding null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
+Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis $(e_1, e_2, e_3, e_4)$. Penrose believed that the light-cone was the essential element of the spacetime, thus it was of importance to find null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
 \begin{align}
     l^2 = n^2 = m^2 = \bar{m}^2 = 0 ~,
 \end{align}
@@ -375,10 +375,16 @@ Still we are left with the ambiguity raised by multiplication of scalar function
 \begin{align}
     l \cdot n = 1 ~, \qquad m \cdot \bar{m} = -1 ~.
 \end{align}
-This formalism is a special case of tetrad calculus, where we can identify $(e_1,e_2,e_3,e_4)=(l,n,m,\bar{m})$. The metric for the tetrad components, $\eta_{ab}$, is defined by all restrictions above, which imply that the coordinate metric must take the form
+This formalism is a special case of tetrad calculus, where we can identify the new basis as $(l,n,m,\bar{m})$. The ``metric'' for manipulating tetrad indices, $\eta_{ab}$, is defined by all restrictions provided above,
 \begin{align}
-    g_{\mu\nu} = l_{\mu} n_{\nu} + n_{\mu} l_{\nu} - m_{\mu} \bar{m}_{\nu} - \bar{m}_{\mu} m_{\nu} ~.
+    g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu = l^{\mu} n^{\nu} + n^{\mu} l^{\nu} - m^{\mu} \bar{m}^{\nu} - \bar{m}^{\mu} m^{\nu} ~.
 \end{align}
+Additionally this vectors define new directional derivatives, $e_a=(e_a)^\mu \nabla_\mu$.
+We will deviate shortly from standard notation~\cite{Teukolsky1972,Teukolsky1973,Teukolsky1974}, by redefining these derivatives as
+\begin{align}
+    ()
+\end{align}
+
 
 \subsection{Kinnersley tetrad}
 
@@ -427,19 +433,15 @@ Kinnersly solved type D vaccum field equations~\cite{Kinnersley1969}, finding a 
         n =& \frac{1}{2 \Sigma} \Bigr( r^2+a^2, \,-\Delta, \,0 , \,a \Bigr) ~, \\
         m =& \frac{1}{ \sqrt{2} \bar{\rho}^2 } \Bigr( i a \sin\theta, \,0, \,1, \, i \csc\theta \Bigr) ~,
     \end{split}
+    \label{eq2:kinnerslytetrad}
 \end{align}
 where $\bar{\rho} = r + i a \cos\theta$ and $\Sigma = \bar{\rho} \bar{\rho}^*$.
 
 The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{ab[cd \rvert e ]} = 0$, and~\eqref{eq2:maxwellEM}.
-<<<<<<< HEAD
-To study GWs, instead of perturbing the background metric, NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and also the NP scalars, now yielding $\psi_i = \psi_i{}^P$, except for $i=2$, where $\psi_2 = \psi_2{}^B+\psi_2{}^P$.
-=======
-To study of GWs, instead of perturbing the background metric, NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and all NP scalars.
-Weyl NP scalar do not vanish for GW perturbations, now yielding $\psi_i = \psi_i{}^P$, except for $i=2$, where $\psi_2 = \psi_2{}^B+\psi_2{}^P$.
->>>>>>> 487490f0ebc8476d89b6c5e43d6b985f0fe6fff5
+To study GWs, instead of perturbing the background metric, NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms.
 The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
 
-\subsection{Maxwell equations}
+\subsection{Maxwell tensor}
 
 We will focus with more detail on EM perturbations with a fixed background because is a simpler procedure and leads to the same master equation as GW perturbations. Thus, we consider all Maxwell equation in NP formalism,
 \begin{align}
@@ -459,12 +461,44 @@ Considering all posible combinations of NP indices in~\eref{eq2:maxwellFabEqs}, 
 This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are included in these equations. It is possible to eliminate every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, obtaining the equations
 \begin{subequations}
     \begin{align}
-      \phi_{0\rvert 2} &= \phi_{1 \rvert 3} ~,\\
-      \phi_{2\rvert 1} &= \phi_{1 \rvert 4} ~,\\
-      \phi_{0\rvert 4} &= \phi_{1 \rvert 1} ~,\\
-      \phi_{2\rvert 3} &= \phi_{1 \rvert 2} ~.
+        \phi_{2\rvert 1} &= \phi_{1\rvert 4} ~, \label{eq2:phi21phi14}\\
+        \phi_{1\rvert 2} &= \phi_{2\rvert 3} ~, \label{eq2:phi12phi23}\\
+        \phi_{1\rvert 1} &= \phi_{0\rvert 4} ~, \label{eq2:phi11phi04}\\
+        \phi_{0\rvert 2} &= \phi_{1\rvert 3} ~. \label{eq2:phi02phi13}
     \end{align}
 \end{subequations}
+We may expand explicitly the left-hand side of~\eqref{eq2:phi21phi14},
+\begin{align}
+    \begin{split}
+        \phi_{2\rvert 1} &= \phi_{2, 1} - \eta^{ab}( \gamma_{a41} F_{b2} + \gamma_{a21} F_{4b} ) \\
+        &= \phi_{2, 1} - (\gamma_{241} F_{12} + \gamma_{121} F_{42}) + ( \gamma_{341} F_{42} + \gamma_{421} F_{43} ) \\
+        &= \phi_{2, 1} + 2 F_{42} \left(\frac{\gamma_{341} + \gamma_{211}}{2}\right) + 2 \gamma_{421} \left(\frac{F_{12} + F_{43}}{2}\right) \\
+        &= \mathbbl{D} \phi_2 + 2 \varepsilon \phi_2 - 2 \pi \phi_1 ~,
+    \end{split}
+    \label{eq2:phi21expand}
+\end{align}
+where we used the antisymmetry of the spin connection, $\gamma_{abc}=-\gamma_{bac}$. The right-hand side yields
+\begin{align}
+    \begin{split}
+        \phi_{1\rvert 4} &= \phi_{1, 4} - \tfrac{1}{2} \eta^{ab}( \gamma_{a14} F_{b2} + \gamma_{a24} F_{1b} + \gamma_{a44} F_{b3} + \gamma_{a34} F_{4b} ) \\
+        &= \phi_{1, 4} - \tfrac{1}{2} ( \gamma_{144} F_{23} + \gamma_{134} F_{42} + \gamma_{214} F_{12} + \gamma_{234} F_{41} ) \\ 
+        &\qquad\qquad + \tfrac{1}{2} ( \gamma_{314} F_{42} + \gamma_{414} F_{42} + \gamma_{324} F_{14} + \gamma_{424} F_{13} ) \\
+        &= \phi_{2, 1} - \gamma_{244} F_{13} + \gamma_{314} F_{42} \\
+        &= \bar{\bbdelta} \phi_1 - \lambda \phi_0 + \tau \phi_2  ~.
+    \end{split}
+    \label{eq2:phi21expand}
+\end{align}
+The operators $\mathbbl{D}$, $\bar{\bbdelta}$ and the spin coefficients $\varepsilon$, $\pi$, $\lambda$, $\tau$ as well as other NP definitions can be found in~\aref{AppendixNPSpinCoef}. If we repeat the same expansion for the other Maxwell equations, we gather the set
+\begin{subequations}
+    \begin{align}
+        \mathbbl{D} \phi_2 - \bar{\bbdelta} \phi_1 &= -\lambda \phi_0 + 2 \pi \phi_1 + (\varrho - 2 \varepsilon) \phi_2 ~,\\
+        \mathbbl{\Delta} \phi_1 - \bbdelta \phi_2 &= (2 \gamma - \mu) \phi_0 + 2 \varrho \phi_1 - \kappa \phi_2 ~,\\
+        \mathbbl{D} \phi_1 - \bar{\bbdelta} \phi_0 &= (\pi - 2 \alpha) \phi_0 - 2 \tau \phi_1 + \sigma \phi_2 ~,\\
+        \mathbbl{\Delta} \phi_0 - \bbdelta \phi_1 &= \nu \phi_0 - 2 \mu \phi_1 + (2\beta-\tau) \phi_2 ~.
+    \end{align}
+\end{subequations}
+Chandrasekhar provided the 
+
 
 
 \cleardoublepage

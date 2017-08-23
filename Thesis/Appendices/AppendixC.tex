@@ -1,0 +1,26 @@
+% !TEX root = ../main.tex
+
+\chapter{Spin-weighted spherical harmonics}
+\label{AppendixSWHs}
+
+SWSHs play an important role BH physics and was first introduced by Teukolsky when considering non-scalar wave perturbations on a Kerr background, obtaining a separable master equation in four dimensions. After the usual change of coordinates, the polar differential equation goes as 
+\begin{equation}
+	\frac{1}{S} \frac{\dd}{\dd x} \left( (1-x^2) \, \frac{\dd S}{\dd x} \right) + (c x)^2 - 2 c s x  -\frac{(m + s x)^2}{1 - x^2} + s  = - \lambda
+\label{eqA:diffSWSH}
+\end{equation}
+with $x=\cos\theta$, where $\lambda$ is the eigenvalue for a given SWSH solution. Periodic boundary conditions on the azimuthal wave function constrains $m$ to the integers.   
+
+\section{Connection with spheroical harmonics}
+
+By setting $s=0$ (scalar) and $c=0$ (spherical), then it's clear that~\eqref{eqA:diffSWSH} appears as a generalization of the spherical harmonics equation. In this last case, the solution are given by the associated Legendre polynomials, $P^m_\ell (x)$, for which the eigenvalue is $\ell(\ell+1)$, restricted to the condition of $|m| \le \ell$. The closed form for spherical harmonics, after normalization, is
+\begin{equation}
+	\sts[0]{Y^m}{\ell}(x)= (-1)^{m} \sqrt{\frac{(2\ell +1)}{4\pi} \frac{(\ell -m)!}{(\ell +m)!}} \, P_\ell^m (x)
+\label{eqA:SH}
+\end{equation}
+where $P_{\ell}^{m}$ are the associated Legendre polynomials can be obtained using Rodrigues' formula.
+
+\section{Spin raising/lowering differential operators}
+
+\section{Generalized addition of angular momentum formula}
+
+\section{Some useful harmonics}

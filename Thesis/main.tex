@@ -11,19 +11,25 @@
 \usepackage{pdfpages}
 
 \graphicspath{{Figures/}} % Specifies the directory where pictures are stored
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{xfrac}
-\usepackage{bm}
 
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
 
+
 %%% FONT PACKAGES
+\usepackage[bbgreekl]{mathbbol}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\DeclareSymbolFontAlphabet{\mathbbl}{bbold}
+
 % - fourier
 % - mathpazo ( palatino for Computer Modern on math )
 \usepackage{mathpazo}
 \setstretch{1.5}
+
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xfrac}
+\usepackage{bm}
 
 \usepackage{lipsum}
 
@@ -235,6 +241,7 @@
 
 \input{Appendices/AppendixA}
 \input{Appendices/AppendixB}
+\input{Appendices/AppendixC}
 
 \backmatter
 

@@ -1,47 +1,80 @@
 % !TEX root = ../main.tex
 
-\chapter{Newman-Penrose equations} % Main chapter title
-\label{AppendixTetrad}
+\chapter{Tetrad techniques} % Main chapter title
+\label{AppendixTetradFormalism}
 
-\section{Tetrad techniques}
+
+\section{Noncoordinate representation}
+\label{AppendixTetradMetric}
 
 The standard way of expressing quantities in GR was to use a local coordinate basis. This corresponds to use
 \begin{align}
-   \frac{\partial}{\partial x^\mu} \qquad ( x^\mu = t,r,\theta,\varphi )
+   \frac{\partial}{\partial x^\mu} \qquad (x^\mu = t, r, \theta, \varphi)
 \end{align}
 as our vector basis. One-form basis can be defined the usual way. The tetrad formalism allows for an alternative choice of a \emph{noncoordinate} basis, by introducing a set of linear independent four-vectors, 
 \begin{align}
-    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad ( a = 1,2,3,4 ) ~.
- \end{align}
+    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~.
+\end{align}
 We will use Greek alphabet ($\alpha,\beta,\gamma,\dots$) for the coordinate components and the Latin alphabet ($a,b,c,\dots$) for the tetrad components.
+The tetrad fields also defined directional derivatives, for example for any scalar field $f$
+\begin{align}
+    f_{, a} = e_a ( f ) = (e_a)^\mu \frac{\partial f}{\partial x^\mu} =  (e_a)^\mu f_{,  \mu}  ~.
+\end{align}
 
-Given any tensor field $F_{\mu\nu}$, we project it to the tetrad frame to obtain its tetrad components,
+However, this formalism must not be mistaken with as change of coordinates, $y=\phi(x)$, such that $(e_a)^\mu = \partial x^\mu / \partial y^a$, since those coordinates may not exist.
+A tetrad frame is a pointwise rotation of the coordinate frame, \emph{i.e.} the concept is related to passive transformations rather that active (diffeomorphisms).
+
+Given any tensor field $F_{\mu\nu}$, we can obtain its tetrad components by projecting it onto the tetrad frame,
 \begin{align}
     F_{ab} = (e_a)^\mu (e_b)^\nu F_{\mu\nu} ~.
 \end{align}
-We may invert this expression, by defining the inverse tetrad, $(e^a)_\mu$,
+We may invert this expression, by defining the inverse tetrad, $(e^a)_\mu$, such that
 \begin{align}
-    e_a \cdot e^b = (e_a)^\mu (e^b)_\mu = (e_a)^\mu (e^b)^\nu g_{\mu\nu} = \delta_a{}^b ~,
+    (e_a)^\mu (e^b)_\mu = (e_a)^\mu (e^b)^\nu g_{\mu\nu} = \delta_a{}^b ~,
 \end{align}
-such that invariant quantities remain unchanged, \emph{i.e}
+hence invariant quantities remain unchanged,
 \begin{align}
     A^2 = A^\mu A_\mu = A^a (e_a)^\mu \, A_b (e^b)_\mu = A^a A_a~.
 \end{align}
-We can then substitute the manifold metric for
+
+We can then substitute the manifold metric for the tetrad ``metric''
 \begin{align}
     \eta_{ab} = e_a \cdot e_b = g_{\mu\nu} (e_a)^\mu (e_b)^\nu ~,
 \end{align}
-which can be used for raising/lowering tetrad indices and to contract tetrad components.
-By analyzing the underlying symmetries of spacetime, one may choose a basis makes the components of $\eta_{ab}$ constant.
-
-\section{Spin coefficients}
-
-The analogy with the coordinate basics breaks when applying the derivative, 
+which can be used for raising/lowering tetrad indices and to contract tetrad components,
 \begin{align}
-    A_{a,b} = (e_b)^\mu \nabla_\mu A_{a} = (e_a)^\mu (e_b)^\nu A_{\mu ; \nu} + (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu A^c ~,
+    A^a = \eta^{ab} A_b ~.
 \end{align}
-due to extra terms resultant of the tetrad derivatives. These terms can be written using the spin connection
+By analyzing the underlying symmetries of spacetime, one may choose a basis makes the components of $\eta_{ab}$ constant, which is particularly important for the NP formalism.
+Going forward, we will assume that this is the case.
+
+\section{Spin connection}
+\label{AppendixSpinConnection}
+
+The analogy with the coordinate basics breaks when applying the a directional derivative of a tetrad components, 
+\begin{align}
+    A_{a,b} = (e_b)^\nu \partial_\nu A_{a} = (e_b)^\nu \nabla_\nu \left[ (e_a)^\mu A_\mu \right] = (e_a)^\mu (e_b)^\nu A_{\mu ; \nu} + (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu A^c ~,
+    \label{eqA:PartialbAa}
+\end{align}
+due to extra terms resultant of the tetrad derivatives. Tetrad decompositions, $A^a$, are scalars and must not be mistaken as vector fields such as $(e_a)^\mu$ or $A^\mu$. These terms can be written using the spin connection
 \begin{align}
     \gamma_{cab} = (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu ~,
 \end{align}  
-which is antisymmetric in the first two indices, $\gamma_{(ca)b}=0$, due to the metric compatibility of the covariant derivative, $\nabla_\mu g_{\nu\rho} = 0$. 
+which is antisymmetric in the first two indices,
+\begin{align}
+    \gamma_{cab} = - \gamma_{acb} ~,
+\end{align}
+due to the metric compatibility of the covariant derivative, $\nabla_\mu g_{\nu\rho} = 0$.
+Nonetheless, this only holds if $\eta_{ab}$ is constant, otherwise we would have $\gamma_{abc} + \gamma_{bac} = \eta_{ab,c}$
+
+The other term is called the \emph{intrinsic} derivative of $A_a$ in the direction of $e_b$, being defined as the projection of the tensor $A_{\mu;\nu}$ in the tetrad frame,
+\begin{align}
+    A_{a\rvert  b} = (e_a)^\mu (e_b){}^\nu A_{\mu;\nu}
+\end{align}
+If we have a higher rank tensor, $F_{\mu\nu}$, we can generalize the intrinsic derivative inverting~\eqref{eqA:PartialbAa} and generalizing for multiple indices with the use of the spin connection,
+\begin{align}
+    F_{ab\rvert c} = F_{ab,c} - \eta^{nm} ( F_{nb} \gamma_{mac} + F_{an} \gamma_{mbc}) ~.
+\end{align}
+
+Obviously, the spin connection replaces the Christoper symbols, $\Gamma^\rho_{\mu\nu}$, in the tetrad formalism. 
+We generally need $\tfrac{1}{2} d^2(d+1)$ computations to fully define the latter, while the spin connection has $\tfrac{1}{2} d^2(d-1)$ independent components. For $d=4$, the use of the spin connection implies $16$ components less to work with.
