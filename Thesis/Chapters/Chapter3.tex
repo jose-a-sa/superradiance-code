@@ -3,10 +3,259 @@
 \chapter{Teukolsky master equation} % Main chapter title
 \label{Chapter3}
 
+\section{Newman-Penrose formalism}
+
+Study of gravitational and electromagnetic perturbations in a BH background were performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's. Despite it's simplicity, the procedure involved was already algebraically tedious. In the Kerr case, the metric was far more complicated, making the problem almost untreatable.
+
+Fortunately, the NP formalism~\cite{Newman1962} provides an alternative method of studying perturbations.
+Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis,
+\begin{align}
+    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~,
+\end{align}
+where all quantities will be projected, \emph{i.e.} for the Weyl tensor we define
+\begin{align}
+    C_{abcd} =  (e_a)^\alpha  (e_b)^\beta  (e_c)^\gamma  (e_d)^\delta  C_{\alpha\beta\gamma\delta} ~.
+\end{align}
+Penrose believed that the light-cone was the essential element of the spacetime, thus it was of importance to find null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
+\begin{align}
+    l^2 = n^2 = m^2 = \bar{m}^2 = 0 ~,
+\end{align}
+orthogonality conditions of NP formalism require
+\begin{align}
+    l \cdot m = l \cdot \bar{m} = n \cdot m = n \cdot \bar{m} = 0 ~.
+\end{align}
+Still we are left with the ambiguity raised by multiplication of scalar functions to each vector, therefore its customary to impose normalization conditions to the basis,
+\begin{align}
+    l \cdot n = 1 ~, \qquad m \cdot \bar{m} = -1 ~.
+\end{align}
+This formalism is a special case of tetrad calculus, where we can identify the new basis as $(l,n,m,\bar{m})$. The ``metric'' for manipulating tetrad indices, $\eta_{ab}$, is defined by all restrictions provided above,
+\begin{align}
+    g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu = l^{\mu} n^{\nu} + n^{\mu} l^{\nu} - m^{\mu} \bar{m}^{\nu} - \bar{m}^{\mu} m^{\nu} ~.
+\end{align}
+Additionally this vectors define new directional derivatives.
+We will depart shortly from standard notation~\cite{Teukolsky1972,Teukolsky1973,Teukolsky1974}, by redefining these derivatives as
+\begin{align}
+    \mathbbl{D}=\nabla_l ~,\qquad \mathbbl{\Delta}=\nabla_n ~,\qquad \bbdelta=\nabla_m ~,\qquad \bar{\bbdelta}=\nabla_{\bar{m}} ~.
+    \label{eq3:tetradCovDer}
+\end{align}
+
+More details and definitions on the tetrad formalism can be found in~\aref{AppendixTetradFormalism}.
+
+\subsection{Kinnersley tetrad}
+
+The Riemann tensor may have up to twenty non-vanishing components.
+We know that ten of these are present in the symmetric Ricci tensor, that is intrinsically connected to matter and energy.
+The other components are pure gravitational degrees of freedom and are encoded in the Weyl tensor.
+It becomes the most useful object when the Ricci tensor vanishes, such as vacuum solutions and source-free gravitational waves.
+In order to remove the Ricci tensor degrees of freedom, the tensor must be constructed trace-free,
+\begin{align}
+    \eta^{ad} C_{abcd} = C_{1bc2} + C_{1bc2} - C_{3bc4} - C_{4bc3} = 0 ~. 
+\end{align}
+Together with the other symmetries inherited from the Riemann tensor, for instance the first Bianchi identity, $C_{a[bcd]}=0$, it is possible to vanish some components and rewrite others such that only ten degrees of freedom remain.
+As a result, in NP formalism the Weyl tensor can be represented by five complex scalars, usually chosen as
+\begin{align}
+    \begin{split}
+        \psi_0 &= - C_{1313} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta l^\gamma m^\delta ~,\qquad
+        ~\psi_1 = - C_{1213} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta l^\gamma m^\delta ~,\\
+        \psi_2 &= - C_{1342} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta \bar{m}^\gamma n^\delta ~,\qquad
+        \psi_3 = - C_{1242} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta \bar{m}^\gamma n^\delta ~,\\
+        \psi_4 &= - C_{2424} = - C_{\alpha\beta\gamma\delta}\, n^\alpha \bar{m}^\beta n^\gamma \bar{m}^\delta ~.
+    \end{split}
+\end{align}
+The complex conjugates can be obtained by doing the replacement $3 \rightleftarrows 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. 
+Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$. 
+It is clear that the values these five complex scalars take is completely dependent on the choice of tetrad frame. 
+
+BH solutions are ``type D'' spacetimes according to Petrov's classification, which was a major restriction necessary to the discovery of Kerr's metric.
+For BH spacetimes it is possible to find two doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $l$ and $n$~\cite{Chandrasekhar1998}.
+These yield
+\begin{align}
+    C_{\mu\alpha\beta[\nu} l_{\rho]} l^\alpha l^\beta = 0 ~, \qquad C_{\mu\alpha\beta[\nu} l_{\rho]} n^\alpha n^\beta = 0  ~.
+\end{align}
+In NP formalism terms, this implies, respectively,
+\begin{align}
+    \psi_0=\psi_1=0 ~,\qquad \psi_3=\psi_4=0 ~.
+\end{align}
+
+Finding the principal directions may not be trivial, but we can apply successive local transformations of the six-parameter Lorentz group in order to rotate the tetrad vectors. 
+This procedure allows for the simplification of the Weyl tensor by vanishing NP scalars, ``locking'' the orientation of the tetrad frame.
+Weyl scalar $\psi_2$ becomes invariant under boosts in the principal directions.
+These keep the light-cone structure intact by maintaining the direction of $l$ and $n$ unchanged (up to multiplication of scalar functions), being useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}. 
+Kinnersly solved type D vaccum field equations~\cite{Kinnersley1969}, finding a suitable tetrad 
+\begin{align}
+    \begin{split}
+        l =& \left(\frac{r^2+a^2}{\Delta}, \, 1, \,0, \,\frac{a}{\Delta} \right) ~, \\
+        n =& \frac{1}{2 \rho^2} \Bigr( r^2+a^2, \,-\Delta, \,0 , \,a \Bigr) ~, \\
+        m =& \frac{1}{ \sqrt{2} \bar{\rho}^2 } \Bigr( i a \sin\theta, \,0, \,1, \, i \csc\theta \Bigr) ~,
+    \end{split}
+    \label{eq3:kinnerslytetrad}
+\end{align}
+where $\bar{\rho} = r + i a \cos\theta$ and $\rho^2 = \bar{\rho} \bar{\rho}^*$.
+
+The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{\mu\nu[\rho \sigma ; \lambda ]} = 0$, and~\eqref{eq3:maxwellEM}.
+To study GWs, instead of perturbing the background metric, the NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms.
+The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
+
+\subsection{Maxwell equations}
+
+We will focus with more detail on EM perturbations with a fixed background because is a simpler procedure and leads to the same master equation as GW perturbations. In NP formalism, all Maxwell equations, $F_{[\mu\nu ; \rho]}=0$ and~\eqref{eq3:maxwellEM}, reduce respectively to
+\begin{align}
+    F_{[ab \rvert c]} = 0 ~,\qquad \eta^{bc} F_{ab \rvert c} = 0 ~.
+    \label{eq3:maxwellFabEqs}
+\end{align}
+The Mawell tensor $F_{\mu\nu}$ has a total of six components which encodes the vector quantities of the electric and the magnetic fields. We may reduce the equation using three complex NP scalars,
+\begin{align}
+    \begin{split}
+        \phi_0 &= F_{13} = F_{\alpha\beta} l^\alpha m^\beta ~,\qquad
+        \phi_1 = \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} (l^\alpha n^\beta + \bar{m}^\alpha m^\beta) ~,\\
+        \phi_2 &= F_{42} = F_{\alpha\beta} \bar{m}^\alpha n^\beta ~.
+    \end{split}
+    \label{eq3:maxwellNPphi}
+\end{align}
+Considering all posible combinations of NP indices in~\eref{eq3:maxwellFabEqs}, we gather eight equations, double the amount of necessary relations. 
+This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are included in these equations. It is possible to eliminate every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, obtaining the equations
+\begin{subequations}
+    \begin{align}
+        \phi_{2\rvert 1} &= \phi_{1\rvert 4} ~, \label{eq3:phi21phi14}\\
+        \phi_{1\rvert 2} &= \phi_{2\rvert 3} ~, \label{eq3:phi12phi23}\\
+        \phi_{1\rvert 1} &= \phi_{0\rvert 4} ~, \label{eq3:phi11phi04}\\
+        \phi_{0\rvert 2} &= \phi_{1\rvert 3} ~. \label{eq3:phi02phi13}
+    \end{align}
+\end{subequations}
+We may expand explicitly the left-hand side of~\eqref{eq3:phi21phi14},
+\begin{align}
+    \begin{split}
+        \phi_{2\rvert 1} &= \phi_{2, 1} - \eta^{ab}( \gamma_{a41} F_{b2} + \gamma_{a21} F_{4b} ) \\
+        &= \phi_{2, 1} - (\gamma_{241} F_{12} + \gamma_{121} F_{42}) + ( \gamma_{341} F_{42} + \gamma_{421} F_{43} ) \\
+        &= \phi_{2, 1} + 2 F_{42} \left(\frac{\gamma_{341} + \gamma_{211}}{2}\right) + 2 \gamma_{421} \left(\frac{F_{12} + F_{43}}{2}\right) \\
+        &= \mathbbl{D} \phi_2 + 2 \varepsilon \phi_2 - 2 \pi \phi_1 ~,
+    \end{split}
+    \label{eq3:phi21SpinCoef}
+\end{align}
+where we used the antisymmetry of the spin connection, $\gamma_{abc}=-\gamma_{bac}$. The right-hand side yields
+\begin{align}
+    \begin{split}
+        \phi_{1\rvert 4} &= \phi_{1, 4} - \tfrac{1}{2} \eta^{ab}( \gamma_{a14} F_{b2} + \gamma_{a24} F_{1b} + \gamma_{a44} F_{b3} + \gamma_{a34} F_{4b} ) \\
+        &= \phi_{1, 4} - \tfrac{1}{2} ( \gamma_{144} F_{23} + \gamma_{134} F_{42} + \gamma_{214} F_{12} + \gamma_{234} F_{41} ) \\ 
+        &\qquad\qquad + \tfrac{1}{2} ( \gamma_{314} F_{42} + \gamma_{414} F_{42} + \gamma_{324} F_{14} + \gamma_{424} F_{13} ) \\
+        &= \phi_{2, 1} - \gamma_{244} F_{13} + \gamma_{314} F_{42} \\
+        &= \bar{\bbdelta} \phi_1 - \lambda \phi_0 + \tau \phi_2  ~.
+    \end{split}
+    \label{eq3:phi21SpinCoef}
+\end{align}
+The spin coefficients $\varepsilon$, $\pi$, $\lambda$, $\tau$ along with other NP definitions are found in~\aref{AppendixNPSpinCoef}. If we repeat the same expansion for the other Maxwell equations, we gather the set
+\begin{subequations}
+    \begin{align}
+        \label{eq3:phi21phi14SpinCoef}
+        \mathbbl{D} \phi_2 - \bar{\bbdelta} \phi_1 &= -\lambda \phi_0 + 2 \pi \phi_1 + (\varrho - 2 \varepsilon) \phi_2 ~,\\
+        \label{eq3:phi12phi23SpinCoef}
+        \mathbbl{\Delta} \phi_1 - \bbdelta \phi_2 &= \nu \phi_0 - 2 \mu \phi_1 + (2\beta-\tau) \phi_2 ~,\\
+        \label{eq3:phi11phi04SpinCoef}
+        \mathbbl{D} \phi_1 - \bar{\bbdelta} \phi_0 &= (\pi - 2 \alpha) \phi_0 + 2 \varrho \phi_1 - \kappa \phi_2 ~,\\
+        \label{eq3:phi02phi13SpinCoef}
+        \mathbbl{\Delta} \phi_0 - \bbdelta \phi_1 &= (2 \gamma - \mu) \phi_0 - 2 \tau \phi_1 + \sigma \phi_2 ~.
+    \end{align}
+\end{subequations}
+The Kinnersley tetrad guarantees that $\kappa = \sigma = \lambda = \nu = 0$, decoupling all equations above. After substitution of all spin coefficients
+\begin{subequations}
+    \begin{align}
+        \label{eq3:phi21phi14Expand}
+        \left( \mathbbl{D} + \frac{1}{\bar{\rho}^*} \right) \phi_2 &= \left( \bar{\bbdelta} + \frac{2 i a \sin\theta}{\sqrt{2} (\bar{\rho}^*)^2} \right) \phi_2 ~,\\
+        \label{eq3:phi12phi23Expand}
+        \left( \mathbbl{\Delta} - \frac{\Delta}{\rho^2 \bar{\rho}^*} \right) \phi_1 &= \left[ \bbdelta + \frac{1}{\sqrt{2} \bar{\rho}} \left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_2 ~,\\
+        \label{eq3:phi11phi04Expand}
+        \left( \mathbbl{D} + \frac{2}{\bar{\rho}^*} \right) \phi_1 &= \left[ \bar{\bbdelta} + \frac{1}{\sqrt{2} \bar{\rho}^*}\left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_0 ~, \\
+        \label{eq3:phi02phi13Expand}
+        \left[ \mathbbl{\Delta} + \frac{\Delta}{2 \rho^2} \left( \frac{1}{\bar{\rho}^*} - \frac{2(r-M)}{\Delta} \right) \right] \phi_0 &= \left(\bbdelta + \frac{2 i a \sin\theta}{\sqrt{2} \bar{\rho} \bar{\rho}^*}\right) \phi_1  ~.
+    \end{align}
+    \label{eq3:phiAllExpand}
+\end{subequations}
+
+An important consequence of the symmetries of Kerr spacetime allows for a wave decomposition of the form $\phi_0, \phi_1, \phi_2 \sim e^{- i \omega t + i m \varphi}$.
+Therefore, the four differential operators group into radial $(\mathbbl{D}, \mathbbl{\Delta})$ and angular $(\bbdelta, \bar{\bbdelta})$. The procedure for separation of the Maxwell equations can be further simplified by introducing new operators
+\begin{equation}
+    \begin{alignedat}{3}
+        \EuScript{D}_n &= \partial_r - \frac{i \EuScript{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\qquad && \EuScript{D}_n^\dagger = \partial_r + \frac{i \EuScript{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\\
+        \EuScript{L}_n &= \partial_\theta - \EuScript{Q} + n \cot\theta ~,\qquad && \EuScript{L}_n^\dagger = \partial_\theta + \EuScript{Q} + n \cot\theta ~,
+    \end{alignedat}
+\end{equation}
+where we define the functions $\EuScript{K}=(r^2+a^2)\omega - m a$, $\EuScript{Q} = a \omega \sin\theta - m \csc\theta$.
+In this definition, $n$ is a non-negative integer.
+These operators are related to the tetrad by
+\begin{align}
+    \mathbbl{D} = \EuScript{D}_0 ~,\qquad \mathbbl{\Delta} = - \frac{\Delta}{2 \rho^2 }\EuScript{D}^\dagger_0 ~,\qquad \bbdelta = \frac{1}{\sqrt{2} \bar{\rho}} \EuScript{L}^\dagger_0 ~,\qquad \bar\bbdelta = \frac{1}{\sqrt{2} \bar{\rho}^*} \EuScript{L}_0 ~,
+\end{align}
+as a result of the substitutions $\partial_t\rightarrow-i \omega$, $\partial_\varphi\rightarrow i m$.
+We may use the fact that $\EuScript{D}_n$ and $\EuScript{L}_n$ act mostly as radial and angular derivatives, respectively, to deduce the properties
+\begin{subequations}
+    \begin{align}
+        \label{eq3:propDeltaD}
+        \EuScript{D}_n \Delta &= \Delta \EuScript{D}_{n+1} ~, \\[0.15cm]
+        \label{eq3:propSinL}
+        \EuScript{L}_n \sin\theta &= \sin\theta\, \EuScript{L}_{n+1} ~, \\[0.15cm]
+        \label{eq3:propBarRhoD}
+        \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= \frac{1}{(\bar{\rho}^*)^p} \left(\EuScript{D}_n + \frac{q-p}{\bar{\rho}^*} \right) ~, \\[0.15cm]
+        \label{eq3:propBarRhoL}
+        \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= \frac{1}{(\bar{\rho}^*)^p} \left(\EuScript{D}_n + \frac{i (q-p) a \sin\theta}{\bar{\rho}^*} \right) ~, \\[0.15cm]
+        \label{eq3:propCommutLD}
+        \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) &= \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) ~,
+    \end{align}
+\end{subequations}
+for any non-negative integers $p,q,n$, holding also for either $\EuScript{D}^\dagger_n$ or $\EuScript{L}^\dagger_n$.
+
+In order to achieve the separable form, we still need to perform a replacement of the Maxwell NP scalars by new dynamical variables
+\begin{align}
+    \label{eq3:phiBarRhoToPhi}
+    \Phi_0 = \phi_0 ~,\qquad \Phi_1 = \sqrt{2} \bar{\rho}^* \phi_1 ~,\qquad \Phi_2 = 2 (\bar{\rho}^*)^2 \phi_2  ~,
+\end{align}
+and using properties~\eref{eq3:propBarRhoD} and~\eref{eq3:propBarRhoL}, we go from Eqs.~\eref{eq3:phiAllExpand} to
+\begin{subequations}
+    \begin{align}
+        \label{eq3:D0Phi2L0Phi1}
+        \left( \EuScript{D}_0 - \frac{1}{\bar{\rho}^*} \right) \Phi_2 &= \left( \EuScript{L}_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~, \\
+        \label{eq3:Dd0Phi1Ld1Phi2}
+        - \Delta \left( \EuScript{D}^\dagger_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= \left( \EuScript{L}^\dagger_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_2 ~, \\
+        \label{eq3:D0Phi1L1Phi0}
+        \left( \EuScript{D}_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= \left( \EuScript{L}_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_0 ~, \\
+        \label{eq3:Dd1Phi0Ld0Phi1}
+        - \Delta \left( \EuScript{D}^\dagger_1 - \frac{1}{\bar{\rho}^*} \right) \Phi_0 &= \left( \EuScript{L}^\dagger_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~.
+    \end{align}
+    \label{eq3:AllDPhiLPhi}
+\end{subequations}
+
+Now we may use commutatively property~\eref{eq3:propCommutLD} together with~\eref{eq3:propDeltaD} to separate the equations for $\Phi_0$ and $\Phi_2$.
+In order to obtain the first equation, we must first apply the operator $(\EuScript{L}^\dagger_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:D0Phi1L1Phi0} and then use the commutativity relation to substitute~\eqref{eq3:Dd1Phi0Ld0Phi1}.
+Similarly, applying $(\EuScript{L}_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:Dd0Phi1Ld1Phi2} we obtain the final equation.
+Together yield
+\begin{align}
+    \label{eq3:DDLLPhi0}
+    \left[ \Delta \EuScript{D}_1 \EuScript{D}^\dagger_1 + \EuScript{L}^\dagger_0 \EuScript{L}_1 + 2 i \omega (r+i a \cos\theta) \right] \Phi_0 = 0 \\
+    \label{eq3:DDLLPhi2}
+    \left[ \Delta \EuScript{D}^\dagger_0 \EuScript{D}_0 + \EuScript{L}_0 \EuScript{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 = 0 
+\end{align}
+Still, there is another way of combining equations, \emph{i.e} Eq.~\eref{eq3:Dd0Phi1Ld1Phi2} with~\eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two, resulting in
+\begin{align}
+    \label{eq3:LLPhi0DDPhi2}
+    \EuScript{L}_0 \EuScript{L}_1 \Phi_0 &= \EuScript{D}_0 \EuScript{D}_0 \Phi_2 ~,\\
+    \label{eq3:LLPhi2DDPhi0}
+    \EuScript{L}^\dagger_0 \EuScript{L}^\dagger_1 \Phi_2 &= \Delta \EuScript{D}^\dagger_0 \EuScript{D}^\dagger_0 \Delta \Phi_0 ~.
+\end{align}
+These are equally important for studying superradiant phenomena, because both solutions contain the two degrees of freedom of the electromagnetic field. The first set allows for analytical/numerical solution, while the second set of equations relates the boundary conditions.
+
+Eqs
+
+% \begin{align}
+%     \Delta \left( \EuScript{D}_1  + \frac{1}{\bar{\rho}^*} \right) \left( \EuScript{D}^\dagger_1  - \frac{1}{\bar{\rho}^*} \right) = \Delta \EuScript{D}_1 \EuScript{D}^\dagger_1 + \frac{2 i \EuScript{K}}{\bar{\rho}^*} ~, \\
+%     \left( \EuScript{L}^\dagger_0  + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \left( \EuScript{L}_1  - \frac{i a \sin\theta}{\bar{\rho}^*} \right) = \EuScript{L}^\dagger_0 \EuScript{L}_1 - \frac{2 i a \sin\theta \EuScript{Q}}{\bar{\rho}^*}
+% \end{align}
+
+\subsection{Angular and radial separation}
+
+
 
 \section{Spin-Weighted Spheroidal Harmonics}
 
-\section{Asymptotic radial solution}
+\section{Analytic radial expansions}
 
 \section{Amplification factor $Z_{slm}$}
 

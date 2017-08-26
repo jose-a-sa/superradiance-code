@@ -41,9 +41,13 @@ We can then substitute the manifold metric for the tetrad ``metric''
 \begin{align}
     \eta_{ab} = e_a \cdot e_b = g_{\mu\nu} (e_a)^\mu (e_b)^\nu ~,
 \end{align}
-which can be used for raising/lowering tetrad indices and to contract tetrad components,
+which can be used for raising/lowering tetrad indices,
 \begin{align}
-    A^a = \eta^{ab} A_b ~.
+    A^a = \eta^{ab} A_b ~,
+\end{align}
+and to contract tetrad components, such as $\eta_{ab} A^a A^b = A^2$. This implies that we may return to the original metric using 
+\begin{align}
+    g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu ~.
 \end{align}
 By analyzing the underlying symmetries of spacetime, one may choose a basis makes the components of $\eta_{ab}$ constant, which is particularly important for the NP formalism.
 Going forward, we will assume that this is the case.
@@ -56,7 +60,7 @@ The analogy with the coordinate basics breaks when applying the a directional de
     A_{a,b} = (e_b)^\nu \partial_\nu A_{a} = (e_b)^\nu \nabla_\nu \left[ (e_a)^\mu A_\mu \right] = (e_a)^\mu (e_b)^\nu A_{\mu ; \nu} + (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu A^c ~,
     \label{eqA:PartialbAa}
 \end{align}
-due to extra terms resultant of the tetrad derivatives. Tetrad decompositions, $A^a$, are scalars and must not be mistaken as vector fields such as $(e_a)^\mu$ or $A^\mu$. These terms can be written using the spin connection
+due to extra terms resultant of the tetrad derivatives. Tetrad decompositions, $A^a$, are scalars and must not be mistaken as vector fields such as $(e_a)^\mu$ or $A^\mu$. These extra terms can be written using the spin connection
 \begin{align}
     \gamma_{cab} = (e_c)^\mu (e_a)_{\mu;\nu} (e_b){}^\nu ~,
 \end{align}  
@@ -70,11 +74,14 @@ Nonetheless, this only holds if $\eta_{ab}$ is constant, otherwise we would have
 The other term is called the \emph{intrinsic} derivative of $A_a$ in the direction of $e_b$, being defined as the projection of the tensor $A_{\mu;\nu}$ in the tetrad frame,
 \begin{align}
     A_{a\rvert  b} = (e_a)^\mu (e_b){}^\nu A_{\mu;\nu}
+    \label{eqA:intrinsicDerA}
 \end{align}
 If we have a higher rank tensor, $F_{\mu\nu}$, we can generalize the intrinsic derivative inverting~\eqref{eqA:PartialbAa} and generalizing for multiple indices with the use of the spin connection,
 \begin{align}
     F_{ab\rvert c} = F_{ab,c} - \eta^{nm} ( F_{nb} \gamma_{mac} + F_{an} \gamma_{mbc}) ~.
 \end{align}
 
-Obviously, the spin connection replaces the Christoper symbols, $\Gamma^\rho_{\mu\nu}$, in the tetrad formalism. 
-We generally need $\tfrac{1}{2} d^2(d+1)$ computations to fully define the latter, while the spin connection has $\tfrac{1}{2} d^2(d-1)$ independent components. For $d=4$, the use of the spin connection implies $16$ components less to work with.
+Obviously, the spin connection replaces the Christoper symbols, $\Gamma^\rho_{\mu\nu}$, in the tetrad formalism, although they are fundamentally different.
+We will avoid the computation of the Christoper symbols because every equation involving a covariant derivative will become an intrinsic derivative in NP formalism due to tetrad projections. 
+This will become useful during calculations as we generally need $\tfrac{1}{2} d^2(d+1)$ computations to fully define the latter, while the spin connection has $\tfrac{1}{2} d^2(d-1)$ independent components.
+For $d=4$, the use of the spin connection implies $16$ components less to work with.

@@ -3,12 +3,23 @@
 \chapter{Additional Newman-Penrose definitions and computations} % Main chapter title
 \label{AppendixNPFormalism}
 
-In this appendix we will present important computations using NP formalism in Kerr background using the Kinnersley tetrad defined in~\eref{eq2:kinnerslytetrad}.
+In this appendix we will present important computations of NP formalism in Kerr background~\eref{eq2:KerrBL}, using the Kinnersley tetrad defined in~\eref{eq3:kinnerslytetrad}.
+We will find useful in the one form conversion from the Kinnersley vectors, $(e_a)^\flat = (e_a)_\mu \dd x^\mu$,
+\begin{align}
+    \begin{split}
+        l^\flat =& \frac{1}{\Delta} \Bigr(\Delta, -\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
+        n^\flat =& \frac{1}{2 \rho^2} \Bigr(\Delta, \,\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
+        m^\flat =& \frac{1}{ \sqrt{2} \bar{\rho} } \Bigr( i a \sin\theta, \,0, -\rho^2, - i (r^2+a^2) \sin\theta \Bigr) ~,
+    \end{split}
+\end{align}
+where $\Delta=r^2-2 M r + a^2$, $~\bar{\rho} = r + i a \cos\theta$, $~\rho^2 = \bar{\rho} \bar{\rho}^*$.
 
 \section{Spin coefficients}
 \label{AppendixNPSpinCoef}
 
-The spin connection has $24$ components due to the antisymmetry of the two tetrad indices. These are designated using $12$ complex variables,
+The spin connection is defined as the covariant derivative of the tetrad field projected onto the tetrad frame. 
+For example, we write $\gamma_{412} = \bar{m}^\mu l_{\mu;\nu} n^\nu =  \bar{m}^\mu n^\nu \nabla_\nu l_{\mu} = \bar{m}^\mu \mathbbl{\Delta} l_\mu$.
+It has $24$ components due to the antisymmetry of the first tetrad indices. These can be encapsulated using $12$ complex variables,
 \begin{equation}
     \begin{alignedat}{4}
         \kappa  =& \gamma_{311} ~,\qquad \varrho =& \gamma_{314} ~,\qquad \varepsilon =& \tfrac{1}{2} (\gamma_{211} + \gamma_{341}) ~, \\
@@ -17,3 +28,32 @@ The spin connection has $24$ components due to the antisymmetry of the two tetra
         \nu     =& \gamma_{311} ~,\qquad \pi     =& \gamma_{241} ~,\qquad \beta       =& \tfrac{1}{2} (\gamma_{213} + \gamma_{343}) ~.
     \end{alignedat}
 \end{equation}
+
+The computation of these coefficients can be done without computation of the Christopher symbols associated with the covariant derivative.
+This is cleverly avoided by observing that for any torsion-free connection $(e_b)_{[\mu;\nu]} = (e_b)_{[\mu,\nu]}$, therefore we define
+\begin{align}
+    \lambda_{abc} = (e_a)^\mu (e_c)^\nu \left[ (e_b)_{\mu,\nu} - (e_b)_{\nu,\mu} \right]~.
+\end{align}
+The computation of the various spin coefficients can be easily performed noticing that $\lambda_{abc} = \gamma_{abc} - \gamma_{cba}$, which can be inverted to
+\begin{align}
+    \gamma_{abc} = \frac{1}{2} \left( \lambda_{abc} + \lambda_{cab} - \lambda_{bca} \right) ~.
+\end{align}
+All relevant non-vanishing $\lambda$-symbols can be computed by coordinate derivatives on the one-form basis,
+\begin{equation}
+    \begin{alignedat}{3}
+        \lambda_{122} =& -\frac{1}{\rho^4} \left[ (r-M) \rho^2 - r \Delta \right] ~,\qquad && \lambda_{314} = - \frac{2 i a \cos\theta}{\rho^2} ~, \\
+        \lambda_{132} =& \frac{i \sqrt{2} a r \sin\theta}{\rho^2 \bar{\rho}} ~,\qquad && \lambda_{324} = - \frac{i a \Delta \cos\theta}{\rho^4}~, \\
+        \lambda_{213} =& -\frac{\sqrt{2} a^2 \cos\theta \sin\theta }{\rho^2 \bar{\rho}} ~,\qquad && \lambda_{334} = \frac{(i a + r \cos\theta ) \csc\theta }{\sqrt{2} \bar{\rho}^2} ~, \\
+        \lambda_{243} =& -\frac{\Delta}{2 \rho^2 \bar{\rho}} ~,\qquad && \lambda_{341} = - \frac{1}{ \bar{\rho}} ~.
+    \end{alignedat}
+\end{equation}
+All other necessary symbols may be found by the symmetry $\lambda_{abc}=-\lambda_{cba}$ or by complex conjugation ($3 \rightleftarrows 4$). For example, for computing the coefficient $\mu$, we need to use the relation $\lambda_{432}=-\lambda_{234}=-(\lambda_{234})^*$.
+Assembling all symbols, we obtain
+\begin{align}
+    \begin{split}
+        \kappa = \sigma &= \lambda = \nu = 0  ~, \\[0.15cm]
+        \varrho = - \frac{1}{\bar{\rho}}  ~,\qquad \mu = - \frac{\Delta}{ 2 \rho^2 \bar{\rho}^*}  ~,&\qquad \tau = - \frac{i a \sin\theta}{\sqrt{2} \rho^2}  ~,\qquad \pi = \frac{i a \sin\theta}{\sqrt{2} (\bar{\rho}^*)^2}  ~, \\[0.15cm]
+        \varepsilon = 0  ~,\qquad \gamma = \mu + \frac{r-M}{2 \rho^2}  &~,\qquad \alpha = \pi-\beta^* ~,\qquad \beta = \frac{\cot\theta}{2 \sqrt{2} \bar{\rho} }  ~.
+    \end{split}
+\end{align}
+
