@@ -8,31 +8,45 @@
 
 \documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
 
-\usepackage{pdfpages}
-
-\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
-
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
 
 
-%%% FONT PACKAGES
-\usepackage[bbgreekl]{mathbbol}
-\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
-\DeclareSymbolFontAlphabet{\mathbbl}{bbold}
+%%% FILE RELATED
+\usepackage{pdfpages}
 
-\usepackage{euscript}
+\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
 
+
+%%% FONTS
 % - fourier
 % - mathpazo ( palatino for Computer Modern on math )
 \usepackage{mathpazo}
 \setstretch{1.5}
 
-\usepackage{subcaption}
-\usepackage{float}
+\DeclareSymbolFont{cmletters}{OT1}{cmr}{m}{n}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{cmletters}{"7}
+
+\usepackage[bbgreekl]{mathbbol}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\DeclareSymbolFontAlphabet{\mathbbl}{bbold}
+
+\usepackage[mathscr]{euscript}
+
+\newcommand{\lambdabar}{{\mkern 0.0mu\lambda\mkern -8.2mu\mathchar '26\mkern 2mu}}
+
+%%% MATH
 \usepackage{xfrac}
 \usepackage{bm}
+\usepackage{stackrel}
 
+
+%%% GRAPHICS
+\usepackage{subcaption}
+\usepackage{float}
+
+
+%%% MISC
 \usepackage{lipsum}
 
 

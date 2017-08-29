@@ -64,10 +64,10 @@ As a result, in NP formalism the Weyl tensor can be represented by five complex 
 \end{align}
 The complex conjugates can be obtained by doing the replacement $3 \rightleftarrows 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. 
 Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$. 
-It is clear that the values these five complex scalars take is completely dependent on the choice of tetrad frame. 
+It is clear that the values that these five complex scalars take is completely dependent on the choice of tetrad frame. 
 
 BH solutions are ``type D'' spacetimes according to Petrov's classification, which was a major restriction necessary to the discovery of Kerr's metric.
-For BH spacetimes it is possible to find two doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $l$ and $n$~\cite{Chandrasekhar1998}.
+For these spacetimes it is possible to find two different doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $l$ and $n$~\cite{Chandrasekhar1998}.
 These yield
 \begin{align}
     C_{\mu\alpha\beta[\nu} l_{\rho]} l^\alpha l^\beta = 0 ~, \qquad C_{\mu\alpha\beta[\nu} l_{\rho]} n^\alpha n^\beta = 0  ~.
@@ -92,13 +92,15 @@ Kinnersly solved type D vaccum field equations~\cite{Kinnersley1969}, finding a 
 \end{align}
 where $\bar{\rho} = r + i a \cos\theta$ and $\rho^2 = \bar{\rho} \bar{\rho}^*$.
 
-The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{\mu\nu[\rho \sigma ; \lambda ]} = 0$, and~\eqref{eq3:maxwellEM}.
+The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{\mu\nu[\rho \sigma ; \lambda ]} = 0$, and~\eqref{eq2:maxwellEM}.
 To study GWs, instead of perturbing the background metric, the NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms.
 The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
 
 \subsection{Maxwell equations}
 
-We will focus with more detail on EM perturbations with a fixed background because is a simpler procedure and leads to the same master equation as GW perturbations. In NP formalism, all Maxwell equations, $F_{[\mu\nu ; \rho]}=0$ and~\eqref{eq3:maxwellEM}, reduce respectively to
+We focus with more detail on EM perturbations with a fixed background because is a simpler procedure and then we will tie with the same master equation that also describes GW perturbations. 
+
+In NP formalism, all Maxwell equations, $F_{[\mu\nu ; \rho]}=0$ and~\eqref{eq2:maxwellEM}, reduce to
 \begin{align}
     F_{[ab \rvert c]} = 0 ~,\qquad \eta^{bc} F_{ab \rvert c} = 0 ~.
     \label{eq3:maxwellFabEqs}
@@ -113,7 +115,7 @@ The Mawell tensor $F_{\mu\nu}$ has a total of six components which encodes the v
     \label{eq3:maxwellNPphi}
 \end{align}
 Considering all posible combinations of NP indices in~\eref{eq3:maxwellFabEqs}, we gather eight equations, double the amount of necessary relations. 
-This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are included in these equations. It is possible to eliminate every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, obtaining the equations
+This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are coupled in these equations. Eliminating every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, 
 \begin{subequations}
     \begin{align}
         \phi_{2\rvert 1} &= \phi_{1\rvert 4} ~, \label{eq3:phi21phi14}\\
@@ -156,17 +158,21 @@ The spin coefficients $\varepsilon$, $\pi$, $\lambda$, $\tau$ along with other N
         \mathbbl{\Delta} \phi_0 - \bbdelta \phi_1 &= (2 \gamma - \mu) \phi_0 - 2 \tau \phi_1 + \sigma \phi_2 ~.
     \end{align}
 \end{subequations}
-The Kinnersley tetrad guarantees that $\kappa = \sigma = \lambda = \nu = 0$, decoupling all equations above. After substitution of all spin coefficients
+The Kinnersley tetrad guarantees that $\kappa = \sigma = \lambda = \nu = 0$, decoupling all equations above. After substitution of all spin coefficients,
 \begin{subequations}
     \begin{align}
         \label{eq3:phi21phi14Expand}
-        \left( \mathbbl{D} + \frac{1}{\bar{\rho}^*} \right) \phi_2 &= \left( \bar{\bbdelta} + \frac{2 i a \sin\theta}{\sqrt{2} (\bar{\rho}^*)^2} \right) \phi_2 ~,\\
+        \left( \mathbbl{D} + \frac{1}{\bar{\rho}^*} \right) \phi_2 &= 
+        \left( \bar{\bbdelta} + \frac{2 i a \sin\theta}{\sqrt{2} (\bar{\rho}^*)^2} \right) \phi_2 ~,\\
         \label{eq3:phi12phi23Expand}
-        \left( \mathbbl{\Delta} - \frac{\Delta}{\rho^2 \bar{\rho}^*} \right) \phi_1 &= \left[ \bbdelta + \frac{1}{\sqrt{2} \bar{\rho}} \left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_2 ~,\\
+        \left( \mathbbl{\Delta} - \frac{\Delta}{\rho^2 \bar{\rho}^*} \right) \phi_1 &= 
+        \left[ \bbdelta + \frac{1}{\sqrt{2} \bar{\rho}} \left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_2 ~,\\
         \label{eq3:phi11phi04Expand}
-        \left( \mathbbl{D} + \frac{2}{\bar{\rho}^*} \right) \phi_1 &= \left[ \bar{\bbdelta} + \frac{1}{\sqrt{2} \bar{\rho}^*}\left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_0 ~, \\
+        \left( \mathbbl{D} + \frac{2}{\bar{\rho}^*} \right) \phi_1 &=
+        \left[ \bar{\bbdelta} + \frac{1}{\sqrt{2} \bar{\rho}^*}\left( \cot\theta - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \right] \phi_0 ~, \\
         \label{eq3:phi02phi13Expand}
-        \left[ \mathbbl{\Delta} + \frac{\Delta}{2 \rho^2} \left( \frac{1}{\bar{\rho}^*} - \frac{2(r-M)}{\Delta} \right) \right] \phi_0 &= \left(\bbdelta + \frac{2 i a \sin\theta}{\sqrt{2} \bar{\rho} \bar{\rho}^*}\right) \phi_1  ~.
+        \left[ \mathbbl{\Delta} + \frac{\Delta}{2 \rho^2} \left( \frac{1}{\bar{\rho}^*} - \frac{2(r-M)}{\Delta} \right) \right] \phi_0 &=
+        \left(\bbdelta + \frac{2 i a \sin\theta}{\sqrt{2} \bar{\rho} \bar{\rho}^*}\right) \phi_1  ~.
     \end{align}
     \label{eq3:phiAllExpand}
 \end{subequations}
@@ -175,33 +181,38 @@ An important consequence of the symmetries of Kerr spacetime allows for a wave d
 Therefore, the four differential operators group into radial $(\mathbbl{D}, \mathbbl{\Delta})$ and angular $(\bbdelta, \bar{\bbdelta})$. The procedure for separation of the Maxwell equations can be further simplified by introducing new operators
 \begin{equation}
     \begin{alignedat}{3}
-        \EuScript{D}_n &= \partial_r - \frac{i \EuScript{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\qquad && \EuScript{D}_n^\dagger = \partial_r + \frac{i \EuScript{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\\
-        \EuScript{L}_n &= \partial_\theta - \EuScript{Q} + n \cot\theta ~,\qquad && \EuScript{L}_n^\dagger = \partial_\theta + \EuScript{Q} + n \cot\theta ~,
+        \mathscr{D}_n &= \partial_r - \frac{i \mathscr{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\qquad && \mathscr{D}_n^\dagger = \partial_r + \frac{i \mathscr{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\\
+        \mathscr{L}_n &= \partial_\theta - \mathscr{Q} + n \cot\theta ~,\qquad && \mathscr{L}_n^\dagger = \partial_\theta + \mathscr{Q} + n \cot\theta ~,
     \end{alignedat}
 \end{equation}
-where we define the functions $\EuScript{K}=(r^2+a^2)\omega - m a$, $\EuScript{Q} = a \omega \sin\theta - m \csc\theta$.
+where we define the functions $\mathscr{K}=(r^2+a^2)\omega - m a$, $\mathscr{Q} = a \omega \sin\theta - m \csc\theta$.
 In this definition, $n$ is a non-negative integer.
 These operators are related to the tetrad by
 \begin{align}
-    \mathbbl{D} = \EuScript{D}_0 ~,\qquad \mathbbl{\Delta} = - \frac{\Delta}{2 \rho^2 }\EuScript{D}^\dagger_0 ~,\qquad \bbdelta = \frac{1}{\sqrt{2} \bar{\rho}} \EuScript{L}^\dagger_0 ~,\qquad \bar\bbdelta = \frac{1}{\sqrt{2} \bar{\rho}^*} \EuScript{L}_0 ~,
+    \mathbbl{D} = \mathscr{D}_0 ~,\qquad \mathbbl{\Delta} = - \frac{\Delta}{2 \rho^2 }\mathscr{D}^\dagger_0 ~,\qquad \bbdelta = \frac{1}{\sqrt{2} \bar{\rho}} \mathscr{L}^\dagger_0 ~,\qquad \bar\bbdelta = \frac{1}{\sqrt{2} \bar{\rho}^*} \mathscr{L}_0 ~,
 \end{align}
 as a result of the substitutions $\partial_t\rightarrow-i \omega$, $\partial_\varphi\rightarrow i m$.
-We may use the fact that $\EuScript{D}_n$ and $\EuScript{L}_n$ act mostly as radial and angular derivatives, respectively, to deduce the properties
+We may use the fact that $\mathscr{D}_n$ and $\mathscr{L}_n$ act mostly as radial and angular derivatives, respectively, to deduce the properties
 \begin{subequations}
     \begin{align}
         \label{eq3:propDeltaD}
-        \EuScript{D}_n \Delta &= \Delta \EuScript{D}_{n+1} ~, \\[0.15cm]
+        \mathscr{D}_n \Delta &= \Delta \mathscr{D}_{n+1} ~, \\[0.15cm]
         \label{eq3:propSinL}
-        \EuScript{L}_n \sin\theta &= \sin\theta\, \EuScript{L}_{n+1} ~, \\[0.15cm]
+        \mathscr{L}_n \sin\theta &= \sin\theta\, \mathscr{L}_{n+1} ~, \\[0.15cm]
         \label{eq3:propBarRhoD}
-        \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= \frac{1}{(\bar{\rho}^*)^p} \left(\EuScript{D}_n + \frac{q-p}{\bar{\rho}^*} \right) ~, \\[0.15cm]
+        \left(\mathscr{D}_n + \frac{q}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= 
+        \frac{1}{(\bar{\rho}^*)^p} \left(\mathscr{D}_n + \frac{q-p}{\bar{\rho}^*} \right) ~, \\[0.15cm]
         \label{eq3:propBarRhoL}
-        \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= \frac{1}{(\bar{\rho}^*)^p} \left(\EuScript{D}_n + \frac{i (q-p) a \sin\theta}{\bar{\rho}^*} \right) ~, \\[0.15cm]
+        \left(\mathscr{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) \frac{1}{(\bar{\rho}^*)^p} &= 
+        \frac{1}{(\bar{\rho}^*)^p} \left(\mathscr{L}_n + \frac{i (q-p) a \sin\theta}{\bar{\rho}^*} \right) ~, \\[0.15cm]
         \label{eq3:propCommutLD}
-        \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) &= \left(\EuScript{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) \left(\EuScript{D}_n + \frac{q}{\bar{\rho}^*} \right) ~,
+        \left(\mathscr{D}_n + \frac{q}{\bar{\rho}^*} \right) 
+        \left(\mathscr{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right) &= 
+        \left(\mathscr{L}_n + \frac{i q a \sin\theta}{\bar{\rho}^*} \right)
+        \left(\mathscr{D}_n + \frac{q}{\bar{\rho}^*} \right) ~,
     \end{align}
 \end{subequations}
-for any non-negative integers $p,q,n$, holding also for either $\EuScript{D}^\dagger_n$ or $\EuScript{L}^\dagger_n$.
+for any integers $p,q,n$, holding also for either $\mathscr{D}^\dagger_n$ or $\mathscr{L}^\dagger_n$.
 
 In order to achieve the separable form, we still need to perform a replacement of the Maxwell NP scalars by new dynamical variables
 \begin{align}
@@ -212,50 +223,202 @@ and using properties~\eref{eq3:propBarRhoD} and~\eref{eq3:propBarRhoL}, we go fr
 \begin{subequations}
     \begin{align}
         \label{eq3:D0Phi2L0Phi1}
-        \left( \EuScript{D}_0 - \frac{1}{\bar{\rho}^*} \right) \Phi_2 &= \left( \EuScript{L}_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~, \\
+        \left( \mathscr{D}_0 - \frac{1}{\bar{\rho}^*} \right) \Phi_2 &=
+        \left( \mathscr{L}_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~, \\
         \label{eq3:Dd0Phi1Ld1Phi2}
-        - \Delta \left( \EuScript{D}^\dagger_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= \left( \EuScript{L}^\dagger_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_2 ~, \\
+        \Delta \left( \mathscr{D}^\dagger_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= 
+        -\left( \mathscr{L}^\dagger_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_2 ~, \\
         \label{eq3:D0Phi1L1Phi0}
-        \left( \EuScript{D}_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= \left( \EuScript{L}_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_0 ~, \\
+        \left( \mathscr{D}_0 + \frac{1}{\bar{\rho}^*} \right) \Phi_1 &= 
+        \left( \mathscr{L}_1 - \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_0 ~, \\
         \label{eq3:Dd1Phi0Ld0Phi1}
-        - \Delta \left( \EuScript{D}^\dagger_1 - \frac{1}{\bar{\rho}^*} \right) \Phi_0 &= \left( \EuScript{L}^\dagger_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~.
+        \Delta \left( \mathscr{D}^\dagger_1 - \frac{1}{\bar{\rho}^*} \right) \Phi_0 &= 
+        -\left( \mathscr{L}^\dagger_0 + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \Phi_1 ~.
     \end{align}
     \label{eq3:AllDPhiLPhi}
 \end{subequations}
-
 Now we may use commutatively property~\eref{eq3:propCommutLD} together with~\eref{eq3:propDeltaD} to separate the equations for $\Phi_0$ and $\Phi_2$.
-In order to obtain the first equation, we must first apply the operator $(\EuScript{L}^\dagger_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:D0Phi1L1Phi0} and then use the commutativity relation to substitute~\eqref{eq3:Dd1Phi0Ld0Phi1}.
-Similarly, applying $(\EuScript{L}_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:Dd0Phi1Ld1Phi2} we obtain the final equation.
+In order to obtain the first equation, we must first apply the operator $(\mathscr{L}^\dagger_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:D0Phi1L1Phi0} and then use the commutativity relation to substitute~\eqref{eq3:Dd1Phi0Ld0Phi1}.
+Similarly, applying $(\mathscr{L}_0 + i a \sin\theta/\bar{\rho}^*)$ to~\eqref{eq3:Dd0Phi1Ld1Phi2} we obtain the final equation.
 Together yield
 \begin{align}
     \label{eq3:DDLLPhi0}
-    \left[ \Delta \EuScript{D}_1 \EuScript{D}^\dagger_1 + \EuScript{L}^\dagger_0 \EuScript{L}_1 + 2 i \omega (r+i a \cos\theta) \right] \Phi_0 = 0 \\
+    \left[ \Delta \mathscr{D}_1 \mathscr{D}^\dagger_1 + \mathscr{L}^\dagger_0 \mathscr{L}_1 + 2 i \omega (r+i a \cos\theta) \right] \Phi_0 = 0 ~, \\
     \label{eq3:DDLLPhi2}
-    \left[ \Delta \EuScript{D}^\dagger_0 \EuScript{D}_0 + \EuScript{L}_0 \EuScript{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 = 0 
+    \left[ \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 + \mathscr{L}_0 \mathscr{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 = 0 ~.
 \end{align}
-Still, there is another way of combining equations, \emph{i.e} Eq.~\eref{eq3:Dd0Phi1Ld1Phi2} with~\eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two, resulting in
+Still, there is another way of combining equations, \emph{i.e} Eq.~\eref{eq3:Dd0Phi1Ld1Phi2} with~\eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two form the set
 \begin{align}
     \label{eq3:LLPhi0DDPhi2}
-    \EuScript{L}_0 \EuScript{L}_1 \Phi_0 &= \EuScript{D}_0 \EuScript{D}_0 \Phi_2 ~,\\
+    \mathscr{L}_0 \mathscr{L}_1 \Phi_0 &= \mathscr{D}_0 \mathscr{D}_0 \Phi_2 ~,\\
     \label{eq3:LLPhi2DDPhi0}
-    \EuScript{L}^\dagger_0 \EuScript{L}^\dagger_1 \Phi_2 &= \Delta \EuScript{D}^\dagger_0 \EuScript{D}^\dagger_0 \Delta \Phi_0 ~.
+    \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \Phi_2 &= \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta \Phi_0 ~.
 \end{align}
-These are equally important for studying superradiant phenomena, because both solutions contain the two degrees of freedom of the electromagnetic field. The first set allows for analytical/numerical solution, while the second set of equations relates the boundary conditions.
+Thus, we went from four first-order differential equations relating three NP scalars to four second-order differential equations, two of each decoupled, eliminating the need for the scalar $\Phi_1$.
+The last two equations imply that each one of the complex NP scalars contains all the information necessary to describe a EM wave (two polarizations).
+One may think that we only need one of each group of equations to solve all perturbations, as of today no closed form solution has been found.
+Thus the problem has to be tackled using approximations or numerical methods, recurring to all last four equations.
 
-Eqs
+Due to the nature of the operators $\mathscr{D}_n$ and $\mathscr{L}_n$, we may separate the equations for $\Phi_0 \sim R_{+1}(r) S_{+1}(\theta)$ and $\Phi_2 \sim R_{-1}(r) S_{-1}(\theta)$ into two pairs of equations, 
+\begin{subequations}
+    \begin{align}
+        \label{eq3:separationDDRp}
+        \left(\Delta \mathscr{D}_0 \mathscr{D}^\dagger_0 + 2 i \omega r \right) \Delta R_{+1} 
+        &= \lambdabar \Delta R_{+1} ~, \\
+        \label{eq3:separationLLSp}
+        \left( \mathscr{L}^\dagger_0 \mathscr{L}_1 - 2 a \omega \cos\theta \right) S_{+1}
+        &= - \lambdabar S_{+1}  ~, 
+    \end{align}
+    \label{eq3:separationRSp}
+\end{subequations}
+and
+\begin{subequations}
+    \begin{align}
+        \label{eq3:separationDDRm}
+        \left( \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 - 2 i \omega r \right) R_{-1}
+        &= \lambdabar R_{-1} ~, \\
+        \label{eq3:separationLLSm}
+        \left( \mathscr{L}_0 \mathscr{L}^\dagger_1 + 2 a \omega \cos\theta \right) S_{-1}
+        &= - \lambdabar S_{-1}  ~,
+    \end{align}
+    \label{eq3:separationRSm}
+\end{subequations}
+where $\lambdabar$ is a separation constant.
+We use the property~\eref{eq3:propDeltaD} in to obtain~\eqref{eq3:separationDDRp}.
+The constant $\lambdabar$ must be real, as the angular differential operators $\mathscr{L}_n$ are also real.
+Notice that we not distinguish the separation constants of both equations. Performing the transformation $\theta \rightarrow \pi-\theta$, the angular operators transforms as $\mathscr{L}^\dagger_0 \mathscr{L}_1 \rightarrow \mathscr{L}_0 \mathscr{L}^\dagger_1$. Then if $S_{+1}(\theta)$ is a solution for~\eqref{eq3:separationLLSp} for a given separation constant $\lambdabar$, this implies that $\tilde{S}_{-1}(\theta)=S_{+1}(\pi-\theta)$ is a solution for~\eqref{eq3:separationLLSm} for the same constant. 
+In other words, the separation constant must me the same for both equations. 
+Also, solutions $R_{-1}$ and $\Delta R_{+1}$ obey the same complex conjugate equations due to $\mathscr{D}^\dagger_n=(\mathscr{D}_n)^*$.
 
-% \begin{align}
-%     \Delta \left( \EuScript{D}_1  + \frac{1}{\bar{\rho}^*} \right) \left( \EuScript{D}^\dagger_1  - \frac{1}{\bar{\rho}^*} \right) = \Delta \EuScript{D}_1 \EuScript{D}^\dagger_1 + \frac{2 i \EuScript{K}}{\bar{\rho}^*} ~, \\
-%     \left( \EuScript{L}^\dagger_0  + \frac{i a \sin\theta}{\bar{\rho}^*} \right) \left( \EuScript{L}_1  - \frac{i a \sin\theta}{\bar{\rho}^*} \right) = \EuScript{L}^\dagger_0 \EuScript{L}_1 - \frac{2 i a \sin\theta \EuScript{Q}}{\bar{\rho}^*}
-% \end{align}
+\subsection{Mode decomposition}
 
-\subsection{Angular and radial separation}
+Will be more profitable to study Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2} as a special case of the Teukolsky master equation which describes all the linearized perturbations arround the Kerr geometry.
+The generality of this equation is the primary reason for the focus on the EM case.
+The treatment for GWs differs in the perturbation formalism only in algebraic complexity, resulting in the same master equation.
 
+The general equation reads
+\begin{align}
+    \begin{split}
+        & \frac{1}{\Delta^s} \frac{\partial}{\partial r} \left( \Delta^{s+1} \frac{\partial \Upsilon_s}{\partial r} \right) 
+        + \frac{1}{\sin\theta} \frac{\partial}{\partial\theta} \left( \sin\theta \frac{\partial \Upsilon_s}{\partial \theta} \right) 
+        - \left[ \frac{(r^2+a^2)^2}{\Delta} - a^2 \sin^2\theta \right]\frac{\partial^2 \Upsilon_s}{\partial t^2} \\[0.15cm]
+        - & \frac{4 M a r}{\Delta}\frac{\partial^2 \Upsilon_s}{\partial t \partial \varphi} 
+        - \left( \frac{a^2}{\Delta} -\frac{1}{\sin^2\theta} \right)\frac{\partial^2 \Upsilon_s}{\partial \varphi^2} 
+        + 2s\left[ \frac{M(r^2-a^2)}{\Delta} - r - i a \cos\theta \right] \frac{\partial \Upsilon_s}{\partial t} \\[0.15cm]
+        + & 2s\left[ \frac{a(r-M)}{\Delta}+\frac{i \cos\theta}{\sin^2\theta}\right] \frac{\partial \Upsilon_s}{\partial \varphi}
+        - (s^2 \cot^2\theta - s) \Upsilon_s = 0 ~,
+    \end{split}
+    \label{eq3:teukolsky}
+\end{align}
+where $s$ is the field \emph{spin weight} and each field quantity $\Upsilon_s$ is related to the NP scalars as shown in the~\tref{tb3:solutionsTeukolskyEq}.
+Depending on the spin weight, the equation may describe massless scalar ($s=0$) or Dirac fields ($s=\pm \tfrac{1}{2}$), as well as electromagnetic ($s=\pm 1$) or gravitational waves ($s=\pm 2$).
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{ | c | l | }
+        \hline
+        $s$ & $\qquad ~ \Upsilon_s$ \\
+        \hline\hline
+        $+1$ & $\Phi_0 = \phi_0$ \\
+        \hline
+        $-1$ & $\Phi_2 = 2 (\bar{\rho}^*)^2 \phi_2$ \\
+        \hline
+        $+2$ & $\Psi_0 = \psi_0$  \\
+        \hline
+        $-2$ & $\Psi_4 = 4 (\bar{\rho}^*)^4 \psi_4$ \\
+        \hline
+    \end{tabular}
+    \caption{Performance at peak F-measure}
+    \label{tb3:solutionsTeukolskyEq}
+\end{table}
 
+Clearly, Teukolsky equation is explicitly independent of $t$ and $\varphi$, thus $\Upsilon_s$ accepts a decomposition in $e^{-i \omega t + i m \varphi}$, which we already assumed in the EM case to separate the equations.
+Stationary and axisymmetry of the spacetime geometry guarantees this form.
+The azimuthal wave number $m$ must be an integer, due to periodic boundary conditions on $\varphi$.
+We may separate all perturbations in a completely general mode decomposition
+\begin{align}
+    \Upsilon_s = \sum_{\ell,m,\omega} e^{-i \omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) ~.
+\end{align}
+The integer $\ell$ plays a role in labelling all possible solutions for the eigenvalue problem of both radial and angular equations,
+\begin{align}
+    \label{eq3:teukolskyRadial}
+    \frac{1}{\Delta^s} \frac{\dd}{\dd r} \left( \Delta^{s+1} \frac{\dd\, {}_{s}R_{\ell m}}{\dd r} \right)
+    + \left[ \frac{\mathscr{K}^2 - 2 i s (r-M)\mathscr{K}}{\Delta} + 4 i s \omega r -\mathscr{C}_{s\ell m}  \right] {}_{s}R_{\ell m} = 0 ~, \\[0.15cm]
+    \label{eq3:teukolskyAngular}
+    \frac{1}{\sin\theta} \frac{\dd}{\dd\theta} \left( \sin\theta \frac{\dd\, {}_{s}S_{\ell m}}{\dd \theta} \right)
+    + \left[ a^2 \omega^2 \cos^2\theta - 2 s a \omega \cos\theta - \frac{(m + s \cos\theta)^2}{\sin^2\theta} + s + \mathscr{A}_{s\ell m} \right] {}_{s}S_{\ell m}  = 0~.
+\end{align}
+The radial and angular eigenvalues are related to the separation constant on Eqs.~\eref{eq3:separationRSp} and~\eref{eq3:separationRSm} through
+\begin{align}
+    \mathcal{C}_{s\ell m} + 2 m a \omega = \mathscr{A}_{s\ell m} + a^2 \omega^2 \stackrel[(s=\pm 1)]{}{=} \lambdabar - s(s+1) ~.
+    \label{eq3:relationEVs}
+\end{align}
+Due to the form of the angular equation, the eigenvalues $\mathscr{C}_{s\ell m}$, $\mathscr{A}_{s\ell m}$ as well as the function ${}_{s}S_{\ell m}(\theta)$ depends also on the coupling $a \omega$.
+Clearly, the same does not hold for the radial function ${}_{s}R_{\ell m}(r)$. 
 
 \section{Spin-Weighted Spheroidal Harmonics}
 
+To find the form of the constant $\lambdabar$, we will need to dive into the eigenvalue problem for the angular equation. We may transform the~\eqref{eq3:teukolskyAngular} into a more familiar form using the change of coordinate $z=\cos\theta$ and renaming the BH-wave coupling $c=a \omega$, obtaining
+\begin{align}
+    \frac{\dd}{\dd z} \left[ (1-z^2) \frac{\dd\, {}_{s}S_{\ell m}}{\dd z} \right] + \left[ (c z)^2 - 2 c s z  -\frac{(m + s z)^2}{1 - z^2} + s  + \mathscr{A}_{s\ell m} \right] {}_{s}S_{\ell m} = 0 ~.
+    \label{eq3:swshEq}
+\end{align}
+We may also use freely ${}_{s}S_{\ell m}(\cos\theta) \equiv {}_{s}S_{\ell m}(\theta)$.
+We will consider $c$ real as we are analyzing superradiance of EM waves in the vacuum, although we could generalize the spin-weighted spheroidal harmonic (SWSH) equation to imaginary $c$ values to describe waves in a particular medium.
+
+Spherically symmetric problems such as the hydrogen atom or scalar perturbations in Schwarzschild background allow for a decomposition of wave functions using spherical harmonics $Y_{\ell m}(\theta,\varphi)$.
+By setting $s=0$ and $c=0$ (spherical), then it is clear that solution for~\eqref{eq3:swshEq} are given by the associated Legendre polynomials, $P^m_\ell(z)$, and the therefore it is a generalization of the spherical harmonics, \emph{i.e.}
+\begin{align}
+    e^{i m \varphi} \,{}_{0}S_{\ell m}(0; \theta) = Y_{\ell m}(\theta,\varphi) ~,\qquad \mathscr{A}_{0\ell m}(0) = \ell (\ell + 1) ~,
+\end{align}
+where we explicitly wrote the dependency in the coupling $c$.
+The value of $\ell$ are non-negative integers, with the restriction of $\ell \ge |m|$. 
+Since this generalization must hold for the spherical scalar case, we require that spin-weighted spheroidal harmonics (SWSHs) are normalized for any spin $s$ and coupling $c$,
+\begin{align}
+    \int_{0}^\pi \dd\theta \sin\theta \, | \,{}_{s}S_{\ell m}(\theta) |^2 =
+    \int_{-1}^{1} \dd z  \, | \,{}_{s}S_{\ell m}(z) |^2 = \frac{1}{2\pi} ~.
+\end{align}
+
+\subsection{Eigenvalues}
+
+The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. He worked out the asymptotical and critical behavior of the equation. We observe that equation the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that SWSH is always analytical, he proposed the series expansion at $x=-1$,
+\begin{align}
+    {}_{s}S_{\ell m}(z) = e^{c x} (1+x)^{k_-} (1-x)^{k_+} \sum_{p=0}^\infty a_p (1+x)^p ~,
+\end{align}
+where $k_{\pm} = \tfrac{1}{2}|m \pm s|$.
+The exponential in the ansatz accounts for the large $z$ behavior of the equation.
+
+Substituting the angular equation, we obtain a three-term recurrence relation between the expansion coefficients $a_p$ and the boundary condition at $x=-1$,
+\begin{align}
+    \alpha_p a_{p+1} + \beta_p a_p + \gamma_p a_{p-1} = 0 ~,\qquad
+    \alpha_0 a_1 + \beta_0 a_0 = 0 ~,
+\end{align}
+where
+\begin{align}
+    \begin{split}
+        \alpha_p &= -2 (1 + p) (1 + 2 k_{+} + p) ~,\\
+        \beta_p  &= (k_{-} + k_{+} + p - s) (1 + k_{-} + k_{+} + p + s) \\
+        &\qquad\qquad\qquad - 2 c (1 + 2 k_{-} + 2 p + s) - c^2 - \mathscr{A}_{s\ell m} ~,\\
+        \gamma_p &= 2 c (k_{-} + k_{+} + p + s) ~.
+    \end{split}
+\end{align}
+We may combine the previous relations into a continued fraction
+\begin{align}
+    \beta_0 = \frac{\gamma_1 \alpha_0}{\beta_1 -} \frac{\gamma_2 \alpha_1}{\beta_2 -} \frac{\gamma_3 \alpha_2}{\beta_3 -} \cdots \equiv  \frac{\gamma_1 \alpha_0}{\beta_1 - \frac{\gamma_2 \alpha_1}{\beta_2 - \frac{\gamma_3 \alpha_2}{\beta_3 - \dots}}}  ~.
+\end{align}
+
+\subsection{Eigenfunctions}
+
+
+
+
+
+
+
 \section{Analytic radial expansions}
+
+\subsection{Near horizon approximation}
+\subsection{Assymptotic expansion}
 
 \section{Amplification factor $Z_{slm}$}
 
