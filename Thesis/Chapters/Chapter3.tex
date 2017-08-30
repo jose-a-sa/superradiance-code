@@ -290,11 +290,14 @@ Notice that we not distinguish the separation constants of both equations. Perfo
 In other words, the separation constant must me the same for both equations. 
 Also, solutions $R_{-1}$ and $\Delta R_{+1}$ obey the same complex conjugate equations due to $\mathscr{D}^\dagger_n=(\mathscr{D}_n)^*$.
 
+$\Rightarrow$ Talk about the other two equations. 
+
 \subsection{Mode decomposition}
 
 Will be more profitable to study Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2} as a special case of the Teukolsky master equation which describes all the linearized perturbations arround the Kerr geometry.
 The generality of this equation is the primary reason for the focus on the EM case.
 The treatment for GWs differs in the perturbation formalism only in algebraic complexity, resulting in the same master equation.
+With the Teukolsky master equation we can proceed considering general perturbations, but there are several numerical and analytical details that make EM waves and GWs differ later on.
 
 The general equation reads
 \begin{align}
@@ -311,7 +314,7 @@ The general equation reads
     \label{eq3:teukolsky}
 \end{align}
 where $s$ is the field \emph{spin weight} and each field quantity $\Upsilon_s$ is related to the NP scalars as shown in the~\tref{tb3:solutionsTeukolskyEq}.
-Depending on the spin weight, the equation may describe massless scalar ($s=0$) or Dirac fields ($s=\pm \tfrac{1}{2}$), as well as electromagnetic ($s=\pm 1$) or gravitational waves ($s=\pm 2$).
+Depending on the spin weight, the equation may describe massless scalar ($s=0$) or Dirac fields ($s=\pm \tfrac{1}{2}$), as well as electromagnetic ($s=\pm 1$) or gravitational waves ($s=\pm 2$). Substituting the spin-weight for the EM waves we obtain Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2}.
 \begin{table}[h]
     \centering
     \renewcommand{\arraystretch}{1.25}
@@ -325,16 +328,16 @@ Depending on the spin weight, the equation may describe massless scalar ($s=0$) 
         \hline
         $+2$ & $\Psi_0 = \psi_0$  \\
         \hline
-        $-2$ & $\Psi_4 = 4 (\bar{\rho}^*)^4 \psi_4$ \\
+        $-2$ & $\Psi_4 = (\bar{\rho}^*)^4 \psi_4$ \\
         \hline
     \end{tabular}
     \caption{Performance at peak F-measure}
     \label{tb3:solutionsTeukolskyEq}
 \end{table}
 
-Clearly, Teukolsky equation is explicitly independent of $t$ and $\varphi$, thus $\Upsilon_s$ accepts a decomposition in $e^{-i \omega t + i m \varphi}$, which we already assumed in the EM case to separate the equations.
+Obviously, Teukolsky equation is explicitly independent of $t$ and $\varphi$, thus $\Upsilon_s$ accepts a decomposition in $e^{-i \omega t + i m \varphi}$, which we already assumed in the EM case to separate the equations.
 Stationary and axisymmetry of the spacetime geometry guarantees this form.
-The azimuthal wave number $m$ must be an integer, due to periodic boundary conditions on $\varphi$.
+The azimuthal wave number $m$ must be an integer, due to periodic boundary conditions on the BL coordinate $\varphi$.
 We may separate all perturbations in a completely general mode decomposition
 \begin{align}
     \Upsilon_s = \sum_{\ell,m,\omega} e^{-i \omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) ~.
@@ -343,37 +346,41 @@ The integer $\ell$ plays a role in labelling all possible solutions for the eige
 \begin{align}
     \label{eq3:teukolskyRadial}
     \frac{1}{\Delta^s} \frac{\dd}{\dd r} \left( \Delta^{s+1} \frac{\dd\, {}_{s}R_{\ell m}}{\dd r} \right)
-    + \left[ \frac{\mathscr{K}^2 - 2 i s (r-M)\mathscr{K}}{\Delta} + 4 i s \omega r -\mathscr{C}_{s\ell m}  \right] {}_{s}R_{\ell m} = 0 ~, \\[0.15cm]
+    + \left[ \frac{\mathscr{K}^2 - 2 i s (r-M)\mathscr{K}}{\Delta} + 4 i s \omega r -{}_{s}\mathscr{C}_{\ell m}  \right] {}_{s}R_{\ell m} = 0 ~, \\[0.15cm]
     \label{eq3:teukolskyAngular}
     \frac{1}{\sin\theta} \frac{\dd}{\dd\theta} \left( \sin\theta \frac{\dd\, {}_{s}S_{\ell m}}{\dd \theta} \right)
-    + \left[ a^2 \omega^2 \cos^2\theta - 2 s a \omega \cos\theta - \frac{(m + s \cos\theta)^2}{\sin^2\theta} + s + \mathscr{A}_{s\ell m} \right] {}_{s}S_{\ell m}  = 0~.
+    + \left[ a^2 \omega^2 \cos^2\theta - 2 s a \omega \cos\theta - \frac{(m + s \cos\theta)^2}{\sin^2\theta} + s + {}_{s}\mathscr{A}_{\ell m} \right] {}_{s}S_{\ell m}  = 0~.
 \end{align}
 The radial and angular eigenvalues are related to the separation constant on Eqs.~\eref{eq3:separationRSp} and~\eref{eq3:separationRSm} through
 \begin{align}
-    \mathcal{C}_{s\ell m} + 2 m a \omega = \mathscr{A}_{s\ell m} + a^2 \omega^2 \stackrel[(s=\pm 1)]{}{=} \lambdabar - s(s+1) ~.
+    \mathcal{C}_{s\ell m} + 2 m a \omega = {}_{s}\mathscr{A}_{\ell m} + a^2 \omega^2 \stackrel[(s=\pm 1)]{}{=} \lambdabar - s(s+1) ~.
     \label{eq3:relationEVs}
 \end{align}
-Due to the form of the angular equation, the eigenvalues $\mathscr{C}_{s\ell m}$, $\mathscr{A}_{s\ell m}$ as well as the function ${}_{s}S_{\ell m}(\theta)$ depends also on the coupling $a \omega$.
+Due to the form of the angular equation, the eigenvalues ${}_{s}\mathscr{C}_{\ell m}$, ${}_{s}\mathscr{A}_{\ell m}$ as well as the function ${}_{s}S_{\ell m}(\theta)$ depends also on the coupling $a \omega$.
 Clearly, the same does not hold for the radial function ${}_{s}R_{\ell m}(r)$. 
 
 \section{Spin-Weighted Spheroidal Harmonics}
 
-To find the form of the constant $\lambdabar$, we will need to dive into the eigenvalue problem for the angular equation. We may transform the~\eqref{eq3:teukolskyAngular} into a more familiar form using the change of coordinate $z=\cos\theta$ and renaming the BH-wave coupling $c=a \omega$, obtaining
+To shed some light into the explicit form of $\lambdabar$, we will need to dive into the eigenvalue problem for the angular equation. We may transform the~\eqref{eq3:teukolskyAngular} into a more familiar form using the change of coordinate $z=\cos\theta$ and renaming the BH-wave coupling $c=a \omega$, obtaining
 \begin{align}
-    \frac{\dd}{\dd z} \left[ (1-z^2) \frac{\dd\, {}_{s}S_{\ell m}}{\dd z} \right] + \left[ (c z)^2 - 2 c s z  -\frac{(m + s z)^2}{1 - z^2} + s  + \mathscr{A}_{s\ell m} \right] {}_{s}S_{\ell m} = 0 ~.
+    \frac{\dd}{\dd z} \left[ (1-z^2) \frac{\dd\, {}_{s}S_{\ell m}}{\dd z} \right] + \left[ (c z)^2 - 2 c s z  -\frac{(m + s z)^2}{1 - z^2} + s  + {}_{s}\mathscr{A}_{\ell m} \right] {}_{s}S_{\ell m} = 0 ~.
     \label{eq3:swshEq}
 \end{align}
 We may also use freely ${}_{s}S_{\ell m}(\cos\theta) \equiv {}_{s}S_{\ell m}(\theta)$.
 We will consider $c$ real as we are analyzing superradiance of EM waves in the vacuum, although we could generalize the spin-weighted spheroidal harmonic (SWSH) equation to imaginary $c$ values to describe waves in a particular medium.
 
-Spherically symmetric problems such as the hydrogen atom or scalar perturbations in Schwarzschild background allow for a decomposition of wave functions using spherical harmonics $Y_{\ell m}(\theta,\varphi)$.
+Spherically symmetric problems allow for a decomposition using spherical harmonics $Y_{\ell m}(\theta,\varphi)$ of angular dependent functions with finite boundary conditions.
+These have innumerable applications in physics such as the hydrogen atom or the description of anisotropies in the cosmic microwave background.
 By setting $s=0$ and $c=0$ (spherical), then it is clear that solution for~\eqref{eq3:swshEq} are given by the associated Legendre polynomials, $P^m_\ell(z)$, and the therefore it is a generalization of the spherical harmonics, \emph{i.e.}
 \begin{align}
-    e^{i m \varphi} \,{}_{0}S_{\ell m}(0; \theta) = Y_{\ell m}(\theta,\varphi) ~,\qquad \mathscr{A}_{0\ell m}(0) = \ell (\ell + 1) ~,
+    e^{i m \varphi} \,{}_{0}S_{\ell m}(0; \theta) = Y_{\ell m}(\theta,\varphi) ~,\qquad {}_{0}\mathscr{A}_{\ell m}(0) = \ell (\ell + 1) ~,
 \end{align}
 where we explicitly wrote the dependency in the coupling $c$.
 The value of $\ell$ are non-negative integers, with the restriction of $\ell \ge |m|$. 
-Since this generalization must hold for the spherical scalar case, we require that spin-weighted spheroidal harmonics (SWSHs) are normalized for any spin $s$ and coupling $c$,
+
+Perturbations of any type in Schwarzschild spacetime are described using spin-weighted \emph{spherical} harmonics. The generalization from the $s=0$ case is well studied problem. Due to the shared symmetries with spherical harmonics it is possible to find a closed form for $s\ne0$ harmonics.
+
+Since this generalization must hold for the spherical case, we require that spin-weighted spheroidal harmonics (SWSHs) are normalized for any spin $s$ and coupling $c$,
 \begin{align}
     \int_{0}^\pi \dd\theta \sin\theta \, | \,{}_{s}S_{\ell m}(\theta) |^2 =
     \int_{-1}^{1} \dd z  \, | \,{}_{s}S_{\ell m}(z) |^2 = \frac{1}{2\pi} ~.
@@ -381,14 +388,13 @@ Since this generalization must hold for the spherical scalar case, we require th
 
 \subsection{Eigenvalues}
 
-The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. He worked out the asymptotical and critical behavior of the equation. We observe that equation the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that SWSH is always analytical, he proposed the series expansion at $x=-1$,
+The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. He worked out the asymptotical and critical behavior of the equation. We observe that equation the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that SWSH is everywhere analytical, he proposed the series expansion at $x=-1$,
 \begin{align}
-    {}_{s}S_{\ell m}(z) = e^{c x} (1+x)^{k_-} (1-x)^{k_+} \sum_{p=0}^\infty a_p (1+x)^p ~,
+    {}_{s}S_{\ell m}(z) = e^{c z} (1+z)^{k_-} (1-z)^{k_+} \sum_{p=0}^\infty a_p (1+z)^p ~,
 \end{align}
 where $k_{\pm} = \tfrac{1}{2}|m \pm s|$.
 The exponential in the ansatz accounts for the large $z$ behavior of the equation.
-
-Substituting the angular equation, we obtain a three-term recurrence relation between the expansion coefficients $a_p$ and the boundary condition at $x=-1$,
+Substituting in the angular equation, we obtain a three-term recurrence relation between the expansion coefficients $a_p$ and the boundary condition at $x=-1$,
 \begin{align}
     \alpha_p a_{p+1} + \beta_p a_p + \gamma_p a_{p-1} = 0 ~,\qquad
     \alpha_0 a_1 + \beta_0 a_0 = 0 ~,
@@ -398,14 +404,15 @@ where
     \begin{split}
         \alpha_p &= -2 (1 + p) (1 + 2 k_{+} + p) ~,\\
         \beta_p  &= (k_{-} + k_{+} + p - s) (1 + k_{-} + k_{+} + p + s) \\
-        &\qquad\qquad\qquad - 2 c (1 + 2 k_{-} + 2 p + s) - c^2 - \mathscr{A}_{s\ell m} ~,\\
+        &\qquad\qquad\qquad - 2 c (1 + 2 k_{-} + 2 p + s) - c^2 - {}_{s}\mathscr{A}_{\ell m} ~,\\
         \gamma_p &= 2 c (k_{-} + k_{+} + p + s) ~.
     \end{split}
 \end{align}
-We may combine the previous relations into a continued fraction
+We then find an equation for the eigenvalue ${}_{s}\mathscr{A}_{\ell m}$ with explicit dependence on $m$, $s$ and $c$, by combining the previous relations into a continued fraction,
 \begin{align}
     \beta_0 = \frac{\gamma_1 \alpha_0}{\beta_1 -} \frac{\gamma_2 \alpha_1}{\beta_2 -} \frac{\gamma_3 \alpha_2}{\beta_3 -} \cdots \equiv  \frac{\gamma_1 \alpha_0}{\beta_1 - \frac{\gamma_2 \alpha_1}{\beta_2 - \frac{\gamma_3 \alpha_2}{\beta_3 - \dots}}}  ~.
 \end{align}
+Just like the spherical case, for each fixed $c$, $m$, $s$, will have an infinite set of eigenfunctions each with its corresponding eigenvalue. These eigenvalues are roots 
 
 \subsection{Eigenfunctions}
 
