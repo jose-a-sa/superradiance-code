@@ -39,9 +39,10 @@ For the gravitational case, a straightforward way of obtaining a linearized theo
     g_{\mu\nu} = g_{\mu\nu}{}^B + h_{\mu\nu}{}^P ~,
     \label{eq2:metricBP}
 \end{align}
-keeping only terms with are $\mathcal{O}(h_{\mu\nu}{}^B)$. The indices $B$ and $P$ refer to the background and perturbations, respectively. As a result we are left with a wave equation in the given background. 
+keeping only terms with are $\mathscr{O}(h_{\mu\nu}{}^B)$. The indices $B$ and $P$ refer to the background and perturbations, respectively.
+As a result we are left with a wave equation in the given background. 
 
-Particularly, in this work we will focus on (massless, neutral) electromagnetic waves and perturbations are performed including EM interactions through the Maxwell action
+In this work we will focus on (massless, neutral) electromagnetic waves and perturbations are performed including EM interactions through the Maxwell action
 \begin{align}
     S_{EM} = - \frac{1}{4} \int \dd^4 x \sqrt{-g} \,F_{\alpha\beta} F^{\alpha\beta} ~,
      \label{eq2:actionEM}
@@ -60,7 +61,7 @@ The latter are the Einstein field equations, reflecting the backreaction of the 
 \end{align}
 These equation completely describe the system, but the problem is analytically untreatable, so we will resort to perturbation theory, considering the field $A^\mu$ to be small. 
 This is a very good approximation, as near the gravitational field of stellar-mass BHs is considerably stronger compared with radiation emitted by nearby astrophysical sources.
-As the stress-energy tensor is quadratic in the fields, $T_{\mu\nu}\sim\mathcal{O}(A^2)$, then we can ignore the backreaction and the field equations for the metric $g_{\mu\nu}$ reduce to~\eqref{eq2:vacuumGR}.
+As the stress-energy tensor is quadratic in the fields, $T_{\mu\nu}\sim\mathscr{O}(A^2)$, then we can ignore the backreaction and the field equations for the metric $g_{\mu\nu}$ reduce to~\eqref{eq2:vacuumGR}.
 
 
 \section{Spacetime symmetries}
@@ -70,7 +71,7 @@ Although, at the time it was not known the effect of a slightest amount of angul
 Finding a metric with intrinsic rotation could give insight to such problem. Due to the lack of spherical symmetry, the problem became much harder, and took roughly 50 years after Schwarzschild's discovery to find a metric for a rotating body.
 Imposing symmetries to the final metric was essential to solve the field equation.
 
-If we represent our spacetime and corresponding fields by $(\mathcal{M}, g_{\mu\nu}, \psi)$, then the pullback $f^*$ of the diffeomorphism $f:\mathcal{M}\rightarrow\mathcal{M}$, would give us the same physical system $(\mathcal{M}, f^* g_{\mu\nu}, f^* \psi)$.
+If we represent our spacetime and corresponding fields by $(\mathscr{M}, g_{\mu\nu}, \psi)$, then the pullback $f^*$ of the diffeomorphism $f:\mathscr{M}\rightarrow\mathscr{M}$, would give us the same physical system $(\mathscr{M}, f^* g_{\mu\nu}, f^* \psi)$.
 Since diffeomorphisms are just active coordinate transformations, such concept may raise some confusion, as we don't seam to obtain no new information to work with. 
 Almost all physics theories are coordinate invariant, as is Newtonian mechanics and Special Relativity, but in such theories there is a preferable coordinate system, while the same does not hold true for GR.
 An analogies can be made with the path integral formalism in QFT, where special consideration is taken when summing all field configurations in order to not overcount indistinguishable configurations, as is the case of gauge field theories.
@@ -79,14 +80,14 @@ A similar ambiguity can occur in GR, where two apparently different solutions wh
 Despite the added complexity of Einstein's field equations, it is still possible to find exact nontrivial solutions in a systematic way by considering spacetimes with symmetries with the use of Killing vector fields.
 A vector field $\xi$ that obeys
 \begin{align}
-    \mathcal{L}_\xi  g = 0  
+    \mathscr{L}_\xi  g_{\mu\nu} = 0  
     \label{eq2:killing}
 \end{align}
 is called a Killing field. Locally, this expression reduces to $\nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu = 0$.
 
 A \emph{stationary} solution implies the existence of a Killing vector $k$ that is asymptotically timelike, $k^2>0$, therefore allows us to normalize our vector such that $k^2 \rightarrow 1$. 
 Unlike the case of the static spacetime, a stationary metric does not show invariance under reversal of the time coordinate, which is natural considering a system with angular momentum. 
-Futhermore, a solution is also \emph{axisymmetric}, due to the presence of a asymptotically spacelike Killing field $m$ whose integral curves are closed.
+Futhermore, a solution is also \emph{axisymmetric} if is present a asymptotically spacelike Killing field $m$ whose integral curves are closed.
 A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[k , m] = 0$, \emph{i.e.} rotations along with the axis of symmetry commute with time translations. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
 \begin{align}
     k = \frac{\partial}{\partial t} ~, \qquad m = \frac{\partial}{\partial \varphi} ~.
@@ -94,10 +95,10 @@ A solution is stationary and axisymmetric if both symmetries are present, along 
 \end{align}
 As for direct implication of this choice of chart, components of the metric stay independent of $(t,\varphi)$, in virtue of~\eqref{eq2:killing},
 \begin{align}
-    (\mathcal{L}_m g)_{\mu\nu} = \frac{\partial g_{\mu\nu}}{\partial \varphi} = 0 ~,
+    (\mathscr{L}_m g)_{\mu\nu} = \frac{\partial g_{\mu\nu}}{\partial \varphi} = 0 ~,
     \label{eq2:lieMetricTPhi}
 \end{align}
-with the same holding true for $k$, hence we can write $g_{\alpha\beta} = g_{\alpha\beta}(r,\theta)$. 
+with the same holding true for $k$, hence we can write $g_{\mu\nu} = g_{\mu\nu}(r,\theta)$. 
 
 One of the major applications of Killing vectors is to find conserved charges associated with the motion along a geodesic spanned by field.
 These quantities are defined by taking the geodesics to regions space that are asymptotical flat, where the geometry does not affect the observer.
@@ -107,7 +108,7 @@ This is usually done by evaluating the Komar integrals~\cite{Heusler1996, Wald20
     M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd k^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
     J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd m^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
 \end{align}
-where the usual notation $k^\flat = g(k, \,\cdot\,) = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathcal{M})\to\Omega^{4-p}(\mathcal{M})$ is the Hodge dual map for $p$-forms.
+where the usual notation $k^\flat = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step is assumed~\eref{eq2:tPhiKilling} and~\eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
 According to the widely accepted of \emph{no-hair conjecture}~\cite{Carter1971}, these two quantities completely define a stationary (neutral) BH. 
 
