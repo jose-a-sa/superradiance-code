@@ -78,37 +78,37 @@ An analogies can be made with the path integral formalism in QFT, where special 
 A similar ambiguity can occur in GR, where two apparently different solutions which can be related by a diffeomorphism and are actually ``the same'', so we must be careful when deriving and analyzing any geometries.
 
 Despite the added complexity of Einstein's field equations, it is still possible to find exact nontrivial solutions in a systematic way by considering spacetimes with symmetries with the use of Killing vector fields.
-A vector field $\xi$ that obeys
+A vector field $\bm{\xi}$ that obeys
 \begin{align}
-    \mathscr{L}_\xi  g_{\mu\nu} = 0  
+    \mathscr{L}_{\bm{\xi}} \,g_{\mu\nu} = 0  
     \label{eq2:killing}
 \end{align}
 is called a Killing field. Locally, this expression reduces to $\nabla_\mu \xi_\nu + \nabla_\nu \xi_\mu = 0$.
 
-A \emph{stationary} solution implies the existence of a Killing vector $k$ that is asymptotically timelike, $k^2>0$, therefore allows us to normalize our vector such that $k^2 \rightarrow 1$. 
+A \emph{stationary} solution implies the existence of a Killing vector $\bm{k}$ that is asymptotically timelike, $\bm{k}^2>0$, therefore allows us to normalize our vector such that $\bm{k}^2 \rightarrow 1$. 
 Unlike the case of the static spacetime, a stationary metric does not show invariance under reversal of the time coordinate, which is natural considering a system with angular momentum. 
-Futhermore, a solution is also \emph{axisymmetric} if is present a asymptotically spacelike Killing field $m$ whose integral curves are closed.
-A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[k , m] = 0$, \emph{i.e.} rotations along with the axis of symmetry commute with time translations. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
+Futhermore, a solution is also \emph{axisymmetric} if is present a asymptotically spacelike Killing field $\bm{m}$ whose integral curves are closed.
+A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[\bm{k} , \bm{m}] = 0$, \emph{i.e.} rotations along with the axis of symmetry commute with time translations. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
 \begin{align}
-    k = \frac{\partial}{\partial t} ~, \qquad m = \frac{\partial}{\partial \varphi} ~.
+    \bm{k} = \frac{\partial}{\partial t} ~, \qquad \bm{m} = \frac{\partial}{\partial \varphi} ~.
     \label{eq2:tPhiKilling}
 \end{align}
 As for direct implication of this choice of chart, components of the metric stay independent of $(t,\varphi)$, in virtue of~\eqref{eq2:killing},
 \begin{align}
-    (\mathscr{L}_m g)_{\mu\nu} = \frac{\partial g_{\mu\nu}}{\partial \varphi} = 0 ~,
+    \mathscr{L}_{\bm{m}} \,g_{\mu\nu} = \frac{\partial g_{\mu\nu}}{\partial \varphi} = 0 ~,
     \label{eq2:lieMetricTPhi}
 \end{align}
-with the same holding true for $k$, hence we can write $g_{\mu\nu} = g_{\mu\nu}(r,\theta)$. 
+with the same holding true for $\bm{k}$, hence we can write $g_{\mu\nu} = g_{\mu\nu}(r,\theta)$. 
 
 One of the major applications of Killing vectors is to find conserved charges associated with the motion along a geodesic spanned by field.
 These quantities are defined by taking the geodesics to regions space that are asymptotical flat, where the geometry does not affect the observer.
-In the case of Kerr solution, we have two Killing vectors, $k$ and $m$, which are naturally associated with the total mass $M$ and angular momentum $J$ of the BH, respectively.
+In the case of Kerr solution, we have two Killing vectors, $\bm{k}$ and $\bm{m}$, which are naturally associated with the total mass $M$ and angular momentum $J$ of the BH, respectively.
 This is usually done by evaluating the Komar integrals~\cite{Heusler1996, Wald2010}, which can be written in a covariant way as
 \begin{align}
-    M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd k^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
-    J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd m^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
+    M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd \bm{k}^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
+    J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd \bm{m}^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
 \end{align}
-where the usual notation $k^\flat = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
+where the usual notation $\bm{k}^\flat = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step is assumed~\eref{eq2:tPhiKilling} and~\eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
 According to the widely accepted of \emph{no-hair conjecture}~\cite{Carter1971}, these two quantities completely define a stationary (neutral) BH. 
 
@@ -208,7 +208,7 @@ Considering the problem in hand, the most suitable coordinates for work with the
 \end{align}
 where we define $\Delta=r^2-2 M r + a^2$. In order to show that these corresponds to the same solution, the change of coordinates
 \begin{align}
-    v = t + r_* ~, \qquad \chi = \varphi + \int \frac{a}{\Delta} \dd r ~,
+    \dd v = \dd ( t + r_* ) ~, \qquad \dd \chi = \dd \varphi + \frac{a}{\Delta} \,\dd r ~,
     \label{eq2:InEFtoBL}
 \end{align}
 takes us back to the original Kerr form~\eref{eq2:KerrIngoingEF}.
@@ -222,13 +222,13 @@ Time inversion symmetry is characteristic of static Schwarzschild spacetime, but
 Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\to(-t,-\varphi)$, also known as the \emph{circular condition}, an intuitive notion from physical systems with angular momentum.
 This discrete symmetry eliminates most of the off-diagonal components of the BL metric, $g_{tr} = g_{\varphi r} = g_{t \theta} = g_{\varphi \theta} = 0$, making it the simplest to perform calculations.
 
-Now, to study the possible horizons of Kerr BH, we will consider the one-form $n = \dd r$ that defines normal vectors to constant radial hypersurfaces.
-It is easy to show that $n^2 = g^{rr}$, which implies that $n$ is null when $\Delta=0$, defining horizons at 
+To study the possible horizons of Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp = (g^{\mu\nu} \partial_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
+It is easy to show that $\bm{n}^2 = g^{rr}$, which implies that $\bm{n}$ is null when $\Delta=0$, defining horizons at 
 \begin{align}
     r_\pm = M \pm \sqrt{M^2 - a^2} ~,
     \label{eq2:KerrRadius}
 \end{align}
-singularities at $g_{rr}$ which we know to be removable.
+singularities of $g_{rr}$ which we know to be removable.
 As a consequence, from a static observer a massless particle on an ingoing null geodesic would spiral around the BH for a infinite time, as the coordinate $t\to\infty$, never reaching $r=r_{+}$.
 This surface is the event horizon of the Kerr BH, as it separates two causally disconnected regions of spacetime, \emph{i.e} any information from the inside this surface, will never reach any asymptotic observer. 
 The expression for the event horizon surface also raises limitations for the amount of angular momentum a physical BH can have.
@@ -245,7 +245,7 @@ Despite no information ever escaping the event horizon, it is still possible to 
 Due to this and some other unphysical features (for example, closed timelike curves and instabilities under perturbations), we need only to focus on the region outside the event horizon $r>r_{+}$, since only information on that region is physically reachable from a asymptotic observer point of view.
 
 Event tough most of the Kerr BH basic properties were demonstrated, there is still no result so far showing some kind of rotation.
-First, consider the quantity $\xi\cdot u = \xi_\alpha u^\alpha$, where $u^\alpha$ is the four-velocity and $\xi^\alpha$ is any Killing field. 
+First, consider the quantity $\bm{\xi}\cdot \bm{u} = \xi_\alpha u^\alpha$, where $u^\alpha$ is the four-velocity and $\xi^\alpha$ is any Killing field. 
 Being aware of the geodesic equation, $u^\beta \nabla_\beta u^\alpha = 0$, it is easy to show that this quantity is conserved along geodesics,
 \begin{align}
     u^\beta \nabla_\beta ( \xi_\alpha u^\alpha ) = u^\alpha u^\beta \nabla_\beta \xi_\alpha = \frac{u^\alpha u^\beta }{2} \left( \nabla_\alpha \xi_\beta + \nabla_\beta \xi_\alpha \right) = 0 ~,
@@ -282,23 +282,26 @@ Particularly, at the event horizon, $r=r_+$, one finds that
 \end{align}
 A special linear combination of Killing vector fields,
 \begin{align}
-    \xi = k + \Omega_H m ~,
+    \bm{\xi} = \bm{k} + \Omega_H \,\bm{m} ~,
     \label{eq2:KillingXi}
 \end{align}
-is also a null vector normal to the event horizon, $\xi^\flat=\xi_\alpha \dd x^\alpha \propto \dd r$ and $\xi^2 = 0$ at $r=r_+$, which can be written in BL coordinates as $\xi = \partial_t + \Omega_H \partial_\varphi$.
-Hence, on the outer horizon the integral curves of this vector obey $\xi^\alpha \partial_\alpha (\varphi - \Omega_H t) = 0$, resulting in $\varphi = \Omega_H t + const$.
-Since null geodesics on the horizon follow curves generated by the Killing vector $\xi$, then we say that the BH is ``rotating'' with angular velocity $\Omega_H$.
+is also Killing vector field, but this one is particularly important because it is also a null vector normal to the event horizon, defining it as a Killing horizon of $\bm{\xi}$. Due to the BL chart singularity, the normal vector to radial surfaces, $\bm{n}$, is the zero vector at $r=r_{+}$, but using ingoing EF coordinates we obtain
+\begin{align}
+    \bm{n}_{|r=r_{+}} = \left( g^{rv} \partial_v + g^{rr} \partial_r + g^{r\chi} \partial_\chi \right)_{|r=r_{+}} = - \frac{2 M r_+}{(\rho^2)_{|r=r_+}} \left( \partial_v + \frac{a}{2 M r_+} \partial_\chi \right) \propto \bm{\xi} ~.
+\end{align}
+Since null geodesics on the outer horizon follow curves generated by the Killing vector $\xi$, the integral curves of this vector obey $\xi^\alpha \partial_\alpha (\varphi - \Omega_H t) = 0$, resulting in $\varphi = \Omega_H t + const$.
+Therefore, we say that the BH is ``rotating'' with angular velocity $\Omega_H$.
 
 \section{Ergoregion and the Penrose process}
 
 One of the main characteristic that distinguishes Kerr BHs from other spherical solutions is the existence of a \emph{ergoregion}.
-The surface is characterized when the Killing vector $k^\mu$ becomes spacelike, $k^2=g_{tt}<0$, resulting in the hypersurface boundary
+The surface is characterized when the Killing vector $\bm{k}^\mu$ becomes spacelike, $k^2=g_{tt}<0$, resulting in the hypersurface boundary
 \begin{align}
     r_{\mathrm{ergo}}(\theta) = M + \sqrt{M^2 - a^2 \cos^2\theta} ~.
     \label{eq2:KerrErgo}
 \end{align}
 This region lies outside the event horizon if $a\ne0$, then being defined as $r_+< r < r_{\mathrm{ergo}}(\theta)$.
-Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)$ constant, \emph{i.e.} with tangent vector proportional to $k^\mu$, therefore such observer cannot exist inside because the time Killing vector becomes spacelike, otherwise it would violate causality. We can see that $u^2=g_{\alpha\beta}u^\alpha u^\beta = g_{tt} (u^t)^2 + 2 g_{t\varphi} u^t u^\varphi +  g_{\varphi\varphi} (u^\varphi)^2 > 0$ only occurs when $g_{t\varphi} u^\varphi > 0$, as all other therms are positive. Inside the ergoregion, $g_{t\varphi}>0$, therefore all observers are forced to rotate in the same direction as the BH.
+Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)$ constant, \emph{i.e.} with tangent vector proportional to $k^\mu$, therefore such observer cannot exist inside because the time Killing vector becomes spacelike, otherwise it would violate causality. We can see that $\bm{u}^2=g_{\alpha\beta}u^\alpha u^\beta = g_{tt} (u^t)^2 + 2 g_{t\varphi} u^t u^\varphi +  g_{\varphi\varphi} (u^\varphi)^2 > 0$ only occurs when $g_{t\varphi} u^\varphi > 0$, as all other therms are positive. Inside the ergoregion, $g_{t\varphi}>0$, therefore all observers are forced to rotate in the same direction as the BH.
 
 \begin{figure}[h]
     \centering
@@ -332,7 +335,7 @@ Much like spontaneous pair creation and amplification at discontinuities are rel
 
 Considering a particle with rest mass $\mu$ and four-momentum $p^\alpha = \mu u^\alpha$, we may identify the constant of motion 
 \begin{align}
-    E = k \cdot p = \mu ( g_{tt} p^t + g_{t\varphi} p^\varphi ) ~.
+    E = \bm{k} \cdot \bm{p} = \mu ( g_{tt} p^t + g_{t\varphi} p^\varphi ) ~.
     \label{eq2:PenroseE0}
 \end{align}
 as it's energy measured by a stationary observer at infinity, due to relations~\eref{eq2:geodesicConsts}. As shown above, the Killing vector is asymptotically timelike but is spacelike inside the ergoregion, thus $g_{tt}<0$. For a future-directed geodesic, $p^0 = \mu u^0 > 0$, the energy beyond the ergosurface needs not to be positive. Suppose, by any means, that such particle manages to decay inside the ergoregion into two other, with momenta $p_1$ and $p_2$. Contracting with $k$, implies that $E = E_1+E_2$. Supposing that the first of the particles has negative energy, $E_1<0$, then 
@@ -350,12 +353,22 @@ I can be shown that the particle with negative energy (bounded) must fall into t
     \label{fig2:penroseProcess}
 \end{figure}
 
-To understand the limits of the Penrose process, we use the fact that a stationary observer near the horizon, must follow orbits of $\xi$, given by~\eqref{eq2:KillingXi}. 
-Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $\xi \cdot  p_1 \le 0$. The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delta J = L_1$, where $L_1 = -m \cdot p_1$ is the particle angular momentum. As a result,
+To understand the limits of the Penrose process, we use the fact that a stationary observer near the horizon, must follow orbits of $\bm{\xi}$, given by~\eqref{eq2:KillingXi}. 
+Although a particle may have negative energy as measured from an asymptotic observer, the stationary one at the horizon must measure a positive energy, as both he and the particle must follow the same orbits, which implies that $\bm{\xi} \cdot  \bm{p_1} \le 0$. The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delta J = L_1$, where $L_1 = - \bm{m} \cdot \bm{p_1}$ is the particle angular momentum. As a result,
 \begin{align}
+    \label{eq2:penroseCondition}
     \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
 \end{align}
-which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. For this process to occur (and therefore superradiance), we must have a rotating BH, which is guaranteed to have a ergoregion.
+which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$. Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. 
+
+We can tie the superradiance process with this particle counterpart using a simple and general argument.
+Asymptotically, we may think of waves as a collective of quantum (photons, gravitons, \dots), each carrying $\hbar \omega$ of energy and $\hbar m$ of angular momentum~\cite{Bekenstein1973}, where $m$ labels a mode with definite angular momentum.
+Therefore, when a given quanta is absorbed, the variation of the BH mass and angular momentum is given by
+\begin{align}
+    \label{eq2:spinMassRatio}
+    \delta J = \frac{m}{\omega} \,\delta M ~.
+\end{align}
+Condition for superradiance~\eref{eq1:superradiance} appears explicitly in the second law of BH mechanics~\eref{eq2:penroseCondition}, which guarantees that $\delta M (1 - \Omega_H m /\omega)>0$, \emph{i.e.} confirming energy extraction from the BH when superradiance occurs, while the lack of superradiance increases the mass of the BH.
 
 
 \cleardoublepage

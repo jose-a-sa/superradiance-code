@@ -24,6 +24,7 @@
 \usepackage{mathpazo}
 \setstretch{1.5}
 
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \DeclareSymbolFont{cmletters}{OT1}{cmr}{m}{n}
 \DeclareMathSymbol{\Upsilon}{\mathalpha}{cmletters}{"7}
 
@@ -39,7 +40,7 @@
 \usepackage{xfrac}
 \usepackage{bm}
 \usepackage{stackrel}
-\usepackage{subeqsresume}
+\usepackage{subeqspatch}
 
 %%% GRAPHICS
 \usepackage{subcaption}
@@ -77,8 +78,8 @@
 %	NOTATION VARIABLES
 %----------------------------------------------------------------------------------------
 
-\newcommand{\dd}{\,\mathrm{d}}
-\newcommand{\sts}[3][]{ {}_{#1} #2_{#3} }
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\uu}[3][]{ {}_{#1} #2_{#3} }
 
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
@@ -212,7 +213,7 @@
 	\abbrev{GR}{General Relativity}
 	\abbrev{GW}{Gravitational Wave}
 %	\abbrev{KR}{Kerr-Newman}
-	\abbrev{LIGO}{Laser Interferometric Gravitational Wave Observatory}
+%	\abbrev{LIGO}{Laser Interferometric Gravitational Wave Observatory}
 	\abbrev{NP}{Newman-Penrose}
 %	\abbrev{QM}{Quantum Mechanics}
 %	\abbrev{RN}{Reissner-Nordstr\"{o}m}
