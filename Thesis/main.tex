@@ -6,7 +6,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
+\documentclass[11pt, twoside]{Thesis} % The default font size and one-sided printing (no margin offsets)
 
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
@@ -24,6 +24,7 @@
 \usepackage{mathpazo}
 \setstretch{1.5}
 
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \DeclareSymbolFont{cmletters}{OT1}{cmr}{m}{n}
 \DeclareMathSymbol{\Upsilon}{\mathalpha}{cmletters}{"7}
 
@@ -39,7 +40,7 @@
 \usepackage{xfrac}
 \usepackage{bm}
 \usepackage{stackrel}
-\usepackage{subeqsresume}
+\usepackage{subeqspatch}
 
 %%% GRAPHICS
 \usepackage{subcaption}
@@ -77,8 +78,8 @@
 %	NOTATION VARIABLES
 %----------------------------------------------------------------------------------------
 
-\newcommand{\dd}{\,\mathrm{d}}
-\newcommand{\sts}[3][]{ {}_{#1} #2_{#3} }
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\uu}[3][]{ {}_{#1} #2_{#3} }
 
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
@@ -212,7 +213,7 @@
 	\abbrev{GR}{General Relativity}
 	\abbrev{GW}{Gravitational Wave}
 %	\abbrev{KR}{Kerr-Newman}
-	\abbrev{LIGO}{Laser Interferometric Gravitational Wave Observatory}
+%	\abbrev{LIGO}{Laser Interferometric Gravitational Wave Observatory}
 	\abbrev{NP}{Newman-Penrose}
 %	\abbrev{QM}{Quantum Mechanics}
 %	\abbrev{RN}{Reissner-Nordstr\"{o}m}

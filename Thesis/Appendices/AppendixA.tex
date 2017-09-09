@@ -9,16 +9,16 @@
 
 The standard way of expressing quantities in GR was to use a local coordinate basis. This corresponds to use
 \begin{align}
-   \frac{\partial}{\partial x^\mu} \qquad (x^\mu = t, r, \theta, \varphi)
+    \bm{e}_\mu = \frac{\partial}{\partial x^\mu} \qquad (x^\mu = t, r, \theta, \varphi)
 \end{align}
 as our vector basis. One-form basis can be defined the usual way. The tetrad formalism allows for an alternative choice of a \emph{noncoordinate} basis, by introducing a set of linear independent four-vectors, 
 \begin{align}
-    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~.
+    \bm{e}_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~.
 \end{align}
 We will use Greek alphabet ($\alpha,\beta,\gamma,\dots$) for the coordinate components and the Latin alphabet ($a,b,c,\dots$) for the tetrad components.
 The tetrad fields also defined directional derivatives, for example for any scalar field $f$
 \begin{align}
-    f_{, a} = e_a ( f ) = (e_a)^\mu \frac{\partial f}{\partial x^\mu} =  (e_a)^\mu f_{,  \mu}  ~.
+    f_{, a} = \bm{e}_a ( f ) = (e_a)^\mu \frac{\partial f}{\partial x^\mu} =  (e_a)^\mu f_{,  \mu}  ~.
 \end{align}
 
 However, this formalism must not be mistaken with as change of coordinates, $y=\phi(x)$, such that $(e_a)^\mu = \partial x^\mu / \partial y^a$, since those coordinates may not exist.
@@ -34,18 +34,18 @@ We may invert this expression, by defining the inverse tetrad, $(e^a)_\mu$, such
 \end{align}
 hence invariant quantities remain unchanged,
 \begin{align}
-    A^2 = A^\mu A_\mu = A^a (e_a)^\mu \, A_b (e^b)_\mu = A^a A_a~.
+    \bm{A}^2 = A^\mu A_\mu = A^a (e_a)^\mu \, A_b (e^b)_\mu = A^a A_a~.
 \end{align}
 
 We can then substitute the manifold metric for the tetrad ``metric''
 \begin{align}
-    \eta_{ab} = e_a \cdot e_b = g_{\mu\nu} (e_a)^\mu (e_b)^\nu ~,
+    \eta_{ab} = \bm{e}_a \cdot \bm{e}_b = g_{\mu\nu} (e_a)^\mu (e_b)^\nu ~,
 \end{align}
 which can be used for raising/lowering tetrad indices,
 \begin{align}
     A^a = \eta^{ab} A_b ~,
 \end{align}
-and to contract tetrad components, such as $\eta_{ab} A^a A^b = A^2$. This implies that we may return to the original metric using 
+and to contract tetrad components, such as $\eta_{ab} A^a A^b = \bm{A}^2$. This implies that we may return to the original metric using 
 \begin{align}
     g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu ~.
 \end{align}

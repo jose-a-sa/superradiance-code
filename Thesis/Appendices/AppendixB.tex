@@ -4,12 +4,12 @@
 \label{AppendixNPFormalism}
 
 In this appendix we will present important computations of NP formalism in Kerr background~\eref{eq2:KerrBL}, using the Kinnersley tetrad defined in~\eref{eq3:kinnerslytetrad}.
-We will find useful in the one form conversion from the Kinnersley vectors, $(e_a)^\flat = (e_a)_\mu \dd x^\mu$,
+We will find useful in the one form conversion from the Kinnersley vectors, $(\bm{e}_a)^\flat = (e_a)_\mu \dd x^\mu$,
 \begin{align}
     \begin{split}
-        l^\flat =& \frac{1}{\Delta} \Bigr(\Delta, -\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
-        n^\flat =& \frac{1}{2 \rho^2} \Bigr(\Delta, \,\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
-        m^\flat =& \frac{1}{ \sqrt{2} \bar{\rho} } \Bigr( i a \sin\theta, \,0, -\rho^2, - i (r^2+a^2) \sin\theta \Bigr) ~,
+        \bm{\mathfrak{l}}^\flat =& \frac{1}{\Delta} \Bigr(\Delta, -\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
+        \bm{\mathfrak{n}}^\flat =& \frac{1}{2 \rho^2} \Bigr(\Delta, \,\rho^2, \,0, -a \Delta \sin^2\theta \Bigr) ~, \\
+        \bm{\mathfrak{m}}^\flat =& \frac{1}{ \sqrt{2} \bar{\rho} } \Bigr( i a \sin\theta, \,0, -\rho^2, - i (r^2+a^2) \sin\theta \Bigr) ~,
     \end{split}
 \end{align}
 where $\Delta=r^2-2 M r + a^2$, $~\bar{\rho} = r + i a \cos\theta$, $~\rho^2 = \bar{\rho} \bar{\rho}^*$.
@@ -18,7 +18,7 @@ where $\Delta=r^2-2 M r + a^2$, $~\bar{\rho} = r + i a \cos\theta$, $~\rho^2 = \
 \label{AppendixNPSpinCoef}
 
 The spin connection is defined as the covariant derivative of the tetrad field projected onto the tetrad frame. 
-For example, we write $\gamma_{412} = \bar{m}^\mu l_{\mu;\nu} n^\nu =  \bar{m}^\mu n^\nu \nabla_\nu l_{\mu} = \bar{m}^\mu \mathbbl{\Delta} l_\mu$.
+For example, we write $\gamma_{412} = \bar{\mathfrak{m}}^\mu \mathfrak{l}_{\mu;\nu} \mathfrak{n}^\nu =  \bar{\mathfrak{m}}^\mu \mathfrak{n}^\nu \nabla_\nu \mathfrak{l}_{\mu} = \bar{\mathfrak{m}}^\mu \mathbbl{\Delta} \mathfrak{l}_\mu$.
 It has $24$ components due to the antisymmetry of the first tetrad indices. These can be encapsulated using $12$ complex variables,
 \begin{equation}
     \begin{alignedat}{4}

@@ -10,32 +10,32 @@ Study of gravitational and electromagnetic perturbations in a BH background were
 Fortunately, the NP formalism~\cite{Newman1962} provides an alternative method of studying perturbations.
 Results as a natural introduction of spinor techniques into GR, after the choice of a null complex tetrad basis,
 \begin{align}
-    e_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~,
+    \bm{e}_a = (e_a)^\mu \frac{\partial}{\partial x^\mu} \qquad (a = 1, 2, 3, 4) ~,
 \end{align}
 where all quantities will be projected, \emph{i.e.} for the Weyl tensor we define
 \begin{align}
-    C_{abcd} =  (e_a)^\alpha  (e_b)^\beta  (e_c)^\gamma  (e_d)^\delta  C_{\alpha\beta\gamma\delta} ~.
+    C_{abcd} =  (e_a)^\alpha \,(e_b)^\beta \,(e_c)^\gamma \,(e_d)^\delta \,C_{\alpha\beta\gamma\delta} ~.
 \end{align}
-Penrose believed that the light-cone was the essential element of the spacetime, thus it was of importance to find null directions. The basis consisted in two real vectors, $l$ and $n$, and two complex conjugate vectors $m$ and $\bar{m}$. Besides satisfying
+Penrose believed that the light-cone was the essential element of the spacetime, thus it was of importance to find null directions. The basis consisted in two real vectors, $\bm{\mathfrak{l}}$ and $\bm{\mathfrak{n}}$, and two complex conjugate vectors $\bm{\mathfrak{m}}$ and $\bar{\bm{\mathfrak{m}}}$. Besides satisfying
 \begin{align}
-    l^2 = n^2 = m^2 = \bar{m}^2 = 0 ~,
+    \bm{\mathfrak{l}}^2 = \bm{\mathfrak{n}}^2 = \bm{\mathfrak{m}}^2 = \bar{\bm{\mathfrak{m}}}^2 = 0 ~,
 \end{align}
 orthogonality conditions of NP formalism require
 \begin{align}
-    l \cdot m = l \cdot \bar{m} = n \cdot m = n \cdot \bar{m} = 0 ~.
+   \bm{\mathfrak{l}} \cdot \bm{\mathfrak{m}} = \bm{\mathfrak{l}} \cdot \bar{\bm{\mathfrak{m}}} = \bm{\mathfrak{n}} \cdot \bm{\mathfrak{m}} = \bm{\mathfrak{n}} \cdot \bar{\bm{\mathfrak{m}}} = 0 ~.
 \end{align}
 Still we are left with the ambiguity raised by multiplication of scalar functions to each vector, therefore its customary to impose normalization conditions to the basis,
 \begin{align}
-    l \cdot n = 1 ~, \qquad m \cdot \bar{m} = -1 ~.
+    \bm{\mathfrak{l}} \cdot \bm{\mathfrak{n}} = 1 ~, \qquad \bm{\mathfrak{m}} \cdot \bar{\bm{\mathfrak{m}}} = -1 ~.
 \end{align}
-This formalism is a special case of tetrad calculus, where we can identify the new basis as $(l,n,m,\bar{m})$. The ``metric'' for manipulating tetrad indices, $\eta_{ab}$, is defined by all restrictions provided above,
+This formalism is a special case of tetrad calculus, where we can identify the new basis as $(\bm{\mathfrak{l}},\bm{\mathfrak{n}},\bm{\mathfrak{m}},\bar{\bm{\mathfrak{m}}})$. The ``metric'' for manipulating tetrad indices, $\eta_{ab}$, is defined by all restrictions provided above,
 \begin{align}
-    g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu = l^{\mu} n^{\nu} + n^{\mu} l^{\nu} - m^{\mu} \bar{m}^{\nu} - \bar{m}^{\mu} m^{\nu} ~.
+    g^{\mu\nu} = \eta^{ab} (e_a)^\mu (e_b)^\nu = \mathfrak{l}^{\mu} \mathfrak{n}^{\nu} + \mathfrak{n}^{\mu} \mathfrak{l}^{\nu} - \mathfrak{m}^{\mu} \bar{\mathfrak{m}}^{\nu} - \bar{\mathfrak{m}}^{\mu} \mathfrak{m}^{\nu} ~.
 \end{align}
 Additionally this vectors define new directional derivatives.
 We will depart shortly from standard notation~\cite{Teukolsky1972,Teukolsky1973,Teukolsky1974}, by redefining these derivatives as
 \begin{align}
-    \mathbbl{D}=\nabla_l ~,\qquad \mathbbl{\Delta}=\nabla_n ~,\qquad \bbdelta=\nabla_m ~,\qquad \bar{\bbdelta}=\nabla_{\bar{m}} ~.
+    \mathbbl{D}=\nabla_{\bm{\mathfrak{l}}} ~,\qquad \mathbbl{\Delta}=\nabla_{\bm{\mathfrak{n}}} ~,\qquad \bbdelta=\nabla_{\bm{\mathfrak{m}}} ~,\qquad \bar{\bbdelta}=\nabla_{\bar{\bm{\mathfrak{m}}}} ~.
     \label{eq3:tetradCovDer}
 \end{align}
 
@@ -55,22 +55,23 @@ Together with the other symmetries inherited from the Riemann tensor, for instan
 As a result, in NP formalism the Weyl tensor can be represented by five complex scalars, usually chosen as
 \begin{align}
     \begin{split}
-        \psi_0 &= - C_{1313} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta l^\gamma m^\delta ~,\qquad
-        ~\psi_1 = - C_{1213} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta l^\gamma m^\delta ~,\\
-        \psi_2 &= - C_{1342} = - C_{\alpha\beta\gamma\delta}\, l^\alpha m^\beta \bar{m}^\gamma n^\delta ~,\qquad
-        \psi_3 = - C_{1242} = - C_{\alpha\beta\gamma\delta}\, l^\alpha n^\beta \bar{m}^\gamma n^\delta ~,\\
-        \psi_4 &= - C_{2424} = - C_{\alpha\beta\gamma\delta}\, n^\alpha \bar{m}^\beta n^\gamma \bar{m}^\delta ~.
+        \psi_0 &= - C_{1313} = - C_{\alpha\beta\gamma\delta}\, \mathfrak{l}^\alpha \mathfrak{m}^\beta \mathfrak{l}^\gamma \mathfrak{m}^\delta ~,\qquad
+        ~\psi_1 = - C_{1213} = - C_{\alpha\beta\gamma\delta}\, \mathfrak{l}^\alpha \mathfrak{n}^\beta \mathfrak{l}^\gamma \mathfrak{m}^\delta ~,\\
+        \psi_2 &= - C_{1342} = - C_{\alpha\beta\gamma\delta}\, \mathfrak{l}^\alpha \mathfrak{m}^\beta \bar{\mathfrak{m}}^\gamma \mathfrak{n}^\delta ~,\qquad
+        \psi_3 = - C_{1242} = - C_{\alpha\beta\gamma\delta}\, \mathfrak{l}^\alpha \mathfrak{n}^\beta \bar{\mathfrak{m}}^\gamma \mathfrak{n}^\delta ~,\\
+        \psi_4 &= - C_{2424} = - C_{\alpha\beta\gamma\delta}\, \mathfrak{n}^\alpha \bar{\mathfrak{m}}^\beta \mathfrak{n}^\gamma \bar{\mathfrak{m}}^\delta ~.
     \end{split}
 \end{align}
-The complex conjugates can be obtained by doing the replacement $3 \rightleftarrows 4$, by exchanging $m$ with $\bar{m}$ and vice-versa. 
-Weyl tensor has a unique decomposition in therms of a linear combination of NP scalars and tensorial product of two-forms such as $l_{[\mu} n_{\nu]}$ and $m_{[\rho} \bar{m}_{\sigma]}$. 
+The complex conjugates can be obtained by doing the replacement $3 \rightleftarrows 4$, by exchanging $\bm{\mathfrak{m}}$ with $\bar{\bm{\mathfrak{m}}}$ and vice-versa. 
+Weyl tensor has a unique decomposition in terms of a linear combination of NP scalars and tensorial product of two-forms such as $\mathfrak{l}_{[\mu} \mathfrak{n}_{\nu]}$ and $\mathfrak{m}_{[\rho} \bar{\mathfrak{m}}_{\sigma]}$.
+(INCLUDE WEYL DECOMPOSITION EF NEEDED)
 It is clear that the values that these five complex scalars take is completely dependent on the choice of tetrad frame. 
 
 BH solutions are ``type D'' spacetimes according to Petrov's classification, which was a major restriction necessary to the discovery of Kerr's metric.
-For these spacetimes it is possible to find two different doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $l$ and $n$~\cite{Chandrasekhar1998}.
+For these spacetimes it is possible to find two different doubly-degenerate principal directions of the Weyl tensor, which we choose to be the real vectors of the tetrad, $\bm{\mathfrak{l}}$ and $\bm{\mathfrak{n}}$~\cite{Chandrasekhar1998}.
 These yield
 \begin{align}
-    C_{\mu\alpha\beta[\nu} l_{\rho]} l^\alpha l^\beta = 0 ~, \qquad C_{\mu\alpha\beta[\nu} l_{\rho]} n^\alpha n^\beta = 0  ~.
+    C_{\mu\alpha\beta[\nu} \mathfrak{l}_{\rho]} \mathfrak{l}^\alpha \mathfrak{l}^\beta = 0 ~, \qquad C_{\mu\alpha\beta[\nu} \mathfrak{n}_{\rho]} \mathfrak{n}^\alpha \mathfrak{n}^\beta = 0  ~.
 \end{align}
 In NP formalism terms, this implies, respectively,
 \begin{align}
@@ -79,21 +80,21 @@ In NP formalism terms, this implies, respectively,
 
 Finding the principal directions may not be trivial, but we can apply successive local transformations of the six-parameter Lorentz group in order to rotate the tetrad vectors. 
 This procedure allows for the simplification of the Weyl tensor by vanishing NP scalars, ``locking'' the orientation of the tetrad frame.
-Weyl scalar $\psi_2$ becomes invariant under boosts in the principal directions.
-These keep the light-cone structure intact by maintaining the direction of $l$ and $n$ unchanged (up to multiplication of scalar functions), being useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}. 
-Kinnersly solved type D vaccum field equations~\cite{Kinnersley1969}, finding a suitable tetrad 
+Weyl scalar $\psi_2$ becomes invariant under boosts in the principal directions. (REFER THE TYPE III ROTATIONS EXPLICITLY)
+These keep the light-cone structure intact by maintaining the direction of $\bm{\mathfrak{l}}$ and $\bm{\mathfrak{n}}$ unchanged (up to multiplication of scalar functions), being useful to change between ingoing and outgoing frames~\cite{Teukolsky1974}. 
+Kinnersly solved type D vacuum field equations~\cite{Kinnersley1969}, finding a suitable tetrad 
 \begin{align}
     \begin{split}
-        l =& \left(\frac{r^2+a^2}{\Delta}, \, 1, \,0, \,\frac{a}{\Delta} \right) ~, \\
-        n =& \frac{1}{2 \rho^2} \Bigr( r^2+a^2, \,-\Delta, \,0 , \,a \Bigr) ~, \\
-        m =& \frac{1}{ \sqrt{2} \bar{\rho}^2 } \Bigr( i a \sin\theta, \,0, \,1, \, i \csc\theta \Bigr) ~,
+        \bm{\mathfrak{l}} =& \left(\frac{r^2+a^2}{\Delta}, \, 1, \,0, \,\frac{a}{\Delta} \right) ~, \\
+        \bm{\mathfrak{n}} =& \frac{1}{2 \rho^2} \Bigr( r^2+a^2, \,-\Delta, \,0 , \,a \Bigr) ~, \\
+        \bm{\mathfrak{m}} =& \frac{1}{ \sqrt{2} \bar{\rho}^2 } \Bigr( i a \sin\theta, \,0, \,1, \, i \csc\theta \Bigr) ~,
     \end{split}
     \label{eq3:kinnerslytetrad}
 \end{align}
-where $\bar{\rho} = r + i a \cos\theta$ and $\rho^2 = \bar{\rho} \bar{\rho}^*$.
+where $\bar{\rho} = r + i a \cos\theta$ and $\rho^2 \equiv | \bar{\rho} |^2 = \bar{\rho} \bar{\rho}^*$.
 
 The NP formalism provides a full set of first-order coupled diferential equations, relating the NP scalar (Weyl and Maxwell tensors) and the spin-coeficients resultant of the Kinnersley tetrad. These equations result from second Bianchi identity, $C_{\mu\nu[\rho \sigma ; \lambda ]} = 0$, and~\eqref{eq2:maxwellEM}.
-To study GWs, instead of perturbing the background metric, the NP formalism provides a natural way of performing perturbations by modification of the tetrad, $l=l^B+l^P$, $n=n^B+n^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms.
+To study GWs, instead of perturbing the background metric, the NP formalism provides a natural way of performing perturbations by modification of the tetrad, $\bm{\mathfrak{l}}=\bm{\mathfrak{l}}^B+\bm{\mathfrak{l}}^P$, $\bm{\mathfrak{n}}=\bm{\mathfrak{n}}^B+\bm{\mathfrak{n}}^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms.
 The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
 
 \subsection{Maxwell equations}
@@ -108,13 +109,13 @@ In NP formalism, all Maxwell equations, $F_{[\mu\nu ; \rho]}=0$ and~\eqref{eq2:m
 The Mawell tensor $F_{\mu\nu}$ has a total of six components which encodes the vector quantities of the electric and the magnetic fields. We may reduce the equation using three complex NP scalars,
 \begin{align}
     \begin{split}
-        \phi_0 &= F_{13} = F_{\alpha\beta} l^\alpha m^\beta ~,\qquad
-        \phi_1 = \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} (l^\alpha n^\beta + \bar{m}^\alpha m^\beta) ~,\\
-        \phi_2 &= F_{42} = F_{\alpha\beta} \bar{m}^\alpha n^\beta ~.
+        \phi_0 &= F_{13} = F_{\alpha\beta} \mathfrak{l}^\alpha \mathfrak{m}^\beta ~,\qquad
+        \phi_1 = \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} (\mathfrak{l}^\alpha \mathfrak{n}^\beta + \bar{\mathfrak{m}}^\alpha \mathfrak{m}^\beta) ~,\\
+        \phi_2 &= F_{42} = F_{\alpha\beta} \bar{\mathfrak{m}}^\alpha \mathfrak{n}^\beta ~.
     \end{split}
     \label{eq3:maxwellNPphi}
 \end{align}
-Considering all posible combinations of NP indices in~\eref{eq3:maxwellFabEqs}, we gather eight equations, double the amount of necessary relations. 
+Considering all possible combinations of NP indices in~\eref{eq3:maxwellFabEqs}, we gather eight equations, double the amount of necessary relations. 
 This occurs because the conjugates $\phi_0^*$, $\phi_1^*$, $\phi_2^*$ are coupled in these equations. Eliminating every term of the form $F_{23\rvert a}$ or $F_{14\rvert b}$, 
 \begin{subequations}
     \begin{align}
@@ -145,7 +146,7 @@ where we used the antisymmetry of the spin connection, $\gamma_{abc}=-\gamma_{ba
     \end{split}
     \label{eq3:phi21SpinCoef}
 \end{align}
-The spin coefficients $\varepsilon$, $\pi$, $\lambda$, $\tau$ along with other NP definitions are found in~\aref{AppendixNPSpinCoef}. If we repeat the same expansion for the other Maxwell equations, we gather the set
+The spin coefficients $\varepsilon$, $\pi$, $\lambda$, $\tau$, along with other NP definitions are found in~\aref{AppendixNPSpinCoef}. If we repeat the same expansion for the other Maxwell equations, we gather the set
 \begin{subequations}
     \begin{align}
         \label{eq3:phi21phi14SpinCoef}
@@ -181,12 +182,12 @@ An important consequence of the symmetries of Kerr spacetime allows for a wave d
 Therefore, the four differential operators group into radial $(\mathbbl{D}, \mathbbl{\Delta})$ and angular $(\bbdelta, \bar{\bbdelta})$. The procedure for separation of the Maxwell equations can be further simplified by introducing new operators
 \begin{equation}
     \begin{alignedat}{3}
-        \mathscr{D}_n &= \partial_r - \frac{i \mathscr{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\qquad && \mathscr{D}_n^\dagger = \partial_r + \frac{i \mathscr{K}}{\Delta} + 2n \frac{r-M}{\Delta} ~,\\
-        \mathscr{L}_n &= \partial_\theta - \mathscr{Q} + n \cot\theta ~,\qquad && \mathscr{L}_n^\dagger = \partial_\theta + \mathscr{Q} + n \cot\theta ~,
+        \mathscr{D}_n &= \partial_r - \frac{i K}{\Delta} + 2n \frac{r-M}{\Delta} ~,\qquad && \mathscr{D}_n^\dagger = \partial_r + \frac{i K}{\Delta} + 2n \frac{r-M}{\Delta} ~,\\
+        \mathscr{L}_n &= \partial_\theta - Q + n \cot\theta ~,\qquad && \mathscr{L}_n^\dagger = \partial_\theta + Q + n \cot\theta ~,
     \end{alignedat}
 \end{equation}
-where we define the functions $\mathscr{K}=(r^2+a^2)\omega - m a$, $\mathscr{Q} = a \omega \sin\theta - m \csc\theta$.
-In this definition, $n$ is a non-negative integer.
+where we define the functions $K=(r^2+a^2)\omega - m a$, $Q = a \omega \sin\theta - m \csc\theta$.
+In this definition, $n$ is any integer.
 These operators are related to the tetrad by
 \begin{align}
     \mathbbl{D} = \mathscr{D}_0 ~,\qquad \mathbbl{\Delta} = - \frac{\Delta}{2 \rho^2 }\mathscr{D}^\dagger_0 ~,\qquad \bbdelta = \frac{1}{\sqrt{2} \bar{\rho}} \mathscr{L}^\dagger_0 ~,\qquad \bar\bbdelta = \frac{1}{\sqrt{2} \bar{\rho}^*} \mathscr{L}_0 ~,
@@ -290,11 +291,43 @@ Notice that we not distinguish the separation constants of both equations. Perfo
 In other words, the separation constant must me the same for both equations. 
 Also, solutions $R_{-1}$ and $\Delta R_{+1}$ obey the same complex conjugate equations due to $\mathscr{D}^\dagger_n=(\mathscr{D}_n)^*$.
 
-$\Rightarrow$ Talk about the other two equations. 
+The second-order equations relating $\Phi_0$ and $\Phi_2$ can be separated in the same fashion. Naturally, the separation constant will differ from the eigenvalue Eqs.~\eref{eq3:separationRSp} and~\eref{eq3:separationRSm}.
+Using the same substitutions made previously, we divide each equation by the corresponding ansatz to obtain
+\begin{align}
+    \label{eq3:separationB}
+    \frac{\mathscr{L}_0 \mathscr{L}_1 S_{+1}}{S_{-1}} = \frac{\Delta \mathscr{D}_0 \mathscr{D}_0 R_{-1}}{\Delta R_{+1}} &= \mathscr{B} ~, \\
+    \label{eq3:separationBdagger}
+    \frac{\mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 S_{-1}}{S_{+1}} = \frac{\Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta R_{+1}}{R_{-1}} &= \mathscr{B} ~.
+\end{align}
+The separation constant $\mathscr{B}$ is real and equal for both equations. This claim rests on the same arguments of the eigenvalue $\lambdabar$. We also make the angular functions $S_{-1}$, $S_{+1}$ equally normalized. We may observe the latter by assuming two different separation constants $\mathscr{B}_1$, $\mathscr{B}_2$. Then, we have
+\begin{align}
+    \begin{split}
+        (\mathscr{B}_1)^2 \int_0^\pi \dd\theta \sin\theta \, (S_{-1})^2 &=
+        \int_0^\pi \dd\theta \sin\theta \, ( \mathscr{L}_0 \mathscr{L}_1  S_{+1} )^2 \\
+        &= \int_0^\pi \dd\theta \sin\theta \, ( \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \mathscr{L}_0 \mathscr{L}_1  S_{+1} ) S_{+1} \\
+        &=  \mathscr{B}_1 \mathscr{B}_2 \int_0^\pi \dd\theta \sin\theta \, (S_{+1})^2 ~,
+    \end{split}
+\end{align}
+where we used integration by parts twice.
+Thus $(\mathscr{B}_1)^2 = \mathscr{B}_1 \mathscr{B}_2 = \mathscr{B}^2$.
+We can compute the coefficient by computing the operation
+\begin{align}
+    \begin{split}
+        \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \mathscr{L}_0 \mathscr{L}_1 &=
+        \mathscr{L}^\dagger_0 ( \mathscr{L}_0 \mathscr{L}^\dagger_1 - 4 a\omega \cos\theta )\mathscr{L}_1 \\
+        &= \mathscr{L}_0 \mathscr{L}^\dagger_1 ( - \lambdabar + 2 a\omega \cos\theta) - 4 a\omega \cos\theta \,\mathscr{L}^\dagger_0 \mathscr{L}_1 + 4 a\omega \sin\theta \,\mathscr{L}_1 \\
+        &= -\lambdabar \, \mathscr{L}_0 \mathscr{L}^\dagger_1 + 2 a\omega \left[ \cos\theta \, \mathscr{L}_0 \mathscr{L}^\dagger_1 -\sin\theta(\mathscr{L}_1+\mathscr{L}^\dagger_1) \right] \\ &\mkern200mu - 4 a\omega \cos\theta \,\mathscr{L}^\dagger_0 \mathscr{L}_1 + 4 a\omega \sin\theta \,\mathscr{L}_1 \\
+        &= (-\lambdabar + 2 a\omega \cos\theta ) \mathscr{L}_0 \mathscr{L}^\dagger_1 + 4 a\omega Q \sin\theta \\
+        &= (-\lambdabar + 2 a\omega \cos\theta ) (-\lambdabar - 2 a\omega \cos\theta ) + 4 a\omega ( -a\omega \sin^2\theta + m ) \\
+        &= \lambdabar^2 - 4 a^2 \omega^2 + 4 a \omega m = \mathscr{B}^2 ~,
+    \end{split}
+\end{align}
+applied on the angular function $S_{+1}$.
+The commutation relations between the angular operators can by found directly or by noticing that $[\bm{e}_a,\bm{e}_b]= \eta^{cd} (\gamma_{cba}-\gamma_{cab}) \bm{e}_d$.
+Then using~\eqref{eq3:separationLLSp} it is possible to eliminate the second-order angular operators.
+To obtain $\mathscr{B}^2$, the same procedure could be done for $S_{-1}$ or the the radial functions.
 
-\subsection{Mode decomposition}
-
-Will be more profitable to study Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2} as a special case of the Teukolsky master equation which describes all the linearized perturbations arround the Kerr geometry.
+Will be more profitable to study Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2} as a special case of the Teukolsky master equation which describes all the linearized perturbations around the Kerr geometry.
 The generality of this equation is the primary reason for the focus on the EM case.
 The treatment for GWs differs in the perturbation formalism only in algebraic complexity, resulting in the same master equation.
 With the Teukolsky master equation we can proceed considering general perturbations, but there are several numerical and analytical details that make EM waves and GWs differ later on.
@@ -305,10 +338,10 @@ The general equation reads
         & \frac{1}{\Delta^s} \frac{\partial}{\partial r} \left( \Delta^{s+1} \frac{\partial \Upsilon_s}{\partial r} \right) 
         + \frac{1}{\sin\theta} \frac{\partial}{\partial\theta} \left( \sin\theta \frac{\partial \Upsilon_s}{\partial \theta} \right) 
         - \left[ \frac{(r^2+a^2)^2}{\Delta} - a^2 \sin^2\theta \right]\frac{\partial^2 \Upsilon_s}{\partial t^2} \\[0.15cm]
-        - & \frac{4 M a r}{\Delta}\frac{\partial^2 \Upsilon_s}{\partial t \partial \varphi} 
+        & - \frac{4 M a r}{\Delta}\frac{\partial^2 \Upsilon_s}{\partial t \partial \varphi} 
         - \left( \frac{a^2}{\Delta} -\frac{1}{\sin^2\theta} \right)\frac{\partial^2 \Upsilon_s}{\partial \varphi^2} 
         + 2s\left[ \frac{M(r^2-a^2)}{\Delta} - r - i a \cos\theta \right] \frac{\partial \Upsilon_s}{\partial t} \\[0.15cm]
-        + & 2s\left[ \frac{a(r-M)}{\Delta}+\frac{i \cos\theta}{\sin^2\theta}\right] \frac{\partial \Upsilon_s}{\partial \varphi}
+        &+ 2s\left[ \frac{a(r-M)}{\Delta}+\frac{i \cos\theta}{\sin^2\theta}\right] \frac{\partial \Upsilon_s}{\partial \varphi}
         - (s^2 \cot^2\theta - s) \Upsilon_s = 0 ~,
     \end{split}
     \label{eq3:teukolsky}
@@ -331,7 +364,7 @@ Depending on the spin weight, the equation may describe massless scalar ($s=0$) 
         $-2$ & $\Psi_4 = (\bar{\rho}^*)^4 \psi_4$ \\
         \hline
     \end{tabular}
-    \caption{Performance at peak F-measure}
+    \caption{Newman-Penrose fields that obey the Teukolsky master equation for different spin-weights}
     \label{tb3:solutionsTeukolskyEq}
 \end{table}
 
@@ -340,20 +373,20 @@ Stationary and axisymmetry of the spacetime geometry guarantees this form.
 The azimuthal wave number $m$ must be an integer, due to periodic boundary conditions on the BL coordinate $\varphi$.
 We may separate all perturbations in a completely general mode decomposition
 \begin{align}
-    \Upsilon_s = \sum_{\ell,m,\omega} e^{-i \omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) ~.
+    \Upsilon_s = \int\dd\omega \, e^{-i \omega t} \left( \,\sum_{\ell,m} e^{i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) \right) ~.
 \end{align}
 The integer $\ell$ plays a role in labelling all possible solutions for the eigenvalue problem of both radial and angular equations,
 \begin{align}
     \label{eq3:teukolskyRadial}
     \frac{1}{\Delta^s} \frac{\dd}{\dd r} \left( \Delta^{s+1} \frac{\dd\, {}_{s}R_{\ell m}}{\dd r} \right)
-    + \left[ \frac{\mathscr{K}^2 - 2 i s (r-M)\mathscr{K}}{\Delta} + 4 i s \omega r -{}_{s}\mathscr{C}_{\ell m}  \right] {}_{s}R_{\ell m} = 0 ~, \\[0.15cm]
+    + \left[ \frac{K^2 - 2 i s (r-M)K}{\Delta} + 4 i s \omega r -{}_{s}\mathscr{F}_{\ell m}  \right] {}_{s}R_{\ell m} = 0 ~, \\[0.15cm]
     \label{eq3:teukolskyAngular}
     \frac{1}{\sin\theta} \frac{\dd}{\dd\theta} \left( \sin\theta \frac{\dd\, {}_{s}S_{\ell m}}{\dd \theta} \right)
     + \left[ a^2 \omega^2 \cos^2\theta - 2 s a \omega \cos\theta - \frac{(m + s \cos\theta)^2}{\sin^2\theta} + s + {}_{s}\mathscr{A}_{\ell m} \right] {}_{s}S_{\ell m}  = 0~.
 \end{align}
 The radial and angular eigenvalues are related to the separation constant on Eqs.~\eref{eq3:separationRSp} and~\eref{eq3:separationRSm} through
 \begin{align}
-    \mathcal{C}_{s\ell m} + 2 m a \omega = {}_{s}\mathscr{A}_{\ell m} + a^2 \omega^2 \stackrel[(s=\pm 1)]{}{=} \lambdabar - s(s+1) ~.
+    {}_{s}\mathscr{F}_{\ell m} = {}_{s}\mathscr{A}_{\ell m} - 2 m a \omega + a^2 \omega^2 \stackrel[(s=\pm 1)]{}{=} \lambdabar - s(s+1) ~.
     \label{eq3:relationEVs}
 \end{align}
 Due to the form of the angular equation, the eigenvalues ${}_{s}\mathscr{C}_{\ell m}$, ${}_{s}\mathscr{A}_{\ell m}$ as well as the function ${}_{s}S_{\ell m}(\theta)$ depends also on the coupling $a \omega$.
@@ -373,22 +406,30 @@ Spherically symmetric problems allow for a decomposition using spherical harmoni
 These have innumerable applications in physics such as the hydrogen atom or the description of anisotropies in the cosmic microwave background.
 By setting $s=0$ and $c=0$ (spherical), then it is clear that solution for~\eqref{eq3:swshEq} are given by the associated Legendre polynomials, $P^m_\ell(z)$, and the therefore it is a generalization of the spherical harmonics, \emph{i.e.}
 \begin{align}
-    e^{i m \varphi} \,{}_{0}S_{\ell m}(0; \theta) = Y_{\ell m}(\theta,\varphi) ~,\qquad {}_{0}\mathscr{A}_{\ell m}(0) = \ell (\ell + 1) ~,
+    e^{i m \varphi} \,{}_{0}S_{\ell m}(\theta) \stackrel[(c=0)]{}{=} Y_{\ell m}(\theta,\varphi) ~,\qquad {}_{0}\mathscr{A}_{\ell m} \stackrel[(c=0)]{}{=} \ell (\ell + 1) ~.
 \end{align}
-where we explicitly wrote the dependency in the coupling $c$.
 The value of $\ell$ are non-negative integers, with the restriction of $\ell \ge |m|$. 
-
-Perturbations of any type in Schwarzschild spacetime are described using spin-weighted \emph{spherical} harmonics. The generalization from the $s=0$ case is well studied problem. Due to the shared symmetries with spherical harmonics it is possible to find a closed form for $s\ne0$ harmonics.
-
 Since this generalization must hold for the spherical case, we require that spin-weighted spheroidal harmonics (SWSHs) are normalized for any spin $s$ and coupling $c$,
 \begin{align}
     \int_{0}^\pi \dd\theta \sin\theta \, | \,{}_{s}S_{\ell m}(\theta) |^2 =
     \int_{-1}^{1} \dd z  \, | \,{}_{s}S_{\ell m}(z) |^2 = \frac{1}{2\pi} ~.
 \end{align}
 
-\subsection{Eigenvalues}
+Still on subject of spherical harmonics ($c=0$), perturbations of any type in Schwarzschild spacetime are described using spin-weighted \emph{spherical} harmonics, ${}_{s}Y_{\ell m}(\theta,\varphi)$.
+Due to the shared symmetries with spherical harmonics it is possible to find a closed form for $s\ne0$ harmonics, which is a well studied problem.
+We can raise and lower spin-weight with the use of the operators commonly denoted as $\bar{\eth}$ and $\eth$, respectively, applied on $Y_{\ell m}$,
+\begin{align}
+    \begin{split}
+        (\bar{\eth})^s Y_{\ell m} &= \sqrt{\frac{(\ell+s)!}{(\ell-s)!}} \,{}_{s}Y_{\ell m}  ~, \\
+        (-1)^s  (\eth)^s Y_{\ell m} &= \sqrt{\frac{(\ell+s)!}{(\ell-s)!}} \,{}_{-s}Y_{\ell m} ~,
+    \end{split}
+\end{align}
+limited by $|s|\le\ell$.
+Eqs.~\eref{eq3:separationB} and~\eref{eq3:separationBdagger} are closely related to former, as applications of operators $\mathscr{L}^\dagger_s$ and $\mathscr{L}_s$, generalize $\bar{\eth}$ and $\eth$, respectively. 
 
-The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. He worked out the asymptotical and critical behavior of the equation. We observe that equation the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that SWSH is everywhere analytical, he proposed the series expansion at $x=-1$,
+Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function was found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
+
+The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. Working out the asymptotical and critical behavior of the equation, we observe that equation the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that SWSH is everywhere analytical, Leaver proposed the series expansion at $x=-1$,
 \begin{align}
     {}_{s}S_{\ell m}(z) = e^{c z} (1+z)^{k_-} (1-z)^{k_+} \sum_{p=0}^\infty a_p (1+z)^p ~,
 \end{align}
@@ -396,6 +437,7 @@ where $k_{\pm} = \tfrac{1}{2}|m \pm s|$.
 The exponential in the ansatz accounts for the large $z$ behavior of the equation.
 Substituting in the angular equation, we obtain a three-term recurrence relation between the expansion coefficients $a_p$ and the boundary condition at $x=-1$,
 \begin{align}
+    \label{eq3:ap3CoefRecursion}
     \alpha_p a_{p+1} + \beta_p a_p + \gamma_p a_{p-1} = 0 ~,\qquad
     \alpha_0 a_1 + \beta_0 a_0 = 0 ~,
 \end{align}
@@ -410,24 +452,285 @@ where
 \end{align}
 We then find an equation for the eigenvalue ${}_{s}\mathscr{A}_{\ell m}$ with explicit dependence on $m$, $s$ and $c$, by combining the previous relations into a continued fraction,
 \begin{align}
-    \beta_0 = \frac{\gamma_1 \alpha_0}{\beta_1 -} \frac{\gamma_2 \alpha_1}{\beta_2 -} \frac{\gamma_3 \alpha_2}{\beta_3 -} \cdots \equiv  \frac{\gamma_1 \alpha_0}{\beta_1 - \frac{\gamma_2 \alpha_1}{\beta_2 - \frac{\gamma_3 \alpha_2}{\beta_3 - \dots}}}  ~.
+    \beta_0 = \frac{\alpha_0 \gamma_1}{\beta_1 -} \frac{\alpha_1 \gamma_2}{\beta_2 -} \frac{\alpha_2 \gamma_3}{\beta_3 -} \cdots \left( \equiv  \frac{\alpha_0 \gamma_1}{\beta_1 - \frac{\alpha_1 \gamma_2}{\beta_2 - \frac{\alpha_2 \gamma_3}{\beta_3 - \dots}}} \right)  ~.
+    \label{eq3:evInversion0th}
 \end{align}
-Just like the spherical case, for each fixed $c$, $m$, $s$, will have an infinite set of eigenfunctions each with its corresponding eigenvalue. These eigenvalues are roots 
+We can also consider the $r$-th inversion of~\eqref{eq3:evInversion0th},
+\begin{align}
+    \beta_r - \frac{\alpha_{r-1} \gamma_r}{\beta_{r-1} -} \frac{\alpha_{r-2} \gamma_{r-1}}{\beta_{r-2} -} \cdots \frac{\alpha_{1} \gamma_2}{\beta_{1} -} \frac{\alpha_{0} \gamma_{1}}{\beta_{0}} = \frac{\alpha_{r} \gamma_{r+1}}{\beta_{r+1} -} \frac{\alpha_{r+1} \gamma_{r+2}}{\beta_{r+2} -} \cdots ~.
+    \label{eq3:evInversionRth}
+\end{align}
+These equations involve an infinite fraction that depends explicitly on $c$, $m$, $s$, which leads to suspicion that this leads to a infinite spectra.
+This is a close parallel to the spherical case, where we have a infinite number of harmonics, although no proof has been found.
+If we notice that $\gamma_p\propto c$, then the zero order expansion of the eigenvalue expansion on $c\ll 1$ leads to $\beta_r=0$.
+In the spherical geometry, this corresponds to truncating the series at $r$, as $\gamma_p=0$ for any $p$. Since the the eigenvalue root depends on integer $r$, 
+\begin{align}
+    {}_{s}\mathscr{A}_{\ell m} = \ell(\ell+1) - s(s+1) + \mathscr{O}(a\omega)~,
+    \label{eq3:evSWSH0th}
+\end{align}
+entails the discretization of the spectra, where we identified $\ell=r+k_{+}+k_{-}$. 
+Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the leading contribution for the monopole expansion is the dipole for EM waves and the quadrupole for GWs.
+Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra when $c=0$ and also when $s=0$.
 
-\subsection{Eigenfunctions}
+(MORE ON PERTURBATIONS, STATE THAT EF NECESSARY WE MAY EXPAND).
+Will be useful expanding ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (\aref{AppendixEigenvalues}).
+Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with~\eqref{eq3:relationEVs}.
+In the general angular equation, inversion of spin corresponds to inversion of poles, \emph{i.e.} stays invariant under the transformation $(s,z)\to(-s,-z)$.
+Under this transformation, the eigenvalue must obey $s+ {}_{s}\mathscr{A}_{\ell m} = -s + {}_{-s}\mathscr{A}_{\ell m}$, thus it is beneficial to define 
+\begin{align}
+    {}_{s}\mathscr{A}_{\ell m} = {}_{s}\mathscr{E}_{\ell m} - s(s+1) ~,
+    \label{eq3:sElm}
+\end{align}
+to also exploit the symmetry of spin inversion in numerical computations.
 
+% From now on, we will be dropping the $(s, \ell, m)$ indices on the eigenvalues and on the radial and angular functions.
 
+\section{Analytic radial approximations}
 
+Like the angular equation, in general it is not possible to solve the radial~\eqref{eq3:teukolskyRadial} by known analytical methods.
+The only apparent line of attack would be to numerical solve the equation, but will be important to find the asymptotic form of ${}_{s}R_{\ell m}$ at infinity as well as near-horizon behavior. 
+For both methods will prove beneficial to reduce the equation to change the variables to adimensional quantities,
+\begin{align}
+    x = \frac{r - r_{+}}{r_{+}} ~,\qquad \tau = \frac{r_{+} - r_{-}}{r_{+}} ~,\qquad \varpi = (2-\tau)( \bar\omega - m \bar{\Omega}_H) ~,
+\end{align}
+where every barred frequency is normalized relative to the BH horizon, $\bar\omega\equiv\omega r_{+}$. Due to~\eref{eq2:spinLimit}, we have that $0\le\tau\le 1$. Using this coordinate, $x\to0$ represents the BH horizon. The radial equation now reads
+\begin{align}
+    \begin{split}
+        & \frac{1}{[x(x+\tau)]^s} \frac{\dd}{\dd x}\left( [x(x+\tau)]^{s+1} \frac{\dd \,{}_{s}R_{\ell m}}{\dd x} \right) + \\
+        &\qquad + \left[ \frac{\bar{K}^2 - i s (2 x+\tau) \bar{K}}{x(x+\tau)} + 4 i s (1 + x)\bar{\omega} - {}_{s}\mathscr{F}_{\ell m} \right] {}_{s}R_{\ell m} = 0 ~,
+    \end{split}
+\end{align}
+where we normalize $\bar{K} = K/r_{+} = \varpi + x(x+2)\bar{\omega}$. In this method, will be sufficient to use  this method we will use a spherical approximation for the harmonics eigenvalues, ${}_{s}\mathscr{F}_{\ell m} = \ell(\ell+1) - s(s+1) + \mathscr{O}(a\omega)$, for small enough frequencies.
 
+Near horizon approximation corresponds to considering only small distances compared to the perturbations characteristic wavelength, $r-r_{+} \ll \omega^{-1}$ ($\bar{\omega} x \ll 1$).
+Because superradiant scattering occurs when $\omega\sim\Omega_H$, therefore we also neglect terms $\mathscr{O}(\varpi x)$.
+In this limit, $\bar{K}\simeq\varpi$.
+The resultant equation remains singular at the horizons $x=0$ and $x=-\tau$. Thus, making the substitution ${}_{s}R_{\ell m}(x)\simeq x^\alpha (x+\tau)^\beta H(x)$, the function $H(x)$ is analytical if $\alpha+\beta=-s$ and also if $\alpha=-\tfrac{1}{2} s \pm \left(\tfrac{1}{2} s + i \varpi/\tau \right)$.
+Boundary conditions at the horizon requires that a physical observer measures a negative radial group velocity of the signal.
+In order words, we require that wave travels into the black hole and never outwards.
+Since $x^{\pm i \varpi/\tau} \simeq e^{\pm i \kappa r_{*}}$, where $\kappa=\omega - m \Omega_H$, then the ingoing solution requires $\alpha=-s-i\varpi/\tau$. The near horizon solution gives
+\begin{align}
+    \label{eq3:RnearSolution}
+    {}_{s}R_{\ell m}(x) \simeq A \, x^{-s-i\varpi/\tau} (x+\tau)^{i\varpi/\tau} \,{}_{2}F_1\left( -\ell, \,\ell+1, \,1-s-\frac{2i\varpi}{\tau}; \,-\frac{x}{\tau}\right) ~,
+\end{align}
+where ${}_{2}F_1(a,b,c; x)$ is the hypergeometric function.
 
+Asymptotically, we consider $x\gg\tau$, where $\bar{K}\sim x^2 \bar{\omega}$. The resultant equation, 
+% \begin{align}
+%     x^2 \frac{\dd^2 \,{}_{s}R_{\ell m}}{\dd x^2} + 2 (s+1) x \frac{\dd \,{}_{s}R_{\ell m}}{\dd x}  + ( \bar{\omega}^2 x^2 + 2 i s \bar{\omega} x - {}_{s}\mathscr{F}_{\ell m}) \,{}_{s}R_{\ell m} \sim 0 ~,
+% \end{align}
+allows to substitute a power law ${}_{s}R_{\ell m}(x)\sim x^\alpha e^{- i \bar{\omega} x} M(x)$. In order to $M(x)$ to be analytical everywhere, then we must have $\alpha^2+(2s+1)\alpha = {}_{s}\mathscr{F}_{\ell m}$. We are left with Kummer's differential equation for $M(x)$, where $\alpha = \ell-s$ or $\alpha=-1-\ell-s$. The general solution is the combination
+\begin{align}
+    \begin{split}
+    {}_{s}R_{\ell m}(x) &\sim   C\,  e^{-i \bar{\omega} x} x^{\ell-s} \, {}_{1}F_1(1+\ell-s, \,2 \ell+2 ; \,-2 i \bar{\omega} x) \\
+    &\qquad\qquad + D\,  e^{-i \bar{\omega} x} x^{-1-\ell-s} \, {}_{1}F_1(-\ell-s, \,-2 \ell; \,-2 i \bar{\omega} x) ~,
+    \end{split}
+    \label{eq3:RfarSolution}
+\end{align}
+where ${}_{1}F_1(a,b;x)$ are Olver's confluent hypergeometric functions and $B$, $C$ are integration constants.
 
+Altought useful, these solutions do not provide enough physical insight. Another way of obtaining the same assympotic behavior is by transforming the radial equation into a Schrodinger-like potential problem
+\begin{align}
+    \left[ \frac{\dd^2}{\dd r_{*}^2} + V_\mathrm{eff} \right] {}_{s}U_{\ell m} = 0 ~,
+\end{align}
+where ${}_{s}U_{\ell m}=\sqrt{\Delta^s (r^2 + a^2)} \,{}_{s}R_{\ell m}$ and the tortoise coordinate $r_*$ is defined in~\eqref{eq2:tortoise}.
+We write the potential as a function of the radial coordiante,
+\begin{align}
+    V_\mathrm{eff} = \frac{K^2 - 2 i s (r-M) K + \Delta ( 4 i s \omega r - {}_{s}\mathscr{F}_{\ell m} )}{(r^2+a^2)^2} - G^2 - \frac{\dd G}{\dd r_{*}}
+\end{align}
+where $G = s(r-M)/(r^2+a^2)+ r \Delta/(r^2+a^2)^2$.
+Even tought $r_*$ is related to the radial coordinate through an non-invertable relation, we use this coordinate remove the all $\Delta$ singularities from the diferential equation. 
 
-\section{Analytic radial expansions}
+Taking $r\to\infty$ ($r_{*}\to\infty$), the potential becomes
+\begin{align}
+    V_\mathrm{eff} \sim \omega^2 + \frac{2 i s \omega}{r} ~,
+\end{align}
+with assympotic solution ${}_{s}U_{\ell m}\sim r^{\pm s} e^{\mp i \omega r_{*}}$.
+Combination of both solutions corresponds to
+\begin{align}
+    {}_{s}R_{\ell m}(r) \sim A_\mathrm{in}\, \frac{e^{-i \omega r_*}}{r} + A_\mathrm{out}\, \frac{e^{i \omega r_*}}{r^{2s+1}} ~.
+    \label{eq3:asymptoticR}
+\end{align}
+The ingoing an outgoing wave coeficients can be related to integration coeficients $B,C$ by expanding the hypergeometric function in~\eref{eq3:RfarSolution} at infinity,
+\begin{align}
+    \begin{split}
+    A_\mathrm{in} &= \left[ C (-2 i \bar{\omega})^{-\ell+s-1} \frac{\Gamma(2\ell+2)}{\Gamma(\ell+s+1)} + D (-2 i \bar{\omega})^{\ell+s} \frac{\Gamma(-2\ell)}{\Gamma(-\ell+s)} \right] r_{+} ~, \\
+    A_\mathrm{out} &= \left[ C (2 i \bar{\omega})^{-\ell-s-1} \frac{\Gamma(2\ell+2)}{\Gamma(\ell-s+1)} + D (2 i \bar{\omega})^{\ell-s} \frac{\Gamma(-2\ell)}{\Gamma(-\ell-s)} \right] (r_{+})^{2s+1}  ~.
+    \end{split}
+\end{align}
 
-\subsection{Near horizon approximation}
-\subsection{Assymptotic expansion}
+We may notice the ratio of gamma functions with negative integer valued arguments, which can be misinterpreted as a divergence due to existing poles of $\Gamma$.
+This is a mere artifact of the asymptotic expantion for general confluent hypergeometric arguments.
+A way to circunvey this problem is to consider the Euler's reflection formula for any value of $\ell$ and then taking the limit to the integer set,
+\begin{align}
+    \label{eq3:negativeGammaRatio}
+    \begin{split}
+        \lim_{\ell\in\mathbbl{Z}} \frac{\Gamma(-2\ell)}{\Gamma(-\ell\pm s)} &= \frac{\Gamma(\ell\mp s+1)}{\Gamma(2\ell+1)} \, \lim_{\ell\in\mathbbl{Z}} \frac{\sin(\ell\pi)\cos(\mp s \pi)}{\sin(2\ell\pi)} \\
+        &= \frac{(-1)^{\ell+s}}{2} \frac{(\ell \mp s)!}{(2\ell)!} ~.
+    \end{split}
+\end{align}
+ 
+At the event horizon $r=r_+$, $r_*\to-\infty$ and $\Delta=0$.
+The effective radial potential is simplified to a constant
+\begin{align}
+    V_\mathrm{eff} \simeq \left( \kappa- i s \frac{r_+ - M}{2 M r_+} \right)^2 ~.
+\end{align}
+Due to the logarithm behavior of $r_*$ at the horizon, the solution takes the form ${}_{s}U_{\ell m}\sim e^{\pm i \kappa r_{*} } (r-r_{+})^{\pm s/2} \sim \Delta^{\pm s/2} \,e^{\pm i \kappa r_{*} }$. The boundary conditions at $r=r_{+}$ state that the horizon solution must only have the ingoing solution
+\begin{align}
+    \label{eq3:boundaryR}
+    {}_{s}R_{\ell m} \simeq A_\mathrm{hole} \,\Delta^{-s} \,e^{- i \kappa r_{*} } ~.
+\end{align}
+Expanding solution~\eref{eq3:RnearSolution}, the integration constants relate through $A_\mathrm{hole} = (r_{+})^{-s} A$.
 
-\section{Amplification factor $Z_{slm}$}
+With both approximations is possible to extend the solutions of small frequency waves to overlapping regions and perform a matching of coefficients, which is can be used to find how much of the wave is reflected/amplified.
+The near region $r-r_{+}\ll \omega^{-1}$ and the asymptotic region $r-r_{+}\gg r_{+}$ overlap when $\omega r_{+} \ll 1$ ($\bar{\omega}\ll 1$). The overlapping region becomes larger as $\omega r_{+}$ becomes smaller.
+We proceed by expanding the far region solution~\eref{eq3:RfarSolution} at the horizon, $x=0$, where the lowest order terms are simply
+\begin{align}
+    {}_{s}R_{\ell m} \simeq C \, x^{\ell-s} + D \, x^{-1-\ell-s} ~.
+\end{align}
+On the other hand, expanding the near region solution~\eref{eq3:RfarSolution} at infinity we get
+\begin{align}
+    \begin{split}
+        {}_{s}R_{\ell m} &\sim A \, \tau^{-\ell} \frac{ \Gamma(2\ell+1)}{\Gamma(\ell+1)} \frac{\Gamma(1-s - 2 i \varpi/\tau)}{\Gamma(\ell+1 - s - 2 i \varpi/\tau)} x^{\ell-s} \\
+        &\qquad\qquad + A \, \tau^{\ell+1} \frac{\Gamma(-2\ell-1)}{\Gamma(-\ell)} \frac{\Gamma(1 - s - 2 i \varpi/\tau)}{ \Gamma(-\ell - s - 2 i \varpi/\tau)} x^{-\ell-1-s} ~.
+    \end{split}
+\end{align}
+The matching is possible because the solutions when expanded in regions in the limit of their validity are given in terms of two monomials of $x^{\ell-s}$ and $x^{-1-\ell-s}$.
+A combination of these results yields
+\begin{align}
+    \frac{D}{C} = \frac{(-1)^{\ell+1}}{2} \frac{(\ell !)^2}{(2\ell)! (2\ell+1)!} \frac{\Gamma(\ell+1 - s - 2 i \varpi/\tau)}{\Gamma(-\ell - s - 2 i \varpi/\tau)} \, \tau^{2\ell+1} ~,
+\end{align}
+where we used the same identification as in~\eqref{eq3:negativeGammaRatio} for the $\Gamma$ functions with negative arguments.
+With this result it is possible to find the ratio between the incoming and the outgoing energy from the BH.
 
+\section{Amplification factor ${}_{s}Z_{\ell m}$}
+
+Potential barrier problems are heavilly associated with reflection and absortion of radiation. 
+Central potentials have wave scattered diferently for each mode $(\omega, \ell, m)$, depending on the incident angle of the wave.
+The stress-energy tensor allows to define conserved currents, which can be used to compute the flow of energy and angular momentum.
+Particullary we will be interested in calculating asymptotic energy flow going inward and outward of the BH.
+
+Diferent Killing vectors have distinct currents, due to diferent possible projections of the stress-energy tensor.
+These currents are conserved due to $\nabla_\mu T^{\mu\nu}=0$ and the Killing~\eqref{eq2:killing}.
+Energy flux is defined as
+\begin{align}
+    \label{eq3:fluxE}
+    \dd E = T^{\mu}{}_\nu \, k^\nu \,\dd\Sigma_\mu
+\end{align}
+where $\dd \Sigma_\mu$ is defined as the 3-surface element.
+An asymptotically flat geometry such as Kerr metric has infinity $r$-constant hypersurface with induced 3-metric $\bm{h} = h_{\alpha\beta} \,\dd y^\alpha \dd y^\beta$, where $h_{\alpha\beta} = g_{\alpha\beta}$ for $y^\alpha \in (t, \theta, \varphi)$.
+In BL coordinates, the normal to the surface is the outgoing radial vector $\bm{n}=(\dd r)^\sharp \equiv ( g^{\mu\nu} \partial_\nu r) \partial_\mu$, while the other vectors form the tangent basis.
+By computing the  highest order term when $r\to\infty$, the surface element is asymptotically spherical symmetric, given by
+\begin{align}
+    \label{eq3:radial3SurfaceElement}
+    \dd\Sigma_\mu = n_\mu \,\sqrt{\det{\bm{h}}} \,\dd t \,\dd \theta \,\dd \varphi \sim n_\mu \,r^2 \sin\theta \,\dd t \,\dd \theta \,\dd \varphi ~.
+\end{align}
+
+We are obiously interested in obtaining an expression relation the flow of energy at infinity and the Maxwell NP scalar. Thus, will be convininet describing the stress-energy tensor using symmetric tetrad combinations and NP scalars and their conjugates. Much like the Weyl and the Maxwell tensor, this composition is uniquelly defined by Eqs.~\eref{eq2:stressenergyEM} and~\eref{eq3:maxwellNPphi},
+\begin{align}
+    \begin{split}
+    2 T_{\mu\nu} &= \phi_0^* \phi_0 \, \mathfrak{n}_\mu \mathfrak{n}_\nu + \phi_2^* \phi_2 \, \mathfrak{l}_\mu \mathfrak{l}_\nu + 2 \phi_1^* \phi_1 \, [ \mathfrak{l}_{(\mu} \mathfrak{n}_{\nu)} + \mathfrak{m}_{(\mu} \bar{\mathfrak{m}}_{\nu)} ] \\
+    &\qquad - 4 \phi_0^* \phi_1 \, \mathfrak{n}_\mu \mathfrak{m}_\nu - 4 \phi_1^* \phi_2 \, \mathfrak{l}_\mu \mathfrak{m}_\nu + 2 \phi_0^* \phi_2 \, \mathfrak{m}_\mu \mathfrak{m}_\nu + \text{c.c.} ~.
+    \end{split}
+    \label{eq3:stressEnergyPhi}
+\end{align}
+Energy flow is thus computed by taking the series expansion of
+\begin{align}
+    r^2 \,T^{r}{}_t = r^2 \frac{\Delta}{\rho^2} \,T_{rt} = - r^2 \left(\frac{1}{4} |\phi_0|^2 - |\phi_2|^2\right) + \mathscr{O}\left(\frac{1}{r}\right) ~,
+\end{align}
+recalling definition~\eref{eq3:phiBarRhoToPhi} when considering the asymptotic form of ${}_{s}R_{\ell m}$ in~\eqref{eq3:asymptoticR}.
+We can clearly identify the ingoing and outgoing flows as
+\begin{align}
+    \frac{\dd^2 E_\mathrm{in}}{\dd t \dd\Omega} = \lim_{r\to\infty} \,\frac{r^2}{4} |\phi_0|^2 ~,\qquad \frac{\dd^2 E_\mathrm{out}}{\dd t \dd\Omega} = \lim_{r\to\infty} \, r^2 |\phi_2|^2 ~,
+\end{align}
+
+In order to obtain the full conservation law we must find the absorved radiation by the black hole. We turn down to the horizon null hypersurface, which the normal vector $n$ in BL coordinates is the zero vector, due to $g^{rr}=0$.
+Similarly, the stress-energy tensor in this tetrad basis is ill-defined since $\mathfrak{l}$ is singular at the horizon, where $\Delta=0$.
+The Kinnersley tetrad keeps its properties, by applying a boost in the null directions
+\begin{align}
+   \bm{\tilde{\mathfrak{l}}} = \frac{\Delta}{2 (r^2+a^2)} \bm{\mathfrak{l}} ~,\qquad \bm{\tilde{\mathfrak{n}}} = \frac{2 (r^2+a^2)}{\Delta} \bm{\mathfrak{n}}
+\end{align}
+while removing the singularity at the horizon. The NP field quantities are now given by $\tilde{\Upsilon}_s = [\Delta/2(r^2+a^2)]^s \,\Upsilon_s$.
+In addition, we shall use go to the ingoing EF coordinates, defined in~\eqref{eq2:InEFtoBL}, as the chart is the indicated to consider inward future directed waves, because $(\bm{\mathfrak{l}}\cdot\partial_v)$ is a positive constant,
+\begin{align}
+    \bm{\tilde{\mathfrak{l}}} = \left(1, \,\frac{\Delta}{2(r^2+a^2)}, \,0, \,\frac{a}{r^2 + a^2} \right) ~,\qquad \bm{\tilde{\mathfrak{n}}} = \left(0, -\frac{r^2+a^2}{\rho^2}, \,0, \,0\right) ~,
+\end{align}
+If we set $r=r_{+}$, we obtain that $\bm{\tilde{\mathfrak{l}}} = \bm{\xi}$.
+This implies that $\bm{\tilde{\mathfrak{l}}}$ is normal vector to the event horizon, just like $\bm{n}$, but they are oposite to each other as $n^v = g^{rv}<0$.
+
+The radial 3-surface element cannot be of the form of~\eqref{eq3:radial3SurfaceElement}, since the induced metric at the horizon is now singular, $\sqrt{\det{\bm{h}}}=\Delta \rho^2 \sin\theta = 0$.
+Special considerations must be taken when taking the induced metric of a null hypersurface.
+We usually choose $\bm{k}=\partial_v$ as one of the surface tangent vectors, due to $\bm{\xi}\cdot\bm{k}=0$.
+Then we compute the induced metric $\bm{\sigma}$ of a 2-surface space spanned by the vectors $\partial_\theta$ and $\partial_\chi$,.
+The general 3-surface element for a null horizon, normal to the inward radial direction, is given by
+\begin{align}
+    \dd\Sigma_\mu = \tilde{\mathfrak{l}}_\mu \,(\sqrt{\det \bm{\sigma}} \,\dd\theta \,\dd\chi ) \,\dd v = \tilde{\mathfrak{l}}_\mu  \, 2 M r_+ \sin\theta \,\dd\theta \,\dd\varphi \,\dd t ~,
+\end{align}
+where $\det\sigma = g_{\theta\theta} \,g_{\chi\chi} - (g_{\theta\chi})^2$. In the last equality we used the fact that the jacobian $\partial(v,\chi)/\partial(t,\varphi)=1$.
+The resultant energy flux going inside the BH is then computed by
+\begin{align}
+    \frac{\dd^2 E_\mathrm{hole}}{\dd t \dd\Omega} = 2 M r_{+} T_{\mu\nu} \tilde{\mathfrak{l}}^\mu k^\nu ~.
+\end{align}
+Generalizing~\eqref{eq3:fluxE}, we may define the the flow of angular momentum using the axisymmetic Killing vector, $\dd L = - T^{\mu}{}_\nu \, m^\nu \,\dd\Sigma_\mu$, and combining previous results to write
+\begin{align}
+    \frac{\dd^2 E_\mathrm{hole}}{\dd t \dd\Omega} - \Omega_H \frac{\dd^2 L_\mathrm{hole}}{\dd t \dd\Omega} = 2 M r_{+} T_{\mu\nu} \,\tilde{\mathfrak{l}}^\mu \tilde{\mathfrak{l}}^\nu {}_{|r=r_+}~.
+\end{align}
+
+Compoutation of the flow of the energy into the BH requires to find the ratio of energy and angular momentum carried by waves.
+For a scalar wave $\Phi\sim e^{-i\omega t+ i m\varphi}$, we can easily find the ratio by computing $\dd L/\dd E = -T^r{}_\varphi/T^r{}_t = - \partial_\varphi \Phi / \partial_t \Phi = m/\omega$, using the standard scalar energy-stress tensor~\cite{Bekenstein1973}.
+Another simpler argument was made in~\eref{eq2:spinMassRatio}, obtaining the same result.
+Since the ratio holds for any type of perturbation~\cite{Teukolsky1974},
+\begin{align}
+    \frac{\dd^2 E_\mathrm{hole}}{\dd t \dd\Omega} = \frac{2 M r_{+} \omega}{\omega - m \Omega_H}  \tilde{\phi}_0 \tilde{\phi}_0^* = \frac{\omega}{8 M r_{+} \kappa} |\Delta \phi_0 |^2 \qquad (r=r_{+})~.
+\end{align}
+Double projection of the future-directed inward vector $\bm{\tilde{\mathfrak{l}}}$ onto the energy-stress tensor gives us $|\tilde{\phi}_0|^2$, due to the decomposition~\eref{eq3:stressEnergyPhi}.
+At the horizon, the boosted NP scalar can be written as $\tilde{\phi}_0 = (\Delta \phi_0)/(4 M r_{+})$, where $\Delta \phi_0$ is regular at the horizon by construction and also by checking with the boundary solution~\eref{eq3:boundaryR}.
+
+Now, we are prepared to define the amplification factor as 
+\begin{align}
+    \uu[\pm1]{Z}{\ell m} = \frac{\dd E_\mathrm{out} / \dd t}{\dd E_\mathrm{in} / \dd t} - 1 ~,
+\end{align}
+where we integrated off the polar angles.
+The factor is defined as the overall gain/loss effect for each mode $(\omega,\ell,m)$, therefore it measures how much of the wave was \emph{globally} reflected ($\uu[\pm1]{Z}{\ell m}=0$), absorved ($\uu[\pm1]{Z}{\ell m}<0$) or amplified ($\uu[\pm1]{Z}{\ell m}>0$).
+Remebering that $\phi_2 = \Phi_2/(2 \bar{\rho}^2) \sim {}_{-1}R_{\ell m}/(2 r^2)$, we compute
+\begin{align}
+    \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 ~.
+\end{align}
+Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight.
+Using~\eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.
+In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(r^{-1})$, we substitute in $A_\mathrm{in}(s=+1)$,
+\begin{align}
+    \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{A_\mathrm{out}}{A_\mathrm{in} } \right|_{(s=-1)}^2 ~,
+\end{align}
+where now the expression only is using $s=-1$ coefficients.
+Still, the amplification should not depend on the sign of spin-weight, \emph{i.e.} the amplification should be the same for all EM waves, the same holding true for GW perturbations~\cite{Rosa2016}.
+The $\emph{in-out}$ ratio is given by
+\begin{align}
+    \begin{split}
+        \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{A_\mathrm{out}}{A_\mathrm{in} } \right|^2 & = 
+        \frac{\mathscr{B}^2}{\ell^2(\ell+1)^2} 
+        \left|\cfrac{ 
+            1+ \frac{(-1)^{\ell+1}}{2} \frac{D}{C} 
+            \frac{\Gamma(\ell) \Gamma(\ell+2)}{\Gamma(2\ell+1) \Gamma(2\ell+2)} 
+            (2 i\bar{\omega})^{2\ell+1}
+            }{
+            1 - \frac{(-1)^{\ell+1}}{2} \frac{D}{C}
+            \frac{\Gamma(\ell) \Gamma(\ell+2)}{\Gamma(2\ell+1) \Gamma(2\ell+2)}
+            (2 i\bar{\omega})^{2\ell+1}
+        }\right|^2 \\[0.15cm]
+        & \simeq  1 - (2 \bar{\omega})^{2\ell+1}
+        \frac{\Gamma(\ell) \Gamma(\ell+2)}{\Gamma(2\ell+1) \Gamma(2\ell+2)} \,\Re\left\{2 i \,\frac{D}{C}\right\} ~,
+    \end{split}
+\end{align}
+where we appoximated the relative normalization constant $\mathscr{B} = \lambdabar +\mathscr{O}(a\omega) \simeq \ell(\ell+1)$.
+The $D/C$ ratio has a non-trivial expression in terms of $\Gamma$ functions of non-integers arguments. The factorial property of $\Gamma(z)$ allows the approximation
+\begin{align}
+    \frac{\Gamma(\ell+1-s + y)}{\Gamma(-\ell - s + y)} = \prod_{n=-\ell-s}^{\ell-s} (n + y) \stackrel[(s=\pm 1)]{}{\simeq} (-1)^{\ell+1} \frac{\ell+1}{\ell} \, y \,\prod_{n=1}^{\ell} (n^2 - y^2) ~,
+\end{align}
+where $y\equiv - 2 i \varpi/\tau$. For EM perturbations the amplification factor yields
+\begin{align}
+    \uu[\pm1]{Z}{\ell m} \simeq  - 4 \bar{\omega} (\bar{\omega} - m \bar{\Omega}_H) \,(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right) ~,
+\end{align}
+which is valid for a region $\bar{\omega}\lesssim 1$. 
 
 \cleardoublepage
