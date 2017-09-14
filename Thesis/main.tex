@@ -10,13 +10,12 @@
 
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
-
+\usepackage{notoccite}
 
 %%% FILE RELATED
 \usepackage{pdfpages}
 
 \graphicspath{{Figures/}} % Specifies the directory where pictures are stored
-
 
 %%% FONTS
 % - fourier
@@ -36,11 +35,31 @@
 
 \newcommand{\lambdabar}{{\mkern 0.0mu\lambda\mkern -8.2mu\mathchar '26\mkern 2mu}}
 
+%%% VERBATIM
+
+\usepackage{mmacells}
+
+\mmaDefineMathReplacement[≤]{<=}{\leq}
+\mmaDefineMathReplacement[≥]{>=}{\geq}
+\mmaDefineMathReplacement[≠]{!=}{\neq}
+\mmaDefineMathReplacement[→]{->}{\to}[2]
+\mmaDefineMathReplacement[⧴]{:>}{:\hspace{-.2em}\to}[2]
+\mmaDefineMathReplacement{∉}{\notin}
+\mmaDefineMathReplacement{∞}{\infty}
+\mmaDefineMathReplacement{𝕕}{\mathbbm{d}}
+
+\mmaSet{
+	fv={formatcom*=\normalfont\ttfamily\huge},
+	morefv={gobble=2},
+	linklocaluri=mma/symbol/definition:#1
+}
+
 %%% MATH
 \usepackage{xfrac}
 \usepackage{bm}
 \usepackage{stackrel}
 \usepackage{subeqspatch}
+\usepackage{textcomp}
 
 %%% GRAPHICS
 \usepackage{subcaption}
