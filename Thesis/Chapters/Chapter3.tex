@@ -64,7 +64,7 @@ As a result, in NP formalism the Weyl tensor can be represented by five complex 
 \end{align}
 The complex conjugates can be obtained by doing the replacement $3 \rightleftarrows 4$, by exchanging $\bm{\mathfrak{m}}$ with $\bar{\bm{\mathfrak{m}}}$ and vice-versa. 
 Weyl tensor has a unique decomposition in terms of a linear combination of NP scalars and tensorial product of two-forms such as $\mathfrak{l}_{[\mu} \mathfrak{n}_{\nu]}$ and $\mathfrak{m}_{[\rho} \bar{\mathfrak{m}}_{\sigma]}$.
-(INCLUDE WEYL DECOMPOSITION IF NEEDED).
+(INCLUDE WEYL DECOMPOSITION).
 It is clear that the values that these five complex scalars take is completely dependent on the choice of tetrad frame. 
 
 BH solutions are ``type D'' spacetimes according to Petrov's classification, which was a major restriction necessary to the discovery of Kerr's metric.
@@ -352,8 +352,8 @@ where $s$ is the field \emph{spin weight} and each field quantity $\Upsilon_s$ i
 Depending on the spin weight, the equation may describe massless scalar ($s=0$) or Dirac fields ($s=\pm \tfrac{1}{2}$), as well as electromagnetic ($s=\pm 1$) or gravitational waves ($s=\pm 2$). Substituting the spin-weight for the EM waves we obtain Eqs.~\eref{eq3:DDLLPhi0} and~\eref{eq3:DDLLPhi2}.
 \begin{table}[h]
     \centering
-    \renewcommand{\arraystretch}{1.25}
-    \begin{tabular}{ | c | l | }
+    \tabulinesep=1.5mm
+    \begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}l@{\hskip 0.25cm}}
         \hline
         $s$ & $\qquad ~ \Upsilon_s$ \\
         \hline\hline
@@ -365,7 +365,7 @@ Depending on the spin weight, the equation may describe massless scalar ($s=0$) 
         \hline
         $-2$ & $\Psi_4 = 4 (\bar{\rho}^*)^4 \psi_4$ \\
         \hline
-    \end{tabular}
+    \end{tabu}
     \caption{Newman-Penrose fields that obey the Teukolsky master equation for different spin-weights~\cite{Chandrasekhar1998}}
     \label{tb3:solutionsTeukolskyEq}
 \end{table}
@@ -414,6 +414,7 @@ By setting $s=0$ and $c=0$ (spherical), then it is clear that the solutions for~
 The values of $\ell$ are non-negative integers, with the restriction of $\ell \ge |m|$. 
 We require that spin-weighted spheroidal harmonics (SWSHs) are similarly normalized to unity and also a complete set of orthogonal functions, for any spin-weight and coupling $c$,
 \begin{align}
+    \label{eq3:SWSHorthogonality}
     \int_{0}^\pi \dd\theta \sin\theta \,{}_{s}S_{\ell m}(\theta) \,{}_{s}S_{\ell' m'}(\theta)  =
     \int_{-1}^{1} \dd z \,{}_{s}S_{\ell m}(z) {}_{s}S_{\ell' m}(z) = \frac{1}{2\pi} \delta_{\ell \ell'} ~.
 \end{align}
@@ -429,7 +430,7 @@ We can raise and lower spin-weight with the use of the operators commonly denote
 \end{align}
 limited by $|s|\le\ell$.
 Eqs.~\eref{eq3:separationB} and~\eref{eq3:separationBdagger} are closely related to former, as applications of operators $\mathscr{L}^\dagger_s$ and $\mathscr{L}_s$, generalize $\bar{\eth}$ and $\eth$, respectively.
-(TAKE THE R-INF LIMIT)
+(TAKE THE $\inf$ LIMIT)
 
 Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function was found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
 
@@ -478,7 +479,6 @@ where we identified $\ell=r+k_{+}+k_{-}$.
 Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the leading contribution for the monopole expansion is the dipole for EM waves and the quadrupole for GWs. 
 Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra when $c=0$ and also when $s=0$.
 
-(MORE ON PERTURBATIONS, STATE THAT EF NECESSARY WE MAY EXPAND).
 Will be useful expanding ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (\aref{AppendixEigenvalues}).
 Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with~\eqref{eq3:relationEVs}.
 In the general angular equation, inversion of spin corresponds to inversion of poles, \emph{i.e.} stays invariant under the transformation $(s,z)\to(-s,-z)$.
@@ -502,6 +502,7 @@ For both methods will prove beneficial to reduce the equation to change the vari
 \end{align}
 where every barred frequency is normalized relative to the BH horizon, $\bar\omega\equiv\omega r_{+}$. Due to~\eref{eq2:spinLimit}, we have that $0\le\tau\le 1$. Using this coordinate, $x\to0$ represents the BH horizon. The radial equation now reads
 \begin{align}
+    \label{eq3:radialTeukolskyAdimensional}
     \begin{split}
         & \frac{1}{[x(x+\tau)]^s} \frac{\dd}{\dd x}\left( [x(x+\tau)]^{s+1} \frac{\dd \,{}_{s}R_{\ell m}}{\dd x} \right) + \\
         &\qquad + \left[ \frac{\mathscr{K}^2 - i s (2 x+\tau) \mathscr{K}}{x(x+\tau)} + 4 i s (1 + x)\bar{\omega} - {}_{s}\mathscr{F}_{\ell m} \right] {}_{s}R_{\ell m} = 0 ~,
@@ -528,7 +529,7 @@ Asymptotically, we consider $x\gg\tau$, where $\mathscr{K}\sim x^2 \bar{\omega}$
 % \begin{align}
 %     x^2 \frac{\dd^2 \,{}_{s}R_{\ell m}}{\dd x^2} + 2 (s+1) x \frac{\dd \,{}_{s}R_{\ell m}}{\dd x}  + ( \bar{\omega}^2 x^2 + 2 i s \bar{\omega} x - {}_{s}\mathscr{F}_{\ell m}) \,{}_{s}R_{\ell m} \sim 0 ~,
 % \end{align}
-allows to substitute a power law ${}_{s}R_{\ell m}(x)\sim x^\alpha e^{- i \bar{\omega} x} M(x)$. In order to $M(x)$ to be analytical everywhere, then we must have $\alpha^2+(2s+1)\alpha = {}_{s}\ mathscr{F}_{\ell m}$. We are left with Kummer's differential equation for $M(x)$, where $\alpha = \ell-s$ or $\alpha=-1-\ell-s$. The general solution is the combination
+allows to substitute a power law ${}_{s}R_{\ell m}(x)\sim x^\alpha e^{- i \bar{\omega} x} M(x)$. In order to $M(x)$ to be analytical everywhere, then we must have $\alpha^2+(2s+1)\alpha = {}_{s}\mathscr{F}_{\ell m}$. We are left with Kummer's differential equation for $M(x)$, where $\alpha = \ell-s$ or $\alpha=-1-\ell-s$. The general solution is the combination
 \begin{align}
     \begin{split}
     {}_{s}R_{\ell m}(x) &\sim   C\,  e^{-i \bar{\omega} x} x^{\ell-s} \, {}_{1}F_1(1+\ell-s, \,2 \ell+2 ; \,-2 i \bar{\omega} x) \\
@@ -573,10 +574,7 @@ This is a mere artifact of the asymptotic expantion for general confluent hyperg
 A way to circunvey this problem is to consider the Euler's reflection formula for any value of $\ell$ and then taking the limit to the integer set,
 \begin{align}
     \label{eq3:negativeGammaRatio}
-    \begin{split}
-        \lim_{\ell\in\mathbbl{Z}} \frac{\Gamma(-2\ell)}{\Gamma(-\ell\pm s)} &= \frac{\Gamma(\ell\mp s+1)}{\Gamma(2\ell+1)} \, \lim_{\ell\in\mathbbl{Z}} \frac{\sin(\ell\pi)\cos(\mp s \pi)}{\sin(2\ell\pi)} \\
-        &= \frac{(-1)^{\ell+s}}{2} \frac{(\ell \mp s)!}{(2\ell)!} ~.
-    \end{split}
+    \lim_{\ell\in\mathbbl{Z}} \frac{\Gamma(-2\ell)}{\Gamma(-\ell\pm s)} &= \frac{\Gamma(\ell\mp s+1)}{\Gamma(2\ell+1)} \, \lim_{\ell\in\mathbbl{Z}} \frac{\sin(\ell\pi)\cos(\mp s \pi)}{\sin(2\ell\pi)} = \frac{(-1)^{\ell+s}}{2} \frac{(\ell \mp s)!}{(2\ell)!} ~.
 \end{align}
  
 At the event horizon $r=r_+$, $r_*\to-\infty$ and $\Delta=0$.
@@ -670,7 +668,7 @@ This implies that $\bm{\tilde{\mathfrak{l}}}$ is normal vector to the event hori
 The radial 3-surface element cannot be of the form of~\eqref{eq3:radial3SurfaceElement}, since the induced metric at the horizon is now singular, $\sqrt{\det{\bm{h}}}=\Delta \rho^2 \sin\theta = 0$.
 Special considerations must be taken when taking the induced metric of a null hypersurface.
 We usually choose $\bm{k}=\partial_v$ as one of the surface tangent vectors, due to $\bm{\xi}\cdot\bm{k}=0$.
-Then we compute the induced metric $\bm{\sigma}$ of a 2-surface space spanned by the vectors $\partial_\theta$ and $\partial_\chi$,.
+Then we compute the induced metric $\bm{\sigma}$ of a 2-surface space spanned by the vectors $\partial_\theta$ and $\partial_\chi$.
 The general 3-surface element for a null horizon, normal to the inward radial direction, is given by
 \begin{align}
     \dd\Sigma_\mu = \tilde{\mathfrak{l}}_\mu \,(\sqrt{\det \bm{\sigma}} \,\dd\theta \,\dd\chi ) \,\dd v = \tilde{\mathfrak{l}}_\mu  \, 2 M r_+ \sin\theta \,\dd\theta \,\dd\varphi \,\dd t ~,
@@ -697,26 +695,44 @@ At the horizon, the boosted NP scalar can be written as $\tilde{\phi}_0 = (\Delt
 
 Now, we are prepared to define the amplification factor as 
 \begin{align}
+    \label{eq3:Zdef}
     \uu[s]{Z}{\ell m} = \frac{\dd E_\mathrm{out} / \dd t}{\dd E_\mathrm{in} / \dd t} - 1 ~,
 \end{align}
 where we integrated off the polar angles.
 The factor is defined as the overall gain/loss effect for each mode $(\omega,\ell,m)$, therefore it measures how much of the wave was \emph{globally} reflected ($\uu[s]{Z}{\ell m}=0$), absorved ($\uu[s]{Z}{\ell m}<0$) or amplified ($\uu[s]{Z}{\ell m}>0$).
 Assuming a single mode decomposition and remebering that $\phi_2 = \Phi_2/(2 \bar{\rho}^2) \sim {}_{-1}R_{\ell m}/(2 r^2)$, we show that
 \begin{align}
-    \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 ~.
+    \label{eq3:ZfactorAout2Ain0}
+    \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 \equiv \left| \frac{Z_\mathrm{out}}{Y_\mathrm{in}} \right|^2 ~,
 \end{align}
-Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight.
+Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight. We redefine these constants in \tref{tb3:solutionsTeukolskyEq}.
+\begin{table}[h]
+	\centering
+	\tabulinesep=1.5mm
+    \begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}c@{\hskip 0.75cm}c@{\hskip 0.25cm}}
+        \hline
+         & $\omega r \gg 1$ & $\omega r \ll 1$ \\
+		\hline\hline
+        $\uu[1]{R}{\ell m}$ & $Y_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + Y_\mathrm{out}\, \cfrac{e^{i \omega r_*}}{r^3}$ & $Y_\mathrm{hole} \,\Delta^{-1} e^{-i \kappa r_{*}}$  \\
+		\hline
+        $\uu[-1]{R}{\ell m}$ & $Z_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + Z_\mathrm{out}\, r \,e^{i \omega r_*}$ & $Z_\mathrm{hole} \,\Delta \,e^{-i \kappa r_{*}}$ \\
+        \hline
+    \end{tabu}
+    \caption{Solutions near horzion far horizon~\cite{Teukolsky1974}}
+    \label{tb3:solutionsTeukolskyEq}
+\end{table}
 Using~\eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.
-In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$, we substitute in $A_\mathrm{in}(s=+1)$,
+In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $Y_\mathrm{in}$,
 \begin{align}
-    \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{A_\mathrm{out}}{A_\mathrm{in} } \right|_{(s=-1)}^2 ~,
+    \label{eq3:amplificationBAoutAin}
+    \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{Z_\mathrm{out}}{Z_\mathrm{in} } \right|^2 ~,
 \end{align}
 where now the expression only is using $s=-1$ coefficients.
 Still, the amplification should not depend on the sign of spin-weight, \emph{i.e.} the amplification should be the same for all EM waves, the same holding true for GW perturbations.
 The $\emph{in-out}$ ratio is given by
 \begin{align}
     \begin{split}
-        \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{A_\mathrm{out}}{A_\mathrm{in} } \right|^2 & = 
+        \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{Z_\mathrm{out}}{Z_\mathrm{in} } \right|^2 &= 
         \frac{\mathscr{B}^2}{\ell^2(\ell+1)^2} 
         \left|\cfrac{ 
             1+ \frac{(-1)^{\ell+1}}{2} \frac{D}{C} 

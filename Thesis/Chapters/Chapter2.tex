@@ -7,9 +7,9 @@
 \section{General Relativity}
 
 General Relativity is the theory of space, time and gravitation developed by Einstein in 1915. 
-It introduced a new viewpoint on gravity and it's relation with the fabric of spacetime, a \emph{manifold} that bounded our three spatial dimensions with dimension of time.
+It introduces a new viewpoint on gravity and it's relation with the fabric of spacetime, a \emph{manifold} that bounds our three spatial dimensions with time.
 The concept challenged our deeply ingrained and intuitive notions of nature, partially because the mathematical background needed to understand the precise formulation of theory was unfamiliar to much of the Physics community at the time.
-This formulation corresponds to a field theory with the dynamical object of study being the metric of spacetime, $ds^2=g_{\mu\nu} \dd x^\mu \dd x^\nu$, connecting geometry with mass and energy through Einstein field equations.
+This formulation corresponds to a field theory with the dynamical object of study being the metric of spacetime, $\bm{g}=g_{\mu\nu} \dd x^\mu \dd x^\nu$, connecting geometry with mass and energy through Einstein field equations.
 The theory inherits diffeomorphism invariance, \emph{i.e.} remains the same theory by a active change of coordinates, which was at the core of definition of manifolds.
 
 Immediately after, in 1916, Schwarzschild found the first solution, describing a static spherical isolated object.
@@ -115,17 +115,17 @@ According to the widely accepted of \emph{no-hair conjecture}~\cite{Carter1971},
 \section{Kerr-Child coordinates}
 
 Naturally, Kerr wasn't the only one after such solution.
-Many presented other solutions to approximately describe a rotating star. 
+Many presented other geometries to approximately describe a rotating star. 
 Most of the solutions were one-parameter modifications to Schwarzschild that were not asymptotically flat except for the standard case. 
 Simply using stationary and axisymmetric symmetries and then solving Einstein equations clearly did not suffice.
 
-Kerr success originated in of Petrov's classification of spacetimes, which used the algebraic properties of the Weyl tensor to distinguish the solutions in 3 types, along with some subcases.
+Kerr success originated in of Petrov's classification of spacetimes, which used the algebraic properties of the Weyl tensor to distinguish the solutions in 3 types, with some subcases.
 He assumed that his solution would have the same classification as Schwarzschild's, associated with the geometry of isolated central objects, such as stars and BHs. 
 From this assumption, using GR spinor techniques and only then imposing the Killing vectors in~\eqref{eq2:tPhiKilling} was possible to find a new solution. 
 Kerr's metric appear in his original paper~\cite{Kerr1963} in the form
 \begin{align}
     \begin{split}
-        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
+        \bm{g} = & \left(1 - \frac{2 M r}{\rho^2} \right) (\dd v - a \sin^2\theta \dd \chi )^2 \\
         & - 2  (\dd v - a \sin^2\theta \dd \chi )  (\dd r - a \sin^2\theta \dd \chi ) \\
         & - \rho^2 (\dd \theta^2 + \sin^2\theta \dd \chi^2 ) ~,
     \end{split}
@@ -147,7 +147,7 @@ The Schwarzschild singularity, $r=0$, is replaced with the Kerr singularity $(r,
 It is not clear what is the geometry of the Kerr singularity if we interpret $r$ and $\theta$ as being part of the ordinary spherical coordinates.
 Although the metric is singular, we can draw some insight considering $(r,\theta)$ constant and then the limit of $r\to0$ through the equatorial plane,
 \begin{align}
-    {ds^2}\rvert_{\mathrm{singularity}} \sim \dd v^2 - a^2 \dd \chi^2 ~.
+    {\bm{g}}\rvert_{\mathrm{singularity}} \sim \dd v^2 - a^2 \dd \chi^2 ~.
     \label{eq2:KerrKretschmann}
 \end{align}
 Hence the metric is reduced to the line element of the circle, $S^1$, confirming a \emph{ring singularity} of radius $a$.
@@ -156,7 +156,7 @@ This result implies that we may only reach the singularity $\rho^2=0$, by approa
 The Kerr-Child theory provides the ``cartesian'' form~\cite{Teukolsky2015}, 
 \begin{align}
     \begin{split}
-        ds^2 = & \, \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
+        \bm{g} = & \, \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
         & - \frac{2 M r^3}{r^4 + a^2 z^2} \left[ \dd \tilde{t} + \frac{r (x \dd x + y \dd y) + a ( y \dd x - x \dd y)}{r^2+a^2} + \frac{z}{r} \dd z \right]^2 ~,
     \end{split}
     \label{eq2:KerrChild}
@@ -201,7 +201,7 @@ This gives mathematical access to new spacetime regions, even tough most of them
 Considering the problem in hand, the most suitable coordinates for work with the NP formalism, are the Boyer-Linquist coordinates~\cite{Boyer1967},
 \begin{align}
     \begin{split}
-        ds^2 = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
+        \bm{g} = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
         &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2 ~,
     \end{split}
     \label{eq2:KerrBL}
@@ -223,7 +223,7 @@ Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\t
 This discrete symmetry eliminates most of the off-diagonal components of the BL metric, $g_{tr} = g_{\varphi r} = g_{t \theta} = g_{\varphi \theta} = 0$, making it the simplest to perform calculations.
 
 To study the possible horizons of Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp \equiv (g^{\mu\nu} \partial_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
-It is easy to show that $\bm{n}^2 = g^{rr}$, which implies that $\bm{n}$ is null when $\Delta=0$, defining horizons at 
+It is easy to show that $\bm{n}^2 = g^{rr}$, which implies that $\bm{n}$ is null when $\Delta=0$, defining null hypersurfaces at 
 \begin{align}
     r_\pm = M \pm \sqrt{M^2 - a^2} ~,
     \label{eq2:KerrRadius}
@@ -260,13 +260,13 @@ As a result, geodesics of a free particle in Kerr geometry will be characterized
 where $\tau$ is the affine parameter fo the geodesic.
 These quantities can be interpreted the energy per mass and angular momentum per mass of the particle, respectively.
 Due to the circular form of the BL metric, the metric components of the coordinates $(t,\varphi)$ define a product decomposition, providing the separation of previous equations,
-\begin{subequations}
 \begin{align}
-    \dot{t} &= \frac{1}{\Delta} \left[ (r^2+a^2 +\frac{2 M a^2}{r})E - \frac{2 M a}{r} L \right] ~, \label{eq2:geodesicT} \\
-    \dot{\varphi} &= \frac{1}{\Delta} \left[ \frac{2 M a}{r} E +\left( 1- \frac{2 M}{r} \right) L \right]  ~,
-    \label{eq2:geodesicPhi}
+    \label{eq2:geodesicTPhi}
+    \begin{split}
+        \dot{t} &= \frac{1}{\Delta} \left[ (r^2+a^2 +\frac{2 M a^2}{r})E - \frac{2 M a}{r} L \right] ~,  \\
+        \dot{\varphi} &= \frac{1}{\Delta} \left[ \frac{2 M a}{r} E +\left( 1- \frac{2 M}{r} \right) L \right]  ~,
+    \end{split}
 \end{align}
-\end{subequations}
 specified for the equatorial plane $\theta=\pi/2$. The final equation for the geodesic is provided by the line element (\ref{eq2:KerrBL}), which becomes also a first order ODE, after the substitution of $\dot{t}$ and $\dot{\varphi}$. 
 
 Consider now a zero angular momentum observer (ZAMO) infalling radially, with $L=0$, then we can get the angular velocity $\Omega$, as measured at infinity
@@ -326,7 +326,7 @@ Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)
         \includegraphics[width=\textwidth]{geodKerr_90_-5}
         \caption{~$a=0.9 M$, ~$L<0$}
     \end{subfigure}
-    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicT} and~\eref{eq2:geodesicPhi}, for $r(0)=20 M$, with emphasis on $L\ne0$. Even starting with opposite angular momentum, the Kerr geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dotted).}
+    \caption{Illustration of the Schwarzschild ({\footnotesize\textsc{A,C}}) and Kerr ({\footnotesize\textsc{B,D}}) null equatorial infalling geodesics given by Eqs.~\eref{eq2:geodesicTPhi}, for $r(0)=20 M$, with emphasis on $L\ne0$. Even starting with opposite angular momentum, the Kerr geodesic ({\footnotesize\textsc{D}}) is forced to co-rotate with the BH once crossed the ergoregion (dotted).}
     \label{fig2:geodesics}
 \end{figure}
 

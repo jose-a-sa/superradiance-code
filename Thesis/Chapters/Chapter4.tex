@@ -14,7 +14,7 @@ Additionally, the relative normalization constant $\mathscr{B}$, which depends e
 There is no reason to differentiate the eigenvalue for given BH angular momentum and a particular frequency, since the parameter dependence of the eigenvalue is $c=a\omega$.
 Considering the focus in superradiant modes, we only will need eigenvalues of coupling which is in the range $0<c<3$. 
 Even for extremal BHs, the typical frequency value for a superradiant mode, $\bar{\omega}\sim 1/2$, so this margin is sufficient even for observing the effects in non-superradiant modes.
-Due to symmetries XXXXX, instead of computing for negative values of $c$, we will consider all integer azimuthal numbers $|m|\le \ell$.
+Due to symmetries XXX, instead of computing for negative values of $c$, we will consider all integer azimuthal numbers $|m|\le \ell$.
 
 \subsection{Leaver method}
 
@@ -29,6 +29,9 @@ We improved on this method by starting the curve at $c=0$, and then obtaining th
 This is particularly useful to generate and save a complete table of eigenvalues for given range and then use interpolation methods to guess eigenvalues for intermediate $c$ values.
 
 For both methods the obtained curves are well behaved for $\ell=1$, but for bigger $\ell$ we start to observe some discontinuities, especially when we increase the range of $c$.
+
+(A PLOT WITH DISCONTINUITIES)
+
 For a fixed $s$ and $m$, we have an infinite number of curves labeled by $\ell$ and in some cases the root finding algorithm selecting roots from adjacent curves, either from the branch $\ell-1$ or $\ell+1$.
 These solutions cannot ever intersect, otherwise the eigenvalue would be degenerate and the SWSHs would not be a orthogonal basis of functions.
 The issue rests on the lack of accuracy when identifying of the $\ell$-th root.
@@ -54,8 +57,8 @@ Simple perturbation theory states that
 	\uu[s]{S}{\ell m} &= \uu[s]{Y}{\ell m} - \sum_{j\ne\ell} \frac{\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}}{j(j+1)-\ell(\ell+1)} \, \uu[s]{Y}{j m} +\mathscr{O}(c^2) ~.
 \end{align}
 We may include $\mathscr{H}^{(2)}$ by using a higher order expansion, which can be found in any Quantum Mechanics textbook.
-The integral $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}$ may be computed using Clebsch-Gordon coefficients decomposition generalized for spin-weighted functions, which is proportional to Leaver series coefficient $f_1$ defined in~\aref{AppendixEigenvalues}.
-These operator are generally represented in the basis of spin-weighted spherical harmonics using
+The integral $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}$ may be computed using Clebsch-Gordon coefficients decomposition generalized for spin-weighted functions. The integral must be proportional Leaver series coefficient $f_1$ defined in~\aref{AppendixEigenvalues}.
+These operator can be written in terms of general matrix elements in the basis of spin-weighted spherical harmonics,
 \begin{align}
 	\begin{split}
 	h^{(1)}_{j\ell} &= \int \dd\Omega \,\cos\theta \,(\uu[s]{Y}{j m})^* \,\uu[s]{Y}{\ell m} = \sqrt{\frac{2 \ell+1}{2 j+1}} \langle \ell,m; 1,0 | j,m \rangle \langle \ell, -s; 1,0 | j, -s \rangle ~, \\
@@ -63,7 +66,7 @@ These operator are generally represented in the basis of spin-weighted spherical
 	\end{split}
 \end{align}
 
-Perturbation theory shows that the SWSHs can be expanded in the basis of spherical harmonics.
+Perturbation theory shows that the SWSHs can be expanded using of spherical harmonics.
 This should not be a surprising fact as any angular function $f(\theta,\varphi)$ with a particular spin-weight $s$, can be represented using a decomposition using spin-weighted spherical harmonics.
 Having this idea in mind, we write 
 \begin{align}
@@ -72,6 +75,7 @@ Having this idea in mind, we write
 Replacing the expansion in~\eqref{eq4:angularEqH012}, we can take advantage of the orthogonality of the harmonics, $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\uu[s]{Y}{\ell m} = \delta_{\ell j}$, by multiplying the the equation by $(\uu[s]{Y}{\ell m})^*$ and integrating the solid angle.
 The angular equation is replaced by an eigenvalue matrix equation $\sum_{j} a_{ij} \, b_{j}^{(\ell)} = - \uu[s]{\mathscr{E}}{\ell m} \,b_{i}^{(\ell)}$, such that
 \begin{equation}
+	\label{eq4:spectralMatrix}
 	a_{ij} =
 	\begin{cases} 
 		~c^2 \,h^{(2)}_{ii} - 2 c s \,h^{(1)}_{ii} - i(i+1) & ~ i=j \\[-0.5ex]
@@ -82,169 +86,79 @@ The angular equation is replaced by an eigenvalue matrix equation $\sum_{j} a_{i
 \end{equation}
 where the the eigenvalues of this matrix are $-\uu[s]{\mathscr{E}}{\ell m}$ and the correspondent eigenvector is given by $b_j^{(\ell)}$.
 
-The matrix $[a_{ij}]$ is band-diagonal, optimized numerical methods allow for fast computation of the problem.
-Like the Leaver method, we will have to truncate the matrix at some point.
-Analyzing the matrix, we know that the larger contribution for the eigenvalue will be the element $a_{\ell\ell}$.
-So the best way to approximate $\uu[s]{\mathscr{E}}{\ell m}$ would be to take a square submatrix so that $a_{\ell\ell}$ is centered and on the diagonal.
-Since will will not take large $\ell$ values, we opted to implement a $N\times N$ matrix such that $i,j\ge\max\{|s|,|m|\}$ and truncating the matrix at a $i_{\max} = \ell - \max\{|s|,|m|\} + 1 + n_{c}$.
-The integer $n_c \ge 5$ is a offset that adds extra elements to the matrix to address the increase of $c$.
-We need 
+Like the Leaver method, we will have to truncate the matrix at some finite size.
+From \eqref{eq4:spectralMatrix}, we know that the zeroth order contribution to the $\ell$-th eigenvalue will be the element $a_{\ell\ell}$.
+We opted to implement a $N\times N$ submatrix such that $i,j\ge\max\{|s|,|m|\}$ and truncating the matrix at $N > \ell - \max\{|s|,|m|\} + 1$, in order to include $a_{\ell\ell}$ in the approximation.
+In reality, we must implement a variable $N\equiv N(c)$, so that it increases the size of the taken submatrix in order to include extra corrections for larger values of $c$. The size of submatrix also increases linearly with $\ell$.
+The best way to approximate $\uu[s]{\mathscr{E}}{\ell m}$ would be to take a square submatrix so that $a_{\ell\ell}$ is centered and on the diagonal but the first implementation will suffice since we will not take large $\ell$ values.
+Optimized numerical methods allow for fast computation of the eigenvalues and eigenvectors of a band-diagonal matrix.
+The ``Eigensystem'' method used in Mathematica\texttrademark~ returns a array of positively sorted eigenvalues and their correspondent normalized eigenvectors, guaranteeing~\eqref{eq3:SWSHorthogonality}. As for the eigenvalues we need to select the negative of the ($N-\ell-1+\max\{|s|,|m|\}$)-th element. In order to ensure that the SWSHs have the same phase convections of their spherical counterparts, we must ensure that the correspondent eigenvector has $b_\ell^{(\ell)}>0$, by mapping the obtained vector components as $b_j^{(\ell)}\mapsto \mathrm{sgn}(b_\ell^{(\ell)}) \,b_j^{(\ell)}$.
 
+(EV PLOTS)
 
 \section{Radial equation}
 
-\section{Amplification factor as as first test}
+Finding non-approximate form to the amplification factor $\uu[\pm 1]{Z}{\ell m}$ requires the numerical solving of the radial~\eqref{eq3:radialTeukolskyAdimensional}, which is already in an adimensional form.
+We computed the angular eigenvalues beforehand, which depend on the mode $(\ell,m)$ as well as the coupling $c=a\omega$.
+Additionally the equation depends on the BH parameters $(M,J)$ and $\omega$ explicitly, but it is possible to normalize all variables so that we only need to specify $(\mathscr{J}, \ell, m, \bar{\omega})$, where $\mathscr{J}=a/M=J/M^2$.
+We choose to work with barred frequencies because $\bar{\Omega}_H = \mathscr{J}/2$, which makes it easier to numerically select superradiant modes.
 
-\section{MATHEMATICA CELLS}
+We need to obtain numerical interpolations for $\uu[\pm 1]{R}{\ell m}$, by integrating the solution outwards from the horizon, at $x=0$, up to a sufficiently large $x_\infty \gg \bar{\omega}^{-1}$. 
+The solutions for $s=\pm 1$ contain the all the EM field information, but they have different asymptotic behaviors.
+For $\phi_0$, \eqref{eq3:asymptoticR} tells us that the ingoing coefficient tends to overshadow the outgoing coefficient, while the opposite occurs for $\phi_2$.
+This way seems natural to try to solve the both equations, where we can obtain $Y_\mathrm{in}$ and $Z_\mathrm{out}$ separately.
 
-Input from question with output from my Mathematica version.
-Input is in input form, it can be copied and pasted to Mathematica.
-\begin{mmaCell}[functionlocal=y,yoffset=3.5ex]{Code}
-  Integrate[{y^(-3)*(1-(a/y)^2)^(-2)},{y,r,Infinity}]
-\end{mmaCell}
-\begin{mmaCell}{Output}
-  \{ConditionalExpression[-\mmaFrac{1}{2 (\mmaSup{a}{2} - \mmaSup{r}{2})},
-     Im[r] Re[a] ≠ Im[a] Re[r] || ((a + r > 0 || a + r ∉ Reals) &&
-       ((Re[a] < r && Im[a] == 0) || a - r ∉ Reals)) || r ∉ Reals]\}
-\end{mmaCell}
+Knowing the irregularities of the solution at the horizon, we propose the ansatz
+\begin{align}
+	\label{eq4:numericalRansatz}
+	\uu[\pm 1]{R}{\ell m} = (r_+)^{\mp 1} \, x^{ \mp 1 - i \varpi / \tau} f_{\pm}(x) ~,
+\end{align}
+where $f(x)$ is a new function obeys a regular second-order differential equation.
+Thus we need to set two initial conditions at the horizon, $f_{\pm}(0)$ and $f_{\pm}{\!}'(0)$.
+We expect to $|f_\pm(x)|$ to become approximately constant to large $x$, because this
+form is written in way that also matches the behavior of the radial function at infinity, $\uu[\pm 1]{R}{\ell m}\sim r^{\mp 1}$.
 
-For comparison, same cells obtained by including PDFs exported from Mathematica:
-% You need inCell.pdf and outCell.pdf files for this to work.
-% \mmaCellGraphics{Input}{inCell}
-% \mmaCellGraphics[yoffset=3.5ex]{Output}{outCell}
+(PLOT SHOWING THAT F IS CONSTANT AT INF)
 
-Same input expression, but in standard form (as if it was inputted using math assistant). Note that syntax coloring still works.
-\begin{mmaCell}[index=3,functionlocal=y]{Input}
-  \mmaSubSupM{\int}{r}{∞}\{\mmaFrac{1}{\mmaSup{y}{3}\mmaSup{\big(1-\mmaSup{\big(\mmaFrac{a}{y}\big)}{2}\big)}{2}}\}𝕕y
-\end{mmaCell}
+Comparing \eqref{eq4:numericalRansatz} with the asymptotic form at large $x$ as well as near the horizon, we obtain
+\begin{subequations}
+	\begin{align}
+			\label{eq4:YinFplusInf}
+			r_{+} \tau \,\frac{Y_\mathrm{in}}{Y_\mathrm{hole}} &= \frac{f_{+}(x_\infty)}{f_{+}(0)} \exp\left[ - i \bar{\omega} x_\infty - i \bar{\omega} (2-\tau)\log(x_\infty)   -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~, \\[0.15cm]
+			\label{eq4:ZoutFminusInf}
+			\frac{1}{r_{+} \tau} \,\frac{Z_\mathrm{out}}{Z_\mathrm{hole}} &= \frac{f_{-}(x_\infty)}{f_{-}(0)} \exp\left[ + i \bar{\omega} x_\infty + i \bar{\omega} (2-\tau)\log(x_\infty) -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~.
+	\end{align}
+\end{subequations}
+If both solutions are normalized such that $f_{\pm}(0) = 1$, then we have to deal with the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$. We can obtain such ratio in terms of known parameters by considering \eqref{eq3:separationB} at $x\simeq0$,
+\begin{align}
+	\frac{1}{(r_{+} \tau)^2} \frac{Z_\mathrm{hole}}{Y_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
+\end{align}
+Therefore to compute the amplification factor we use
+\begin{align}
+	\label{eq4:ZBFPlusMinus}
+	\uu[\pm 1]{Z}{\ell m} = \frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1 ~.
+\end{align}
 
+Another way of dealing with the relative normalization would be to select different initial conditions at the horizon $x=0$.
+We could cancel the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$ if we would set any normalization which results in $f_{-}(0)/f_{+}(0) = -\mathscr{B} \tau^2 /[2 \varpi (i \tau + 2 \varpi)]$, eliminating the dependence of $\mathscr{B}^2$ in \eqref{eq4:ZBFPlusMinus}.
 
-More features:
-\begin{mmaCell}[
-  moredefined=f,
-  functionlocal=a,
-  local=b,
-  pattern={x_,x},
-  excessargument=n,
-  linkbuiltin=List
-]{Code}
-  (* A (* nested *) comment. *)
-  Block[{a=3},a+2]
-  f[x_]:=2x+1 
-  Module[{b=c},
-      Print["a string \" with double quotes inside ", b/d];
-      b+1
-  ]
-  f[z]//FullForm
-  Sin[m,n]
-  List[1,List[2,3]]; (* Links to documentation. *)
-\end{mmaCell}
-\begin{mmaCell}{Output}
-  5
-\end{mmaCell}
-\begin{mmaCell}{Code}
-  a string " with double quotes inside \mmaFrac{c}{d}
-\end{mmaCell}
-\begin{mmaCell}[addtoindex=1]{Output}
-  1+c
-\end{mmaCell}
-\begin{mmaCell}[form=FullForm]{Output}
-  Plus[1,Times[2,z]]
-\end{mmaCell}
-\begin{mmaCell}[messagelink={message/General/argx}]{Message}
-  Sin::argx: Sin called with 2 arguments; 1 argument is expected. >>
-\end{mmaCell}
-\begin{mmaCell}{Output}
-  Sin[m,n]
-\end{mmaCell}
-\begin{mmaCell}{Output}
-  \{1,\{2,3\}\}
-\end{mmaCell}
-Graphics mixed with code:
-\begin{mmaCell}{Code}
-  a=Graphics[{Green,Disk[]},ImageSize->50]/2
-\end{mmaCell}
-% You need greenDisk.pdf file for this to work.
-% \begin{mmaCell}[moregraphics={moreig={scale=.7}}]{Output}
-%   \mmaFrac{a \mmaGraphics{greenDisk}}{2}
-% \end{mmaCell}
-\begin{mmaCell}{Code}
-  (* Different roles of one symbol. *)
-  x;
-  _x;
-  \mmaDef{x_};
-  \mmaPat{x_}->2x;
-  \mmaPat{x_}:>2\mmaPat{x};
-  f[\mmaPat{x_}]=2x;
-  f[\mmaPat{x_}]:=2\mmaPat{x};
-  Block[{\mmaFnc{x}},2\mmaFnc{x}];
-  Module[{\mmaLoc{x}},2\mmaLoc{x}];
-  \mmaUnd{Module}; (* undefined Module symbol *)
-  \mmaLnB{Module}; (* Module symbol with link to documentation *)
-  Sin[x\mmaExc{,x}];
-\end{mmaCell}
-\begin{mmaCell}[addtoindex=11]{Input}
-  (* Nesting of "formatting boxes" *)
-  \mmaSup{a}{\mmaSup{a}{a}} \mmaSub{a}{\mmaSub{a}{a}} \mmaSubSup{a}{\mmaSubSup{a}{a}{a}}{\mmaSubSup{a}{a}{a}} \mmaUnder{a}{\mmaUnder{a}{a}} \mmaOver{a}{\mmaOver{a}{a}} \mmaUnderOver{a}{\mmaUnderOver{a}{a}{a}}{\mmaUnderOver{a}{a}{a}} \mmaFrac{a}{\mmaFrac{a}{\mmaFrac{a}{a}}} \mmaSqrt{\mmaSqrt{a}} \mmaRadical{a}{\mmaRadical{a}{a}}
-\end{mmaCell}
-\begin{mmaCell}{Input}
-  (* Replacements for infix operators in "Input" cells. *)
-  x>=y; x<=y; x!=y; x->y; x:>y;
-\end{mmaCell}
-\begin{mmaCell}{Code}
-  (* No replacement in "Code" cells. *)
-  x>=y; x<=y; x!=y; x->y; x:>y;
-\end{mmaCell}
-\begin{mmaCell}[label={}]{Code}
-  (* Cell with custom label. *)
-\end{mmaCell}
-\begin{mmaCell}{Input}
-  \mmaLnT{x}=2;(* labeled definition of x *)
-\end{mmaCell}
-\begin{mmaCell}{Input}
-  \mmaLnL{x}(* usage of x with link to its definition *)
-\end{mmaCell}
+The differential equation obtained from substituting \eref{eq4:numericalRansatz} into \eqref{eq3:radialTeukolskyAdimensional} is identically zero for $x=0$.
+Therefore no matter what initial conditions set for $f_{\pm}{\!}'$ the system would not evolve due to stiffness, which makes the step size of the integrator effectively zero.
+The usual solution for stiff differential equation is to start the solver a small distance from the horizon $\epsilon>0$.
+We adjust the initial conditions by substituting the series expansion of $f_{\pm}(x) = \sum_{n=0}^{N_H} a_n x^n$ in the radial equation, discarding a terms higher than $\mathscr{O}(x^{N_H})$ and obtaining the coefficients $a_n \propto a_0$, $1 \le n \le N_H$. 
+Therefore we may set the initial conditions as
+\begin{align}
+	f_{\pm}(\epsilon) = f_{\pm}(0) \sum_{n=0}^{N_H} \frac{a_n}{a_0} \epsilon^n ~,\qquad f_{\pm}{\!}'(\epsilon) = f_{\pm}(0) \sum_{n=1}^{N_H} \frac{a_n}{a_0} \epsilon^n ~,
+\end{align}
+$f_{\pm}(0)=1$ are the original horizon conditions consider.
+We found $\epsilon=10^{-12}$, $N_H=6$ and $x_\infty = 750 \times 2\pi/\bar{\omega}$ working perfectly for the ``NDSolve'' integrator.
+Effectively we will have $|f_{\pm}{\!}'(\epsilon)|\simeq \epsilon$, but this contribution removes stiffness from the system and has important contributions in case of extremal BHs ($\mathscr{J}\to 1$).
 
-Implemented syntax elements:
-\begin{mmaCell}[
-  defined=defined,
-  undefined=undefined,
-  functionlocal=functionlocal,
-  local=local,
-  pattern=pattern,
-  localconflict=localconflict,
-  globalconflict=globalconflict,
-  excessargument=excessargument,
-  unknownoption=unknownoption,
-  unwantedassignment=unwantedassignment,
-  shadowing=shadowing,
-  syntaxerror=syntaxerror,
-  emphasizedsyntaxerror=emphasizedsyntaxerror,
-  formattingerror=formattingerror,
-]{Code}
-  \mmaDef{Def} defined (*  defined symbol *)
-  \mmaUnd{Und} undefined (* UndefinedSymbol *)
-  \mmaFnc{Fnc} functionlocal (* FunctionLocalVariable *)
-  \mmaLoc{Loc} local (* LocalVariable *)
-  \mmaPat{Pat} pattern (* PatternVariable *)
-  \mmaLCn{LCn} localconflict (* LocalScopeConflict *)
-  \mmaGCn{GCn} globalconflict (* GlobalToLocalScopeConflict *)
-  \mmaExc{Exc} excessargument (* ExcessArgument *)
-  \mmaOpt{Opt} unknownoption (* UnknownOption *)
-  \mmaAsg{Asg} unwantedassignment (* UnwantedAssignment *)
-  \mmaShd{Shd} shadowing (* SymbolShadowing *)
-  \mmaSnt{Snt} syntaxerror (* SyntaxError *)
-  \mmaEmp{Emp} emphasizedsyntaxerror (* EmphasizedSyntaxError *)
-  \mmaFmt{Fmt} formattingerror (* FormattingError *)
-\end{mmaCell}
+(PROBABLY SOME PLOTS OF Z)
 
-Inline cell: \mmaInlineCell[functionlocal=a]{Code}{Module[{a=5}, a]}.
-Formatted inline cell:
-\mmaInlineCell[pattern={x_,x}]{Input}{f[x_]:=\mmaFrac{\mmaSup{x}{2}}{5}}
-\subsubsection*{
-  Inline cell inside macro argument:
-  \mmaInlineCellNonVerb[functionlocal=x]{Code}{Solve[\mmaSqrt{x}==y,x]}
-}
+This previous method requires us to call the integrator twice which is not very effective numerically.
+Exploring the conservation of the wronskian (conserved current)
+
 
 
 \cleardoublepage
