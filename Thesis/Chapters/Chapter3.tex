@@ -541,6 +541,7 @@ where ${}_{1}F_1(a,b;x)$ are Olver's confluent hypergeometric functions and $B$,
 
 Altought useful, these solutions do not provide enough physical insight. Another way of obtaining the same assympotic behavior is by transforming the radial equation into a Schrodinger-like potential problem
 \begin{align}
+    \label{eq3:D2PlusVeff}
     \left[ \frac{\dd^2}{\dd r_{*}^2} + V_\mathrm{eff} \right] {}_{s}U_{\ell m} = 0 ~,
 \end{align}
 where ${}_{s}U_{\ell m}=\sqrt{\Delta^s (r^2 + a^2)} \,{}_{s}R_{\ell m}$ and the tortoise coordinate $r_*$ is defined in~\eqref{eq2:tortoise}.
@@ -683,7 +684,7 @@ Generalizing~\eqref{eq3:fluxE}, we may define the the flow of angular momentum u
     \frac{\dd^2 E_\mathrm{hole}}{\dd t \dd\Omega} - \Omega_H \frac{\dd^2 L_\mathrm{hole}}{\dd t \dd\Omega} = 2 M r_{+} T_{\mu\nu} \,\tilde{\mathfrak{l}}^\mu \tilde{\mathfrak{l}}^\nu \qquad (r=r_{+})~.
 \end{align}
 
-Compoutation of the flow of the energy into the BH requires to find the ratio of energy and angular momentum carried by waves.
+Computation of the flow of the energy into the BH requires us to find the ratio of energy and angular momentum carried by waves.
 For a scalar wave $\Phi\sim e^{-i\omega t+ i m\varphi}$, we can easily find the ratio by computing $\dd L/\dd E = -T^r{}_\varphi/T^r{}_t = - \partial_\varphi \Phi / \partial_t \Phi = m/\omega$, using the standard scalar energy-stress tensor~\cite{Bekenstein1973}.
 Another simpler argument was made in~\eref{eq2:spinMassRatio}, obtaining the same result.
 Since the ratio holds for any type of perturbation~\cite{Teukolsky1974},
@@ -705,7 +706,7 @@ Assuming a single mode decomposition and remebering that $\phi_2 = \Phi_2/(2 \ba
     \label{eq3:ZfactorAout2Ain0}
     \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 \equiv \left| \frac{Z_\mathrm{out}}{Y_\mathrm{in}} \right|^2 ~,
 \end{align}
-Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight. We redefine these constants in \tref{tb3:solutionsTeukolskyEq}.
+Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight. We redefine these constants in \tref{tb3:approximatedRsolutionsYZ}.
 \begin{table}[h]
 	\centering
 	\tabulinesep=1.5mm
@@ -719,7 +720,7 @@ Naturally, in order to give use to the $D/C$ ratio from the matching of coeffici
         \hline
     \end{tabu}
     \caption{Solutions near horzion far horizon~\cite{Teukolsky1974}}
-    \label{tb3:solutionsTeukolskyEq}
+    \label{tb3:approximatedRsolutionsYZ}
 \end{table}
 Using~\eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.
 In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $Y_\mathrm{in}$,

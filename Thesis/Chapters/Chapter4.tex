@@ -78,8 +78,8 @@ The angular equation is replaced by an eigenvalue matrix equation $\sum_{j} a_{i
 	\label{eq4:spectralMatrix}
 	a_{ij} =
 	\begin{cases} 
-		~c^2 \,h^{(2)}_{ii} - 2 c s \,h^{(1)}_{ii} - i(i+1) & ~ i=j \\[-0.5ex]
-		~c^2 \,h^{(2)}_{ij} - 2 c s \,h^{(1)}_{ij} & ~ |i-j|=1 \\[-0.5ex]
+		~c^2 \,h^{(2)}_{ii} - 2 s c \,h^{(1)}_{ii} - i(i+1) & ~ i=j \\[-0.5ex]
+		~c^2 \,h^{(2)}_{ij} - 2 s c \,h^{(1)}_{ij} & ~ |i-j|=1 \\[-0.5ex]
 		~c^2 \,h^{(2)}_{ij} & ~ |i-j|=2 \\[-0.5ex]
 		~0 & ~\text{otherwise}
 	\end{cases}  \qquad \Big( i, j \ge \max\{|s|,|m|\} \Big) ~,
@@ -103,10 +103,10 @@ We computed the angular eigenvalues beforehand, which depend on the mode $(\ell,
 Additionally the equation depends on the BH parameters $(M,J)$ and $\omega$ explicitly, but it is possible to normalize all variables so that we only need to specify $(\mathscr{J}, \ell, m, \bar{\omega})$, where $\mathscr{J}=a/M=J/M^2$.
 We choose to work with barred frequencies because $\bar{\Omega}_H = \mathscr{J}/2$, which makes it easier to numerically select superradiant modes.
 
-We need to obtain numerical interpolations for $\uu[\pm 1]{R}{\ell m}$, by integrating the solution outwards from the horizon, at $x=0$, up to a sufficiently large $x_\infty \gg \bar{\omega}^{-1}$. 
+We need to obtain numerical interpolations for $\uu[\pm 1]{R}{\ell m}$, by integrating the solution outwards from the horizon, at $x=0$, up to a sufficiently large $x_\infty \gg |\bar{\omega}|^{-1}$. 
 The solutions for $s=\pm 1$ contain the all the EM field information, but they have different asymptotic behaviors.
 For $\phi_0$, \eqref{eq3:asymptoticR} tells us that the ingoing coefficient tends to overshadow the outgoing coefficient, while the opposite occurs for $\phi_2$.
-This way seems natural to try to solve the both equations, where we can obtain $Y_\mathrm{in}$ and $Z_\mathrm{out}$ separately.
+This way seems natural to try to solve the both equations, where we can obtain $Y_\mathrm{in}$ and $Z_\mathrm{out}$ separately (\tref{tb3:approximatedRsolutionsYZ}).
 
 Knowing the irregularities of the solution at the horizon, we propose the ansatz
 \begin{align}
@@ -131,16 +131,16 @@ Comparing \eqref{eq4:numericalRansatz} with the asymptotic form at large $x$ as 
 \end{subequations}
 If both solutions are normalized such that $f_{\pm}(0) = 1$, then we have to deal with the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$. We can obtain such ratio in terms of known parameters by considering \eqref{eq3:separationB} at $x\simeq0$,
 \begin{align}
-	\frac{1}{(r_{+} \tau)^2} \frac{Z_\mathrm{hole}}{Y_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
+	(r_{+} \tau)^2 \,\frac{Z_\mathrm{hole}}{Y_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
 \end{align}
 Therefore to compute the amplification factor we use
 \begin{align}
-	\label{eq4:ZBFPlusMinus}
+	\label{eq4:ZFPlusMinus}
 	\uu[\pm 1]{Z}{\ell m} = \frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1 ~.
 \end{align}
 
 Another way of dealing with the relative normalization would be to select different initial conditions at the horizon $x=0$.
-We could cancel the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$ if we would set any normalization which results in $f_{-}(0)/f_{+}(0) = -\mathscr{B} \tau^2 /[2 \varpi (i \tau + 2 \varpi)]$, eliminating the dependence of $\mathscr{B}^2$ in \eqref{eq4:ZBFPlusMinus}.
+We could cancel the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$ if we would set any normalization which results in $f_{-}(0)/f_{+}(0) = -\mathscr{B} \tau^2 /[2 \varpi (i \tau + 2 \varpi)]$, eliminating the dependence of $\mathscr{B}$, $\tau$, $\varpi$ in \eqref{eq4:ZFPlusMinus}.
 
 The differential equation obtained from substituting \eref{eq4:numericalRansatz} into \eqref{eq3:radialTeukolskyAdimensional} is identically zero for $x=0$.
 Therefore no matter what initial conditions set for $f_{\pm}{\!}'$ the system would not evolve due to stiffness, which makes the step size of the integrator effectively zero.
@@ -148,16 +148,57 @@ The usual solution for stiff differential equation is to start the solver a smal
 We adjust the initial conditions by substituting the series expansion of $f_{\pm}(x) = \sum_{n=0}^{N_H} a_n x^n$ in the radial equation, discarding a terms higher than $\mathscr{O}(x^{N_H})$ and obtaining the coefficients $a_n \propto a_0$, $1 \le n \le N_H$. 
 Therefore we may set the initial conditions as
 \begin{align}
-	f_{\pm}(\epsilon) = f_{\pm}(0) \sum_{n=0}^{N_H} \frac{a_n}{a_0} \epsilon^n ~,\qquad f_{\pm}{\!}'(\epsilon) = f_{\pm}(0) \sum_{n=1}^{N_H} \frac{a_n}{a_0} \epsilon^n ~,
+	f_{\pm}(\epsilon) = f_{\pm}(0) \sum_{n=0}^{N_H} \left(\frac{a_n}{a_0}\right) \epsilon^n ~,\qquad f_{\pm}{\!}'(\epsilon) = f_{\pm}(0) \sum_{n=1}^{N_H} \left(\frac{a_n}{a_0}\right) \epsilon^n ~,
 \end{align}
 $f_{\pm}(0)=1$ are the original horizon conditions consider.
-We found $\epsilon=10^{-12}$, $N_H=6$ and $x_\infty = 750 \times 2\pi/\bar{\omega}$ working perfectly for the ``NDSolve'' integrator.
-Effectively we will have $|f_{\pm}{\!}'(\epsilon)|\simeq \epsilon$, but this contribution removes stiffness from the system and has important contributions in case of extremal BHs ($\mathscr{J}\to 1$).
+We found $\epsilon=10^{-12}$, $N_H=6$ and $x_\infty = 200 \times 2\pi/|\bar{\omega}|$ working perfectly for the ``NDSolve'' integrator.
+Effectively we will have $|f_{\pm}{\!}'(\epsilon)|\simeq \epsilon$, but this contribution is sufficient to remove stiffness from the system and has important contributions in case of extremal BHs ($\mathscr{J}\to 1$).
 
-(PROBABLY SOME PLOTS OF Z)
+(PROBABLY SOME PLOTS OF Z, DIFFERENT Ms, ANALYSE PLOT)
 
 This previous method requires us to call the integrator twice which is not very effective numerically.
-Exploring the conservation of the wronskian (conserved current)
+Exploring the conservation of the wronskian (conserved current) of \eqref{eq3:D2PlusVeff}, we can obtain
+\begin{align}
+	\frac{\dd E_\mathrm{out}}{\dd t} - \frac{\dd E_\mathrm{in}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t} ~,
+\end{align}
+which simply states total energy conservation.
+Therefore we can rewrite \eqref{eq3:Zdef} only using \emph{hole-in} ratio, thus we are able to get the amplification factor with just with the $s=+1$ solution,
+\begin{align}
+	\label{eq4:ZFPlusPlus}
+	\uu[\pm 1]{Z}{\ell m} = - \frac{\bar{\omega} \tau^2}{\varpi} \left|\frac{f_{+}(0)}{f_{+}(x_\infty)}\right|^2 ~.
+\end{align}
+If we use the \emph{out-hole} ratio in the amplification factor we only need to solve for $s=-1$,
+\begin{align}
+	\label{eq4:ZFMinusMinus}
+	\uu[\pm 1]{Z}{\ell m} = - \left( 1 + \frac{\mathscr{B}^2 \tau^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \left|\frac{f_{-}(x_\infty)}{f_{-}(0)}\right|^2 \right)^{-1} ~.
+\end{align}
+Thus we have three ways of computing $\uu[\pm 1]{Z}{\ell m}$, which only two of them are independent.
+For example, we can relate the RHS of \eqref{eq4:ZFPlusMinus} from both \eref{eq4:ZFPlusPlus} and \eref{eq4:ZFMinusMinus}.
+
+It is expected that if the amplification factors based on only one solution are approximately equal, then the same would be true when considering the third factor, which uses both solutions.
+But from a better look at FIGURE. XXX we can see that this fact is not true, especially in higher values of $\ell$.
+
+(PLOTS SHOWING THREE WAYS OF COMPUTING Z, $\ell=1$ and $\ell=2$)
+
+Somehow it appears that we are not compute the ratio of $Y_\mathrm{in}$ and $Z_\mathrm{out}$ with enough accuracy, probably because the large values that $f_{\pm}(x_\infty)$ take do not hold the necessary precision to perform the division.
+We owe to correct this problem by considering higher order in the asymptotic expansion of \eqref{eq3:asymptoticR}.
+Separately, we will substitute both two asymptotic series in \eqref{eq3:radialTeukolskyAdimensional}, one for the ingoing part and another for the outgoing.
+Together they have the form
+\begin{align}
+	\label{eq4:radialIOseries}
+	\uu[-1]{R}{\ell m}(r) &= e^{-i \bar{\omega} x}  \, x^{ - 1 - i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} i_n \, x^{-n} + \, e^{-i \bar{\omega} x} x^{ 1 + i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} o_n \, x^{-n} ~,
+\end{align}
+where we identify $i_0 = Z_\mathrm{in}/r_{+}$ and $o_0 = Z_\mathrm{out} \,r_{+}$.
+Although we have chosen the $s=-1$ solution, the same procedure can be done for $s=+1$, because when using a higher order expansion, both ingoing and outgoing coefficients are present.
+Firstly, we directly substitute the series into \eqref{eq3:radialTeukolskyAdimensional}, neglecting terms above $\mathscr{O}(x^{N_\infty})$ and grouping the exponentials terms, in order to obtain $i_n\propto i_0$ and $o_n\propto o_0$ ($1 \le n \le N_\infty$), exactly like the horizon series used above to define boundary conditions at the horizon.
+Secondly, substitution of the numerical ansatz \eref{eq4:numericalRansatz} in the LHS of the previous equation, together with it's derivative, we have a system two linear equations, which in the limit of large-$x$ limit allows to determine
+\begin{align}
+	\frac{1}{r_+} \,Z_\mathrm{in} = i_0\Big( f_{-}(x_\infty),  f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,Z_\mathrm{out} = o_0\Big( f_{-}(x_\infty),  f_{-}{\!}'(x_\infty) \Big) ~.
+\end{align}
+Lastly, we may use previous expression~\eref{eq3:amplificationBAoutAin} to compute $\uu[\pm1]{Z}{\ell m}$.
+FIGURE. XXX shows for a smaller $x_\infty = 80 \times 2 \pi / |\bar{\omega}|$ and $N_\infty = 10$, with the same $\epsilon = 10^{-12}$, that this new method solves the precision problems from the first method when using both $\phi_0$ and $\phi_2$. 
+
+
 
 
 
