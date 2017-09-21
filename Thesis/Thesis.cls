@@ -53,11 +53,10 @@
 %----------------------------------------------------------------------------------------
 %	PARAGRAPHS
 %----------------------------------------------------------------------------------------
-\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{setspace}
 \onehalfspacing
 %\setlength{\parindent}{15pt}
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
-
 
 %----------------------------------------------------------------------------------------
 %	CHAPTERS & SECTIONS
