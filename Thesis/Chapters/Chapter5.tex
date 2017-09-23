@@ -3,31 +3,73 @@
 \chapter{Superradiant scattering of plane waves} % Main chapter title
 \label{Chapter5}
 
-
 The prediction of EM and gravitational radiation amplification was a surprising prediction of Einstein's theory of gravitation in Kerr geometry.
-A method of direct or indirect observation of this process would provide a probe for rotating BHs and thus it would constitute an important test of GR in regions of extreme gravity.
+A method for direct or indirect observation of this process would provide a probe for rotating BHs and thus it would constitute an important test of GR in regions of extreme gravity.
 
 Having shown that superradiance occurs for small frequencies we owe to find astrophysical sources that emit EM waves.
 Binary systems of rotating neutron stars and BH may exhibit the necessary conditions for superradiant scattering.
 These objects, also known as pulsars, possess a strong magnetic field with magnetic dipole moment typically not aligned with the rotation axis.
 Obviously the magnetic field configuration of a neutron star can be very complicated but its main properties are best described by the \emph{oblique-rotator} model, which considers only the leading order in the multipolar expansion, \emph{i.e.} a magnetic moment dipole
 \begin{align}
-    \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega_S t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \,\text{c.c.} \right] + m_P \cos\alpha_S \,\mathbf{\hat{z}} ~,
+    \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \cos\alpha_S \,\mathbf{\hat{z}} \right] + \text{ c.c.} ~,
 \end{align}
-where $\omega_S$ is the frequency of rotation.
+where $\omega$ is the frequency of rotation.
 The upper (lower) sign corresponds to a neutron star co-rotating (counter-rotating) with the BH.
-The moment $\mathbf{m}_P$ makes an angle of $\alpha_S$ with respect with the rotation axis, resulting in the precession of the pulsars' magnetic axis, which produces a periodic focused beam of EM radiation.
+The moment $\mathbf{m}_P$ makes an angle $\alpha_S$ with respect with the rotation axis, resulting in the precession of the pulsars' magnetic axis, which produces a periodic focused beam of EM radiation.
 This periodicity is so precise that makes pulsars ideal for measuring time differences in GR tests.
+Neutron stars usually have a millisecond period producing radiation of a few kHz, which is in range of the superradiant frequencies of a typical stellar mass extremal BH.  
 
 (IN NEED OF A FIGURE WITH BH AND PULSAR)
 
-
-
-
-
-
+We will focus on scattering of incident plane waves, which means we will consider a source that is far away from the BH.
+More specifically, we consider incident plane waves from a magnetic dipole source whose electric and magnetic radiation fields, which are found in standard textbook, are given by
+\begin{align}
+    \begin{split}
+        \mathbf{E} &= \frac{\mu_0}{8\pi}
+        \frac{e^{i\omega|\mathbf{r}-\mathbf{r}_S|}}{|\mathbf{r}-\mathbf{r}_S|} \left(
+        \frac{\mathbf{r}-\mathbf{r}_S}{|\mathbf{r}-\mathbf{r}_S|} \times
+        \frac{\dd^2 \mathbf{m}_P}{\dd t^2} \right) + \text{ c.c.} \\
+        & \simeq  - \frac{\mu_0}{8\pi} \frac{e^{i \omega L}}{L}
+        e^{i \mathbf{k} \cdot \mathbf{r}} \left( \mathbf{\hat{r}}_S \times
+        \frac{\dd^2 \mathbf{m}_P}{\dd t^2} \right) + \text{ c.c.} ~,
+    \end{split}
+\end{align}
+where $\mathbf{k}= -\omega \mathbf{\hat{r}}_S$ and $L=|\mathbf{r}_S|$ is the distance to the source to the BH.
+This approximation is valid for when $r=|\mathbf{r}|$ is large compared with the radiation wavelength and the physical dimension of the dipole.
+Additionally, in the last step we require that $r \ll L$.  With the similar procedure the magnetic field can be obtain using $\mathbf{B}\simeq - \mathbf{\hat{r}}_S \times \mathbf{E}$.
+Thus, when sufficiently far away from the dipole the radiation can be seen as plane waves propagating in the direction of $(- \mathbf{\hat{r}}_S) = (\sin\theta_0 \cos\varphi_0, \sin\theta_0 \sin\varphi_0, \cos\theta_0)$. The EM field has two polarizations,
+\begin{align}
+    \epsilon_{\theta} = \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{8 \pi} \frac{e^{i \omega L}}{L} e^{\pm i \varphi_0} \cos\varphi_0 ~,\qquad
+    \epsilon_{\varphi} = \pm i\, \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{8 \pi} \frac{e^{i \omega L}}{L} e^{\pm i \varphi_0} ~,
+\end{align}
+which can obtained by projecting the complex representation of $\mathbf{E}$ using the perpendicular directions $\mathbf{e}_{\hat{\theta}_0}$ and $\mathbf{e}_{\hat{\varphi}_0}$.
 
 \section{Harmonic decomposition}
+
+To use results from previous chapters it is convenient to write the EM degrees of freedom using the NP formalism.
+There is no need for computing both NP scalars, since we know that the result will very similar.
+Asymptotically we have $\mathfrak{m}\sim \partial_\theta + i \csc\theta \,\partial_\varphi$, thus we may show that $\phi_0 \sim (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} + i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$ and $2\phi_2 \sim (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} - i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$.
+Following the work done in \cref{Chapter4}, we will keep using $\phi_2$ as our primary scalar as it is the indicated for studying outgoing radiation.
+Thus, we may write
+\begin{align}
+    \phi_2 \simeq - \frac{2 \pi i }{3} \left( \epsilon_R \,e^{-i \omega t + i \mathbf{k}\cdot\mathbf{r}} + \epsilon_L^* \,e^{i \omega t - i \mathbf{k}\cdot\mathbf{r}} \right) \sum_{m=-1}^{+1} \uu[-1]{Y}{1,m}(\theta_0,\varphi_0)^{*} \uu[-1]{Y}{1,m}(\theta,\varphi) ~,
+\end{align}
+where $\mathbf{k}\equiv(\theta_0,\varphi_0)$ and $\mathbf{r}\equiv(\theta,\varphi)$ are the directions of incidence and observation, respectively. The left and right polarizations are defined as
+\begin{align}
+    \begin{split}
+        \epsilon_L &= \frac{\epsilon_{\theta} + i \epsilon_{\varphi}}{\sqrt{2}}
+        = \pm \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}} 
+        \frac{e^{i\omega L}}{L} \,\uu[1]{Y}{1,\pm 1}(\theta_0,\varphi_0) ~, \\
+        \epsilon_R^* &= \frac{\epsilon_{\theta}^* - i \epsilon_{\varphi}^*}{\sqrt{2}} =
+        \mp \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}}
+        \frac{e^{-i\omega L}}{L} \,\uu[1]{Y}{1,\mp 1}(\theta_0,\varphi_0) ~,
+    \end{split}
+\end{align}
+The expression for $\phi_0$ remains the same expect for the spherical harmonics 
+
+
+
+
 
 \section{Phase differences}
 

@@ -107,7 +107,7 @@ This is usually done by evaluating the Komar integrals \cite{Heusler1996, Wald20
     M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd \bm{k}^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
     J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd \bm{m}^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
 \end{align}
-where the usual notation $\bm{k}^\flat = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
+where the usual notation $\bm{k}^\flat \equiv g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step are assumed \eref{eq2:tPhiKilling} and \eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
 According to the widely accepted \emph{no-hair conjecture} \cite{Carter1971}, these two quantities completely define a stationary (neutral) BH. 
 
@@ -224,7 +224,7 @@ Time inversion symmetry is characteristic of the static Schwarzschild spacetime,
 Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\to(-t,-\varphi)$, also known as the \emph{circular condition}, an intuitive notion from physical systems with angular momentum.
 This discrete symmetry eliminates most of the off-diagonal components of the BL metric, $g_{tr} = g_{\varphi r} = g_{t \theta} = g_{\varphi \theta} = 0$, making it the simplest to perform calculations.
 
-To study the possible horizons of the Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp \equiv (g^{\mu\nu} \partial_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
+To study the possible horizons of the Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp \equiv (g^{\mu\nu} \nabla_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
 It is easy to show that $\bm{n}^2 = g^{rr}$, which implies that $\bm{n}$ is null when $\Delta=0$, defining null hypersurfaces at 
 \begin{align}
     r_\pm = M \pm \sqrt{M^2 - a^2} ~,

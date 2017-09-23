@@ -67,10 +67,10 @@ These operator can be written in terms of general matrix elements in the basis o
 \end{align}
 
 Perturbation theory shows that the SWSHs can be expanded using of spherical harmonics.
-This should not be a surprising fact as any angular function $f(\theta,\varphi)$ with a particular spin-weight $s$, can be represented using a decomposition using spin-weighted spherical harmonics.
+This should not be a surprising fact as any angular function $f(\theta,\varphi)$ with a particular spin-weight can be represented using a decomposition using spin-weighted spherical harmonics.
 Having this idea in mind, we write 
 \begin{align}
-	e^{i m \varphi} \, \uu[s]{S}{\ell m}(c; \theta) = \sum_{j} b_{j}^{(\ell)}(c) \,\uu[s]{Y}{j m}(\theta,\varphi) \qquad \Big( \ell, j \ge \max\{|s|,|m|\} \Big) ~.
+	e^{i m \varphi} \, \uu[s]{S}{\ell m}(c; \theta) = \sum_{j} b_{j}^{(\ell)} \,\uu[s]{Y}{j m}(\theta,\varphi) \qquad \Big( \ell, j \ge \max\{|s|,|m|\} \Big) ~.
 \end{align}
 Replacing the expansion in~\eqref{eq4:angularEqH012}, we can take advantage of the orthogonality of the harmonics, $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\uu[s]{Y}{\ell m} = \delta_{\ell j}$, by multiplying the the equation by $(\uu[s]{Y}{\ell m})^*$ and integrating the solid angle.
 The angular equation is replaced by an eigenvalue matrix equation $\sum_{j} a_{ij} \, b_{j}^{(\ell)} = - \uu[s]{\mathscr{E}}{\ell m} \,b_{i}^{(\ell)}$, such that
@@ -92,7 +92,7 @@ We opted to implement a $N\times N$ submatrix such that $i,j\ge\max\{|s|,|m|\}$ 
 In reality, we must implement a variable $N\equiv N(c)$, so that it increases the size of the taken submatrix in order to include extra corrections for larger values of $c$. The size of submatrix also increases linearly with $\ell$.
 The best way to approximate $\uu[s]{\mathscr{E}}{\ell m}$ would be to take a square submatrix so that $a_{\ell\ell}$ is centered and on the diagonal but the first implementation will suffice since we will not take large $\ell$ values.
 Optimized numerical methods allow for fast computation of the eigenvalues and eigenvectors of a band-diagonal matrix.
-The ``Eigensystem'' method used in Mathematica\texttrademark~ returns a array of positively sorted eigenvalues and their correspondent normalized eigenvectors, guaranteeing~\eqref{eq3:SWSHorthogonality}. As for the eigenvalues we need to select the negative of the ($N-\ell-1+\max\{|s|,|m|\}$)-th element. In order to ensure that the SWSHs have the same phase convections of their spherical counterparts, we must ensure that the correspondent eigenvector has $b_\ell^{(\ell)}>0$, by mapping the obtained vector components as $b_j^{(\ell)}\mapsto \mathrm{sgn}(b_\ell^{(\ell)}) \,b_j^{(\ell)}$.
+The ``Eigensystem'' method found in Mathematica\texttrademark~ returns a array of positively sorted eigenvalues and their correspondent normalized eigenvectors, guaranteeing~\eqref{eq3:SWSHorthogonality}. As for the eigenvalues we need to select the negative of the ($N-\ell-1+\max\{|s|,|m|\}$)-th element (MORE DETAIL). In order to ensure that the SWSHs have the same phase convections of their spherical counterparts, we must ensure that the correspondent eigenvector has $b_\ell^{(\ell)}>0$, by mapping the obtained vector components as $b_j^{(\ell)}\mapsto \mathrm{sgn}(b_\ell^{(\ell)}) \,b_j^{(\ell)}$.
 
 (EV PLOTS)
 
@@ -186,20 +186,22 @@ Separately, we will substitute both two asymptotic series in \eqref{eq3:radialTe
 Together they have the form
 \begin{align}
 	\label{eq4:radialIOseries}
-	\uu[-1]{R}{\ell m}(r) &= e^{-i \bar{\omega} x}  \, x^{ - 1 - i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} i_n \, x^{-n} + \, e^{-i \bar{\omega} x} x^{ 1 + i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} o_n \, x^{-n} ~,
+	\uu[-1]{R}{\ell m}(r) &= e^{-i \bar{\omega} x}  \, x^{ - 1 - i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} I_n \, x^{-n} + \, e^{-i \bar{\omega} x} x^{ 1 + i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} O_n \, x^{-n} ~,
 \end{align}
-where we identify $i_0 = Z_\mathrm{in}/r_{+}$ and $o_0 = Z_\mathrm{out} \,r_{+}$.
+where we identify $I_0 = Z_\mathrm{in}/r_{+}$ and $O_0 = Z_\mathrm{out} \,r_{+}$.
 Although we have chosen the $s=-1$ solution, the same procedure can be done for $s=+1$, because when using a higher order expansion, both ingoing and outgoing coefficients are present.
-Firstly, we directly substitute the series into \eqref{eq3:radialTeukolskyAdimensional}, neglecting terms above $\mathscr{O}(x^{N_\infty})$ and grouping the exponentials terms, in order to obtain $i_n\propto i_0$ and $o_n\propto o_0$ ($1 \le n \le N_\infty$), exactly like the horizon series used above to define boundary conditions at the horizon.
+Firstly, we directly substitute the series into \eqref{eq3:radialTeukolskyAdimensional}, neglecting terms above $\mathscr{O}(x^{N_\infty})$ and grouping the exponentials terms, in order to obtain $I_n\propto I_0$, $O_n\propto O_0$ ($1 \le n \le N_\infty$), exactly like the series used above to define boundary conditions at the horizon.
 Secondly, substitution of the numerical ansatz \eref{eq4:numericalRansatz} in the LHS of the previous equation, together with it's derivative, we have a system two linear equations, which in the limit of large-$x$ limit allows to determine
 \begin{align}
-	\frac{1}{r_+} \,Z_\mathrm{in} = i_0\Big( f_{-}(x_\infty),  f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,Z_\mathrm{out} = o_0\Big( f_{-}(x_\infty),  f_{-}{\!}'(x_\infty) \Big) ~.
+	\frac{1}{r_+} \,Z_\mathrm{in} = I_0\Big( f_{-}(x_\infty), \,f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,Z_\mathrm{out} = O_0\Big( f_{-}(x_\infty), \, f_{-}{\!}'(x_\infty) \Big) ~.
 \end{align}
 Lastly, we may use previous expression~\eref{eq3:amplificationBAoutAin} to compute $\uu[\pm1]{Z}{\ell m}$.
-FIGURE. XXX shows for a smaller $x_\infty = 80 \times 2 \pi / |\bar{\omega}|$ and $N_\infty = 10$, with the same $\epsilon = 10^{-12}$, that this new method solves the precision problems from the first method when using both $\phi_0$ and $\phi_2$. 
 
+(NEW FIGURE)
 
+FIGURE. XXX shows that this new method solves the precision problems from the first method when using both $\phi_0$ and $\phi_2$, for a smaller $x_\infty = 80 \times 2 \pi / |\bar{\omega}|$ and $N_\infty = 10$, with the same $\epsilon = 10^{-12}$.
 
+(SOME FINAL CONCLUSIONS)
 
 
 \cleardoublepage
