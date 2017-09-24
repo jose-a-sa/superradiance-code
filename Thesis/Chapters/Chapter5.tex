@@ -37,41 +37,72 @@ More specifically, we consider incident plane waves from a magnetic dipole sourc
 where $\mathbf{k}= -\omega \mathbf{\hat{r}}_S$ and $L=|\mathbf{r}_S|$ is the distance to the source to the BH.
 This approximation is valid for when $r=|\mathbf{r}|$ is large compared with the radiation wavelength and the physical dimension of the dipole.
 Additionally, in the last step we require that $r \ll L$.  With the similar procedure the magnetic field can be obtain using $\mathbf{B}\simeq - \mathbf{\hat{r}}_S \times \mathbf{E}$.
-Thus, when sufficiently far away from the dipole the radiation can be seen as plane waves propagating in the direction of $(- \mathbf{\hat{r}}_S) = (\sin\theta_0 \cos\varphi_0, \sin\theta_0 \sin\varphi_0, \cos\theta_0)$. The EM field has two polarizations,
+Thus, when sufficiently far away from the dipole the radiation can be seen as plane waves propagating in the direction of $(- \mathbf{\hat{r}}_S) = (\sin\theta_0 \cos\varphi_0, \sin\theta_0 \sin\varphi_0, \cos\theta_0)$.
+
+\section{Harmonics decomposition}
+
+By projecting the complex representation of $\mathbf{E}$ using the perpendicular directions $\mathbf{e}_{\hat{\theta}_0}$ and $\mathbf{e}_{\hat{\varphi}_0}$, we can obtain the two EM field polarizations,
 \begin{align}
     \epsilon_{\theta} = \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{8 \pi} \frac{e^{i \omega L}}{L} e^{\pm i \varphi_0} \cos\varphi_0 ~,\qquad
     \epsilon_{\varphi} = \pm i\, \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{8 \pi} \frac{e^{i \omega L}}{L} e^{\pm i \varphi_0} ~,
 \end{align}
-which can obtained by projecting the complex representation of $\mathbf{E}$ using the perpendicular directions $\mathbf{e}_{\hat{\theta}_0}$ and $\mathbf{e}_{\hat{\varphi}_0}$.
-
-\section{Harmonic decomposition}
-
 To use results from previous chapters it is convenient to write the EM degrees of freedom using the NP formalism.
 There is no need for computing both NP scalars, since we know that the result will very similar.
-Asymptotically we have $\mathfrak{m}\sim \partial_\theta + i \csc\theta \,\partial_\varphi$, thus we may show that $\phi_0 \sim (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} + i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$ and $2\phi_2 \sim (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} - i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$.
+Asymptotically we have $\mathfrak{m}\sim \partial_\theta + i \csc\theta \,\partial_\varphi$, thus we may show that $\phi_0 = (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} + i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$ and $2\phi_2 = (\mathbf{E} + i \mathbf{B}) \cdot (\mathbf{e}_{\hat{\theta}} - i \mathbf{e}_{\hat{\varphi}} )/\sqrt{2}$.
+Together with the dipole field approximation, the validity of this expansion is when $r_{+} \ll r \ll L$.
 Following the work done in \cref{Chapter4}, we will keep using $\phi_2$ as our primary scalar as it is the indicated for studying outgoing radiation.
 Thus, we may write
 \begin{align}
-    \phi_2 \simeq - \frac{2 \pi i }{3} \left( \epsilon_R \,e^{-i \omega t + i \mathbf{k}\cdot\mathbf{r}} + \epsilon_L^* \,e^{i \omega t - i \mathbf{k}\cdot\mathbf{r}} \right) \sum_{m=-1}^{+1} \uu[-1]{Y}{1,m}(\theta_0,\varphi_0)^{*} \uu[-1]{Y}{1,m}(\theta,\varphi) ~,
+    \phi_2 = - \frac{2 \pi i }{3} \left( \epsilon_R \,e^{-i \omega t + i \mathbf{k}\cdot\mathbf{r}} + \epsilon_L^* \,e^{i \omega t - i \mathbf{k}\cdot\mathbf{r}} \right) \sum_{m=-1}^{+1} \uu[-1]{Y}{1,m}(\theta_0,\varphi_0)^{*} \uu[-1]{Y}{1,m}(\theta,\varphi) ~,
 \end{align}
-where $\mathbf{k}\equiv(\theta_0,\varphi_0)$ and $\mathbf{r}\equiv(\theta,\varphi)$ are the directions of incidence and observation, respectively. The left and right polarizations are defined as
+where $\mathbf{\hat{k}}\equiv(\theta_0,\varphi_0)$ and $\mathbf{\hat{r}}\equiv(\theta,\varphi)$ are the directions of incidence and observation, respectively.
+This result can be easily obtained by explicitly expanding the harmonics sum.
+The left and right polarizations are defined as
 \begin{align}
     \begin{split}
-        \epsilon_L &= \frac{\epsilon_{\theta} + i \epsilon_{\varphi}}{\sqrt{2}}
-        = \pm \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}} 
-        \frac{e^{i\omega L}}{L} \,\uu[1]{Y}{1,\pm 1}(\theta_0,\varphi_0) ~, \\
-        \epsilon_R^* &= \frac{\epsilon_{\theta}^* - i \epsilon_{\varphi}^*}{\sqrt{2}} =
-        \mp \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}}
-        \frac{e^{-i\omega L}}{L} \,\uu[1]{Y}{1,\mp 1}(\theta_0,\varphi_0) ~,
+        \epsilon_R &= \frac{\epsilon_{\theta} - i \epsilon_{\varphi}}{\sqrt{2}}
+        = \mp \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}} 
+        \frac{e^{i\omega L}}{L} \,\uu[-1]{Y}{1,\pm 1}(\theta_0,\varphi_0) ~, \\
+        \epsilon_L^* &= \frac{\epsilon_{\theta}^* - i \epsilon_{\varphi}^*}{\sqrt{2}} =
+        \pm \frac{\mu_0 \,m_P \,\omega^2 \sin\alpha_S}{2\sqrt{6\pi}}
+        \frac{e^{-i\omega L}}{L} \,\uu[-1]{Y}{1,\mp 1}(\theta_0,\varphi_0) ~.
     \end{split}
 \end{align}
-The expression for $\phi_0$ remains the same expect for the spherical harmonics 
 
+It may seem that $\phi_2$ for a plane is approximately describe using only $\ell=1$ harmonics, but we must not forgot the angular dependence in
+\begin{align}
+    e^{i \mathbf{k} \cdot \mathbf{r}} = 4 \pi \sum_{\ell,m} i^\ell j_\ell(\omega r) \uu{Y}{\ell m}(\theta_0,\varphi_0)^{*} \uu{Y}{\ell m}(\theta,\varphi) ~,
+\end{align}
+whose decomposition in terms of $s=0$ spherical harmonics is well-known \cite{Jackson1998}, where $j_\ell(z)$ corresponds to the spherical Bessel function of the first kind.
+Substitution into the result in a superposition of different spin-weight harmonics and after grouping $\mathbf{\hat{k}}$ and $\mathbf{\hat{r}}$ terms these can be expanded using Clebsh-Gordon coefficients.
+\begin{align}
+    \begin{split}
+        \phi_2 &= - 2 \pi \,\epsilon_R \,e^{-i \omega t} \,\sum_{\ell,m} \left(
+        \sum_{n=\ell-1}^{\ell+1} i^{n + 1} \,j_n(\omega r) \,\frac{2n + 1}{2\ell + 1} 
+        \left|\langle n,0 ; 1,1 | \ell,1 \rangle\right|^2 \right)
+        \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) \\
+        & \qquad + ( \,\epsilon_R \to \epsilon_L^*, \,\omega \to -\omega \,) \\[0.15cm]
+        &\sim + 2 \pi \,\epsilon_R \,e^{-i \omega t} \,\sum_{\ell,m} \left(
+        -\frac{1}{2 \omega} \frac{e^{i \omega r}}{r} 
+        + (-1)^\ell \,\frac{\ell(\ell+1)}{8 \omega^3} \frac{e^{-i \omega r}}{r^3} \right)
+        \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) \\
+        & \qquad + (\,\epsilon_R \to \epsilon_L^*, \,\omega \to -\omega \,) ~.
+    \end{split}
+\end{align}
+The expression for $\phi_0$ is very similar, changing the coefficients of $e^{\pm i \omega r}$ accordingly so they obey Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} when $r \gg r_{+}$, replacing $\uu[-1]{Y}{1,m}(\mathbf{\hat{r}})\to\uu[+1]{Y}{1,m}(\mathbf{\hat{r}})$.
 
+We have shown that even a simple plane wave is composition of modes with positive and negative frequencies modulated by the left and right polarizations, respectively, which are proportional to $\uu[-1]{Y}{1, \pm 1}(\theta_0, \varphi_0)$.
+According to condition \eref{eq3:superradiance}, modes with either $\omega>0$, $m>0$ or $\omega<0$, $m<0$ can be amplified.
+The position of the source modulates the incident wave changing changing its mode composition. 
+Therefore if the plane wave source co-rotates with the BH, when $\theta_0 \to 0$ the positive frequencies dominate because $\epsilon_L^*\to 0$, coinciding with the region were $m>0$ harmonics predominate. Analogously, when $\theta_0\to\pi$ negative frequencies dominate as $\epsilon_R \to 0$.
+In the other hand, when considering counter-rotation and the incidence at one of the poles, harmonics with $m \omega >0$ have null coefficients so those modes are never amplified \cite{Rosa2016}.
+More specifically, when we have exactly $\theta_0=0$ ($\theta_0=\pi$) the modes $m=1$ ($m=-1$) are the only non-zero contributions of the EM wave if and only if the source co-rotates with the BH, while other $m$ modes vanish.
 
+(CAN BE USED A FIGURE TO SHOW LEFT/RIGHT DOMINANCE)
 
+\section{Scattering theory}
 
-\section{Phase differences}
+\section{Phase shifts}
 
 
 

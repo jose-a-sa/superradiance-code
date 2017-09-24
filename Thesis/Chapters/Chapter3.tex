@@ -155,7 +155,7 @@ We may expand explicitly the left-hand side of \eqref{eq3:phi21phi14},
 \end{align}
 where we used the antisymmetry of the spin connection, $\gamma_{abc}=-\gamma_{bac}$. The right-hand side yields
 \begin{align}
-    \label{eq3:phi21SpinCoef}
+    \label{eq3:phi14SpinCoef}
     \begin{split}
         \phi_{1\rvert 4} &= \phi_{1, 4} - \tfrac{1}{2} \eta^{ab}( \gamma_{a14} F_{b2} + \gamma_{a24} F_{1b} + \gamma_{a44} F_{b3} + \gamma_{a34} F_{4b} ) \\
         &= \phi_{1, 4} - \tfrac{1}{2} ( \gamma_{144} F_{23} + \gamma_{134} F_{42} + \gamma_{214} F_{12} + \gamma_{234} F_{41} ) \\ 
@@ -720,7 +720,7 @@ The factor is defined as the overall gain/loss effect for each mode $(\omega,\el
 Assuming a single mode decomposition and remebering that $\phi_2 = \Phi_2/(2 \bar{\rho}^2) \sim {}_{-1}R_{\ell m}/(2 r^2)$, we show that
 \begin{align}
     \label{eq3:ZfactorAout2Ain0}
-    \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 \equiv \left| \frac{Z_\mathrm{out}}{Y_\mathrm{in}} \right|^2 ~,
+    \uu[\pm1]{Z}{\ell m} +1= \left| \frac{\lim_{r\to\infty} (\tfrac{1}{r} \; {}_{-1}R_{\ell m} )}{\lim_{r\to\infty} ( r \; {}_{+1}R_{\ell m} )} \right|^2 = \left| \frac{A_\mathrm{out}(s=-1)}{A_\mathrm{in}(s=+1)} \right|^2 \equiv \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Y}_\mathrm{in}} \right|^2 ~,
 \end{align}
 Naturally, in order to give use to the $D/C$ ratio from the matching of coefficients, we need to obtain the ratio $A_\mathrm{out}/A_\mathrm{in}$ for the same spin weight. We redefine these constants in \tref{tb3:approximatedRsolutionsYZ}.
 \begin{table}[h]
@@ -730,26 +730,26 @@ Naturally, in order to give use to the $D/C$ ratio from the matching of coeffici
         \hline
          & $\omega r \gg 1$ & $\omega r \ll 1$ \\
 		\hline\hline
-        $\uu[1]{R}{\ell m}$ & $Y_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + Y_\mathrm{out}\, \cfrac{e^{i \omega r_*}}{r^3}$ & $Y_\mathrm{hole} \,\Delta^{-1} e^{-i \kappa r_{*}}$  \\
+        $\uu[1]{R}{\ell m}$ & $\mathscr{Y}_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + \mathscr{Y}_\mathrm{out}\, \cfrac{e^{i \omega r_*}}{r^3}$ & $\mathscr{Y}_\mathrm{hole} \,\Delta^{-1} e^{-i \kappa r_{*}}$  \\
 		\hline
-        $\uu[-1]{R}{\ell m}$ & $Z_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + Z_\mathrm{out}\, r \,e^{i \omega r_*}$ & $Z_\mathrm{hole} \,\Delta \,e^{-i \kappa r_{*}}$ \\
+        $\uu[-1]{R}{\ell m}$ & $\mathscr{Z}_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + \mathscr{Z}_\mathrm{out}\, r \,e^{i \omega r_*}$ & $\mathscr{Z}_\mathrm{hole} \,\Delta \,e^{-i \kappa r_{*}}$ \\
         \hline
     \end{tabu}
     \caption{Solutions near horzion far horizon \cite{Teukolsky1974}}
     \label{tb3:approximatedRsolutionsYZ}
 \end{table}
 Using \eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.
-In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $Y_\mathrm{in}$,
+In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $\mathscr{Y}_\mathrm{in}$,
 \begin{align}
     \label{eq3:amplificationBAoutAin}
-    \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{Z_\mathrm{out}}{Z_\mathrm{in} } \right|^2 ~,
+    \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in} } \right|^2 ~,
 \end{align}
 where now the expression is only using $s=-1$ coefficients.
 Still, the amplification should not depend on the sign of spin-weight, \emph{i.e.} the amplification should be the same for all EM waves, the same holding true for GW perturbations.
 The $\emph{in-out}$ ratio is given by
 \begin{align}
     \begin{split}
-        \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{Z_\mathrm{out}}{Z_\mathrm{in} } \right|^2 &= 
+        \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in} } \right|^2 &= 
         \frac{\mathscr{B}^2}{\ell^2(\ell+1)^2} 
         \left|\cfrac{ 
             1+ \frac{(-1)^{\ell+1}}{2} \frac{D}{C} 
@@ -782,6 +782,7 @@ When the black hole is extremal, $\tau=0$, the factor is regular and proportiona
 We know that the EM fields must be real quantities, therefore physical waves must also include negative valued $\omega$ in the mode decomposition \eref{eq3:multipoleExpansion}.
 The amplification factor explicity demonstrates that superradiance occurs when
 \begin{align}
+    \label{eq3:superradiance}
     \omega(\omega-m\Omega_H)<0 ~.
 \end{align}
 For $\omega>0$, amplification occurs for $m>0$ modes, in the region \eref{eq1:superradiance}, while for $\omega<0$, only modes with $m<0$ can be amplified.

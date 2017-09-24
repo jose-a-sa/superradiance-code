@@ -106,7 +106,7 @@ We choose to work with barred frequencies because $\bar{\Omega}_H = \mathscr{J}/
 We need to obtain numerical interpolations for $\uu[\pm 1]{R}{\ell m}$, by integrating the solution outwards from the horizon, at $x=0$, up to a sufficiently large $x_\infty \gg |\bar{\omega}|^{-1}$. 
 The solutions for $s=\pm 1$ contain the all the EM field information, but they have different asymptotic behaviors.
 For $\phi_0$, \eqref{eq3:asymptoticR} tells us that the ingoing coefficient tends to overshadow the outgoing coefficient, while the opposite occurs for $\phi_2$.
-This way seems natural to try to solve the both equations, where we can obtain $Y_\mathrm{in}$ and $Z_\mathrm{out}$ separately (\tref{tb3:approximatedRsolutionsYZ}).
+This way seems natural to try to solve the both equations, where we can obtain $\mathscr{Y}_\mathrm{in}$ and $\mathscr{Z}_\mathrm{out}$ separately (\tref{tb3:approximatedRsolutionsYZ}).
 
 Knowing the irregularities of the solution at the horizon, we propose the ansatz
 \begin{align}
@@ -124,14 +124,14 @@ Comparing \eqref{eq4:numericalRansatz} with the asymptotic form at large $x$ as 
 \begin{subequations}
 	\begin{align}
 			\label{eq4:YinFplusInf}
-			r_{+} \tau \,\frac{Y_\mathrm{in}}{Y_\mathrm{hole}} &= \frac{f_{+}(x_\infty)}{f_{+}(0)} \exp\left[ - i \bar{\omega} x_\infty - i \bar{\omega} (2-\tau)\log(x_\infty)   -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~, \\[0.15cm]
+			r_{+} \tau \,\frac{\mathscr{Y}_\mathrm{in}}{\mathscr{Y}_\mathrm{hole}} &= \frac{f_{+}(x_\infty)}{f_{+}(0)} \exp\left[ - i \bar{\omega} x_\infty - i \bar{\omega} (2-\tau)\log(x_\infty)   -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~, \\[0.15cm]
 			\label{eq4:ZoutFminusInf}
-			\frac{1}{r_{+} \tau} \,\frac{Z_\mathrm{out}}{Z_\mathrm{hole}} &= \frac{f_{-}(x_\infty)}{f_{-}(0)} \exp\left[ + i \bar{\omega} x_\infty + i \bar{\omega} (2-\tau)\log(x_\infty) -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~.
+			\frac{1}{r_{+} \tau} \,\frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{hole}} &= \frac{f_{-}(x_\infty)}{f_{-}(0)} \exp\left[ + i \bar{\omega} x_\infty + i \bar{\omega} (2-\tau)\log(x_\infty) -i \frac{\varpi}{\tau} \log(x_\infty) \right] ~.
 	\end{align}
 \end{subequations}
-If both solutions are normalized such that $f_{\pm}(0) = 1$, then we have to deal with the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$. We can obtain such ratio in terms of known parameters by considering \eqref{eq3:separationB} at $x\simeq0$,
+If both solutions are normalized such that $f_{\pm}(0) = 1$, then we have to deal with the relative normalization of $\mathscr{Z}_\mathrm{hole}/\mathscr{Y}_\mathrm{hole}$. We can obtain such ratio in terms of known parameters by considering \eqref{eq3:separationB} at $x\simeq0$,
 \begin{align}
-	(r_{+} \tau)^2 \,\frac{Z_\mathrm{hole}}{Y_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
+	(r_{+} \tau)^2 \,\frac{\mathscr{Z}_\mathrm{hole}}{\mathscr{Y}_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
 \end{align}
 Therefore to compute the amplification factor we use
 \begin{align}
@@ -140,7 +140,7 @@ Therefore to compute the amplification factor we use
 \end{align}
 
 Another way of dealing with the relative normalization would be to select different initial conditions at the horizon $x=0$.
-We could cancel the relative normalization of $Z_\mathrm{hole}/Y_\mathrm{hole}$ if we would set any normalization which results in $f_{-}(0)/f_{+}(0) = -\mathscr{B} \tau^2 /[2 \varpi (i \tau + 2 \varpi)]$, eliminating the dependence of $\mathscr{B}$, $\tau$, $\varpi$ in \eqref{eq4:ZFPlusMinus}.
+We could cancel the relative normalization of $\mathscr{Z}_\mathrm{hole}/\mathscr{Y}_\mathrm{hole}$ if we would set any normalization which results in $f_{-}(0)/f_{+}(0) = -\mathscr{B} \tau^2 /[2 \varpi (i \tau + 2 \varpi)]$, eliminating the dependence of $\mathscr{B}$, $\tau$, $\varpi$ in \eqref{eq4:ZFPlusMinus}.
 
 The differential equation obtained from substituting \eref{eq4:numericalRansatz} into \eqref{eq3:radialTeukolskyAdimensional} is identically zero for $x=0$.
 Therefore no matter what initial conditions set for $f_{\pm}{\!}'$ the system would not evolve due to stiffness, which makes the step size of the integrator effectively zero.
@@ -180,7 +180,7 @@ But from a better look at FIGURE. XXX we can see that this fact is not true, esp
 
 (PLOTS SHOWING THREE WAYS OF COMPUTING Z, $\ell=1$ and $\ell=2$)
 
-Somehow it appears that we are not compute the ratio of $Y_\mathrm{in}$ and $Z_\mathrm{out}$ with enough accuracy, probably because the large values that $f_{\pm}(x_\infty)$ take do not hold the necessary precision to perform the division.
+Somehow it appears that we are not compute the ratio of $\mathscr{Y}_\mathrm{in}$ and $\mathscr{Z}_\mathrm{out}$ with enough accuracy, probably because the large values that $f_{\pm}(x_\infty)$ take do not hold the necessary precision to perform the division.
 We owe to correct this problem by considering higher order in the asymptotic expansion of \eqref{eq3:asymptoticR}.
 Separately, we will substitute both two asymptotic series in \eqref{eq3:radialTeukolskyAdimensional}, one for the ingoing part and another for the outgoing.
 Together they have the form
@@ -188,12 +188,13 @@ Together they have the form
 	\label{eq4:radialIOseries}
 	\uu[-1]{R}{\ell m}(r) &= e^{-i \bar{\omega} x}  \, x^{ - 1 - i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} I_n \, x^{-n} + \, e^{-i \bar{\omega} x} x^{ 1 + i (2-\tau) \bar{\omega} } \sum_{n=0}^{N_\infty} O_n \, x^{-n} ~,
 \end{align}
-where we identify $I_0 = Z_\mathrm{in}/r_{+}$ and $O_0 = Z_\mathrm{out} \,r_{+}$.
+where we identify $I_0 \,r_{+} = \mathscr{Z}_\mathrm{in}/ \mathscr{Z}_\mathrm{hole}$ and $O_0/r_{+} = \mathscr{Z}_\mathrm{out}/\mathscr{Z}_\mathrm{hole}$.
 Although we have chosen the $s=-1$ solution, the same procedure can be done for $s=+1$, because when using a higher order expansion, both ingoing and outgoing coefficients are present.
+
 Firstly, we directly substitute the series into \eqref{eq3:radialTeukolskyAdimensional}, neglecting terms above $\mathscr{O}(x^{N_\infty})$ and grouping the exponentials terms, in order to obtain $I_n\propto I_0$, $O_n\propto O_0$ ($1 \le n \le N_\infty$), exactly like the series used above to define boundary conditions at the horizon.
 Secondly, substitution of the numerical ansatz \eref{eq4:numericalRansatz} in the LHS of the previous equation, together with it's derivative, we have a system two linear equations, which in the limit of large-$x$ limit allows to determine
 \begin{align}
-	\frac{1}{r_+} \,Z_\mathrm{in} = I_0\Big( f_{-}(x_\infty), \,f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,Z_\mathrm{out} = O_0\Big( f_{-}(x_\infty), \, f_{-}{\!}'(x_\infty) \Big) ~.
+	\frac{1}{r_+} \,\mathscr{Z}_\mathrm{in} = I_0\Big( f_{-}(x_\infty), \,f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,\mathscr{Z}_\mathrm{out} = O_0\Big( f_{-}(x_\infty), \, f_{-}{\!}'(x_\infty) \Big) ~.
 \end{align}
 Lastly, we may use previous expression~\eref{eq3:amplificationBAoutAin} to compute $\uu[\pm1]{Z}{\ell m}$.
 
