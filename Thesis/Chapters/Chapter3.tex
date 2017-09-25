@@ -3,6 +3,8 @@
 \chapter{Teukolsky's master equation} % Main chapter title
 \label{Chapter3}
 
+%----------------------------------------------------------------------------------------
+
 \section{Newman-Penrose formalism}
 
 The study of gravitational and electromagnetic perturbations in a BH background was performed long before Kerr found his solution, for other spacetimes such as Schwarzschild's.
@@ -44,6 +46,8 @@ We will depart shortly from standard notation, by redefining these derivatives a
 \end{align}
 
 More details and definitions on the tetrad formalism can be found in~\aref{AppendixTetradFormalism}.
+
+%----------------------------------------------------------------------------------------
 
 \subsection{Kinnersley tetrad}
 
@@ -112,6 +116,8 @@ In order to write these equations explicitly we need to define the \emph{spin co
 
 To study GWs, instead of perturbing the background metric, the NP formalism provides a natural way of performing perturbations by modification of the tetrad, $\bm{\mathfrak{l}}=\bm{\mathfrak{l}}^B+\bm{\mathfrak{l}}^P$, $\bm{\mathfrak{n}}=\bm{\mathfrak{n}}^B+\bm{\mathfrak{n}}^P$, etc., and also the NP scalars, $\psi_a = \psi_a{}^B + \psi_a{}^P$, maintaining only first-order terms \cite{Teukolsky1973a}.
 The formalism reveals decoupled equations for $\psi_0{}^P$ and $\psi_4{}^P$, which implies that these dynamic variables are the only independent degrees of freedom of the GWs.
+
+%----------------------------------------------------------------------------------------
 
 \subsection{Maxwell equations}
 
@@ -412,6 +418,8 @@ The radial and angular eigenvalues are related to the separation constant on Eqs
 Due to the form of the angular equation, the eigenvalues ${}_{s}\mathscr{F}_{\ell m}$, \,${}_{s}\mathscr{A}_{\ell m}$ as well as the function ${}_{s}S_{\ell m}(\theta)$ depends also on the coupling $a \omega$.
 Clearly, the same does not hold for the radial function ${}_{s}R_{\ell m}(r)$. 
 
+%----------------------------------------------------------------------------------------
+
 \section{Spin-Weighted Spheroidal Harmonics}
 
 To shed some light into the explicit form of ${}_{s}\mathscr{A}_{\ell m}$, we will need to dive into the eigenvalue problem for the angular equation. We may transform \eqref{eq3:teukolskyAngular} into a more familiar form using the change of coordinate $z=\cos\theta$ and renaming the dimensionless parameter $c=a \omega$, obtaining
@@ -424,10 +432,11 @@ We will consider $c$ real as we are analyzing superradiance of EM waves in vacuu
 
 Spherically symmetric problems allow for a decomposition using spherical harmonics $Y_{\ell m}(\theta,\varphi)$ of angular dependent functions with finite boundary conditions.
 These have innumerable applications in physics such as the hydrogen atom or the description of anisotropies in the cosmic microwave background.
-By setting $s=0$ and $c=0$ (spherical), then it is clear that the solutions for \eqref{eq3:swshEq} are given by the associated Legendre polynomials, $P^m_\ell(z)$. Therefore, ${}_{s}S_{\ell m}$ is a generalization of a spherical harmonic, with
+By setting $s=0$ and $c=0$ (spherical), then it is clear that the solutions for \eqref{eq3:swshEq} are given by the associated Legendre polynomials, $P^m_\ell(z)$. Therefore, ${}_{s}S_{\ell m}$ is a generalization of a spherical harmonic \cite{Berti2005}, with
 \begin{align}
-    e^{i m \varphi} \,{}_{0}S_{\ell m}(\theta) \stackrel[(c=0)]{}{=} Y_{\ell m}(\theta,\varphi) ~,\qquad {}_{0}\mathscr{A}_{\ell m} \stackrel[(c=0)]{}{=} \ell (\ell + 1) ~.
+    {}_{0}S_{\ell m}(\theta,\varphi) \stackrel[(c=0)]{}{=} Y_{\ell m}(\theta,\varphi) ~,\qquad {}_{0}\mathscr{A}_{\ell m} \stackrel[(c=0)]{}{=} \ell (\ell + 1) ~,
 \end{align}
+where $\uu[s]{S}{\ell m}(\theta,\varphi) \equiv e^{i m \varphi} \uu[s]{S}{\ell m}(\theta)$.
 The values of $\ell$ are non-negative integers, with the restriction of $\ell \ge |m|$. 
 We require that spin-weighted spheroidal harmonics (SWSHs) are similarly normalized to unity and also a complete set of orthogonal functions, for any spin-weight and coupling $c$,
 \begin{align}
@@ -436,9 +445,9 @@ We require that spin-weighted spheroidal harmonics (SWSHs) are similarly normali
     \int_{-1}^{1} \dd z \,{}_{s}S_{\ell m}(z) {}_{s}S_{\ell' m}(z) = \frac{1}{2\pi} \delta_{\ell \ell'} ~.
 \end{align}
 
-Perturbations of any type in Schwarzschild spacetime are written using spin-weighted \emph{spherical} harmonics, ${}_{s}Y_{\ell m}(\theta,\varphi)$, which are still spherical harmonics ($c=0$) (MORE ON SPIN-WEIGHT, $\theta-\varphi$ ROTATION, FACTOR $e^{i s \alpha}$).
+Perturbations of any type in Schwarzschild spacetime are written using spin-weighted \emph{spherical} harmonics, ${}_{s}Y_{\ell m}(\theta,\varphi)$, which are still spherical harmonics ($c=0$).
 Due to the shared symmetries with spherical harmonics it is possible to find a closed form for $s\ne0$ harmonics.
-We can raise and lower spin-weight with the use of the operators commonly denoted as $\bar{\eth}$ and $\eth$ (\aref{AppendixSWHs}), respectively, applied on $Y_{\ell m}$,
+We can raise and lower spin-weight with the use of the operators commonly denoted as $\bar{\eth}$ and $\eth$ (see \aref{AppendixSWHs}), respectively, applied on $Y_{\ell m}$,
 \begin{align}
     \begin{split}
         (\bar{\eth})^s Y_{\ell m} &= \sqrt{\frac{(\ell+s)!}{(\ell-s)!}} \,{}_{s}Y_{\ell m}  ~, \\
@@ -450,7 +459,7 @@ Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} are closely related
 
 Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function was found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
 
-The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985. Working out the asymptotical and critical behavior of the equation, we observe the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that a SWSH is everywhere analytical, Leaver proposed the series expansion at $z=-1$,
+The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985 . Working out the asymptotical and critical behavior of the equation, we observe the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that a SWSH is everywhere analytical, Leaver proposed the series expansion at $z=-1$,
 \begin{align}
     \label{eq3:SWSHseriesLeaver}
     {}_{s}S_{\ell m}(z) = e^{c z} (1+z)^{k_-} (1-z)^{k_+} \sum_{p=0}^\infty a_p (1+z)^p ~,
@@ -495,7 +504,7 @@ where we identified $\ell=r+k_{+}+k_{-}$.
 Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the leading contribution for the monopole expansion is the dipole for EM waves and the quadrupole for GWs. 
 Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra when $c=0$ and also when $s=0$.
 
-It will be useful to expand ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (\aref{AppendixEigenvalues}).
+It will be useful to expand ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (see \aref{AppendixEigenvalues}).
 Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with \eqref{eq3:relationEVs}.
 In the general angular equation, inversion of spin corresponds to inversion of poles, \emph{i.e.} stays invariant under the transformation $(s,z)\to(-s,-z)$.
 Under this transformation, the eigenvalue must obey $s+ {}_{s}\mathscr{A}_{\ell m} = -s + {}_{-s}\mathscr{A}_{\ell m}$, thus it is beneficial to define 
@@ -504,9 +513,9 @@ Under this transformation, the eigenvalue must obey $s+ {}_{s}\mathscr{A}_{\ell 
     {}_{s}\mathscr{A}_{\ell m} = {}_{s}\mathscr{E}_{\ell m} - s(s+1) ~,
 \end{align}
 to also exploit the symmetry of spin inversion in numerical computations.
+This way, we can simply write that $\lambdabar={}_{\pm1}\mathscr{E}_{\ell m}$.
 
-(SYMMETRIES OF THE EIGENVALUE ${}_{s}\mathscr{E}_{\ell m}$, WRITE $\lambdabar={}_{\pm1}\mathscr{E}_{\ell m}$)
-
+%----------------------------------------------------------------------------------------
 
 \section{Analytic radial approximations}
 
@@ -525,8 +534,6 @@ where every barred frequency is normalized relative to the BH horizon, $\bar\ome
     \end{split}
 \end{align}
 where we normalize $\mathscr{K} = K/r_{+} = \varpi + x(x+2)\bar{\omega}$. In this method, it will be sufficient to use a spherical approximation for the harmonics eigenvalues, ${}_{s}\mathscr{F}_{\ell m} = \ell(\ell+1) - s(s+1) + \mathscr{O}(a\omega)$, for small enough frequencies.
-
-(SYMMETRIES OF THE RADIAL FUNCTION ${}_{s}R_{\ell m}$)
 
 The near-horizon approximation corresponds to considering only small distances compared to the perturbations characteristic wavelength, $r-r_{+} \ll \omega^{-1}$ ($\bar{\omega} x \ll 1$).
 Because superradiant scattering occurs when $\omega\lesssim\Omega_H$, we also neglect terms $\mathscr{O}(\varpi x)$.
@@ -570,6 +577,7 @@ Even tought $r_*$ is related to the radial coordinate through an non-invertable 
 
 Taking $r\to\infty$ ($r_{*}\to\infty$), the potential becomes
 \begin{align}
+    \label{eq3:asymptoticVeff}
     V_\mathrm{eff} \sim \omega^2 + \frac{2 i s \omega}{r} ~,
 \end{align}
 with assympotic solution ${}_{s}U_{\ell m}\sim r^{\pm s} e^{\mp i \omega r_{*}}$.
@@ -626,6 +634,8 @@ A combination of these results yields
 \end{align}
 where we used the same identification as in \eqref{eq3:negativeGammaRatio} for the $\Gamma$ functions with negative arguments.
 With this result it is possible to find the ratio between the incoming and the outgoing energy from the BH.
+
+%----------------------------------------------------------------------------------------
 
 \section{Amplification factor ${}_{s}Z_{\ell m}$}
 
@@ -789,9 +799,10 @@ For $\omega>0$, amplification occurs for $m>0$ modes, in the region \eref{eq1:su
 The circular symmetry of the spacetime garantees that superradiance phenomena is invariant under the change of $(\omega,m)\to(-\omega,-m)$.
 In other other words,
 \begin{align}
-    {}_{s}Z_{\ell-m}(-\omega) = {}_{s}Z_{\ell m}(\omega) ~,
+    {}_{s}Z_{\ell,-m}(-\omega) = {}_{s}Z_{\ell m}(\omega) ~,
 \end{align}
 which is clear from the EM case in \eref{eq3:ZfactorEM}.
 
+%----------------------------------------------------------------------------------------
 
 \cleardoublepage

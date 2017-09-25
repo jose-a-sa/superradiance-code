@@ -39,5 +39,5 @@ raw=Import[file,"Text"];
 meta=StringTrim@StringJoin@StringCases[raw,StartOfLine~~"#"~~Shortest[__]~~EndOfLine~~"\n"];
 table=StringReplace[raw,{StartOfLine~~"#"~~Shortest[___]~~EndOfLine~~"\n"->"","#"~~Shortest[___]~~EndOfLine->""}];
 If[OptionValue[PrintMetadata],Print@meta];
-ImportString[table,"Table"]
+ImportString[table]
 ]

@@ -5,8 +5,10 @@
 
 The prediction of EM and gravitational radiation amplification was a surprising prediction of Einstein's theory of gravitation in Kerr geometry.
 A method for direct or indirect observation of this process would provide a probe for rotating BHs and thus it would constitute an important test of GR in regions of extreme gravity.
+We owe to find in which conditions the scattering an EM wave composed of multiple mode $(\omega,\ell, m)$ provides information to probe the occurrence of superradiance in a BH.
+We know that each mode will be independently amplified/attenuated as shown above. The challenge is to predict if superradiant scattering occurred given the wave composed of these modified modes. 
 
-Having shown that superradiance occurs for small frequencies we owe to find astrophysical sources that emit EM waves.
+Having shown that superradiance occurs for small frequencies we need to find astrophysical sources that emit EM waves.
 Binary systems of rotating neutron stars and BH may exhibit the necessary conditions for superradiant scattering.
 These objects, also known as pulsars, possess a strong magnetic field with magnetic dipole moment typically not aligned with the rotation axis.
 Obviously the magnetic field configuration of a neutron star can be very complicated but its main properties are best described by the \emph{oblique-rotator} model, which considers only the leading order in the multipolar expansion, \emph{i.e.} a magnetic moment dipole
@@ -39,6 +41,8 @@ This approximation is valid for when $r=|\mathbf{r}|$ is large compared with the
 Additionally, in the last step we require that $r \ll L$.  With the similar procedure the magnetic field can be obtain using $\mathbf{B}\simeq - \mathbf{\hat{r}}_S \times \mathbf{E}$.
 Thus, when sufficiently far away from the dipole the radiation can be seen as plane waves propagating in the direction of $(- \mathbf{\hat{r}}_S) = (\sin\theta_0 \cos\varphi_0, \sin\theta_0 \sin\varphi_0, \cos\theta_0)$.
 
+%----------------------------------------------------------------------------------------
+
 \section{Harmonics decomposition}
 
 By projecting the complex representation of $\mathbf{E}$ using the perpendicular directions $\mathbf{e}_{\hat{\theta}_0}$ and $\mathbf{e}_{\hat{\varphi}_0}$, we can obtain the two EM field polarizations,
@@ -53,7 +57,8 @@ Together with the dipole field approximation, the validity of this expansion is 
 Following the work done in \cref{Chapter4}, we will keep using $\phi_2$ as our primary scalar as it is the indicated for studying outgoing radiation.
 Thus, we may write
 \begin{align}
-    \phi_2 = - \frac{2 \pi i }{3} \left( \epsilon_R \,e^{-i \omega t + i \mathbf{k}\cdot\mathbf{r}} + \epsilon_L^* \,e^{i \omega t - i \mathbf{k}\cdot\mathbf{r}} \right) \sum_{m=-1}^{+1} \uu[-1]{Y}{1,m}(\theta_0,\varphi_0)^{*} \uu[-1]{Y}{1,m}(\theta,\varphi) ~,
+    \label{eq5:phi2plane}
+    \phi_2{}^{(\mathrm{plane})} = - \frac{2 \pi i }{3} \left( \epsilon_R \,e^{-i \omega t + i \mathbf{k}\cdot\mathbf{r}} + \epsilon_L^* \,e^{i \omega t - i \mathbf{k}\cdot\mathbf{r}} \right) \sum_{m=-1}^{+1} \uu[-1]{Y}{1,m}(\theta_0,\varphi_0)^{*} \uu[-1]{Y}{1,m}(\theta,\varphi) ~,
 \end{align}
 where $\mathbf{\hat{k}}\equiv(\theta_0,\varphi_0)$ and $\mathbf{\hat{r}}\equiv(\theta,\varphi)$ are the directions of incidence and observation, respectively.
 This result can be easily obtained by explicitly expanding the harmonics sum.
@@ -69,15 +74,16 @@ The left and right polarizations are defined as
     \end{split}
 \end{align}
 
-It may seem that $\phi_2$ for a plane is approximately describe using only $\ell=1$ harmonics, but we must not forgot the angular dependence in
+It may seem that $\phi_2$ for a plane wave is approximately describe using only $\ell=1$ harmonics, but we must not forgot the angular dependence in
 \begin{align}
     e^{i \mathbf{k} \cdot \mathbf{r}} = 4 \pi \sum_{\ell,m} i^\ell j_\ell(\omega r) \uu{Y}{\ell m}(\theta_0,\varphi_0)^{*} \uu{Y}{\ell m}(\theta,\varphi) ~,
 \end{align}
 whose decomposition in terms of $s=0$ spherical harmonics is well-known \cite{Jackson1998}, where $j_\ell(z)$ corresponds to the spherical Bessel function of the first kind.
 Substitution into the result in a superposition of different spin-weight harmonics and after grouping $\mathbf{\hat{k}}$ and $\mathbf{\hat{r}}$ terms these can be expanded using Clebsh-Gordon coefficients.
 \begin{align}
+    \label{eq5:phi2planeExpanded}
     \begin{split}
-        \phi_2 &= - 2 \pi \,\epsilon_R \,e^{-i \omega t} \,\sum_{\ell,m} \left(
+        \phi_2{}^{(\mathrm{plane})} &= - 2 \pi \,\epsilon_R \,e^{-i \omega t} \,\sum_{\ell,m} \left(
         \sum_{n=\ell-1}^{\ell+1} i^{n + 1} \,j_n(\omega r) \,\frac{2n + 1}{2\ell + 1} 
         \left|\langle n,0 ; 1,1 | \ell,1 \rangle\right|^2 \right)
         \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) \\
@@ -89,7 +95,7 @@ Substitution into the result in a superposition of different spin-weight harmoni
         & \qquad + (\,\epsilon_R \to \epsilon_L^*, \,\omega \to -\omega \,) ~.
     \end{split}
 \end{align}
-The expression for $\phi_0$ is very similar, changing the coefficients of $e^{\pm i \omega r}$ accordingly so they obey Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} when $r \gg r_{+}$, replacing $\uu[-1]{Y}{1,m}(\mathbf{\hat{r}})\to\uu[+1]{Y}{1,m}(\mathbf{\hat{r}})$.
+The expression for $\phi_0$ is very similar, changing the coefficients of $e^{\pm i \omega r}$ accordingly so they obey Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} when $r \gg r_{+}$, replacing $\uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})\to\uu[+1]{Y}{\ell m}(\mathbf{\hat{r}})$.
 
 We have shown that even a simple plane wave is composition of modes with positive and negative frequencies modulated by the left and right polarizations, respectively, which are proportional to $\uu[-1]{Y}{1, \pm 1}(\theta_0, \varphi_0)$.
 According to condition \eref{eq3:superradiance}, modes with either $\omega>0$, $m>0$ or $\omega<0$, $m<0$ can be amplified.
@@ -100,10 +106,87 @@ More specifically, when we have exactly $\theta_0=0$ ($\theta_0=\pi$) the modes 
 
 (CAN BE USED A FIGURE TO SHOW LEFT/RIGHT DOMINANCE)
 
+%----------------------------------------------------------------------------------------
+
 \section{Scattering theory}
+
+We understand that we(US HUMANS) have limited observational capabilities and only have access to given direction of observation for this hypothetical binary system.
+If it were possible to map the entire scattered wave with enough detail we could in principle extract and compare each mode with the ones of the emitted wave. For this analysis we would only need to know the global gain/loss factor, given by $\uu[\pm1]Z{\ell m}$. Therefore we will resort to scattering theory of waves to study the angular effects of superradiance.
+
+Intuitively, it is understood that only a small part of the incident wave will be scattered by the BH.
+The scattered part together with the indent wave produce a characteristic interference pattern pattern.
+In order to differentiate the scattered wave we need to remove the background incident plane wave.
+Scattering theory assumes that we may write
+\begin{align}
+    \label{eq5:scattering}
+    \phi_2 - \phi_2{}^{(\mathrm{plane})} = f(\theta,\varphi) \frac{e^{i \omega (r_{*}-t)}}{r} + (\omega\to-\omega, \,f \to g) ~,
+\end{align}
+where $\phi_2$ is written similarly with coefficients $\mathscr{Z}_\mathrm{out}$ and $\mathscr{Z}_\mathrm{in}$ obtained numerically in \cref{Chapter4}.
+
+Up to this point we used the approximation of plane wave first introduced in \eref{eq5:phi2plane}, which can only be used in flat space. The fact is that this approximation does not take into account the long-range behaviour of Kerr's gravitational field, which goes is of $\mathscr{O}(\tfrac{1}{r})$ as obtained in \eref{eq3:asymptoticVeff}.
+We know that from the asymptotic form of the radial function that this can be bypassed by a logarithmic phase-correction in the exponential, substituting $r\to r_{*}$.
+We can match the ingoing parts of $\phi_2$ and $\phi_2{}^{(\mathrm{plane})}$ so the scattered part only have outgoing part, obtaining
+\begin{align}
+    \label{eq5:scatterFexpressionYY}
+    f(\theta,\varphi) = - \frac{\pi \,\epsilon_R}{\omega} \sum_{\ell,m} \left[
+    (-1)^{\ell+1} \frac{\ell(\ell+1)}{4 \omega^2 }
+    \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} - 1 \right]
+    \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) ~.
+\end{align}
+A similar expression is obtained for $g(\theta,\varphi)$ proportional to $\epsilon_L^*$.
+
+The long-range effect of the background is independent of the BH rotation (also in Schwarzschild), \emph{i.e.} we must not mistake the spherical approximation with long-range effects of the effective gravitational potential.
+Approximation of plane waves as described in \eref{eq5:phi2plane} also discards the effects of the BH rotation, which is the reason ats the plane wave is decomposed using spherical harmonics $\uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})$ instead of SWSHs.
+We can also recall that the mode factor in \eqref{eq5:scatterFexpressionYY} is very similar the expression \eref{eq3:amplificationBAoutAin}, derived in \cref{Chapter3}.
+We see that for $a\omega \to 0$,
+\begin{align}
+    \label{eq5:phaseFactor}
+    (-1)^{\ell+1} \frac{\mathscr{B}}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \simeq (-1)^{\ell+1} \frac{\ell(\ell+1)}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} ~,
+\end{align}
+remembering that $\mathscr{B} = \left[ (\uu[\pm 1]{\mathscr{E}}{\ell m})^2 - 4 a^2 \omega^2 + 4 m a \omega \right]^{1/2}$.
+An argument could be made state that the latter expression fo the coefficient is the correct instead of the one in \eqref{eq5:scatterFexpressionYY}, but this approximation is good enough when considering superradiant frequencies $|\omega| \simeq 0.4 \Omega_H$ for a typical stellar mass extremal BH (see FIGS SWSH/EVS).
+
+%----------------------------------------------------------------------------------------
 
 \section{Phase shifts}
 
+If to assume co-rotation of the source with optimal incidence at $\theta_0=\varphi_0=0$ we will only need to compute $f(\theta,\varphi)$, since $\epsilon_L^*=0$.
+This assumption eases the need to compute modes other then $m=1$.
+Assuming that we truncate the expansion \eref{eq5:scatterFexpressionYY} at some $\ell=\ell_{\max}$, this reduces the number of necessary harmonics in $\ell_{\max}(\ell_{\max} + 1)$.
+Proceeding with the sum in FIGURE.XXX it appears that the partial wave sum is slowly convergent and even divergent near $\theta \simeq 0$.
+
+(FIGURE WITH SUM HERE, WITHOUT REGULARIZATION)
+
+This problem is due to the long-range effect of gravitational potential of BHs. This problem is known problem in Coloumb scattering. Central potentials falling as $1/r$ do not have effect on the global amplitude of the have but the scattered wave has phase shifts in each of the modes coefficients, producing a divergence at $(\theta,\varphi)=(\theta_0,\varphi_0)$.
+This result appears strange at first, but we must remember that, being a complete space of functions, the harmonics obey $\sum_{\ell m} \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})) = \delta(\cos\theta - \cos\theta_0) \delta(\varphi - \varphi_0)$.
+
+In order to regularize the sum for $f(\theta,\varphi)$, it is convenient to separate it in two terms,
+\begin{align}
+    \label{eq5:fNfD}
+    f(\theta,\varphi) = f_\mathrm{N}(\theta,\varphi) + f_\mathrm{D}(\theta,\varphi) ~,
+\end{align}
+$f_\mathrm{N}(\theta,\varphi)$ carries all the scattering information about the Newtonian effects of the long-range $1/r$ (Coulomb) potential.
+It can be written as
+\begin{align}
+    f_\mathrm{N}(\theta,\varphi) = - \frac{\pi \,\epsilon_R}{\omega}
+    \sum_{\ell,m} \left( e^{2 i \delta_N } - 1 \right)
+    \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) ~,
+\end{align}
+where the phase shifts are \cite{Futterman1988}
+\begin{align}
+    e^{2 i \delta_N } = \frac{\Gamma(\ell + 1 - 2 i M \omega)}{\Gamma(\ell+1 + 2 i M \omega)} ~.
+\end{align}
+Assuming an incidence of $\theta_0=0$, summing the series leads to a similar result as the Rutherford elastic scattering in a Coulomb potential, $|f_\mathrm{N}(\theta,0)| \propto 1/\sin^{4}(\theta/2) \sim 1/\theta^4$, which appears to explain the divergence at $\theta=0$. 
+
+On the other hand, the $f_\mathrm{D}(\theta,\varphi)$ encloses all the information regarding the main scattering effects, including superradiance.
+From \eqref{eq5:fNfD}, simple algebra states that
+\begin{align}
+    f_\mathrm{D}(\theta,\varphi) = - \frac{\pi \,\epsilon_R}{\omega}
+    \sum_{\ell,m} \left( \frac{\ell(\ell+1)}{4 \omega^2} \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \right| e^{2 i \delta } - e^{2 i \delta_\mathrm{N} } \right)
+    \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) ~,
+\end{align}
+where we define $\delta = \mathrm{arg} \left[ (-1)^{\ell+1} \,\mathscr{Z}_\mathrm{out}/\mathscr{Z}_\mathrm{in} \right]$.
+In order of this sum to converge two things
 
 
 \cleardoublepage
