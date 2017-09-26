@@ -14,7 +14,7 @@ With the eigenvalue defined for a particular mode, we will compute the asymptoti
 The need for obtaining the eigenvalues $\uu[s]{\mathscr{E}}{\ell m}$ rests on the dependency to solve the radial equation numerically with no spherical approximation.
 Additionally, the relative normalization constant $\mathscr{B}$, which depends explicitly on the eigenvalue, will be rather important in one the methods used to calculate the gain/loss factor $\uu[s]{Z}{\ell m}$ for each mode $(\omega,\ell,m)$.
 There is no reason to differentiate the eigenvalue for given BH angular momentum and a particular frequency, since the parameter dependence of the eigenvalue is $c=a\omega$.
-Considering the focus in superradiant modes, we only will need eigenvalues of coupling which is in the range $0<c<3$. 
+Considering the focus in superradiant modes, we only will need eigenvalues in the range $0<c<3$. 
 Even for extremal BHs, the typical frequency value for a superradiant mode, $\bar{\omega}\sim 1/2$, so this margin is sufficient even for observing the effects in non-superradiant modes.
 Due to the circular symmetry, $\uu[s]{\mathscr{E}}{\ell, -m}(c) = \uu[s]{\mathscr{E}}{\ell m}(-c)$, instead of computing for negative values of $c$, we will consider all integer azimuthal numbers $|m|\le \ell$.
 
@@ -25,7 +25,7 @@ Due to the circular symmetry, $\uu[s]{\mathscr{E}}{\ell, -m}(c) = \uu[s]{\mathsc
 The first method implemented was Leaver's.
 Consists is using the three recursion relation obtained for SWSHs and correspondent continued fraction~\eref{eq3:evInversion0th} and it's inversions.
 Since the problem is now numerical, we have to stop the continued fraction at some particular $p=N$.
-By substitution of the parameters $s$ and $m$ and $c$, we are left with an equation with $N$ roots for $\uu[s]{\mathscr{A}}{\ell m}$.
+By substitution of the parameters $s$ and $m$ and $c$, we are left with an equation with $N$ roots for $\uu[s]{\mathscr{E}}{\ell m}$.
 A root-finding algorithm is a method that allows to approximate roots of some equation $f(x)=0$, by suggestion of a connected region were $f$ has different signs at the boundary.
 The method ``FindRoot'' in Mathematica\texttrademark~ allows to distinguish the roots of equation by finding the closest to a particular input value.
 Firstly, we use the the expansion coefficients for $c\ll 1$~(\aref{AppendixEigenvalues}) to suggest a value of the eigenvalue $\uu[s]{\mathscr{E}}{\ell m}$ that is close to $\ell(\ell+1)$.
