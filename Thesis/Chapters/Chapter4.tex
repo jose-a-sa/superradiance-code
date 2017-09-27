@@ -33,14 +33,20 @@ We improved on this method by starting the curve at $c=0$, and then obtaining th
 This is particularly useful to generate and save a complete table of eigenvalues for given range and then use interpolation methods to guess eigenvalues for intermediate $c$ values.
 
 For both methods the obtained curves are well behaved for $\ell=1$, but for bigger $\ell$ we start to observe some discontinuities, especially when we increase the range of $c$.
-
-(A PLOT WITH DISCONTINUITIES)
-
-For a fixed $s$ and $m$, we have an infinite number of curves labeled by $\ell$ and in some cases the root finding algorithm selecting roots from adjacent curves, either from the branch $\ell-1$ or $\ell+1$.
+\begin{figure}[h]
+	\centering
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.6\textwidth}
+        \includegraphics[width=\textwidth]{discontinuitiesEV}
+    \end{subfigure}
+	\caption{Discontinuities in the values of $\uu[\pm 1]{\mathscr{E}}{\ell 1}$ for $m=1,2$ using incorrect implementation of the Leaver method. Real values of the eigenvalues are shown as dashed lines ($m=1,2,3$) of the same color.}
+	\label{fig4:discontinuitiesEV}
+\end{figure}
+For a fixed $s$ and $m$, we have an infinite number of curves labeled by $\ell$ and in some cases the root finding algorithm selecting roots from adjacent curves, either from the branch $\ell-1$, $\ell+1$ or even distant values.
 These solutions cannot ever intersect, otherwise the eigenvalue would be degenerate and the SWSHs would not be a orthogonal basis of functions.
 The issue rests on the lack of accuracy when identifying of the $\ell$-th root.
 We lose accuracy when trying to obtaining roots on levels further down in the continued fraction.
-We solve the problem by considering the inversion~\eref{eq3:evInversionRth}, choosing $r=\ell+\max\{|m|,|s|\}$, as the main information in the value taken by the $\ell$-th root is in the $\beta_r$, with the fractions providing higher order contributions in $c$.
+We solve the problem by considering the inversion~\eref{eq3:evInversionRth}, choosing $r=\ell+\max\{|m|,|s|\}$, as the main information in the value taken by the $\ell$-th root is in the $\beta_r$, with the continuous fractions providing higher order contributions in $c$.
 
 Once the eigenvalue root is know, one can find any number of the series expansions coefficients $a_p$, for a particular eigenfunction~\eref{eq3:SWSHseriesLeaver}, by using the three-coefficient recursion relation~\eref{eq3:ap3CoefRecursion}.
 
@@ -59,8 +65,10 @@ The zeroth order operator $\mathscr{H}^{(0)}$, defines the eigenvalue problem fo
 The other two operators are quickly identified from the angular equation as $\mathscr{H}^{(1)} = - 2 s c \cos\theta$ and $\mathscr{H}^{(2)} = c^2 \cos^2\theta$.
 Simple perturbation theory states that
 \begin{align}
-	\uu[s]{\mathscr{E}}{\ell m} &= \ell(\ell+1) - \int \dd\Omega \,(\uu[s]{Y}{\ell m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m} + \mathscr{O}(c^2) ~, \\
-	\uu[s]{S}{\ell m} &= \uu[s]{Y}{\ell m} - \sum_{j\ne\ell} \frac{\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}}{j(j+1)-\ell(\ell+1)} \, \uu[s]{Y}{j m} +\mathscr{O}(c^2) ~.
+	\begin{split}
+		\uu[s]{\mathscr{E}}{\ell m} &= \ell(\ell+1) - \int \dd\Omega \,(\uu[s]{Y}{\ell m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m} + \mathscr{O}(c^2) ~, \\
+		\uu[s]{S}{\ell m} &= \uu[s]{Y}{\ell m} - \sum_{j\ne\ell} \frac{\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}}{j(j+1)-\ell(\ell+1)} \, \uu[s]{Y}{j m} +\mathscr{O}(c^2) ~.
+	\end{split}
 \end{align}
 We may include $\mathscr{H}^{(2)}$ by using a higher order expansion, which can be found in any Quantum Mechanics textbook.
 The integral $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\mathscr{H}^{(1)} \,\uu[s]{Y}{\ell m}$ may be computed using Clebsch-Gordon coefficients decomposition generalized for spin-weighted functions. The integral must be proportional Leaver series coefficient $f_1$ defined in~\aref{AppendixEigenvalues}.
@@ -76,6 +84,7 @@ Perturbation theory shows that the SWSHs can be expanded using of spherical harm
 This should not be a surprising fact as any angular function $f(\theta,\varphi)$ with a particular spin-weight can be represented using a decomposition using spin-weighted spherical harmonics.
 Having this idea in mind, we write 
 \begin{align}
+	\label{eq4:SWSHsphericalExpansion}
 	\uu[s]{S}{\ell m}(c; \theta, \varphi) = \sum_{j} b_{j}^{(\ell)} \,\uu[s]{Y}{j m}(\theta,\varphi) \qquad \Big( \ell, j \ge \max\{|s|,|m|\} \Big) ~.
 \end{align}
 Replacing the expansion in~\eqref{eq4:angularEqH012}, we can take advantage of the orthogonality of the harmonics, $\int \dd\Omega \,(\uu[s]{Y}{j m})^* \,\uu[s]{Y}{\ell m} = \delta_{\ell j}$, by multiplying the the equation by $(\uu[s]{Y}{\ell m})^*$ and integrating the solid angle.
@@ -94,17 +103,51 @@ where the the eigenvalues of this matrix are $-\uu[s]{\mathscr{E}}{\ell m}$ and 
 
 Like the Leaver method, we will have to truncate the matrix at some finite size.
 From \eqref{eq4:spectralMatrix}, we know that the zeroth order contribution to the $\ell$-th eigenvalue will be the element $a_{\ell\ell}$.
-We opted to implement a $N\times N$ submatrix such that $i,j\ge\max\{|s|,|m|\}$ and truncating the matrix at $N > \ell - \max\{|s|,|m|\} + 1$, in order to include $a_{\ell\ell}$ in the approximation.
+We opted to implement a $N\times N$ centered submatrix such that $i,j\ge\ell_\mathrm{\min}\equiv\max\{|s|,|m|\}$ and truncating the matrix at $N > \ell+1 - \ell_\mathrm{\min}$, in order to include the $a_{\ell\ell}$ terms in the approximation.
 In reality, we must implement a variable $N\equiv N(c)$, so that it increases the size of the taken submatrix in order to include extra corrections for larger values of $c$. The size of submatrix also increases linearly with $\ell$.
-The best way to approximate $\uu[s]{\mathscr{E}}{\ell m}$ would be to take a square submatrix so that $a_{\ell\ell}$ is centered and on the diagonal but the first implementation will suffice since we will not take large $\ell$ values.
-Optimized numerical methods allow for fast computation of the eigenvalues and eigenvectors of a band-diagonal matrix.
-The ``Eigensystem'' method found in Mathematica\texttrademark~ returns a array of positively sorted eigenvalues and their correspondent normalized eigenvectors, guaranteeing~\eqref{eq3:SWSHorthogonality}. As for the eigenvalues we need to select the negative of the ($N-\ell-1+\max\{|s|,|m|\}$)-th element (MORE DETAIL). In order to ensure that the SWSHs have the same phase convections of their spherical counterparts, we must ensure that the correspondent eigenvector has $b_\ell^{(\ell)}>0$, by mapping the obtained vector components as $b_j^{(\ell)}\mapsto \mathrm{sgn}(b_\ell^{(\ell)}) \,b_j^{(\ell)}$.
+The best way to approximate $\uu[s]{\mathscr{E}}{\ell m}$ would be to not to construct the submatrix including all values of $\ell_\mathrm{\min}$ but center the submatrix at $a_{\ell\ell}$ and increase its size to fine-tune the eigenvalue.
+Since we will take very large $\ell$ values, we will use the first method for simplicity.
 
-(EV PLOTS)
+\begin{figure}[h]
+	\centering
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plotEV1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[c]{0.47\textwidth}
+		\includegraphics[width=\textwidth]{plotEV2}
+	\end{subfigure}
+	\hfill
+	\caption{Eigenvalues for $\ell=1$ (left) and $\ell=2$ (right) for typical values of $c$, using the spectral method.}
+	\label{fig4:plotsEV12}
+\end{figure}
+Optimized numerical methods allow for fast computation of the eigenvalues and eigenvectors of a band-diagonal matrix.
+The ``Eigensystem'' method found in Mathematica\texttrademark~ returns a array of eigenvalues and their correspondent normalized eigenvectors, guaranteeing \eqref{eq3:SWSHorthogonality}. Since the result is positively sorted list of $-\uu[s]{\mathscr{E}}{\ell m}$, with $0\le \ell-\ell_\mathrm{min}\le N-1$, of which we need to select the negative of the ($N-\ell+\ell_\mathrm{min}$)-th element.
+We show EM eigenvalues form lower $\ell$ values in \fref{fig4:plotsEV12}.
+\begin{figure}[!b]
+	\centering
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plotSWSH1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[c]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{plotSWSH2}
+	\end{subfigure}
+	\hfill
+	\caption{Plots of all spin-weighted spheroidal harmonics $\uu[-1]{S}{\ell m}(\theta,0)$ with $\ell=1$ (left) and $\ell=2$ (right) for $s=-1$ and $c=0.4$. This plot shares the same legend coloring as the above (\fref{fig4:plotsEV12}). Dotted curves represent the values of the $\uu[-1]{Y}{\ell m}$, when $c\to0$.}
+	\label{fig4:plotSWSH12}
+\end{figure}
+This procedure also returns correct eigenvector for approximating the eigenfunction using \eref{eq4:SWSHsphericalExpansion}.
+In order to ensure that the SWSHs have the same phase convections of their spherical counterparts, we must ensure that the correspondent eigenvector has $b_\ell^{(\ell)}>0$, by mapping the obtained vector components as $b_j^{(\ell)}\mapsto \mathrm{sgn}(b_\ell^{(\ell)}) \,b_j^{(\ell)}$.
+This process is computationally more stressful, since it requires the computing and combining $N$ different spherical harmonics with the same $s$ and $m$.
+In the superradiance range, the values of $c$ can be small $\left(<\tfrac{1}{2}|m|\right)$, therefore the SWSHs may not differ greatly from $\uu[s]{Y}{\ell m}(\theta,\varphi)$, with smaller deviations as $\ell$ increases (e.g. see \fref{fig4:plotSWSH12}).
+In this regime, we may the use pure spin-weighted spherical harmonics as approximations, as they not change the qualitative behaviour of the $\uu[s]{S}{\ell m}(\theta,\varphi)$.
 
 %----------------------------------------------------------------------------------------
 
-\section{Radial equation}
+\section{Amplification factor}
 
 Finding non-approximate form to the amplification factor $\uu[\pm 1]{Z}{\ell m}$ requires the numerical solving of the radial~\eqref{eq3:radialTeukolskyAdimensional}, which is already in an adimensional form.
 We computed the angular eigenvalues beforehand, which depend on the mode $(\ell,m)$ as well as the coupling $c=a\omega$.
@@ -126,8 +169,6 @@ Thus we need to set two initial conditions at the horizon, $f_{\pm}(0)$ and $f_{
 We expect to $|f_\pm(x)|$ to become approximately constant to large $x$, because this
 form is written in way that also matches the behavior of the radial function at infinity, $\uu[\pm 1]{R}{\ell m}\sim r^{\mp 1}$.
 
-(PLOT SHOWING THAT F IS CONSTANT AT INF)
-
 Comparing \eqref{eq4:numericalRansatz} with the asymptotic form at large $x$ as well as near the horizon, we obtain
 \begin{subequations}
 	\begin{align}
@@ -141,7 +182,7 @@ If both solutions are normalized such that $f_{\pm}(0) = 1$, then we have to dea
 \begin{align}
 	(r_{+} \tau)^2 \,\frac{\mathscr{Z}_\mathrm{hole}}{\mathscr{Y}_\mathrm{hole}} = -\frac{\mathscr{B} \tau^2 }{2 \varpi (i \tau + 2 \varpi)} ~.
 \end{align}
-Therefore to compute the amplification factor we use
+Therefore to compute the amplification factor we use ($f_{\pm}(0)=1$)
 \begin{align}
 	\label{eq4:ZFPlusMinus}
 	\uu[\pm 1]{Z}{\ell m} = \frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1 ~.
@@ -162,8 +203,6 @@ $f_{\pm}(0)=1$ are the original horizon conditions consider.
 We found $\epsilon=10^{-12}$, $N_H=6$ and $x_\infty = 200 \times 2\pi/|\bar{\omega}|$ working perfectly for the ``NDSolve'' integrator.
 Effectively we will have $|f_{\pm}{\!}'(\epsilon)|\simeq \epsilon$, but this contribution is sufficient to remove stiffness from the system and has important contributions in case of extremal BHs ($\mathscr{J}\to 1$).
 
-(DIFERENT MS Z PLOTS)
-
 This previous method requires us to call the integrator twice which is not very effective numerically.
 Exploring the conservation of the wronskian (conserved current) of \eqref{eq3:D2PlusVeff}, we can obtain
 \begin{align}
@@ -180,52 +219,43 @@ If we use the \emph{out-hole} ratio in the amplification factor we only need to 
 	\label{eq4:ZFMinusMinus}
 	\uu[\pm 1]{Z}{\ell m} = - \left( 1 + \frac{\mathscr{B}^2 \tau^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \left|\frac{f_{-}(x_\infty)}{f_{-}(0)}\right|^2 \right)^{-1} ~.
 \end{align}
-Thus we have three ways of computing $\uu[\pm 1]{Z}{\ell m}$, which only two of them are independent.
-For example, we can relate the RHS of \eqref{eq4:ZFPlusMinus} from both \eref{eq4:ZFPlusPlus} and \eref{eq4:ZFMinusMinus}.
-
-It is expected that if the amplification factors based on only one solution are approximately equal, then the same would be true when considering the third factor, which uses both solutions.
-But from a better look at FIGURE. XXX we can see that this fact is not true, especially in higher values of $\ell$.
-
-(LOG PLOTS SHOWING THREE WAYS OF COMPUTING Z, $\ell=1$ and $\ell=2$)
-
-Somehow it appears that we are not compute the ratio of $\mathscr{Y}_\mathrm{in}$ and $\mathscr{Z}_\mathrm{out}$ with enough accuracy, probably because the large values that $f_{\pm}(x_\infty)$ take do not hold the necessary precision to perform the division.
-We rename the three different ways of computing the amplification factor in \tref{tb4:diferentsZs}.
-\begin{table}[h]
+Results from computing the mode $\ell=m=1$ at $\mathscr{J}=0.9999$, we obtain a maximum amplification of about $4.36\%$ for a frequency of about $\omega M \simeq 0.436$.
+Modes in the region \eref{eq3:superradiance} have always $\uu[\pm 1]{Z}{\ell m}>0$, but decreases heavily in orders of magnitude for large $\ell$.
+\begin{figure}[h]
 	\centering
-	\tabulinesep=1.5mm
-    \begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}c@{\hskip 0.75cm}c@{\hskip 0.25cm}}
-        \hline
-        $\uu[\pm 1]{Z}{\ell m}$ & Expression & Requires \\
-		\hline\hline
-		$Z^{(1)}$
-		& $-\frac{\bar{\omega} \tau^2}{\varpi} \left|\frac{f_{+}(0)}{f_{+}(x_\infty)}\right|^2$
-		& $\phi_0$  \\
-		\hline
-		$Z^{(2)}$
-		& $-\left( 1 + \frac{\mathscr{B}^2 \tau^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \left|\frac{f_{-}(x_\infty)}{f_{-}(0)}\right|^2 \right)^{-1}$
-		& $\phi_2$ \\
-		\hline
-		$Z^{(3)}$
-		& $\frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1$
-		& $\phi_0$, $\phi_2$ \\
-        \hline
-    \end{tabu}
-    \caption{Different forms of computing the amplification factor $\uu[\pm 1]{Z}{\ell m}$, using the asymptotic coefficients of radial part $\phi_0$, $\phi_2$ and both.}
-    \label{tb4:diferentsZs}
-\end{table}
-Picking carefully a superradiant frequency. For larger values of $\ell$ (with small $m$) the gain/loss is practically zero.
-Still we have large we usually large discrepancies in the order of the amplification factor when is computed using only one solution and the one which uses both.
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.6\textwidth}
+        \includegraphics[width=\textwidth]{precisionZ1}
+	\end{subfigure}
+	\caption{Amplification factor of an extremal BH ($\mathscr{J}=0.9999$) for modes with $\ell=1$. In figure, superradiance occurs only for $m=1$ as predicted.}
+	\label{fig4:plotZ53}
+\end{figure}
+
+Thus we have three ways of computing $\uu[\pm 1]{Z}{\ell m}$, which only two of them are independent.
+We rename the these different forms in Eqs. \eref{eq4:ZFPlusPlus}, \eref{eq4:ZFMinusMinus}, \eref{eq4:ZFPlusMinus} as $Z^{(1)}$, $Z^{(2)}$, $Z^{(3)}$, respectively.
 We can rearrange the expressions, so that we have
 \begin{align}
 	Z^{(3)} = Z^{(1)} \left[ 1 + \frac{1}{Z^{(2)}} \right] - 1 ~.
 \end{align}
-This expression states that if any pair of the numericals factors match, then they match with the third. 
-Since two different equation are numerically solved, it will always be a discrepancy, $Z^{(2)} = Z^{(1)} (1+\eta)$, with $\eta$ small.
-The problem is that this error is propagated as $Z^{(3)} \simeq Z^{(1)} - \eta$.
-For example, when $(\mathscr{J}, \ell, m, \bar{\omega})=(0.9999,5,3,0.1)$ we have $\eta \simeq 0.03$ and $Z^{(1)}\sim 10^{-20}$, which implies that when using both solutions we have a discrepancy of a factor of $10^{18}$.
-Therefore we cannot use the expression $Z^{(3)}$ to compute the amplification factor, when we have $\eta \gg Z^{(1)} , Z^{(2)}$.
+It is expected that if the amplification factors based only on a single solution are approximately equal, then the same would be true when considering the third factor, which uses both solutions.
+But from a better look at \fref{fig4:plotZ53} we can see that this fact is not true, especially in higher values of $\ell$.
+\begin{figure}[h]
+	\centering
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.6\textwidth}
+        \includegraphics[width=\textwidth]{noPrecisionZ53}
+	\end{subfigure}
+	\caption{Plot demonstrating error propagation for $\uu[\pm 1]{Z}{53}$ when computing the factor using both numerical solutions for the radial part of $\phi_0$ and $\phi_2$.}
+	\label{fig4:plotZ53}
+\end{figure}
+Somehow it appears that we are not able to compute the ratio of $\mathscr{Y}_\mathrm{in}$ and $\mathscr{Z}_\mathrm{out}$ with enough accuracy, probably because the large values that $f_{\pm}(x_\infty)$ take do not hold the necessary precision to perform the division.
 
-(MORE PLOTS)
+Picking carefully a superradiant frequency. For larger values of $\ell$ (with small $m$) the gain/loss is practically zero.
+Still we have huge difference in the order of magnitude of the amplification factor when comparing results from using only one solution and using both.
+Since two different equation are numerically solved, it will always be a discrepancy, $Z^{(2)} = Z^{(1)} (1+\eta)$, with $\eta$ small.
+The problem is that this error is propagated in absolute value, $Z^{(3)} \simeq Z^{(1)} - \eta$.
+For example, when $(\mathscr{J}, \ell, m, \bar{\omega})=(0.9999,5,3,0.1)$ we have $\eta \simeq -0.003$ and $Z^{(1)}\sim 10^{-20}$, which implies that when using both solutions we have a discrepancy of a factor of $10^{17}$.
+Therefore we cannot use the expression $Z^{(3)}$ to compute the amplification factor, when we have $\eta \gg Z^{(1)} , Z^{(2)}$.
 
 We go a step further to increase the numerical precision in this problem by considering higher order terms in the asymptotic expansion of \eqref{eq3:asymptoticR}.
 Separately, we will substitute both two asymptotic series in \eqref{eq3:radialTeukolskyAdimensional}, one for the ingoing part and another for the outgoing.
@@ -240,10 +270,19 @@ Although we have chosen the $s=-1$ solution, the same procedure can be done for 
 Firstly, we directly substitute the series into \eqref{eq3:radialTeukolskyAdimensional}, neglecting terms above $\mathscr{O}(x^{N_\infty})$ and grouping the exponentials terms, in order to obtain $I_n\propto I_0$, $O_n\propto O_0$ ($1 \le n \le N_\infty$), exactly like the series used above to define boundary conditions at the horizon.
 Secondly, substitution of the numerical ansatz \eref{eq4:numericalRansatz} in the LHS of the previous equation, together with it's derivative, we have a system two linear equations, which in the limit of large-$x$ limit allows to determine
 \begin{align}
-	\frac{1}{r_+} \,\mathscr{Z}_\mathrm{in} = I_0\Big( f_{-}(x_\infty), \,f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \,\mathscr{Z}_\mathrm{out} = O_0\Big( f_{-}(x_\infty), \, f_{-}{\!}'(x_\infty) \Big) ~.
+	\frac{1}{r_+} \,\frac{\mathscr{Z}_\mathrm{in}}{\mathscr{Z}_\mathrm{hole}} = I_0\Big( f_{-}(x_\infty), \,f_{-}{\!}'(x_\infty) \Big) ~,\qquad r_{+} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{hole}} = O_0\Big( f_{-}(x_\infty), \, f_{-}{\!}'(x_\infty) \Big) ~.
 \end{align}
 Lastly, we may use previous expression~\eref{eq3:amplificationBAoutAin} to compute $\uu[\pm1]{Z}{\ell m}$.
 This new method solves some of the precision problems from the first method when using both $\phi_0$ and $\phi_2$, for a smaller $x_\infty = 80 \times 2 \pi / |\bar{\omega}|$ and $N_\infty = 10$, with the same $\epsilon = 10^{-12}$.
+\begin{figure}[!t]
+	\centering
+	\vspace{0.2cm}
+	\begin{subfigure}[c]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{precisionLogZ}
+	\end{subfigure}
+	\caption{Eigenvalue plots}
+	\label{fig4:logZ}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 
