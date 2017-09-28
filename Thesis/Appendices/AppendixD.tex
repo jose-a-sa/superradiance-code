@@ -7,10 +7,10 @@ Using the Leaver continued fraction equation for the eigenvalue, defined in \ere
 \begin{align}
     \uu[s]{\mathscr{A}}{\ell m} = \sum_{p=0}^\infty f_p \,c^p ~.
 \end{align}
-Directed substitution into the continued fraction is done in \cite{Fackerell1977,Seidel1989}, computing the coefficients up to $\mathscr{O}(c^6)$.
+Directed substitution into the continued fraction is done in \cite{Fackerell1977,Seidel1989}, where the coefficients are presented up to $\mathscr{O}(c^6)$.
 Defining
 \begin{align}
-    h(\ell) = \frac{2 \left(\ell^2-s^2\right)}{\ell^3 (2 \ell^2 -1) } \left( \ell^2 - \frac{s^2 m^2}{\max\{|s|,|m|\}^2} \right) \Big( \ell^2 - \max\{|s|,|m|\}^2 \Big) 
+    h(\ell) = \frac{\left(\ell^2-s^2\right) \left[\ell^2-(k_{+}-k_{-})^2\right] \left[\ell^2-(k_{+}+k_{-})^2\right]}{2 \ell^3 \left(\ell^2-\frac{1}{4}\right)} = \frac{2 \left(\ell^2-m^2\right) \left(\ell^2-s^2\right)^2}{\ell^3 \left(4 \ell^2-1\right)}
 \end{align}
 we may list the series coefficients below,
 \begin{subequations}
@@ -23,7 +23,7 @@ we may list the series coefficients below,
     \begin{split}
         f_4 &= 4 m^2 s^4 \bigg[ \frac{h(\ell+1)}{\ell^2 (\ell+1)^4 (\ell+2)^2} 
         - \frac{h(\ell)}{(\ell-1)^2 \ell^4 (\ell+1)^2} \bigg] 
-        - \frac{h(\ell)^2}{2\ell} +\frac{h(\ell+1)^2}{2 (\ell+1)} \\
+        +\frac{h(\ell+1)^2}{2 (\ell+1)} - \frac{h(\ell)^2}{2\ell} \\
         &~ + \frac{(\ell-1) h(\ell-1) h(\ell)}{2 \ell (2\ell-1)} + \frac{h(\ell) h(\ell+1)}{2 \ell (\ell+1)} 
         - \frac{(\ell+2) h(\ell+1) h(\ell+2)}{2(\ell+1) (2 \ell+3)} ~,
     \end{split}

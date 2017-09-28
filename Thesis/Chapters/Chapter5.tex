@@ -141,10 +141,10 @@ We can also recall that the mode factor in \eqref{eq5:scatterFexpressionYY} is v
 We see that for $a\omega \to 0$,
 \begin{align}
     \label{eq5:phaseFactor}
-    (-1)^{\ell+1} \frac{\mathscr{B}}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \simeq (-1)^{\ell+1} \frac{\ell(\ell+1)}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} ~,
+    \frac{\mathscr{B}}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \simeq \frac{\ell(\ell+1)}{4 \omega^2} \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} ~,
 \end{align}
 remembering that $\mathscr{B} = \left[ (\uu[\pm 1]{\mathscr{E}}{\ell m})^2 - 4 a^2 \omega^2 + 4 m a \omega \right]^{1/2}$.
-An argument could be made state that the latter expression fo the coefficient is the correct instead of the one in \eqref{eq5:scatterFexpressionYY}, but this approximation is good enough when considering superradiant frequencies $|\omega| \simeq 0.4 \Omega_H$ for a typical stellar mass extremal BH (see FIGS SWSH/EVS).
+An argument could be made state that the latter expression fo the coefficient is the correct instead of the one in \eqref{eq5:scatterFexpressionYY}, but this approximation is good enough when considering superradiant frequencies $|\omega| \simeq 0.4 \Omega_H$ for a typical stellar mass extremal BH (see \fref{fig4:plotSWSH12}).
 
 %----------------------------------------------------------------------------------------
 
@@ -174,6 +174,7 @@ It can be written as
 \end{align}
 where the phase shifts are \cite{Futterman1988}
 \begin{align}
+    \label{eq5:phaseShiftN}
     e^{2 i \delta_N } = \frac{\Gamma(\ell + 1 - 2 i M \omega)}{\Gamma(\ell+1 + 2 i M \omega)} ~.
 \end{align}
 Assuming an incidence of $\theta_0=0$, summing the series leads to a similar result as the Rutherford elastic scattering in a Coulomb potential, $|f_\mathrm{N}(\theta,0)| \propto 1/\sin^{4}(\theta/2) \sim 1/\theta^4$, which appears to explain the divergence at $\theta=0$. 
@@ -181,12 +182,22 @@ Assuming an incidence of $\theta_0=0$, summing the series leads to a similar res
 On the other hand, the $f_\mathrm{D}(\theta,\varphi)$ encloses all the information regarding the main scattering effects, including superradiance.
 From \eqref{eq5:fNfD}, simple algebra states that
 \begin{align}
+    \label{eq5:fD}
     f_\mathrm{D}(\theta,\varphi) = - \frac{\pi \,\epsilon_R}{\omega}
-    \sum_{\ell,m} \left( \frac{\ell(\ell+1)}{4 \omega^2} \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \right| e^{2 i \delta } - e^{2 i \delta_\mathrm{N} } \right)
+    \sum_{\ell,m} \left[ \frac{\mathscr{B}}{\ell(\ell+1)} \sqrt{ \uu[\pm 1]{Z}{\ell m} +1 } \,e^{2 i \delta } - e^{2 i \delta_\mathrm{N} } \right]
     \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) ~,
 \end{align}
-where we define $\delta = \mathrm{arg} \left[ (-1)^{\ell+1} \,\mathscr{Z}_\mathrm{out}/\mathscr{Z}_\mathrm{in} \right]$.
-In order of this sum to converge two things
+where we define
+\begin{align}
+    \label{eq5:phaseShiftD}
+    2 \delta = \mathrm{arg} \left[ (-1)^{\ell+1} \,\frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in}} \right] ~.
+\end{align}
+In order of this sum to converge two things must occur.
+First, absolute value of the factor \eref{eq5:phaseFactor} must go to 1.
+Numerically, we find that in the limit of $\ell/\omega\to \infty$ superradiant modes are reflected with no change in the amplitude, $\uu[\pm 1]{Z}{\ell m}\to 0$ (check \fref{fig4:logZ}).
+Also, from \eqref{eq3:Bdefinition} we know that for $c=a\omega$ constant, increasing $\ell$ leads to the eigenvalue $\uu[\pm 1]{\mathscr{E}}{\ell m} \sim \ell(\ell+1)$, which cancels the factor in \eref{eq5:fD}.
+Secondly, the phase shift numerically computed using \eref{eq5:phaseShiftD} must converge for the the Newtonian phase shits \eref{eq5:phaseShiftN}, $\delta\to\delta_N$.
+This is not so trivial to ensure.
 
 
 \cleardoublepage
