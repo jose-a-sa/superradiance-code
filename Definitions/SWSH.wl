@@ -55,7 +55,7 @@ Rule\[ScriptH] = {\[ScriptH][l_] -> ((l^2 - (kp + km)^2)*(l^2 - (kp - km)^2)*(l^
 
 (* \[Alpha][0]a[1]+\[Beta][0]a[0]=0 *)
 (* \[Alpha][p]a[p+1]+\[Beta][p]a[p]+\[Gamma][p]a[p-1]=0 *)
-es = {
+LeaverCoef = {
 	\[Alpha][p_] -> -2*(1 + p)*(1 + 2*km + p), 
 	\[Beta][p_] -> -A - c^2 + (km + kp + p - s)*(1 + km + kp + p + s) - 2*c*(1 + 2*km + 2*p + s), 
     \[Gamma][p_] -> 2*c*(km + kp + p + s)
@@ -96,6 +96,6 @@ EigenLeaver[\[ScriptS]_Integer, (\[ScriptL]_Integer)?NonNegative,
      Quiet[FindRoot[Fold[\[Beta][#2 - 1] - (\[Alpha][#2 - 1]*\[Gamma][#2])/
             #1 & , 1, Reverse[Range[M]]] /. (LeaverCoef /. Rule\[Kappa]pm /. 
          {m -> \[ScriptM], l -> \[ScriptL], s -> \[ScriptS], 
-          c -> \[ScriptC]}), {A, Table[c^(i - 1), {i, Length[EigenCoef]}] . 
-          Simplify[EigenCoef /. Rule\[Kappa]pm /. {m -> \[ScriptM], 
+          c -> \[ScriptC]}), {A, Table[c^(i - 1), {i, Length[SWSHEigenCoef]}] . 
+          Simplify[SWSHEigenCoef /.Rule\[ScriptH]/. Rule\[Kappa]pm /. {m -> \[ScriptM], 
              s -> \[ScriptS]}] /. {l -> \[ScriptL], c -> \[ScriptC]}},Method->"Secant",WorkingPrecision->Max[MachinePrecision,Precision[\[ScriptC]]],AccuracyGoal->Max[MachinePrecision,Precision[\[ScriptC]]]-2]]

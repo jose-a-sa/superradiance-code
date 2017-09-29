@@ -3,7 +3,7 @@
 GetZFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
     StringJoin["Data/", StringRiffle[{"Z", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
-GetZFile[]:=FileNames["Z_*",{"Data"}];
+GetZFile[]:=SortBy[FileNames["Z_*",{"Data"}],(Last@StringSplit[#,"_"]&)];
 
 
 GetZFileBCP[(s_Integer)?NonPositive, (l_Integer)?NonNegative, m_Integer] := 
@@ -15,13 +15,13 @@ GetZFileBCP[]:=FileNames["sigma_VS*",{"Data/Z-Brito-Cardoso-Pani"}];
 GetSWSHEigenFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
     StringJoin["Data/", "SWSH-Eigenvalues/", StringRiffle[{"SWSH", "EV", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
-GetSWSHEigenFile[]:=FileNames["SWSH_EV*",{"Data","SWSH-Eigenvalues"}];
+GetSWSHEigenFile[]:=SortBy[FileNames["SWSH_EV*",{"Data\\SWSH-Eigenvalues"}],(Last@StringSplit[#,"_"]&)];
 
 
 Get\[Phi]File[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
     StringJoin["Data/", StringRiffle[{"YinZoutCoef", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
-Get\[Phi]File[]:=FileNames["YinZoutCoef_*",{"Data"}];
+Get\[Phi]File[]:=SortBy[FileNames["YinZoutCoef_*",{"Data"}],(Last@StringSplit[#,"_"]&)];
 
 
 Clear[ExportCSV];
@@ -39,5 +39,5 @@ raw=Import[file,"Text"];
 meta=StringTrim@StringJoin@StringCases[raw,StartOfLine~~"#"~~Shortest[__]~~EndOfLine~~"\n"];
 table=StringReplace[raw,{StartOfLine~~"#"~~Shortest[___]~~EndOfLine~~"\n"->"","#"~~Shortest[___]~~EndOfLine->""}];
 If[OptionValue[PrintMetadata],Print@meta];
-ImportString[table,"Table"]
+ImportString[table]
 ]

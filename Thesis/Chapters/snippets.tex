@@ -1,0 +1,35 @@
+\begin{table}[h]
+	\centering
+	\tabulinesep=1.5mm
+    \begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}c@{\hskip 0.75cm}c@{\hskip 0.25cm}}
+        \hline
+        $\uu[\pm 1]{Z}{\ell m}$ & Expression & Requires \\
+		\hline\hline
+		$Z^{(1)}$
+		& $-\frac{\bar{\omega} \tau^2}{\varpi} \left|\frac{f_{+}(0)}{f_{+}(x_\infty)}\right|^2$
+		& $\phi_0$  \\
+		\hline
+		$Z^{(2)}$
+		& $-\left( 1 + \frac{\mathscr{B}^2 \tau^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \left|\frac{f_{-}(x_\infty)}{f_{-}(0)}\right|^2 \right)^{-1}$
+		& $\phi_2$ \\
+		\hline
+		$Z^{(3)}$
+		& $\frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1$
+		& $\phi_0$, $\phi_2$ \\
+        \hline
+    \end{tabu}
+    \caption{Different forms of computing the amplification factor $\uu[\pm 1]{Z}{\ell m}$, using the asymptotic coefficients of radial part $\phi_0$, $\phi_2$ and both.}
+    \label{tb4:diferentsZs}
+\end{table}
+
+We started by introduced the necessary features of the Kerr geometry that allow for superradiance to occur as well as the necessary formalism to study any types of perturbations in Kerr spacetime, particularly the ergoregion.
+We the describe in detail the transformation of the Maxwell equations into two second-order linear differential equations whose dynamical variables are projections of the Maxwell tensor in the Kinnersley complex null tetrad basis.
+We showed that resultant equations are special cases of Teukolsky's master equation that describes all wave perturbations in Kerr geometry.
+The well established approximate methods allows to derive the near horizon and far horizon behaviours of the radial equation as well as derive an low-frequency approximation of the mode amplification.
+From this we obtain a the known superradiant condition, $\omega(\omega - m \Omega_H)<0$.
+Computation of the radial asymptotic coefficients requires the first to know the angular eigenvalue.
+By using the eigenvalue we found a discontinuities on the plots (solved later), which led us to opt for the spectral method. Using the closed form for the spin-weighted spherical harmonics it is easy to compute any SWSHs.
+Given the eigenvalues it was possible to numerical solve the radial part of the equation.
+While most known methods use the radial equation in the $V_\mathrm{eff}$, the method described in this work used standard BL coordinates together with a cleaver ansatz.
+This allows for the equation to be solves quickly with precise results.
+Even tought we have three forms of computing the gain/loss factor from the the possible $s=\pm 1$ solutions, we showed that the relative difference between the factor using one coefficients propagates in absolute values to the factor using both coefficients.

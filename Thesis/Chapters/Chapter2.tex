@@ -3,6 +3,7 @@
 \chapter{Kerr black hole} % Main chapter title
 \label{Chapter2}
 
+%----------------------------------------------------------------------------------------
 
 \section{General Relativity}
 
@@ -12,9 +13,9 @@ The concept challenged our deeply ingrained and intuitive notions of nature, par
 This formulation corresponds to a field theory with the dynamical object of study being the metric of spacetime, $\bm{g}=g_{\mu\nu} \dd x^\mu \dd x^\nu$, connecting geometry with mass and energy through Einstein's field equations.
 The theory inherits diffeomorphism invariance, \emph{i.e.} remains the same theory by an active change of coordinates, which was at the core of definition of manifolds.
 
-Immediately after, in 1916, Schwarzschild found the first solution, describing a static spherical isolated object.
+Immediately after, in 1916, Schwarzschild found the first solution \cite{Schwarzschild1916}, describing a static spherical isolated object.
 Then, the theory was left aside because of the numerous coupled nonlinear equations, but the astronomical discovery of compact and highly energetic objects in the 1950s breaded new interest into the somewhat dormant GR, mainly because it was thought that these quasars and compact X-ray sources had suffered some form of gravitational collapse or that strong gravitational fields were present.
-Soon after, the modern theory of gravitational collapse was developed in the mid-1960s, including other BH solutions, for example Kerr's.
+Soon after, the modern theory of gravitational collapse was developed in the mid-1960s, including other BH solutions, for example Kerr's \cite{Kerr1963}.
 
 The theory of GR can be elegantly described in the form of the Hilbert action,
 \begin{align}
@@ -22,7 +23,7 @@ The theory of GR can be elegantly described in the form of the Hilbert action,
     \label{eq2:actionGR}
 \end{align}
 where $g=\det(g_{\mu\nu})$ and $R=g_{\alpha\beta} R^{\alpha\beta}$ corresponds to the Ricci scalar.
-Naturally, the first solutions corresponded to pure gravity, usually designated as vacuum solutions, which obey
+Naturally, the first solutions corresponded to pure gravity, usually designated as vacuum solutions \cite{Wald2010}, which obey
 \begin{align}
     R_{\mu\nu} = 0 ~.
     \label{eq2:vacuumGR}
@@ -63,6 +64,7 @@ These equations completely describe the system, but the problem is analytically 
 This is a very good approximation, as the gravitational field near a stellar-mass BHs is considerably stronger then the radiation emitted by nearby astrophysical sources.
 As the stress-energy tensor is quadratic in the fields, $T_{\mu\nu}\sim\mathscr{O}(A^2)$, then we can ignore the backreaction and the field equations for the metric $g_{\mu\nu}$ reduce to \eqref{eq2:vacuumGR}.
 
+%----------------------------------------------------------------------------------------
 
 \section{Spacetime symmetries}
 
@@ -87,7 +89,7 @@ is called a Killing field. Locally, this expression reduces to $\nabla_\mu \xi_\
 A \emph{stationary} solution implies the existence of a Killing vector $\bm{k}$ that is asymptotically timelike, $\bm{k}^2>0$, therefore allowing us to normalize our vector such that $\bm{k}^2 \rightarrow 1$. 
 Unlike the case of the static spacetime, a stationary metric does not show invariance under reversal of the time coordinate, which is natural considering a system with angular momentum. 
 Futhermore, a solution is also \emph{axisymmetric} if there is an asymptotically spacelike Killing field $\bm{m}$ whose integral curves are closed.
-A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[\bm{k} , \bm{m}] = 0$, \emph{i.e.} rotations about the axis of symmetry commute with time translations. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
+A solution is stationary and axisymmetric if both symmetries are present, along with commuting fields, $[\bm{k} , \bm{m}] = 0$, \emph{i.e.} rotations about the axis of symmetry commute with time translations \cite{Wald2010}. The commutativity of the fields implies the existence of a set of coordinates, $(t,r,\theta,\varphi)$, such that
 \begin{align}
     \bm{k} = \frac{\partial}{\partial t} ~, \qquad \bm{m} = \frac{\partial}{\partial \varphi} ~.
     \label{eq2:tPhiKilling}
@@ -102,16 +104,18 @@ with the same holding true for $\bm{k}$, hence we can write $g_{\mu\nu} = g_{\mu
 One of the major applications of Killing vectors is to find conserved charges associated with the motion along a geodesic spanned by the field.
 These quantities are defined by taking the geodesics to regions of space that are asymptotical flat, where the geometry does not affect the observer.
 In the case of the Kerr solution, we have two Killing vectors, $\bm{k}$ and $\bm{m}$, which are naturally associated with the total mass $M$ and angular momentum $J$ of the BH, respectively.
-This is usually done by evaluating the Komar integrals \cite{Heusler1996, Wald2010}, which can be written in a covariant way as
+This is usually done by evaluating the Komar integrals \cite{Heusler1996, Townsend1997}, which can be written in a covariant way as
 \begin{align}
     M = \frac{1}{8 \pi} \int_{S^2_\infty} \star \dd \bm{k}^\flat  =  -\frac{1}{4}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{t[\alpha,\beta]} ~, \label{eq2:komarMass} \\
     J = -\frac{1}{16 \pi} \int_{S^2_\infty} \star \dd \bm{m}^\flat = \frac{1}{8}& \lim_{r\to\infty}  \int_0^\pi \dd\theta \sqrt{-g} \, g^{t\alpha} g^{r\beta} g_{\varphi[\alpha,\beta]} ~, \label{eq2:komarSpin}
 \end{align}
-where the usual notation $\bm{k}^\flat = g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
+where the usual notation $\bm{k}^\flat \equiv g_{\mu\nu} k^\mu \dd x^\nu$ transforms a vector into a one-form and the operator $\star : \Omega^{p}(\mathscr{M})\to\Omega^{4-p}(\mathscr{M})$ is the Hodge dual map for $p$-forms.
 In order to complete the integration in the last step are assumed \eref{eq2:tPhiKilling} and \eref{eq2:lieMetricTPhi}, keeping $(t,r)$ constant. 
 According to the widely accepted \emph{no-hair conjecture} \cite{Carter1971}, these two quantities completely define a stationary (neutral) BH. 
 
-\section{Kerr-Child coordinates}
+%----------------------------------------------------------------------------------------
+
+\section{Kerr-Schild coordinates}
 
 Naturally, Kerr was not the only one looking for such solution.
 Many presented other geometries to approximately describe a rotating star. 
@@ -138,42 +142,42 @@ That being said, this raises the difficulty of finding the essential singulariti
 The best way to look for these singularities is to compute curvature scalar quantities, and if they diverge in one particular chart, then they diverge in all charts.
 Since any BH is just a vacuum solution, then the Ricci scalar vanishes, $R=0$, so we resort to the Kretschmann scalar,
 \begin{align}
-    R_{\alpha\beta\gamma\delta} R^{\alpha\beta\gamma\delta} = \frac{48 M (r^2 - a^2\cos^2\theta) \left[ (r^2 - a^2\cos^2\theta) ^2 - 16 r^2 M^2 a^2\cos^2\theta \right] }{(r^2 + a^2\cos^2\theta)^6} ~,
     \label{eq2:KerrKretschmann}
+    R_{\alpha\beta\gamma\delta} R^{\alpha\beta\gamma\delta} = \frac{48 M (r^2 - a^2\cos^2\theta) \left[ (r^2 - a^2\cos^2\theta) ^2 - 16 r^2 M^2 a^2\cos^2\theta \right] }{(r^2 + a^2\cos^2\theta)^6} ~,
 \end{align}
 that clearly diverges for $\rho^2=0$.
 The Schwarzschild singularity, $r=0$, is replaced with the Kerr singularity $(r,\theta)=(0,\pi/2)$.
 It is not clear what is the geometry of the Kerr singularity if we interpret $r$ and $\theta$ as being part of the ordinary spherical coordinates.
 Although the metric is singular, we can draw some insight considering $(r,\theta)$ constant and then the limit of $r\to0$ through the equatorial plane,
 \begin{align}
+    \label{eq2:KerrSingularity}
     {\bm{g}}\rvert_{\mathrm{singularity}} \sim \dd v^2 - a^2 \dd \chi^2 ~.
-    \label{eq2:KerrKretschmann}
 \end{align}
 Hence the metric is reduced to the line element of the circle, $S^1$, confirming a \emph{ring singularity} of radius $a$.
 This result implies that we may only reach the singularity, $\rho^2=0$, by approaching the Kerr BH through the equatorial plane. 
 
-The Kerr-Child theory provides the ``cartesian'' form \cite{Teukolsky2015}, 
+The Kerr-Schild theory provides the ``cartesian'' form \cite{Teukolsky2015}, 
 \begin{align}
+    \label{eq2:KerrSchild}
     \begin{split}
         \bm{g} = & \, \dd \tilde{t}^2 - \dd x^2 - \dd y^2 - \dd z^2 \\
         & - \frac{2 M r^3}{r^4 + a^2 z^2} \left[ \dd \tilde{t} + \frac{r (x \dd x + y \dd y) + a ( y \dd x - x \dd y)}{r^2+a^2} + \frac{z}{r} \dd z \right]^2 ~,
     \end{split}
-    \label{eq2:KerrChild}
 \end{align}
 which is particularly useful to understand the singularity geometry.
 In this metric, $r$ is no longer a coordinate but a function of this chart coordinates $(\tilde{t},x,y,z)$.
-We can relate the The Kerr-Child metric to the original Kerr solution, using
+We can relate the The Kerr-Schild metric to the original Kerr solution, using
 \begin{align}
+    \label{eq2:InEFtoKSchild}
     \tilde{t} = v - r ~, \qquad x+ i y = (r -i a) e^{i \chi} \sin\theta ~,\qquad z=r\cos\theta ~,
-    \label{eq2:InEFtoKChild}
 \end{align}
 which implies that $r(x,y,z)$ is implicitly given by
 \begin{align}
+    \label{eq2:rConditionKSchild}
     r^4 - (x^2+y^2+z^2-a^2)r^2 -a^2 z^2 = 0 ~.
-    \label{eq2:rConditionKChild}
 \end{align}
 This condition deserves a more in-depth analysis.
-For increasing $r$, the surfaces obeying \eqref{eq2:rConditionKChild} approximates perfect spheres as the geometry gets more and more flat.
+For increasing $r$, the surfaces obeying \eqref{eq2:rConditionKSchild} approximates perfect spheres as the geometry gets more and more flat.
 Minkowsky flat space is immediately also guaranteed for $M=0$.
 On the other hand, as we approach the singularity on $z=0$ and $x^2+y^2 = a^2$, rotation effects deform the surfaces into oblate spheroids ($\theta\ne\pi/2$ for the strict inequality).
 Such remarks are visually demonstrated in~\fref{fig2:kerrchild}.
@@ -187,44 +191,46 @@ Such remarks are visually demonstrated in~\fref{fig2:kerrchild}.
     \begin{subfigure}[c]{0.35\textwidth}
         \includegraphics[width=\textwidth]{kerrchild3d}
     \end{subfigure}
-    \caption{Contour plots of the surface $r(x,y,z)/a$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Child coordinates. The left plot is the intersection of the $y=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves representing orthogonal constant $\theta(x,y,z)$ hypersufaces become asymptotically affine.}\label{fig2:kerrchild}
+    \caption{Contour plots of the surface $r(x,y,z)/a$ for constant values of $0,\,1/2,\,1,\,3/2$, in the Kerr-Schild coordinates. The left plot is the intersection of the $y=0$ plane with the 3D representation (right) that spotlights the ring singularity. Dashed curves representing orthogonal constant $\theta(x,y,z)$ hypersufaces become asymptotically affine.}\label{fig2:kerrchild}
 \end{figure}
 
-Even though the Kerr-Child metric takes $r>0$ values, there is no mathematical reason to restrict $r$ strictly to positive values.
+Even though the Kerr-Schild metric takes $r>0$ values, there is no mathematical reason to restrict $r$ strictly to positive values.
 Thus, hypersurfaces of constant $r$ can also be represented by $-r$. 
 This means that this chart can be analytically extended to regions where $r<0$.
-It is possible to obtain a \emph{maximally extended} solution by analytic continuation and a proper collage of charts.
+It is possible to obtain a \emph{maximally extended} solution by analytic continuation and a proper collage of charts \cite{Townsend1997}.
 This gives mathematical access to new spacetime regions, even tough most of them show unphysical properties.
+
+%----------------------------------------------------------------------------------------
 
 \section{Boyer-Linquist coordinates}
 
 Considering the problem in hand, the most suitable coordinates for work with the Newman-Penrose (NP) formalism, are the Boyer-Linquist (BL) coordinates \cite{Boyer1967},
 \begin{align}
+    \label{eq2:KerrBL}
     \begin{split}
         \bm{g} = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
         &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2 ~,
     \end{split}
-    \label{eq2:KerrBL}
 \end{align}
 where we define $\Delta=r^2-2 M r + a^2$.
 In order to show that these correspond to the same solution, the change of coordinates
 \begin{align}
-    \dd v = \dd ( t + r_* ) ~, \qquad \dd \chi = \dd \varphi + \frac{a}{\Delta} \,\dd r ~,
     \label{eq2:InEFtoBL}
+    \dd v = \dd ( t + r_* ) ~, \qquad \dd \chi = \dd \varphi + \frac{a}{\Delta} \,\dd r ~,
 \end{align}
 takes us back to the original Kerr form \eref{eq2:KerrIngoingEF}.
 The coordinate $v$ is given by the known ingoing EF transformation, defined by the Regge-Wheeler coordinate, also named \emph{tortoise} coordinate, which is very useful to construct null directions.
 In the case of the Kerr BL metric, it holds that
 \begin{align}
-    \frac{\dd r_*}{\dd r} = \frac{r^2+a^2}{\Delta} ~.
     \label{eq2:tortoise}
+    \frac{\dd r_*}{\dd r} = \frac{r^2+a^2}{\Delta} ~.
 \end{align}
 These coordinates are usually referred as ``Schwarzschild like'', as they lead to the spherical static case in standard curvature coordinates when setting $a=0$. 
 Time inversion symmetry is characteristic of the static Schwarzschild spacetime, but the same does not hold for Kerr's.
-Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\to(-t,-\varphi)$, also known as the \emph{circular condition}, an intuitive notion from physical systems with angular momentum.
+Nevertheless, this specific form is invariant under the inversion $(t,\varphi)\to(-t,-\varphi)$, also known as the \emph{circular condition}, an intuitive notion from physical systems with angular momentum \cite{Wald2010, Heusler1996}.
 This discrete symmetry eliminates most of the off-diagonal components of the BL metric, $g_{tr} = g_{\varphi r} = g_{t \theta} = g_{\varphi \theta} = 0$, making it the simplest to perform calculations.
 
-To study the possible horizons of the Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp \equiv (g^{\mu\nu} \partial_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
+To study the possible horizons of the Kerr BH, we will consider $\bm{n} = (\dd r)^\sharp \equiv (g^{\mu\nu} \nabla_\nu r) \partial_\mu$ which defines a normal vector to constant radial hypersurfaces.
 It is easy to show that $\bm{n}^2 = g^{rr}$, which implies that $\bm{n}$ is null when $\Delta=0$, defining null hypersurfaces at 
 \begin{align}
     r_\pm = M \pm \sqrt{M^2 - a^2} ~,
@@ -239,7 +245,7 @@ We must have
     |a| < M ~,
     \label{eq2:spinLimit}
 \end{align}
-otherwise $\Delta$ would lack any real roots and would lead to an essential \emph{naked singularity}, reachable in a finite observable time, which is forbidden by the \emph{Weak Cosmic Censorship} conjecture.  
+otherwise $\Delta$ would lack any real roots and would lead to an essential \emph{naked singularity}, reachable in a finite observable time, which is forbidden by the \emph{Weak Cosmic Censorship} conjecture \cite{Townsend1997}.  
 
 The surface at $r=r_{-}$, on the other hand, is called a Cauchy horizon.
 In GR, a spacelike surface containing all initial conditions of spacetime (Cauchy surface) would suffice to predict all past and future events, but a Cauchy horizon separates the domain of validity of such initial conditions.
@@ -296,6 +302,8 @@ Due to the BL chart singularity, the normal vector to radial surfaces, $\bm{n}$,
 Since null geodesics on the outer horizon follow curves generated by the Killing vector $\xi$, the integral curves of this vector obey $\xi^\alpha \partial_\alpha (\varphi - \Omega_H t) = 0$, resulting in $\varphi = \Omega_H t + const$.
 Therefore, we say that the BH is ``rotating'' with angular velocity $\Omega_H$.
 
+%----------------------------------------------------------------------------------------
+
 \section{Ergoregion and the Penrose process}
 
 One of the main characteristic that distinguishes Kerr BHs from other spherical solutions is the existence of an \emph{ergoregion}.
@@ -307,7 +315,7 @@ In this region the Killing vector $\bm{k}$ becomes spacelike, $\bm{k}^2=g_{tt}<0
 This region lies outside the event horizon if $a\ne0$, then being defined as $r_+< r < r_{\mathrm{ergo}}(\theta)$.
 Notice that a static observer moves in a timelike curve with $(r,\theta,\varphi)$ constant, \emph{i.e.} with tangent vector proportional to $\bm{k}$, therefore such observer cannot exist inside the ergoregion because the time Killing vector becomes spacelike, otherwise it would violate causality.
 We can see that $\bm{u}^2=g_{\alpha\beta}u^\alpha u^\beta = g_{tt} (u^t)^2 + 2 g_{t\varphi} u^t u^\varphi +  g_{\varphi\varphi} (u^\varphi)^2 > 0$ only occurs when $g_{t\varphi} u^\varphi > 0$, as all other terms are positive.
-Inside the ergoregion, $g_{t\varphi}>0$, therefore all observers are forced to rotate in the same direction as the BH.
+Inside the ergoregion, $g_{t\varphi}>0$, therefore all observers are forced to rotate in the same direction as the BH \cite{Brito2015}.
 
 \begin{figure}[h]
     \centering
@@ -353,13 +361,13 @@ Suppose, that by some means such particle manages to decay inside the ergoregion
     \label{eq2:PenroseE2}
 \end{align}
 It can be shown that the particle with negative energy (bounded) must fall into the BH while the other may escape the ergoregion, with greater energy than the particle sent in. 
-Energy is conserved by making the BH absorb the particle with negative energy, therefore resulting in a net energy extraction.
+Energy is conserved by making the BH absorb the particle with negative energy, therefore resulting in a net energy extraction \cite{Townsend1997}.
 
 \begin{figure}[h]
     \centering
     \vspace{0.2cm}
     \includegraphics[width=0.65\textwidth]{ergoPenrose}
-    \caption{Illustration of the Penrose process, with ergoregion (dotted) and event horizon surfaces parameterized in Kerr-Child cartesian coordinates.}
+    \caption{Illustration of the Penrose process, with ergoregion (dotted) and event horizon surfaces parameterized in Kerr-Schild cartesian coordinates.}
     \label{fig2:penroseProcess}
 \end{figure}
 
@@ -371,7 +379,7 @@ The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delt
     \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
 \end{align}
 which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$.
-Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics. 
+Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics \cite{Hawking1973}. 
 
 We can tie the superradiance process with this particle counterpart using a simple and general argument.
 Asymptotically, we may think of waves as a collective of quantum (photons, gravitons, \dots), each carrying $\hbar \omega$ of energy and $\hbar m$ of angular momentum \cite{Bekenstein1973}, where $m$ labels a mode with definite angular momentum.
@@ -382,5 +390,6 @@ Therefore, when a given quanta is absorbed, the variation of the BH mass and ang
 \end{align}
 The condition for superradiance \eref{eq1:superradiance} appears explicitly in the second law of BH mechanics \eref{eq2:penroseCondition}, which guarantees that $\delta M (1 - \Omega_H m /\omega)>0$, \emph{i.e.} confirming energy extraction from the BH when superradiance occurs, while the lack of superradiance increases the mass of the BH.
 
+%----------------------------------------------------------------------------------------
 
 \cleardoublepage

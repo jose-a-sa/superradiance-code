@@ -1493,7 +1493,7 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["Kerr-Child plot", "Section",
+Cell["Kerr-Schild plot", "Section",
  CellChangeTimes->{{3.711632338822607*^9, 
   3.7116323448055196`*^9}},ExpressionUUID->"a8f87cf8-4423-4bd2-b724-\
 90ada0195963"],
