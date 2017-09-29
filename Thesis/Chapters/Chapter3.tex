@@ -460,7 +460,7 @@ Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} are closely related
 
 Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function was found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
 
-The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985 . Working out the asymptotical and critical behavior of the equation, we observe the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that a SWSH is everywhere analytical, Leaver proposed the series expansion at $z=-1$,
+The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985 \cite{Leaver1985, Leaver1986}. Working out the asymptotical and critical behavior of the equation, we observe the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that a SWSH is everywhere analytical, Leaver proposed the series expansion at $z=-1$,
 \begin{align}
     \label{eq3:SWSHseriesLeaver}
     {}_{s}S_{\ell m}(z) = e^{c z} (1+z)^{k_-} (1-z)^{k_+} \sum_{p=0}^\infty a_p (1+z)^p ~,
@@ -522,7 +522,7 @@ This way, we can simply write that $\lambdabar={}_{\pm1}\mathscr{E}_{\ell m}$.
 
 Like the angular equation, in general it is not possible to solve the radial \eqref{eq3:teukolskyRadial} by known analytical methods.
 The only apparent line of attack would be to numerical solve the equation, but it will be important to find the asymptotic form of ${}_{s}R_{\ell m}$ at infinity as well as its near-horizon behavior. 
-For both methods it will prove beneficial to change the variables into dimentionaless quantities,
+For both methods it will prove beneficial to change the variables into dimentionaless quantities \cite{Rosa2016},
 \begin{align}
     x = \frac{r - r_{+}}{r_{+}} ~,\qquad \tau = \frac{r_{+} - r_{-}}{r_{+}} ~,\qquad \varpi = (2-\tau)( \bar\omega - m \bar{\Omega}_H) ~,
 \end{align}
@@ -569,7 +569,7 @@ Altought useful, these solutions do not provide enough physical insight. Another
     \left[ \frac{\dd^2}{\dd r_{*}^2} + V_\mathrm{eff} \right] {}_{s}U_{\ell m} = 0 ~,
 \end{align}
 where ${}_{s}U_{\ell m}=\sqrt{\Delta^s (r^2 + a^2)} \,{}_{s}R_{\ell m}$ and the tortoise coordinate $r_*$ was defined in \eqref{eq2:tortoise}.
-We write the potential as a function of the radial coordiante,
+We write the potential as a function of the radial coordiante \cite{Teukolsky1973a},
 \begin{align}
     V_\mathrm{eff} = \frac{K^2 - 2 i s (r-M) K + \Delta ( 4 i s \omega r - {}_{s}\mathscr{F}_{\ell m} )}{(r^2+a^2)^2} - G^2 - \frac{\dd G}{\dd r_{*}}
 \end{align}
@@ -595,7 +595,7 @@ The ingoing and outgoing wave coeficients can be related to the integration coef
     \end{split}
 \end{align}
 
-We may notice the ratio of gamma functions with negative integer valued arguments, which can be misinterpreted as a divergence due to existing poles of $\Gamma$.
+We may notice the ratio of gamma functions with negative integer valued arguments, which can be misinterpreted as a divergence due to existing poles of $\Gamma(z)$.
 This is a mere artifact of the asymptotic expantion for general confluent hypergeometric arguments.
 A way to circumvent this problem is to consider Euler's reflection formula for any value of $\ell$ and then take the limit to the integer set,
 \begin{align}
@@ -615,7 +615,7 @@ Due to the logarithmic behavior of $r_*$ at the horizon, the solution takes the 
 \end{align}
 Expanding solution \eref{eq3:RnearSolution}, the integration constants relate through $A_\mathrm{hole} = (r_{+})^{-s} A$.
 
-With both approximations it is possible to extend the solutions of small frequency waves to overlapping regions and perform a matching of coefficients, which can be used to find how much of the wave is reflected/amplified.
+With both approximations it is possible to extend the solutions of small frequency waves to overlapping regions and perform a matching of coefficients \cite{Starobinsky1973a, Starobinsky1973b}, which can be used to find how much of the wave is reflected/amplified.
 The near region $r-r_{+}\ll \omega^{-1}$ and the asymptotic region $r-r_{+}\gg r_{+}$ overlap when $\omega r_{+} \ll 1$ ($\bar{\omega}\ll 1$). The overlapping region becomes larger as $\omega r_{+}$ becomes smaller.
 We proceed by expanding the far region solution \eref{eq3:RfarSolution} at the horizon, $x=0$, where the lowest order terms are simply
 \begin{align}
@@ -647,7 +647,7 @@ In particular, we will be interested in calculating the asymptotic energy flow g
 
 Different Killing vectors have distinct currents, due to different possible projections of the stress-energy tensor.
 These currents are conserved due to $\nabla_\mu T^{\mu\nu}=0$ and the Killing \eqref{eq2:killing}.
-The energy flux is defined as
+The energy flux is defined as \cite{Townsend1997}
 \begin{align}
     \label{eq3:fluxE}
     \dd E = T^{\mu}{}_\nu \, k^\nu \,\dd\Sigma_\mu
@@ -661,7 +661,7 @@ By computing the highest order term when $r\to\infty$, the surface element is as
     \dd\Sigma_\mu = n_\mu \,\sqrt{\det{\bm{h}}} \,\dd t \,\dd \theta \,\dd \varphi \sim n_\mu \,r^2 \sin\theta \,\dd t \,\dd \theta \,\dd \varphi ~.
 \end{align}
 
-We are obiously interested in obtaining an expression relating the flow of energy at infinity and the Maxwell NP scalar. Thus, will be convenient to describe the stress-energy tensor using symmetric tetrad combinations and NP scalars and their conjugates. Much like the Weyl and the Maxwell tensor, this composition is uniquelly defined by Eqs. \eref{eq2:stressenergyEM} and \eref{eq3:maxwellNPphi},
+We are obviously interested in obtaining an expression relating the flow of energy at infinity and the Maxwell NP scalar. Thus, will be convenient to describe the stress-energy tensor using symmetric tetrad combinations and NP scalars and their conjugates. Much like the Weyl and the Maxwell tensor, this composition is uniquelly defined by Eqs. \eref{eq2:stressenergyEM} and \eref{eq3:maxwellNPphi},
 \begin{align}
     \begin{split}
     2 T_{\mu\nu} &= \phi_0^* \phi_0 \, \mathfrak{n}_\mu \mathfrak{n}_\nu + \phi_2^* \phi_2 \, \mathfrak{l}_\mu \mathfrak{l}_\nu + 2 \phi_1^* \phi_1 \, [ \mathfrak{l}_{(\mu} \mathfrak{n}_{\nu)} + \mathfrak{m}_{(\mu} \bar{\mathfrak{m}}_{\nu)} ] \\
@@ -681,7 +681,7 @@ We can clearly identify the ingoing and outgoing flows as
 
 In order to obtain the full conservation law we must find the absorbed radiation by the BH. We turn now to the horizon null hypersurface, for which the normal vector $n$ in BL coordinates is the zero vector, due to $g^{rr}=0$.
 Similarly, the stress-energy tensor in this tetrad basis is ill-defined since $\bm{\mathfrak{l}}$ is singular at the horizon, where $\Delta=0$.
-The Kinnersley tetrad keeps its properties, by applying a boost in the null directions
+The Kinnersley tetrad keeps its properties, by applying a boost in the null directions \cite{Hawking1972,Brito2015,Teukolsky1974, Townsend1997}
 \begin{align}
    \bm{\tilde{\mathfrak{l}}} = \frac{\Delta}{2 (r^2+a^2)} \bm{\mathfrak{l}} ~,\qquad \bm{\tilde{\mathfrak{n}}} = \frac{2 (r^2+a^2)}{\Delta} \bm{\mathfrak{n}} ~,
 \end{align}
@@ -696,7 +696,7 @@ This implies that $\bm{\tilde{\mathfrak{l}}}$ is the normal vector to the event 
 The radial 3-surface element cannot be of the form in \eqref{eq3:radial3SurfaceElement}, since the induced metric at the horizon is now singular, $\sqrt{\det{\bm{h}}}=\Delta \rho^2 \sin\theta = 0$.
 Special considerations must be taken when taking the induced metric of a null hypersurface.
 We usually choose $\bm{k}=\partial_v$ as one of the surface tangent vectors, due to $\bm{\xi}\cdot\bm{k}=0$.
-Then we compute the induced metric $\bm{\sigma}$ of a 2-surface space spanned by the vectors $\partial_\theta$ and $\partial_\chi$.
+Then we compute the induced metric $\bm{\sigma}$ of a 2-surface space spanned by the vectors $\partial_\theta$ and $\partial_\chi$ \cite{Poisson2004}.
 The general 3-surface element for a null horizon, normal to the inward radial direction, is given by
 \begin{align}
     \dd\Sigma_\mu = \tilde{\mathfrak{l}}_\mu \,(\sqrt{\det \bm{\sigma}} \,\dd\theta \,\dd\chi ) \,\dd v = \tilde{\mathfrak{l}}_\mu  \, 2 M r_+ \sin\theta \,\dd\theta \,\dd\varphi \,\dd t ~,
@@ -746,11 +746,11 @@ Naturally, in order to give use to the $D/C$ ratio from the matching of coeffici
         $\uu[-1]{R}{\ell m}$ & $\mathscr{Z}_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + \mathscr{Z}_\mathrm{out}\, r \,e^{i \omega r_*}$ & $\mathscr{Z}_\mathrm{hole} \,\Delta \,e^{-i \kappa r_{*}}$ \\
         \hline
     \end{tabu}
-    \caption{Solutions near horzion far horizon \cite{Teukolsky1974}}
+    \caption{Solutions near horzion far horizon}
     \label{tb3:approximatedRsolutionsYZ}
 \end{table}
 Using \eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.
-In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $\mathscr{Y}_\mathrm{in}$,
+In the large $r$ limit, this equation is simplified into $(\partial_r-i \omega)(\partial_r-i \omega) \,{}_{-1}R_{\ell m} \sim \mathscr{B} \,( {}_{+1}R_{\ell m} )$, and considering terms only up to $\mathscr{O}(\tfrac{1}{r})$ we substitute $\mathscr{Y}_\mathrm{in}$ \cite{Teukolsky1974},
 \begin{align}
     \label{eq3:amplificationBAoutAin}
     \uu[\pm1]{Z}{\ell m} +1 = \frac{\mathscr{B}^2}{16 \omega^4} \left| \frac{\mathscr{Z}_\mathrm{out}}{\mathscr{Z}_\mathrm{in} } \right|^2 ~,

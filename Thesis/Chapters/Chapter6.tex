@@ -2,3 +2,21 @@
 
 \chapter{Discussion and future work} % Main chapter title
 \label{Chapter6}
+
+In this work we soughed to understand the effect of superradiance scattering in EM waves on Kerr BHs.
+The objective was to demonstrate if superradiance occurred in case of scattering of a EM wave radiated from a physically realistic source by a rotating BH.
+General waves are a superpositions of modes ($\omega, \ell, m$), which we know that occurs superradiance when $\omega(\omega - m \Omega_H)<0$.
+In this region the modes are either reflected or amplified, with the maximum amplification in the case of EM waves being of approximately 4.4\%.
+This occurs when the BH is extremal, $a\to M$ and on the lowest multipole $\ell=1$, with the percentage dropping quickly to zero as $\ell$ increases.
+Modes with large $|\omega|$ are quickly absorbed by the BH since they can ``cross'' the gravitational potential barrier, reaching the event horizon.
+To compute these amplification factor we need: (i) to compute the angular eigenvalues in order to substitute into the radial equation; (ii) obtain the coefficients of $\mathscr{Z}_\mathrm{in}$ and $\mathscr{Z}_\mathrm{out}$, by solving the radial equation.
+The second step we devised way of not rewriting the radial equation using the tortoise coordinate $r_*$, removing the singularities by considering a cleaver ansatz, without sacrificing precision or computational speed.
+We showed that is possible to find the amplification factor of each mode either using $|\mathscr{Z}_\mathrm{in}|^2$ or $|\mathscr{Z}_\mathrm{out}|^2$ our both.
+In this work we discuss why it is more advantageous to write the gain/loss factor only using only one of the previous coefficients.
+Although the routine is defined for EM perturbations, it can be quickly updated to accommodate GW perturbations for future work studies.
+The resultant complex coefficients also play an integral part in the computation of phase shifts, which are present in for each mode.
+Particularly, for a plane wave with superradiant frequency we know that most of the multipole modes are deflected with no change in the amplitude.
+This effect is characteristic of long-ranged potential that fall as $1/r$.
+When observing the BH from a particular direction, the effect of these phase shifts will dominate and conceal the effects of superradiance.
+In principle we could remove these interference effects, integrate all the solid angle by taking making observations from all directions, leaving only global amplification/absorption effects, but we do not know if that will be ever possible.
+Therefore we need to find a way to isolate the lower superradiant modes. A possible idea would be use a source orbiting the BH, with possibility for variation of distance to the BH and incidence angle, due to the chaotic orbits of the Kerr geometry. 
