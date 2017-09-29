@@ -280,17 +280,20 @@ Secondly, substitution of the numerical ansatz \eref{eq4:numericalRansatz} in th
 Lastly, we may use the previous expression \eref{eq4:InOutHole} to compute $\uu[\pm1]{Z}{\ell m}$ using only one of the coefficient, instead of using \eqref{eq3:amplificationBAoutAin}. 
 This new method solves some of the precision problems from the initial implementation when using both $\phi_0$ and $\phi_2$, for a smaller $x_\infty = 80 \times 2 \pi / |\bar{\omega}|$ and $N_\infty = 10$, with the same $\epsilon = 10^{-12}$.
 
-A similar method is implemented in \cite{Brito2015} which matches with ours results and results from earlier literature.
-Because we identified the error propagation in the ratio of coefficient \eref{eq4:ZFPlusMinus}, we were able to obtain results with less noise and more precision than data provided in \cite{Brito2015}.
-In \fref{fig4:logZ}, we have the logarithm-scaled plot of the amplification factor for different superradiant modes. We can conclude that $\uu[\pm 1]{Z}{\ell m}$ decreases in order of magnitude as $\ell$ increases.
-Therefore the mode with the highest amplification factor is $\ell=m=1$, we is ploted in detail in \fref{fig4:plotZ11}.
+A similar method is implemented in \cite{Brito2015}, which is very similar with the obtained results.
+These are very similar to those of Teukolsky \cite{TeukolskyPress1973b}.
+By identifying the source of the problem as the error propagation in expression \eref{eq4:ZFPlusMinus}, we are now aware that we must use definitions of $\uu[\pm 1]{Z}{\ell m}$ that have either \emph{in} or \emph{out} coefficient.
+Therefore we are able to obtain result with more precision and less noise compared to data originated from other methods (e.g. compare with \cite{Brito2015}).
 
+In \fref{fig4:logZ}, we have the logarithm-scaled plot of the amplification factor for different superradiant modes. We can infer that $\uu[\pm 1]{Z}{\ell m}$ decreases in order of magnitude as $\ell$ increases.
+Therefore the mode with the highest amplification factor is $\ell=m=1$, we is plotted in detail in \fref{fig4:plotZ11}.
+This particular plot reveals information which most relevent when considering a wave which is a superposition of harmonic modes.
 \begin{figure}[t]
 	\centering
 	\begin{subfigure}[c]{0.9\textwidth}
         \includegraphics[width=\textwidth]{precisionLogZ}
 	\end{subfigure}
-	\caption{Log plot of $\uu[\pm 1]{Z}{\ell m}$ as a function of $\bar{\omega}/m\bar{\omega}_H$. Each color represents the same value of $\ell$, while different dashing corresponds to grouping the modes as $|\ell-m|=0,1,2$. Each element group with a similar order of magnitude.}
+	\caption{Log plot of $\uu[\pm 1]{Z}{\ell m}$ as a function of $\bar{\omega}/m\bar{\omega}_H$ \cite{TeukolskyPress1973b}. Each color represents the same value of $\ell$, while different dashing corresponds to grouping the modes as $|\ell-m|=0,1,2$. Each element group with a similar order of magnitude.}
 	\label{fig4:logZ}
 \end{figure}
 
