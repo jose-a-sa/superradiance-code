@@ -16,6 +16,9 @@
         "**/*.lot": true,
         "**/*.toc": true,
         "**/*.out": true,
+        "**/*.snm": true,
+        "**/*.nav": true,
+        "**/*.vrb": true,
         "**/*.fdb_latexmk": true
     },
 

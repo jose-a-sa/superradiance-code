@@ -3,9 +3,9 @@
 \chapter{Superradiant scattering of plane waves} % Main chapter title
 \label{Chapter5}
 
-The prediction of EM and gravitational radiation amplification was a surprising prediction of Einstein's theory of gravitation in the Kerr geometry.
+The result of EM and gravitational radiation amplification was a surprising prediction of Einstein's theory of gravitation in the Kerr geometry.
 A method for direct or indirect observation of this process would provide a probe of rotating BHs and thus it would constitute an important test of GR in regions of extreme gravity.
-We have studied so far under which conditions an EM mutipole mode $(\omega,\ell, m)$ can undergo superradiant scattering.
+We have studied so far under which conditions an EM multipole mode $(\omega,\ell, m)$ can undergo superradiant scattering.
 We know that each mode will be independently amplified/attenuated as shown above.
 The challenge is to observationally infer the occurrence of superradiance for a realistic EM wave, which is generically a superposition of superradiant and non-superradiant modes. This chapter will follow closely results worked out in \cite{Rosa2017}.
 
@@ -103,7 +103,7 @@ The position of the source modulates the incident wave changing its mode composi
 Therefore if the plane wave source co-rotates with the BH, when $\theta_0 \to 0$ the positive frequencies dominate because $\epsilon_L^*\to 0$, coinciding with the region were $m>0$ harmonics predominate. Analogously, when $\theta_0\to\pi$ negative frequencies dominate as $\epsilon_R \to 0$.
 On the other hand, when considering counter-rotation and the incidence at one of the poles, harmonics with $m \omega >0$ have null coefficients so those modes are never amplified.
 More specifically, when we have exactly $\theta_0=0$ ($\theta_0=\pi$) the modes $m=1$ ($m=-1$) are the only non-zero contributions of the EM wave if and only if the source co-rotates with the BH, while other $m$ modes vanish.
-This has been used in \cite{Rosa2016} to show that a plane wave can be overall amplified by a spinning black hole when it is incident along the BH rotation axis and the source co-rotates with the latter. For a pulsar orbiting a Kerr BH, this results in a modulation of the pulsar’s total luminosity.
+This has been used in \cite{Rosa2017} to show that a plane wave can be overall amplified by a spinning black hole when it is incident along the BH rotation axis and the source co-rotates with the latter. For a pulsar orbiting a Kerr BH, this results in a modulation of the pulsar’s total luminosity.
 
 %----------------------------------------------------------------------------------------
 
@@ -161,12 +161,12 @@ Proceeding with the sum over multipoles, using the numerically obtained results 
 	\begin{subfigure}[c]{0.6\textwidth}
         \includegraphics[width=\textwidth]{sumF2}
 	\end{subfigure}
-	\caption{Eigenvalues for $\ell=1$ (left) and $\ell=2$ (right) for typical values of $c$, using the spectral method.}
+	\caption{Plot of the scattering function $|f(\theta,0)|^2$ truncated at different $\ell_\mathrm{max}$, for values of $\mathscr{J}=0.99$ and $\bar{\omega}=0.4$, showing divergence in $\theta=\theta_0=0$.} 
 	\label{fig5:sumF}
 \end{figure}
 This problem is due to the long-range effect of the gravitational potential of BHs. Central potentials falling as $1/r$ (check \eref{eq3:asymptoticVeff}) do not have an effect on the global amplitude of the wave but the scattered wave has phase shifts in each of the mode coefficients, producing a divergence at $(\theta,\varphi)=(\theta_0,\varphi_0)$.
 This problem was also studied in classical Coloumb scattering, where $f(\theta,0)$ is known to diverge at $\theta=\theta_0$.
-This result appears strange at first, but we must remember that, being a complete space of functions, the harmonics obey $\sum_{\ell m} \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})) = \delta(\cos\theta - \cos\theta_0) \delta(\varphi - \varphi_0)$.
+This result appears strange at first, but we must remember that, being a complete space of functions, the harmonics obey $\sum_{\ell m} \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) = \delta(\cos\theta - \cos\theta_0) \delta(\varphi - \varphi_0)$.
 
 In order to regularize the sum for $f(\theta,\varphi)$, it is convenient to separate it in two terms,
 \begin{align}
@@ -203,7 +203,7 @@ where we define
 For this sum to converge two things must occur.
 First, absolute value \eref{eq5:phaseFactor} must go to $1$.
 Numerically, we find that in the limit of $\ell/\omega\to \infty$ mode amplitudes are not significantly affected by the BH, $\uu[\pm 1]{Z}{\ell m}\to 0$ (check \fref{fig4:logZ}).
-Also, from \eqref{eq3:Bdefinition} we know that for $c=a\omega$ constant, increasing $\ell$ leads to the eigenvalue $\uu[\pm 1]{\mathscr{E}}{\ell m} \sim \ell(\ell+1)$, which cancels the factor in \eref{eq5:fD}.
+Also, from \eqref{eq3:Bdefinition} we know that for $c=a\omega$ constant, increasing $\ell$ leads to the eigenvalue $\mathscr{B}\sim \uu[\pm 1]{\mathscr{E}}{\ell m} \sim \ell(\ell+1)$, which cancels the factor in \eref{eq5:fD}.
 
 Secondly, the numerically computed phases using \eref{eq5:phaseShiftD} must converge to the Newtonian phase shifts \eref{eq5:phaseShiftN}, $\delta_\ell \to\delta_N$.
 Results appear to indicate that these phases, like $\delta_N$, are independent of $m$.
@@ -224,7 +224,7 @@ which is needed to extract the complex asymptotic coefficients of \eref{eq3:asym
         \includegraphics[width=\textwidth]{arg3}
     \end{subfigure}
     \hfill
-	\caption{Eigenvalues for $\ell=1$ (left) and $\ell=2$ (right) for typical values of $c$, using the spectral method.}
+	\caption{Plots of the phase shifts $\delta_\ell$ compared with the newtonian shifts $\delta_N$ summed with a given adjustment constant $\delta_0$ (fitted), for two given BH configurations and modes.}
 	\label{fig5:argZoutZin}
 \end{figure}
 It is expect for this integration constant to be dependent only on $a$ and $M$, which implies that for constant $\bar{\omega}$ the value of $\delta_0$ depends only on $\mathscr{J}$.
@@ -250,7 +250,7 @@ Thus we must find other ways of isolating these effects from relevant superradia
         \includegraphics[width=\textwidth]{sumFD3}
     \end{subfigure}
     \hfill
-	\caption{Eigenvalues for $\ell=1$ (left) and $\ell=2$ (right) for typical values of $c$, using the spectral method.}
+	\caption{Plots of the regularized partial wave sum, $|f_D(\theta,0)|^2$, for the same configurations of \fref{fig5:argZoutZin}.}
 	\label{fig5:fD}
 \end{figure}
 

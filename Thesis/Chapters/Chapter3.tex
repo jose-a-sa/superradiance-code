@@ -238,7 +238,7 @@ We may use the fact that $\mathscr{D}_n$ and $\mathscr{L}_n$ act mostly as radia
         \left(\mathscr{D}_n + \frac{q}{\bar{\rho}^*} \right) ~,
     \end{align}
 \end{subequations}
-for any integers $p,q,n$, holding also for either $\mathscr{D}^\dagger_n$ or $\mathscr{L}^\dagger_n$.
+for any integers $p,q,n$, holding also for $\mathscr{D}^\dagger_n$ and $\mathscr{L}^\dagger_n$.
 
 In order to achieve the separable form, we still need to perform a replacement of the Maxwell NP scalars by new dynamical variables
 \begin{align}
@@ -273,7 +273,7 @@ This yield
     \label{eq3:DDLLPhi2}
     \left[ \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 + \mathscr{L}_0 \mathscr{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 = 0 ~.
 \end{align}
-Still, there is another way of combining equations, \emph{i.e} Eq. \eref{eq3:Dd0Phi1Ld1Phi2} with \eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two form the set
+Still, there is another way of combining equations, \emph{i.e} \eqref{eq3:Dd0Phi1Ld1Phi2} with \eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two form the set
 \begin{align}
     \label{eq3:LLPhi0DDPhi2}
     \mathscr{L}_0 \mathscr{L}_1 \Phi_0 &= \mathscr{D}_0 \mathscr{D}_0 \Phi_2 ~,\\
@@ -458,7 +458,7 @@ We can raise and lower spin-weight with the use of the operators commonly denote
 limited by $|s|\le\ell$.
 Eqs. \eref{eq3:separationB} and \eref{eq3:separationBdagger} are closely related to former, as applications of the operators $\mathscr{L}^\dagger_s$ and $\mathscr{L}_s$ generalize $\bar{\eth}$ and $\eth$, respectively.
 
-Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function was found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
+Thus, for the non-spherical symmetry we could in principle obtain all SWSHs if we knew the closed form for ${}_{0}S_{\ell m}$ and its eigenvalues. The problem lies in the fact that no such decomposition of elementary function has been found. This require us to follow numerical and approximate methods to find the values of ${}_{s}S_{\ell m}$.
 
 The major advances on the study of the eigenvalues of the SWSHs was performed by Leaver in 1985 \cite{Leaver1985, Leaver1986}. Working out the asymptotical and critical behavior of the equation, we observe the equation diverges at the poles, $z = \pm 1$, where the it takes the form $(1 \mp z) \,{}_{s}S_{\ell m}{}'(z) \sim \mp \tfrac{1}{4} (m \pm s)^2 \, {}_{s}S_{\ell m}(z)$. In order to guarantee that a SWSH is everywhere analytical, Leaver proposed the series expansion at $z=-1$,
 \begin{align}
@@ -493,20 +493,20 @@ We can also consider the $r$-th inversion of \eqref{eq3:evInversion0th},
     \label{eq3:evInversionRth}
     \beta_r - \frac{\alpha_{r-1} \gamma_r}{\beta_{r-1} -} \frac{\alpha_{r-2} \gamma_{r-1}}{\beta_{r-2} -} \cdots \frac{\alpha_{1} \gamma_2}{\beta_{1} -} \frac{\alpha_{0} \gamma_{1}}{\beta_{0}} = \frac{\alpha_{r} \gamma_{r+1}}{\beta_{r+1} -} \frac{\alpha_{r+1} \gamma_{r+2}}{\beta_{r+2} -} \cdots ~.
 \end{align}
-These equations involve an infinite fraction that depends explicitly on $c$, $m$, $s$, which leads to suspicion that this leads to an infinite spectrum.
+These equations involve an infinite fraction that depends explicitly on $c$, $m$, $s$, which raises suspicion that we may have an infinite spectrum.
 This is in a close parallel to the spherical case, where we have a infinite number of harmonics, although no proof has been found.
-If we notice that $\gamma_p\propto c$, then the zero order expansion of the eigenvalue expansion in $c\ll 1$ leads to $\beta_r=0$.
+If we notice that $\gamma_p\propto c$, then the zero order expansion of the eigenvalue expansion in $c\ll 1$ corresponds to $\beta_r=0$.
 In the spherical geometry, this corresponds to truncating the series at $r$, as $\gamma_p=0$ for any $p$. Thus, the eigenvalue root depends explicitly on the integer $r$, entailing the discretization of the spectra
 \begin{align}
     \label{eq3:evSWSH0th}
     {}_{s}\mathscr{A}_{\ell m} = \ell(\ell+1) - s(s+1) + \mathscr{O}(a\omega)~,
 \end{align}
 where we identified $\ell=r+k_{+}+k_{-}$.
-Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the leading contribution for the monopole expansion is the dipole for EM waves and the quadrupole for GWs. 
-Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra when $c=0$ and also when $s=0$.
+Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the leading contribution for the multipole expansion is the dipole for EM waves and the quadrupole for GWs. 
+Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra with know cases ($c=0$).
 
 It will be useful to expand ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (see \aref{AppendixEigenvalues}).
-Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with \eqref{eq3:relationEVs}.
+Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with \eqref{eq3:relationEVs} \cite{Fackerell1977,Seidel1989}.
 In the general angular equation, inversion of spin corresponds to inversion of poles, \emph{i.e.} stays invariant under the transformation $(s,z)\to(-s,-z)$.
 Under this transformation, the eigenvalue must obey $s+ {}_{s}\mathscr{A}_{\ell m} = -s + {}_{-s}\mathscr{A}_{\ell m}$, thus it is beneficial to define 
 \begin{align}
@@ -522,7 +522,7 @@ This way, we can simply write that $\lambdabar={}_{\pm1}\mathscr{E}_{\ell m}$.
 
 Like the angular equation, in general it is not possible to solve the radial \eqref{eq3:teukolskyRadial} by known analytical methods.
 The only apparent line of attack would be to numerical solve the equation, but it will be important to find the asymptotic form of ${}_{s}R_{\ell m}$ at infinity as well as its near-horizon behavior. 
-For both methods it will prove beneficial to change the variables into dimentionaless quantities \cite{Rosa2016},
+For both methods it will prove beneficial to change the variables into dimentionaless quantities \cite{Rosa2017},
 \begin{align}
     x = \frac{r - r_{+}}{r_{+}} ~,\qquad \tau = \frac{r_{+} - r_{-}}{r_{+}} ~,\qquad \varpi = (2-\tau)( \bar\omega - m \bar{\Omega}_H) ~,
 \end{align}
@@ -701,7 +701,7 @@ The general 3-surface element for a null horizon, normal to the inward radial di
 \begin{align}
     \dd\Sigma_\mu = \tilde{\mathfrak{l}}_\mu \,(\sqrt{\det \bm{\sigma}} \,\dd\theta \,\dd\chi ) \,\dd v = \tilde{\mathfrak{l}}_\mu  \, 2 M r_+ \sin\theta \,\dd\theta \,\dd\varphi \,\dd t ~,
 \end{align}
-where $\det\sigma = g_{\theta\theta} \,g_{\chi\chi} - (g_{\theta\chi})^2$. In the last equality we used the fact that the jacobian $\partial(v,\chi)/\partial(t,\varphi)=1$.
+where $\det\bm{\sigma} = g_{\theta\theta} \,g_{\chi\chi} - (g_{\theta\chi})^2$. In the last equality we used the fact that the jacobian $\partial(v,\chi)/\partial(t,\varphi)=1$.
 The resultant energy flux going inside the BH is then computed by
 \begin{align}
     \frac{\dd^2 E_\mathrm{hole}}{\dd t \dd\Omega} = 2 M r_{+} T_{\mu\nu} \tilde{\mathfrak{l}}^\mu k^\nu \qquad (r=r_{+})~.
@@ -786,9 +786,9 @@ Combining all results, the amplification factor for EM perturbations yields
     \label{eq3:ZfactorEM}
     \uu[\pm1]{Z}{\ell m} \simeq  - 4 \bar{\omega} (\bar{\omega} - m \bar{\Omega}_H) \,(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right) ~.
 \end{align}
-A very similar expression can be obtained for GW perturbations (see e.g. \cite{Rosa2016}).
+A very similar expression can be obtained for GW perturbations (see e.g. \cite{Rosa2017}).
 The validity of this result is mainly based on the overlapping of the far-region and near-region solutions.
-When the black hole is extremal, $\tau=0$, the factor is regular and proportional to ${}_{\pm1}Z_{\ell m}\propto - (4 \varpi \bar{\omega})^{2\ell+1}$, while the amplification occurs mostly when $\ell=m=1$, due to the dampening of the quickly growing factorials in the denominator of $\uu[\pm1]{Z}{\ell m}$.
+When the BH is extremal, $\tau=0$, the factor is regular and proportional to ${}_{\pm1}Z_{\ell m}\propto - (4 \varpi \bar{\omega})^{2\ell+1}$, while the amplification occurs mostly when $\ell=m=1$, due to the dampening of the quickly growing factorials in the denominator of $\uu[\pm1]{Z}{\ell m}$.
 
 We know that the EM fields must be real quantities, therefore physical waves must also include negative valued $\omega$ in the mode decomposition \eref{eq3:multipoleExpansion}.
 The amplification factor explicity demonstrates that superradiance occurs when

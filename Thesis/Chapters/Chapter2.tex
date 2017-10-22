@@ -74,8 +74,8 @@ Imposing symmetries to the final metric was essential to solve the field equatio
 
 If we represent our spacetime and corresponding fields by $(\mathscr{M}, g_{\mu\nu}, \psi)$, then the pullback $f^*$ of the diffeomorphism $f:\mathscr{M}\rightarrow\mathscr{M}$ would give us the same physical system $(\mathscr{M}, f^* g_{\mu\nu}, f^* \psi)$.
 Since diffeomorphisms are just active coordinate transformations, such concept may raise some confusion, as we do not seem to obtain any new information to work with. 
-Almost all physical theories are coordinate invariant, as is Newtonian mechanics and Special Relativity, but in such theories there is a preferable coordinate system, while the same does not hold true for GR.
-An analogy can be made with the path integral formalism in QFT, where special consideration is taken when summing all field configurations in order to not overcount indistinguishable configurations, as is the case of gauge field theories.
+Almost all physical theories are coordinate invariant, as is Newtonian mechanics and Special Relativity, but in such theories there is a preferable coordinate system (inertial), while the same does not hold true for GR.
+An analogy can be made with the path integral formalism in QFT, where special consideration is taken when summing all field configurations in the case of gauge field theories in order to not overcount indistinguishable configurations.
 A similar ambiguity can occur in GR, where two apparently different solutions can be related by a diffeomorphism and are actually ``the same'', so we must be careful when deriving and analyzing any geometries.
 
 Despite the added complexity of Einstein's field equations, it is still possible to find exact nontrivial solutions in a systematic way by considering spacetimes with symmetries with the use of Killing vector fields.
@@ -245,7 +245,7 @@ We must have
     |a| < M ~,
     \label{eq2:spinLimit}
 \end{align}
-otherwise $\Delta$ would lack any real roots and would lead to an essential \emph{naked singularity}, reachable in a finite observable time, which is forbidden by the \emph{Weak Cosmic Censorship} conjecture \cite{Townsend1997}.  
+otherwise $\Delta$ would lack any real roots and would lead to an essential \emph{naked singularity}, reachable in a finite time, which is forbidden by the \emph{Weak Cosmic Censorship} conjecture \cite{Townsend1997}.  
 
 The surface at $r=r_{-}$, on the other hand, is called a Cauchy horizon.
 In GR, a spacelike surface containing all initial conditions of spacetime (Cauchy surface) would suffice to predict all past and future events, but a Cauchy horizon separates the domain of validity of such initial conditions.
@@ -253,7 +253,7 @@ Despite no information ever escaping the event horizon, it is still possible to 
 Due to this and some other unphysical features (for example, closed timelike curves and instabilities under perturbations), we need only to focus on the region outside the event horizon $r>r_{+}$, since only information on that region is physically reachable from an asymptotic observer's point of view.
 
 Event tough most of the Kerr BH basic properties were demonstrated, there is still no result so far showing some kind of rotation.
-First, consider the quantity $\bm{\xi}\cdot \bm{u} = \xi_\alpha u^\alpha$, where $u^\alpha$ is the four-velocity of a point-particle and $\xi^\alpha$ is any Killing field. 
+First, consider the quantity $\bm{\xi}\cdot \bm{u} = \xi_\alpha u^\alpha$, where $\bm{u}$ is the four-velocity of a point-particle and $\bm{\xi}$ is any Killing field. 
 Taking into account the geodesic equation, $u^\beta \nabla_\beta u^\alpha = 0$, it is easy to show that this quantity is conserved along geodesics,
 \begin{align}
     u^\beta \nabla_\beta ( \xi_\alpha u^\alpha ) = u^\alpha u^\beta \nabla_\beta \xi_\alpha = \frac{u^\alpha u^\beta }{2} \left( \nabla_\alpha \xi_\beta + \nabla_\beta \xi_\alpha \right) = 0 ~,
@@ -265,14 +265,14 @@ As a result, geodesics of a free particle in Kerr geometry will be characterized
     E &=  k^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~, \qquad -L = m^\beta g_{\alpha\beta} \frac{\dd x^\alpha}{\dd \tau} ~,
     \label{eq2:geodesicConsts}
 \end{align}
-where $\tau$ is the affine parameter fo the geodesic.
-These quantities can be interpreted as the energy and angular momentum per mass of the particle, respectively.
+where $\tau$ is the affine parameter associated with the geodesic.
+These quantities can be interpreted as the energy and angular momentum (per mass) of the particle, respectively.
 Due to the circular form of the BL metric, the metric components of the coordinates $(t,\varphi)$ define a product decomposition, providing the separation of the previous equations,
 \begin{align}
     \label{eq2:geodesicTPhi}
     \begin{split}
-        \dot{t} &= \frac{1}{\Delta} \left[ (r^2+a^2 +\frac{2 M a^2}{r})E - \frac{2 M a}{r} L \right] ~,  \\
-        \dot{\varphi} &= \frac{1}{\Delta} \left[ \frac{2 M a}{r} E +\left( 1- \frac{2 M}{r} \right) L \right]  ~,
+        \dot{t} \equiv \frac{\dd t}{\dd \tau} &= \frac{1}{\Delta} \left[ (r^2+a^2 +\frac{2 M a^2}{r})E - \frac{2 M a}{r} L \right] ~,  \\
+        \dot{\varphi} \equiv \frac{\dd \varphi}{\dd \tau} &= \frac{1}{\Delta} \left[ \frac{2 M a}{r} E +\left( 1- \frac{2 M}{r} \right) L \right]  ~,
     \end{split}
 \end{align}
 specified for the equatorial plane $\theta=\pi/2$.
@@ -378,7 +378,7 @@ The BH will have a variation of mass $\delta M =E_1$ and angular momentum $\delt
     \label{eq2:penroseCondition}
     \delta J \le \frac{2M\left(M^2+\sqrt{M^4-J^2}\right)}{J} \delta M ~,
 \end{align}
-which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon $A=4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$.
+which is equivalent to $\delta \left(M^2+\sqrt{M^4-J^2}\right) \ge 0$. This quantity is usually refereed as the ``area'' of the event horizon, $4\pi(r_+^2+a^2)=8\pi\left(M^2+\sqrt{M^4-J^2}\right)$.
 Energy extraction from the Penrose process is limited by the requirement that the horizon area must always increase, which is a special case of the second law of BH mechanics \cite{Hawking1973}. 
 
 We can tie the superradiance process with this particle counterpart using a simple and general argument.

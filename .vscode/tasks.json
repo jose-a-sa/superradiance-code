@@ -6,7 +6,7 @@
         {
             "taskName": "TeXcount Thesis",
             "type": "shell",
-            "command": "cd Thesis; bash.exe -c 'perl ../.vscode/texcount.pl -merge main.tex'",
+            "command": "cd Thesis && texcount -merge main.tex",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
