@@ -12,7 +12,6 @@
         "**/*.bbl": true,
         "**/*.lof": true,
         "**/*.fls": true,
-        "**/*.dvi": true,
         "**/*.lot": true,
         "**/*.toc": true,
         "**/*.out": true,

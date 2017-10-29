@@ -39,6 +39,18 @@
             },
             "problemMatcher": [],
             "dependsOn": ["Compile Front"]
+        },
+        {
+            "taskName": "Compile Presentation",
+            "type": "shell",
+            "command": "cd Presentation; xelatex -interaction=nonstopmode -file-line-error presentation",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
         }
     ]
 }

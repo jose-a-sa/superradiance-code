@@ -1,4 +1,12 @@
-\documentclass[10pt]{beamer}
+\documentclass[9pt,serif,mathserif]{beamer}
+
+\usepackage[utf8]{inputenc}
+
+\def\today{\ifcase\month\or
+January\or February\or March\or April\or May\or June\or
+July\or August\or September\or October\or November\or December\fi
+\space \number\year
+} % \today of the form "Month Year"
 
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
@@ -7,13 +15,16 @@
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
 \usepackage{notoccite}
 
-%%% FILE RELATED
-\usepackage{pdfpages}
-
-\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
+\usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace,mathtools}
+\usepackage[centerlast,small,sc]{caption}
+\graphicspath{{Figures/},{../Thesis/Figures/}} % Specifies the directory where pictures are stored
 
 %%% FONTS
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
 \usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tabu}
 
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 \DeclareSymbolFont{cmletters}{OT1}{cmr}{m}{n}
@@ -25,25 +36,28 @@
 
 \usepackage[mathscr]{euscript}
 
-\newcommand{\lambdabar}{{\mkern 0.0mu\lambda\mkern -10mu\mathchar '26\mkern 2mu}}
+\newcommand{\lambdabar}{{\mkern 0.0mu\lambda\mkern -8.2mu\mathchar '26\mkern 2mu}}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\uu}[3][]{ {}_{#1} #2_{#3} }
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+\setbeamerfont{frametitle}{size=\Large,shape=\scshape}
+\setbeamerfont{title page}{size=\Large,shape=\scshape}
+
+%-------------------------------------------------------------------------------------
 
 
 
-\usepackage{booktabs}
-\usepackage[scale=2]{ccicons}
-
-\usepackage{pgfplots}
-\usepgfplotslibrary{dateplot}
-
-\usepackage{xspace}
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
-
-\title{Metropolis}
-\subtitle{A modern beamer theme}
-\date{\today}
-\author{Matthias Vogelgesang}
-\institute{Center for modern beamer themes}
+\title{\scshape\LARGE Aspects of superradiant scattering \\ off Kerr black holes}
+%\subtitle{A modern beamer theme}
+\date{November 2017}
+\author{\textbf{José \textsc{Sá}} \hfill \textit{Supervisor:} João G. \textsc{Rosa} \\[0.15cm] \phantom{arg} \hfill \textit{Co-supervisor:} Orfeu \textsc{Bertolami} \\[0.4cm]}
+\institute{Faculdade de Ciências da Universidade do Porto}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+
 
 \begin{document}
 
@@ -54,80 +68,243 @@
 %     \tableofcontents[hideallsubsections]
 % \end{frame}
 
-\section{Introduction}
-
-\begin{frame}[fragile]{Metropolis}
-
-    The \themename theme is a Beamer theme with minimal visual noise
-    inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer
-    Theme} by Benjamin Weiss.
-
-    Enable the theme by loading $\lambdabar$, $\varpi$
-
-    \begin{verbatim}    \documentclass{beamer}
-    \usetheme{metropolis}\end{verbatim}
-
-    Note, that you have to have Mozilla's \emph{Fira Sans} font and XeTeX
-    installed to enjoy this wonderful typography.
-\end{frame}
-
-\begin{frame}[fragile]{Sections}
-    Sections group slides of the same topic
-
-    \begin{verbatim}    \section{Elements}\end{verbatim}
-
-    for which \themename provides a nice progress indicator \ldots
-\end{frame}
-
-\section{Titleformats}
-
-\begin{frame}[fragile]{Metropolis titleformats}
-    \themename supports 4 different titleformats:
+\begin{frame}[fragile]{Outline}
     \begin{itemize}
-        \item Regular
-        \item \textsc{Smallcaps}
-        \item \textsc{allsmallcaps}
-        \item ALLCAPS
+        \large
+        \setlength\itemsep{1.2em}
+        \item What is superradiance ?
+        \item Kerr black hole and the Penrose process
+        \item Newman-Penrose formalism and the Teukolsky equation
+        \item Analytical approximated solutions
+        \item Numerical methods
+        \item Scattering of planes waves 
+        \item Conclusions and future work
     \end{itemize}
-    They can either be set at once for every title type or individually.
 \end{frame}
 
 {
-    \metroset{titleformat frame=smallcaps}
-\begin{frame}{Small caps}
-    This frame uses the \texttt{smallcaps} titleformat.
+    \usebackgroundtemplate{\includegraphics[scale=0.55,trim=-11cm 0 0 -3cm]{test.pdf}}
+    \begin{frame}[fragile]{Introduction}
 
-    \begin{alertblock}{Potential Problems}
-        Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
-    \end{alertblock}
-\end{frame}
+        \begin{columns}[T,onlytextwidth]        
+            \column{0.5\textwidth}
+        
+                \metroset{block=fill}
+        
+                \begin{block}{Default}
+                Block content.
+                \end{block}
+        
+                \begin{alertblock}{Alert}
+                Block content.
+                \end{alertblock}
+        
+                \begin{exampleblock}{Example}
+                Block content.
+                \end{exampleblock}
+        
+        \end{columns}
+
+    \end{frame}
 }
 
-{
-\metroset{titleformat frame=allsmallcaps}
-\begin{frame}{All small caps}
-    This frame uses the \texttt{allsmallcaps} titleformat.
+\begin{frame}[fragile]{Kerr black hole}
 
-    \begin{alertblock}{Potential problems}
-        As this titleformat also uses smallcaps you face the same problems as with the \texttt{smallcaps} titleformat. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
+    \vspace{0.15cm}
 
-        As a rule of thumb: Just use it for plaintext-only titles.
-    \end{alertblock}
+    \metroset{block=fill}
+    \begin{block}{Boyer-Lindquist coordinates}
+        \begin{align*}
+            \begin{split}
+                \bm{g} = & \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 + 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
+                &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta}{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2
+            \end{split}
+        \end{align*}
+        \centering
+        $[\,\Delta=r^2 - 2 M r + a^2 ~,~~ \rho^2 = r^2 + a^2 \cos^2\theta\,]$
+    \end{block}
+
+    \begin{itemize}
+        \setlength\itemsep{0.8em}
+        \item BH angular momentum $J = a M \quad\left[ a=0 ~\Rightarrow \text{Schwarzschild} \right]$ 
+        \item Killing vectors $\bm{k}=\partial_t$ (stationary) and $\bm{m}=\partial_\varphi$ (axisymmetric)
+        \item Horizons at $g^{rr}=0 ~\Rightarrow~ \Delta=0 ~\Rightarrow~ r = r_{\pm} \equiv M \pm \sqrt{M^2-a^2}$ \\
+        \emph{Cosmic censorship} conjecture $~\Rightarrow~$ $|a| \le M$
+        
+        \item Infinite redshift boundary $g_{tt}=0 ~\Rightarrow$ \alert{Ergoregion} $(g_{tt}<0)$
+        $$r_+<r<r_\mathrm{ergo}(\theta) \equiv M + \sqrt{M^2 - a^2 \cos^2\theta}$$
+    \end{itemize}
 \end{frame}
-}
 
-{
-\metroset{titleformat frame=allcaps}
-\begin{frame}{All caps}
-    This frame uses the \texttt{allcaps} titleformat.
-
-    \begin{alertblock}{Potential Problems}
-        This titleformat is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-    \end{alertblock}
+\begin{frame}[fragile]{Penrose process}
+    \begin{itemize}
+        \setlength\itemsep{0.8em}
+        \item Particle decays into two inside the ergoregion: $\bm{p} = \bm{p_1} + \bm{p_2}$
+        %\vspace{0.2cm}
+        \begin{columns}[onlytextwidth]        
+            \begin{column}{0.7\textwidth}
+                \centering
+                \includegraphics[scale=0.55,trim=0.3cm 0.3cm 0 0.3cm]{ergoPenrose.pdf}
+            \end{column}
+            \hfill
+            \begin{column}{0.26\textwidth}
+                \vspace*{0.5cm}
+                \metroset{block=fill}
+                \begin{block}{\small Killing horizon}
+                    \footnotesize Hypersurface $r=r_{+}$ with normal null vector $$\bm{\xi} = \bm{k} + \Omega_H \bm{m} \qquad$$ 
+                    
+                    Event horizon angular momentum:
+                    $$\Omega_H = \frac{a}{2 M r_+} \qquad$$
+                \end{block}
+            \end{column}
+        \end{columns}
+        \vspace{0.3cm}
+        \item We may have $E_1 = \bm{k} \cdot \bm{p_1} < 0 ~\Rightarrow E_2 = E + |E_1| > E $
+        \item Local energy condition $\bm{\xi}\cdot\bm{p_1}>0$ at $r=r_{+} ~\Rightarrow E_1 - \Omega_H \, L_1 > 0$
+        $$ \psi \sim e^{-i \omega t + i m \varphi} ~\Rightarrow~ \frac{\delta J}{\delta M} = \frac{\hbar m}{\hbar \omega} ~\Rightarrow~ \delta M < 0 ~\land~ \fbox{ \omega( \omega - \Omega_H \,m) < 0~} $$\\
+        \hspace*{5.5cm}\alert{Energy extraction !}
+    \end{itemize}
 \end{frame}
-}
 
-\section{Elements}
+\begin{frame}{Newman-Penrose formalism}    
+    \begin{itemize}
+        \setlength\itemsep{1.5em}
+        \item Electromagnectic perturbations ($A^\mu \ll 1$)
+        \begin{align*}
+            R_{\mu\nu} - \frac{R}{2} g_{\mu\nu} &= 8 \pi T_{\mu\nu} = 0 + \mathcal{O}(A^2) ~\Rightarrow\text{fixed background (Kerr)}
+        \end{align*}
+
+        \item Tetrad frame of complex null vectors $(\bm{e}_1,\bm{e}_2,\bm{e}_3,\bm{e}_4)
+        = (\bm{\mathfrak{l}},\bm{\mathfrak{n}},\bm{\mathfrak{m}},\bar{\bm{\mathfrak{m}}}\equiv \bm{\mathfrak{m}}^*)$
+        with $\bm{\mathfrak{l}}\cdot\bm{\mathfrak{m}} = \bm{\mathfrak{n}}\cdot\bm{\mathfrak{m}} = 0 ~,~~ \bm{\mathfrak{l}}\cdot\bm{\mathfrak{n}} = 1 ~,~~ \bm{\mathfrak{m}}\cdot\bar{\bm{\mathfrak{m}}} = -1$
+        \begin{equation*}
+            \underbrace{\mathbf{E} ~,~ \mathbf{B}}_\text{6 real components}
+            \quad\longrightarrow\quad
+            \boxed{
+            \begin{aligned}
+                \phi_0 &= F_{\mu\nu} \mathfrak{l}^\mu \mathfrak{m}^\nu \\
+                \phi_1 &= \tfrac{1}{2} F_{\mu\nu} ( \mathfrak{l}^\mu \mathfrak{n}^\nu - \mathfrak{m}^\mu \bar{\mathfrak{m}}^\nu ) \\
+                \phi_2 &= F_{\mu\nu} \bar{\mathfrak{m}}^\mu \mathfrak{n}^\nu 
+            \end{aligned}
+            }
+            %\quad\text{and}\quad\text{c.c.} \Leftrightarrow (\bm{\mathfrak{m}}%\rightleftarrows \bar{\bm{\mathfrak{m}}})
+        \end{equation*}
+
+        \item Equations written using tetrad derivatives $(\mathbbl{D}, \mathbbl{\Delta}, \bbdelta, \bar{\bbdelta})$ and spin connection $\gamma_{cab} = (e_c)^\mu (e_b){}^\nu \nabla_\nu (e_a)_{\mu} ~\Rightarrow~ \lambda, \pi, \tau, \varrho, \varepsilon, \sigma,\kappa, \gamma ,\mu, \nu, \alpha,\beta$
+        \begin{equation*}
+            \begin{aligned}[c]
+                \nabla_\mu F^{\mu\nu} &= 0 \\
+                \nabla_{[\mu} F_{\nu\rho]} &= 0
+            \end{aligned}
+            \quad\longrightarrow~\left\{~~
+            \begin{aligned}[c]
+                \mathbbl{D} \phi_2 - \bar{\bbdelta} \phi_1 &= -\lambda \phi_0 + 2 \pi \phi_1 + (\varrho - 2 \varepsilon) \phi_2 \\
+                \mathbbl{\Delta} \phi_1 - \bbdelta \phi_2 &= \nu \phi_0 - 2 \mu \phi_1 + (2\beta-\tau) \phi_2 \\
+                \mathbbl{D} \phi_1 - \bar{\bbdelta} \phi_0 &= (\pi - 2 \alpha) \phi_0 + 2 \varrho \phi_1 - \kappa \phi_2 \\
+                \mathbbl{\Delta} \phi_0 - \bbdelta \phi_1 &= (2 \gamma - \mu) \phi_0 - 2 \tau \phi_1 + \sigma \phi_2
+            \end{aligned}
+            \right.
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Newman-Penrose formalism}
+    \metroset{block=fill}
+    \begin{block}{Kinnersley tetrad}
+        \begin{columns}[onlytextwidth]   
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    \bm{\mathfrak{l}} &= \frac{1}{\Delta} \Big( r^2+a^2, \,\Delta, \,0, \,a \Big) \\
+                    \bm{\mathfrak{n}} &= \frac{1}{2 \rho^2} \Big( r^2+a^2, -\Delta, \,0, \,a \Big) \\
+                    \bm{\mathfrak{m}} &= \frac{1}{\sqrt{2} \bar{\rho}} \Big( i \,a \sin\theta, \,0, \,1, \,i \csc\theta \Big) \\[0.3cm]
+                    & ~~ [\,\bar{\rho} = r + i \,a \cos\theta \,]
+                \end{align*}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item $\bm{\mathfrak{l}}$, $\bm{\mathfrak{n}}$ are the doubly degenerate principal null of directions of the Weyl tensor
+                    \begin{align*}
+                        \bm{\mathfrak{l}} &\sim (\bm{e}_t + \bm{e}_r)
+                        \qquad\text{(ingoing)} \\
+                        \bm{\mathfrak{n}} &\sim \tfrac{1}{2}(\bm{e}_t - \bm{e}_r) 
+                        \quad\text{(outgoing)}
+                    \end{align*}
+                    \item $\bm{\mathfrak{l}}$, $\bm{\mathfrak{n}}$ are geodesic ($\kappa = \lambda=0$) \\ and shear-free ($\nu=\sigma=0$) \\ 
+                    $~~\Rightarrow$ \alert{equations decouple}
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    \end{block}
+    \begin{itemize}
+        \item Reformulation of the fields: $\quad\Phi_n = (\sqrt{2} \bar{\rho})^n \,\phi_n \quad (n=0,1,2)$
+        \item Spacetime symmetry $~\Rightarrow~ \Phi_n \sim e^{-i\omega t + i m \phi}  ~\Rightarrow~ \partial_t \rightarrow -i\omega ~,~ \partial_\varphi \rightarrow i m$ 
+        \item Rewrite operators: $\mathbbl{D} = \mathscr{D}_0 ~,~ \mathbbl{\Delta} = - \frac{\Delta}{2 \rho^2 }\mathscr{D}^\dagger_0$   
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Newman-Penrose formalism}
+    \begin{verbatim}The theme provides sensible defaults to
+\emph{emphasize} text, \alert{accent} parts
+or show \textbf{bold} results.\end{verbatim}
+
+\begin{center}becomes\end{center}
+
+The theme provides sensible defaults to \emph{emphasize} text,
+\alert{accent} parts or show \textbf{bold} results.
+\end{frame}
+
+\begin{frame}{Newman-Penrose formalism}
+    %\metroset{block=fill}
+    \begin{block}{\hspace{1.0cm}\alert{Coordinate frame}\hspace{3.5cm}\alert{Tetrad frame}}
+        \vspace{0.45cm}
+        \begin{columns}[T,onlytextwidth]        
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item Vector (coordinate) basis
+                    $$\bm{e}_\mu \equiv \frac{\partial}{\partial x^\mu} \quad (\mu = t,r,\theta,\varphi)$$
+                    \item Spacetime metric
+                    $$g_{\mu\nu}$$
+                    \item Tensorial components
+                    $$ A_\mu ~,~ F_{\alpha\beta} $$
+                    \item Covariant derivative
+                    $$ A_{\mu;\nu} = A_{\mu,\nu} - \Gamma_{\mu\nu}^\rho \,A_\rho $$
+                    \item Levi-Civita connection
+                    $$\Gamma^\rho_{\mu\nu} = \tfrac{1}{2} g^{\rho\sigma} (g_{\sigma\mu,\nu}+g_{\sigma\mu,\nu}-g_{\mu\nu,\sigma})$$
+                \end{itemize}
+            \end{column}
+            \vrule{}
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item Tetrad (non-coordinate) basis
+                    $$ \bm{e}_a \equiv (e_a)^\mu \frac{\partial}{\partial x^\mu} \quad (a = 1,2,3,4)$$
+                    \item Raising/lowering tetrad indices
+                    $$\eta_{ab} = \bm{e}_a \cdot \bm{e}_b = (e_a)^\mu (e_b)^\nu g_{\mu\nu} $$
+                    \item Tetrad (NP) scalars
+                    $$ A_a = (e_a)^\mu \,A_\mu ~,~ F_{ab} = (e_a)^\alpha (e_b)^\beta F_{\alpha\beta} $$
+                    \item Intrinsic derivative
+                    $$ A_{a|b} \equiv (e_a)^\mu (e_b)^\nu A_{\mu;\nu} = A_{a,b} - \gamma_{cab} \,A^c $$
+                    \item Spin connection
+                    $$\gamma_{cab} = (e_c)^\mu (e_a)_{\mu;\nu} A_{\mu;\nu} = (e_b){}^\nu$$
+                \end{itemize}
+            \end{column}
+        \end{columns}
+        \vspace{0.15cm}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Newman-Penrose formalism}
+    \begin{block}{Kinnersley tetrad}
+        \begin{align*}
+            \bm{\mathfrak{l}} &= \frac{1}{\Delta} \Big( r^2+a^2, \,\Delta, \,0, \,a \Big) \\
+            \bm{\mathfrak{n}} &= \frac{1}{2 \rho^2} \Big( r^2+a^2, -\Delta, \,0, \,a \Big)\\
+            \bm{\mathfrak{m}} &= \frac{1}{\sqrt{2} \bar{\rho}} \Big( i a \sin\theta, \,0, \,1, \,i \csc\theta \Big)
+        \end{align*}
+    \end{block}
+    \begin{align*}
+        \uu[\pm1]{Z}{\ell m} &\simeq  - 4 \bar{\omega} (\bar{\omega} - m \bar{\Omega}_H) \,(2-\tau)(2\bar{\omega} \tau)^{2\ell} \\
+        & \qquad\qquad \times \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell}\left(n^2 + \frac{4 \varpi^2}{\tau^2} \right)
+    \end{align*}
+\end{frame}
 
 \begin{frame}[fragile]{Typography}
         \begin{verbatim}The theme provides sensible defaults to
@@ -176,6 +353,7 @@ or show \textbf{bold} results.\end{verbatim}
         \end{description}
     \end{columns}
 \end{frame}
+
 \begin{frame}{Animation}
     \begin{itemize}[<+- | alert@+>]
     \item \alert<4>{This is\only<4>{ really} important}
@@ -183,47 +361,8 @@ or show \textbf{bold} results.\end{verbatim}
     \item And now this
     \end{itemize}
 \end{frame}
-\begin{frame}{Figures}
-    \begin{figure}
-    \newcounter{density}
-    \setcounter{density}{20}
-    \begin{tikzpicture}
-        \def\couleur{alerted text.fg}
-        \path[coordinate] (0,0)  coordinate(A)
-                    ++( 90:5cm) coordinate(B)
-                    ++(0:5cm) coordinate(C)
-                    ++(-90:5cm) coordinate(D);
-        \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
-        \foreach \x in {1,...,40}{%
-            \pgfmathsetcounter{density}{\thedensity+20}
-            \setcounter{density}{\thedensity}
-            \path[coordinate] coordinate(X) at (A){};
-            \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
-                                -- (C) coordinate[pos=.10](B)
-                                -- (D) coordinate[pos=.10](C)
-                                -- (X) coordinate[pos=.10](D);
-            \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
-        }
-    \end{tikzpicture}
-    \caption{Rotated square from
-    \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
-    \end{figure}
-\end{frame}
-\begin{frame}{Tables}
-    \begin{table}
-    \caption{Largest cities in the world (source: Wikipedia)}
-    \begin{tabular}{lr}
-        \toprule
-        City & Population\\
-        \midrule
-        Mexico City & 20,116,842\\
-        Shanghai & 19,210,000\\
-        Peking & 15,796,450\\
-        Istanbul & 14,160,467\\
-        \bottomrule
-    \end{tabular}
-    \end{table}
-\end{frame}
+
+
 \begin{frame}{Blocks}
     Three different block environments are pre-defined and may be styled with an
     optional background color.
@@ -260,48 +399,13 @@ or show \textbf{bold} results.\end{verbatim}
 
     \end{columns}
 \end{frame}
+
 \begin{frame}{Math}
     \begin{equation*}
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
     \end{equation*}
 \end{frame}
-\begin{frame}{Line plots}
-    \begin{figure}
-    \begin{tikzpicture}
-        \begin{axis}[
-        mlineplot,
-        width=0.9\textwidth,
-        height=6cm,
-        ]
 
-        \addplot {sin(deg(x))};
-        \addplot+[samples=100] {sin(deg(2*x))};
-
-        \end{axis}
-    \end{tikzpicture}
-    \end{figure}
-\end{frame}
-\begin{frame}{Bar charts}
-    \begin{figure}
-    \begin{tikzpicture}
-        \begin{axis}[
-        mbarplot,
-        xlabel={Foo},
-        ylabel={Bar},
-        width=0.9\textwidth,
-        height=6cm,
-        ]
-
-        \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
-        \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
-        \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
-
-        \legend{lorem, ipsum, dolor}
-
-        \end{axis}
-    \end{tikzpicture}
-    \end{figure}
-\end{frame}
 \begin{frame}{Quotes}
     \begin{quote}
     Veni, Vidi, Vici
@@ -311,14 +415,10 @@ or show \textbf{bold} results.\end{verbatim}
 {%
 \setbeamertemplate{frame footer}{My custom footer}
 \begin{frame}[fragile]{Frame footer}
-    \themename defines a custom beamer template to add a text to the footer. It can be set via
+    Metropolis defines a custom beamer template to add a text to the footer. It can be set via
     \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
 \end{frame}
 }
-
-\begin{frame}{References}
-    Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
 
 \section{Conclusion}
 
@@ -336,10 +436,16 @@ or show \textbf{bold} results.\end{verbatim}
 
 \end{frame}
 
-{\setbeamercolor{palette primary}{fg=black, bg=yellow}
-\begin{frame}[standout]
-    Questions?
-\end{frame}
+{
+    \setbeamercolor{palette primary}{fg=black, bg=yellow}
+    \begin{frame}[standout]
+        Questions?
+    \end{frame}\begin{frame}{Line plots}
+        
+        \end{frame}
+        \begin{frame}{Bar charts}
+        
+        \end{frame}
 }
 
 \appendix
@@ -351,7 +457,7 @@ or show \textbf{bold} results.\end{verbatim}
     The best way to do this is to include the \verb|appendixnumberbeamer|
     package in your preamble and call \verb|\appendix| before your backup slides.
 
-    \themename will automatically turn off slide numbering and progress bars for
+    Metropolis will automatically turn off slide numbering and progress bars for
     slides in the appendix \cite{Rosa2017}.
 \end{frame}
 
