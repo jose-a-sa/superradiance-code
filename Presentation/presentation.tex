@@ -262,7 +262,6 @@ July\or August\or September\or October\or November\or December\fi
 \begin{frame}{Teukolsky equation}
 	\begin{block}{General perturbation solution $\displaystyle 
 			\quad\Rightarrow~ \Upsilon_s = \int\dd\omega \,\sum_{\ell,m} e^{-i\omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta)\, {}_{s}R_{\ell m}(r)$}
-
 		\begin{itemize}
 			\item Scalar $(s=0)$
 			\item Electromagnetic $(s=\pm1)$ \hspace*{1cm}$\boxed{\Upsilon_{+1} = \phi_0 \qquad \Upsilon_{-1} = 2 (\bar{\rho}^*)^2 \phi_2 }$
@@ -270,7 +269,7 @@ July\or August\or September\or October\or November\or December\fi
 		\end{itemize}
 	\end{block}
 
-	\begin{block}{Angular equation $\hspace{6cm}\scriptstyle [\, z = \cos\theta ~,~ c = a \omega \,]$}
+	\begin{block}{Angular equation $\hfill\scriptstyle [\, z = \cos\theta ~,~ c = a \omega \,]$}
 		\begin{center}
 			$\displaystyle \frac{\dd}{\dd z} \left[ (1-z^2) \frac{\dd\, {}_{s}S_{\ell m}}{\dd z} \right] + \left[ (c z)^2 - 2 c s z  -\frac{(m + s z)^2}{1 - z^2} + s + {}_{s}\mathscr{A}_{\ell m} \right] {}_{s}S_{\ell m} = 0 $
 		\end{center}
@@ -302,13 +301,11 @@ July\or August\or September\or October\or November\or December\fi
 \end{frame}
 
 
-
-
 \begin{frame}{Analytical results}
 	
 	\begin{block}{Matching of coefficients}
 		\begin{itemize}
-			\setlength\itemsep{0.5em}
+			\setlength\itemsep{0.6em}
 			\item Solving radial equation for $r - r_+ \gg r_+$ (far) and $r - r_+ \ll \omega^{-1}$ (near)
 			
 			\item Extend validity of the solutions to opposite regions and match dominant monomials of $x^{\ell-s}$ and $x^{-\ell-1-s}$ $~\Rightarrow~$ valid for modes $\bar{\omega}\equiv \omega r_+ \ll 1$
@@ -318,16 +315,20 @@ July\or August\or September\or October\or November\or December\fi
 		
 			\item Obtain loss/gain factor $~\boxed{\displaystyle ~{}_{\pm 1}Z_{\ell m} = \frac{\dd E_\mathrm{out}}{\dd t}\bigg/\frac{\dd E_\mathrm{in}}{\dd t} - 1~}$
 			\begin{align*}
-			\uu[\pm1]{Z}{\ell m} \simeq  - 4 \underbrace{\bar{\omega} (\bar{\omega} - m \bar{\Omega}_H)}_{\substack{\text{superradiant}\\\text{condition}}} \,\underbrace{(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right)}_\text{always positive}
+				\uu[\pm1]{Z}{\ell m} \simeq  - 4 \bar{\omega} (\bar{\omega} - m \bar{\Omega}_H) \underbrace{(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right)}_\text{always $\ge 0$}
 			\end{align*}
+			
+			\item Mode amplification $\uu[\pm1]{Z}{\ell m}>0 ~~{\color{orange}\Rightarrow}~ \omega (\omega - m \Omega_H) < 0$  
 		\end{itemize}
+		$\scriptstyle \hfill [~ x = (r-r_{+})/r_{+} ~,~ \tau = (r_{+}-r_{-})/r_{+} ~,~ \varpi = (2-\tau)(\bar{\omega} - m \bar{\Omega}_H) ~]$
 	\end{block}
 	
 \end{frame}
 
 \begin{frame}{Numerical methods}
-	
 	\begin{itemize}
+		\setlength\itemsep{1em}
+
 		\item Dependent variables $(\mathscr{J} = a/M, \,\bar{\omega}, \, \ell, \, m)$
 		
 		\item
@@ -335,25 +336,51 @@ July\or August\or September\or October\or November\or December\fi
 		
 		\item
 		Integrate from $\epsilon\ll 1$ (stiffness) up to $x_\infty = 2\pi/\bar{\omega} \times 200$
-		$$ f_{\pm}(\epsilon) = \sum_{n=0}^{N_H} \underbrace{\left(\frac{a_n}{a_0}\right)}_\text{$\ell, m, \omega, a$} \,\epsilon^n  ~~\Rightarrow~ f_{\pm}{}(\epsilon) \simeq 1 ~,~~ f_{\pm}{}'(\epsilon) \simeq 0 $$
+		$$ f_{\pm}(\epsilon) = \sum_{n=0}^{N_H} \left(\frac{a_n}{a_0}\right)
+		\,\epsilon^n ~~\Rightarrow~ f_{\pm}{}(\epsilon) \simeq 1 ~,~~ f_{\pm}{}'(\epsilon) \simeq 0$$
 		
 		\item
-		Integrate from the horizon $x_0=\epsilon=10^{-12}$ onward
-		$$ \uu[\pm 1]{Z}{\ell m} = \frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1 $$
-		
-		\item
-		Using conservation of energy $\frac{\dd E_\mathrm{in}}{\dd t} - \frac{\dd E_\mathrm{out}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t}$
-		$$ \uu[\pm 1]{Z}{\ell m} = - \frac{\bar{\omega} \tau^2}{\varpi} \left|\frac{1}{f_{+}(x_\infty)}\right|^2 = - \left( 1 + \frac{\mathscr{B}^2 \tau^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \left|f_{-}(x_\infty)\right|^2 \right)^{-1}$$
-		
+		Using conservation of energy $~\frac{\dd E_\mathrm{in}}{\dd t} - \frac{\dd E_\mathrm{out}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t}$
+		\\[0.3cm]
+		\begin{center}
+			\tabulinesep=0.2em
+			\begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}c@{\hskip 0.75cm}}
+				\hline
+				$\uu[\pm 1]{Z}{\ell m}$ & Solutions \\
+				\hline\hline
+				$\frac{\mathscr{B}^2 \tau^4 }{4 \varpi^2 (\tau^2 + 4 \varpi^2)} \left| \frac{f_{-}(x_\infty)}{f_{+}(x_\infty)} \right|^2 - 1$ & 
+				$\phi_0$ and $\phi_2$ \\
+				\hline
+				$- \frac{\bar{\omega} \tau^2}{\varpi} \left|\frac{1}{f_{+}(x_\infty)}\right|^2$ &
+				$\phi_0$ \\
+				\hline
+				$-1\bigg/\left( 1 + \frac{\mathscr{B}^2 \tau^2 \left|f_{-}(x_\infty)\right|^2}{4 \bar{\omega} \varpi(\tau^2 + 4 \varpi^2)} \right)$ & $\phi_2$ \\
+				\hline
+			\end{tabu}
+		\end{center}
 	\end{itemize}
-	
+	\vspace*{0.3cm}
+	$\hfill\scriptstyle [~ \mathscr{B}^2 = ( \uu[-1]{\mathscr{A}}{\ell m} + a^2\omega^2 - 2 m a \omega )^2 - 4 a^2\omega^2 + 4 m a \omega ~]$
 \end{frame}
 
 
 \begin{frame}{Numerical methods}
 	\begin{columns}
 		\begin{column}{0.45\textwidth}
-			Suppp
+			\begin{itemize}
+				\setlength\itemsep{1.5em}
+				\item $\uu[s]{Z}{\ell m}(-\omega) = \uu[s]{Z}{\ell, -m}(\omega)$
+
+				\item Maximum EM amplification:
+				$$\sim \mathbf{4.4\%}$$
+				for $\ell=m=1 ~,~  \omega M \simeq 0.436$
+
+				\item Non-superradiant modes $$|\omega|\gg|m\Omega_h| ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to 1 $$ (fully reflected)
+
+				\item Superradiant modes
+				$$ \text{increase } \ell ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to 0 $$
+				(potential centrifugal barrier)
+			\end{itemize}
 		\end{column}
 		\begin{column}{0.55\textwidth}
 			\includegraphics[scale=0.47]{precisionLogZ}
@@ -394,8 +421,49 @@ July\or August\or September\or October\or November\or December\fi
 	
 \end{frame}
 
+
+{
+\usebackgroundtemplate{\includegraphics[scale=0.50,trim=-13.5cm 0 0 6]{test.pdf}}
+\begin{frame}[fragile]{Scattering of plane waves}
+	\begin{columns}[T,onlytextwidth]        
+		\begin{column}{0.60\textwidth}
+			\begin{itemize}
+				\item Astrophysical source: neutron star binary system with magnetic moment
+				$$ \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \cos\alpha_S \,\mathbf{\hat{z}} \right] $$
+
+				\item Scattering description 
+				$$ \phi_2{}^\text{(scatt)} =  \phi_2{}^\text{(pl)} + f(\theta,\varphi) \frac{e^{- i\omega t + i\omega r_*}}{r} $$
+
+				\item Desccription in NP formalism 
+				$ \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \cos\alpha_S \,\mathbf{\hat{z}} \right] + \text{ c.c.} $
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+}
+
+\begin{frame}{Scattering of plane waves}
+	\begin{figure}
+		\includegraphics[scale=0.5]{arg2}
+		$\Longrightarrow$
+		\includegraphics[scale=0.5]{sumFD2}
+	\end{figure}
+\end{frame}
+
 \begin{frame}{Conclusions / Future work}
-	
+	\begin{block}{Conclusions}
+		\begin{itemize}
+			\item Conclusion 1
+			\item Conclusion 2
+			\item Conclusion 3
+		\end{itemize}
+	\end{block}
+	\begin{block}{Future work}
+		\begin{itemize}
+			\item Work 1
+			\item Work 2
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}[standout]
