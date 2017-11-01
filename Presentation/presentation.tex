@@ -59,12 +59,11 @@ July\or August\or September\or October\or November\or December\fi
 %-------------------------------------------------------------------------------------
 
 
-
-\title{\scshape\LARGE Aspects of superradiant scattering \\ off Kerr black holes}
+\title{\scshape\huge Aspects of superradiant scattering\\off Kerr black holes}
 %\subtitle{A modern beamer theme}
-\date{November 2017}
-\author{\textbf{José \textsc{Sá}} \hfill \textit{Supervisor:} João G. \textsc{Rosa} \\[0.15cm] \phantom{arg} \hfill \textit{Co-supervisor:} Orfeu \textsc{Bertolami} \\[0.4cm]}
-\institute{Faculdade de Ciências da Universidade do Porto}
+\date{\normalsize November 2017}
+\author{\large\textbf{José \textsc{Sá}} \hfill \textit{Supervisor:} João G. \textsc{Rosa} \\[0.15cm] \phantom{arg} \hfill \textit{Co-supervisor:} Orfeu \textsc{Bertolami} \\[0.4cm]}
+\institute{\small Faculdade de Ciências da Universidade do Porto}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
 
@@ -81,8 +80,8 @@ July\or August\or September\or October\or November\or December\fi
 \begin{frame}[fragile]{Outline}
     \begin{itemize}
         \large
-        \setlength\itemsep{1.2em}
-        \item What is superradiance ?
+        \setlength\itemsep{1.6em}
+        \item Introduction
         \item Kerr black hole and the Penrose process
         \item Newman-Penrose formalism and the Teukolsky equation
         \item Analytical approximated solutions
@@ -92,31 +91,30 @@ July\or August\or September\or October\or November\or December\fi
     \end{itemize}
 \end{frame}
 
-{
-    \usebackgroundtemplate{\includegraphics[scale=0.55,trim=-11cm 0 0 -3cm]{test.pdf}}
-    \begin{frame}[fragile]{Introduction}
 
-        \begin{columns}[T,onlytextwidth]        
-            \column{0.5\textwidth}
-        
-                \metroset{block=fill}
-        
-                \begin{block}{Default}
-                Block content.
-                \end{block}
-        
-                \begin{alertblock}{Alert}
-                Block content.
-                \end{alertblock}
-        
-                \begin{exampleblock}{Example}
-                Block content.
-                \end{exampleblock}
-        
-        \end{columns}
-
-    \end{frame}
-}
+\begin{frame}[fragile]{Introduction}
+	\begin{block}{Superradiance}
+		\begin{itemize}
+			\setlength\itemsep{1em}
+			
+			\item Any radiation enhancement processes: scalar, fermionic, electromagnetic, gravitational
+			
+			\item First examples being examples spontaneous pair creation: Klein paradox 
+			
+			\item \emph{Rotational superradiance:} Zeldovich absoving cylinder $\Rightarrow \omega(\omega - m \Omega) < 0$\\
+			{\small ($~\Omega$ angular velocity, $~m$ azimuthal quantum number )}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Motivation}
+		\begin{itemize}
+			\setlength\itemsep{1em}
+			\item Gravitational wave emissions by merger systems (2016)
+			\item Kerr BH can amplify radiation $\,\Rightarrow\,$ General Relativity test and way of probing rotating BHs
+			\item Focus on EM waves $\,\Rightarrow\,$ same mode equation, similar results
+			\item Directional observations of superradiant scattering of radiation
+		\end{itemize}
+	\end{block}
+\end{frame}
 
 \begin{frame}[fragile]{Kerr black hole}
 
@@ -135,7 +133,7 @@ July\or August\or September\or October\or November\or December\fi
     \end{block}
 
     \begin{itemize}
-        \setlength\itemsep{0.8em}
+        \setlength\itemsep{1em}
         \item BH angular momentum $J = a M \quad\left[ a=0 ~\Rightarrow \text{Schwarzschild} \right]$ 
         \item Killing vectors $\partial_t$ (stationary) and $\partial_\varphi$ (axisymmetric)
         \item Horizons at $g^{rr}=0 ~\Rightarrow~ \Delta=0 ~\Rightarrow~ r = r_{\pm} \equiv M \pm \sqrt{M^2-a^2}$ \\
@@ -163,7 +161,7 @@ July\or August\or September\or October\or November\or December\fi
                 \begin{block}{\small Killing horizon}
                     \footnotesize Hypersurface $r=r_{+}$ with normal null vector $$\bm{\xi} = \partial_t + \Omega_H \partial_\varphi \,\qquad$$ 
                     
-                    Event horizon angular momentum:
+                    Event horizon angular ``velocity''\texttt{}:
                     $$\Omega_H = \frac{a}{2 M r_+} \qquad$$
                 \end{block}
             \end{column}
@@ -230,34 +228,66 @@ July\or August\or September\or October\or November\or December\fi
 \end{frame}
 
 \begin{frame}[fragile]{Newman-Penrose formalism}
-    $\nabla_\mu F^{\mu\nu} = 0 ~,~ \nabla_{[\mu} F_{\nu\rho]} = 0  ~\longrightarrow~$ 4 complex first-order coupled equations
-    $$\hspace{1.0cm}\xDownarrow{0.8cm} \quad\mathscr{D}_n \,, \mathscr{D}_n^\dagger = \partial_r \mp i K / \Delta + 2n(r-M)/\Delta \qquad 
-    \mathscr{L}_n \,, \mathscr{L}_n^\dagger = \partial_\theta \mp Q + n \cot\theta $$
-	Eliminate $\phi_1$ and rewrite $\Phi_0 = \phi_0 ~,~ \Phi_2 = 2 (\bar{\rho}^*)^2 \,\phi_2$ :
-	\begin{itemize}
-		\item 2 equations with eigenvalue $\lambdabar$
-		\begin{align*}
-			\left[ \Delta \mathscr{D}_1 \mathscr{D}^\dagger_1 + \mathscr{L}^\dagger_0 \mathscr{L}_1 + 2 i \omega (r+i a \cos\theta) \right] \Phi_0 &= 0 \\
-			\left[ \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 + \mathscr{L}_0 \mathscr{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 &= 0
-		\end{align*}
-		
-		\item 2 equations with relative normalization $\mathscr{B} = \sqrt{\lambdabar^2 - 4 a^2 \omega^2 + 4 a \omega m}$
-		\begin{equation*}
+	\begin{equation*}
 		\begin{aligned}
-			\mathscr{L}_0 \mathscr{L}_1 \Phi_0 &= \mathscr{D}_0 \mathscr{D}_0 \Phi_2 ~\\
-			\mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \Phi_2 &= \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta \Phi_0
+			\nabla_\mu F^{\mu\nu} = 0 \\
+			\nabla_{[\mu} F_{\nu\rho]} = 0
 		\end{aligned}
-%		~~\Rightarrow~
-%		\begin{aligned}
-%			( \mathscr{L}_0 \mathscr{L}_1 S_{+1} )/S_{-1} &= ( \Delta \mathscr{D}_0 \mathscr{D}_0 R_{-1})/(\Delta R_{+1}) = \mathscr{B} \\
-%			( \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 S_{-1} )/S_{+1} &= ( \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta R_{+1} )/R_{-1} = \mathscr{B}
-%		\end{aligned}
-		\end{equation*}
-	\end{itemize}
-	\vfill
-	Whats the form of the eigenvalue $\lambdabar$ ?
+		\quad\Rightarrow\quad
+		\parbox{2.1cm}{\centering NP equivalent\\equations }
+		\quad\Rightarrow\quad
+		\parbox{4.2cm}{\centering 4 first-order coupled complex\\equations $(\phi_0, \phi_1, \phi_2)$ }
+	\end{equation*}
 
+	\begin{equation*}
+		\hspace*{3.5cm}\scriptstyle\text{(decouple from $\phi_1$)}\quad\xDownarrow{0.8cm}
+	\end{equation*}
+	\metroset{block=fill}
+	\begin{block}{Teukolsky's equation}
+		\begin{align*}
+		& \frac{1}{\Delta^s} \frac{\partial}{\partial r} \left( \Delta^{s+1} \frac{\partial \Upsilon_s}{\partial r} \right) 
+		+ \frac{1}{\sin\theta} \frac{\partial}{\partial\theta} \left( \sin\theta \frac{\partial \Upsilon_s}{\partial \theta} \right) 
+		- \left[ \frac{(r^2+a^2)^2}{\Delta} - a^2 \sin^2\theta \right]\frac{\partial^2 \Upsilon_s}{\partial t^2} \\[0.15cm]
+		& - \frac{4 M a r}{\Delta}\frac{\partial^2 \Upsilon_s}{\partial t \partial \varphi} 
+		- \left( \frac{a^2}{\Delta} -\frac{1}{\sin^2\theta} \right)\frac{\partial^2 \Upsilon_s}{\partial \varphi^2} 
+		+ 2s\left[ \frac{M(r^2-a^2)}{\Delta} - r - i a \cos\theta \right] \frac{\partial \Upsilon_s}{\partial t} \\[0.15cm]
+		&+ 2s\left[ \frac{a(r-M)}{\Delta}+\frac{i \cos\theta}{\sin^2\theta}\right] \frac{\partial \Upsilon_s}{\partial \varphi}
+		- (s^2 \cot^2\theta - s) \Upsilon_s = 0 
+		\end{align*}
+	\end{block}
+	
 \end{frame}
+
+
+% \begin{frame}[fragile]{Newman-Penrose formalism}
+%     $\nabla_\mu F^{\mu\nu} = 0 ~,~ \nabla_{[\mu} F_{\nu\rho]} = 0  ~\longrightarrow~$ 4 complex first-order coupled equations
+%     $$\hspace{1.0cm}\xDownarrow{0.8cm} \quad\mathscr{D}_n \,, \mathscr{D}_n^\dagger = \partial_r \mp i K / \Delta + 2n(r-M)/\Delta \qquad 
+%     \mathscr{L}_n \,, \mathscr{L}_n^\dagger = \partial_\theta \mp Q + n \cot\theta $$
+% 	Eliminate $\phi_1$ and rewrite $\Phi_0 = \phi_0 ~,~ \Phi_2 = 2 (\bar{\rho}^*)^2 \,\phi_2$ :
+% 	\begin{itemize}
+% 		\item 2 equations with eigenvalue $\lambdabar$
+% 		\begin{align*}
+% 			\left[ \Delta \mathscr{D}_1 \mathscr{D}^\dagger_1 + \mathscr{L}^\dagger_0 \mathscr{L}_1 + 2 i \omega (r+i a \cos\theta) \right] \Phi_0 &= 0 \\
+% 			\left[ \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 + \mathscr{L}_0 \mathscr{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 &= 0
+% 		\end{align*}
+		
+% 		\item 2 equations with relative normalization $\mathscr{B} = \sqrt{\lambdabar^2 - 4 a^2 \omega^2 + 4 a \omega m}$
+% 		\begin{equation*}
+% 		\begin{aligned}
+% 			\mathscr{L}_0 \mathscr{L}_1 \Phi_0 &= \mathscr{D}_0 \mathscr{D}_0 \Phi_2 ~\\
+% 			\mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \Phi_2 &= \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta \Phi_0
+% 		\end{aligned}
+% %		~~\Rightarrow~
+% %		\begin{aligned}
+% %			( \mathscr{L}_0 \mathscr{L}_1 S_{+1} )/S_{-1} &= ( \Delta \mathscr{D}_0 \mathscr{D}_0 R_{-1})/(\Delta R_{+1}) = \mathscr{B} \\
+% %			( \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 S_{-1} )/S_{+1} &= ( \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta R_{+1} )/R_{-1} = \mathscr{B}
+% %		\end{aligned}
+% 		\end{equation*}
+% 	\end{itemize}
+% 	\vfill
+% 	Whats the form of the eigenvalue $\lambdabar$ ?
+
+% \end{frame}
 
 \begin{frame}{Teukolsky equation}
 	\begin{block}{General perturbation solution $\displaystyle 
@@ -281,7 +311,7 @@ July\or August\or September\or October\or November\or December\fi
 				\hspace*{0.8cm}{}_{s}\mathscr{A}_{\ell m} = \ell(\ell+1)-s(s+1)$
 			\end{center}
 			\item $c\ne0$ $~\Rightarrow$ Series approximation or numerical methods (Leaver/Spectral)
-			$${}_{s}\mathscr{A}_{\ell m} &= \ell(\ell+1) -s(s+1) - \frac{2 m s^2}{\ell(\ell+1)} c + \mathcal{O}(c^2)$$
+			$${}_{s}\mathscr{A}_{\ell m} = \ell(\ell+1) -s(s+1) - \frac{2 m s^2}{\ell(\ell+1)} c + \mathcal{O}(c^2)$$
 		\end{itemize}
 	\end{block}
 
@@ -308,7 +338,7 @@ July\or August\or September\or October\or November\or December\fi
 			\setlength\itemsep{0.6em}
 			\item Solving radial equation for $r - r_+ \gg r_+$ (far) and $r - r_+ \ll \omega^{-1}$ (near)
 			
-			\item Extend validity of the solutions to opposite regions and match dominant monomials of $x^{\ell-s}$ and $x^{-\ell-1-s}$ $~\Rightarrow~$ valid for modes $\bar{\omega}\equiv \omega r_+ \ll 1$
+			\item Extend solutions to opposite regions and match dominant monomials of $x^{\ell-s}$ and $x^{-\ell-1-s}$ $~\Rightarrow$ valid for modes $\bar{\omega}\equiv \omega r_+ \ll 1$
 			\begin{center}
 				\includegraphics[scale=0.4]{validitySol}
 			\end{center}	
@@ -327,21 +357,21 @@ July\or August\or September\or October\or November\or December\fi
 
 \begin{frame}{Numerical methods}
 	\begin{itemize}
-		\setlength\itemsep{1em}
+		\setlength\itemsep{0.8em}
 
 		\item Dependent variables $(\mathscr{J} = a/M, \,\bar{\omega}, \, \ell, \, m)$
 		
-		\item
-		$\uu[\pm 1]{R}{\ell m} = (r_+)^{\mp 1} \, x^{ \mp 1 - i \varpi / \tau} f_{\pm}(x) \Rightarrow$ removes singular points of the eq.
+		\item $\uu[\pm 1]{R}{\ell m} = (r_+)^{\mp 1} \, x^{ \mp 1 - i \varpi / \tau} f_{\pm}(x) \Rightarrow$ removes singular points of the eq.
 		
 		\item
-		Integrate from $\epsilon\ll 1$ (stiffness) up to $x_\infty = 2\pi/\bar{\omega} \times 200$
+		Integrate from $\epsilon\ll 1$ (stiffness) 
 		$$ f_{\pm}(\epsilon) = \sum_{n=0}^{N_H} \left(\frac{a_n}{a_0}\right)
 		\,\epsilon^n ~~\Rightarrow~ f_{\pm}{}(\epsilon) \simeq 1 ~,~~ f_{\pm}{}'(\epsilon) \simeq 0$$
+		up to $x_\infty = 2\pi/\bar{\omega} \times 200$
 		
 		\item
 		Using conservation of energy $~\frac{\dd E_\mathrm{in}}{\dd t} - \frac{\dd E_\mathrm{out}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t}$
-		\\[0.3cm]
+		\\[0.2cm]
 		\begin{center}
 			\tabulinesep=0.2em
 			\begin{tabu}{@{\hskip 0.25cm}c@{\hskip 0.75cm}c@{\hskip 0.75cm}}
@@ -359,7 +389,7 @@ July\or August\or September\or October\or November\or December\fi
 			\end{tabu}
 		\end{center}
 	\end{itemize}
-	\vspace*{0.3cm}
+	\vspace*{0.15cm}
 	$\hfill\scriptstyle [~ \mathscr{B}^2 = ( \uu[-1]{\mathscr{A}}{\ell m} + a^2\omega^2 - 2 m a \omega )^2 - 4 a^2\omega^2 + 4 m a \omega ~]$
 \end{frame}
 
@@ -381,6 +411,7 @@ July\or August\or September\or October\or November\or December\fi
 				$$ \text{increase } \ell ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to 0 $$
 				(potential centrifugal barrier)
 			\end{itemize}
+			\vfill
 		\end{column}
 		\begin{column}{0.55\textwidth}
 			\includegraphics[scale=0.47]{precisionLogZ}
@@ -388,86 +419,96 @@ July\or August\or September\or October\or November\or December\fi
 	\end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Newman-Penrose formalism}
-	$\nabla_\mu F^{\mu\nu} = 0 ~,~ \nabla_{[\mu} F_{\nu\rho]} = 0  ~\longrightarrow~$ 4 first-order coupled equations $(\phi_0, \phi_1, \phi_2)$ \\
-	$\hspace{1.5cm}\xDownarrow{0.25cm}$
-	\metroset{block=fill}
-	\begin{alertblock}{Teukolsky's equation}
-		\begin{align*}
-		& \frac{1}{\Delta^s} \frac{\partial}{\partial r} \left( \Delta^{s+1} \frac{\partial \Upsilon_s}{\partial r} \right) 
-		+ \frac{1}{\sin\theta} \frac{\partial}{\partial\theta} \left( \sin\theta \frac{\partial \Upsilon_s}{\partial \theta} \right) 
-		- \left[ \frac{(r^2+a^2)^2}{\Delta} - a^2 \sin^2\theta \right]\frac{\partial^2 \Upsilon_s}{\partial t^2} \\[0.15cm]
-		& - \frac{4 M a r}{\Delta}\frac{\partial^2 \Upsilon_s}{\partial t \partial \varphi} 
-		- \left( \frac{a^2}{\Delta} -\frac{1}{\sin^2\theta} \right)\frac{\partial^2 \Upsilon_s}{\partial \varphi^2} 
-		+ 2s\left[ \frac{M(r^2-a^2)}{\Delta} - r - i a \cos\theta \right] \frac{\partial \Upsilon_s}{\partial t} \\[0.15cm]
-		&+ 2s\left[ \frac{a(r-M)}{\Delta}+\frac{i \cos\theta}{\sin^2\theta}\right] \frac{\partial \Upsilon_s}{\partial \varphi}
-		- (s^2 \cot^2\theta - s) \Upsilon_s = 0 
-		\end{align*}
-	\end{alertblock}
-	
-	\begin{center}
-		\tabulinesep=0.5mm
-		\begin{tabu}{|@{\hskip 0.25cm}c@{\hskip 0.25cm}|c@{\hskip 0.25cm}|}
-			\hline
-			Spin-weight $s$ & $\Upsilon_s = \int\dd\omega \,\sum_{\ell,m} e^{-i\omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) $ \\
-			\hline\hline
-			$+1$ & $\Phi_0 \equiv \phi_0$ \\
-			\hline
-			$-1$ & $\Phi_2 \equiv 2 (\bar{\rho}^*)^2 \phi_2$ \\
-			\hline
-		\end{tabu}
-	\end{center}
-	$\rightarrow$ Describes other perturbations: scalar ($s=0$), GWs ($s=\pm 2$)  
-	
-\end{frame}
-
-
 {
-\usebackgroundtemplate{\includegraphics[scale=0.50,trim=-13.5cm 0 0 6]{test.pdf}}
+\usebackgroundtemplate{\includegraphics[scale=0.4,trim=-19.5cm 0 0 -2.0cm]{test.pdf}}
 \begin{frame}[fragile]{Scattering of plane waves}
-	\begin{columns}[T,onlytextwidth]        
-		\begin{column}{0.60\textwidth}
+	\begin{columns}[T]      
+		\begin{column}{0.6\textwidth}
 			\begin{itemize}
+				\setlength\itemsep{1em}
 				\item Astrophysical source: neutron star binary system with magnetic moment
-				$$ \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \cos\alpha_S \,\mathbf{\hat{z}} \right] $$
+				\begin{align*}
+					\phi_2{}^\text{(pl)} &\sim 2 \pi \epsilon_R e^{-i \omega t} \sum_{\ell,m} \left(
+						a_\mathrm{out} \frac{e^{i \omega r}}{r} 
+						+ a_\mathrm{in} \frac{e^{-i \omega r}}{r^3} \right) \\
+						&\hspace*{0cm}\times \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})
+						+ (\epsilon_R \to \epsilon_L^*, \,\omega \to -\omega )
+				\end{align*}
 
-				\item Scattering description 
-				$$ \phi_2{}^\text{(scatt)} =  \phi_2{}^\text{(pl)} + f(\theta,\varphi) \frac{e^{- i\omega t + i\omega r_*}}{r} $$
+				\item Scattering theory description 
+				$$ \displaystyle \phi_2{}^\text{(scatt)} =  \phi_2{}^\text{(pl)} + f(\theta,\varphi) e^{- i \omega ( t - r_* )} /r \vspace{0.1cm}$$
 
-				\item Desccription in NP formalism 
-				$ \mathbf{m}_P = \frac{m_P}{2} \left[ e^{-i \omega t} \sin\alpha_S ( \mathbf{\hat{x}} \pm i \mathbf{\hat{y}}) + \cos\alpha_S \,\mathbf{\hat{z}} \right] + \text{ c.c.} $
+				\item Match \emph{ingoing} part of $\phi_2{}^\text{(pl)}$ and $\phi_2{}^\text{(scatt)}$
+				\begin{align*}
+					f(\theta,\varphi) &= - \frac{\pi \epsilon_R}{\omega} \sum_{\ell,m} \left[\frac{(-1)^{\ell+1} \ell(\ell+1)}{4 \omega^2 }
+					\frac{A_\mathrm{out}}{A_\mathrm{in}} - 1 \right] \\
+					& \hspace*{2cm}\times \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})
+				\end{align*}
+
+				\item Series divergences $\theta=\theta_0 ~\Rightarrow$ \alert{phase-shifts}
 			\end{itemize}
+			\vfill
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\vspace{4.75cm}
+			\includegraphics[width=\columnwidth]{sumF2}
 		\end{column}
 	\end{columns}
 \end{frame}
 }
 
 \begin{frame}{Scattering of plane waves}
-	\begin{figure}
-		\includegraphics[scale=0.5]{arg2}
-		$\Longrightarrow$
-		\includegraphics[scale=0.5]{sumFD2}
-	\end{figure}
+	\begin{columns}[T]      
+		\begin{column}{0.73\textwidth}
+			\begin{itemize}
+				\setlength\itemsep{1.2em}
+				\item Separate long-range $V_\mathrm{eff} \sim 1/r~$ effects $ ~\Rightarrow$ only phase-shifts, no effect on the amplitutes
+				$$ f(\theta,\varphi) = f_N(\theta,\varphi) + f_D(\theta,\varphi) $$
+
+				\item \textbf{Newtonian phase-shifts} $\delta_N = \arg\Gamma(\ell+1-2 i M \omega)$
+				\begin{alignat*}{3}
+					&\delta_\ell = \arg\left[(-1)^{\ell+1}\frac{A_\mathrm{out}}{A_\mathrm{in}}\right] \longrightarrow \delta_N \qquad&(\ell\to\infty) \\
+					&|f_N(\theta,0)|^2 \sim 1/\sin^4(\theta/2) & (\theta_0=0)
+				\end{alignat*}
+
+				\item Dispertion wave sum
+				\begin{align*}
+					f_D(\theta,\varphi) &\simeq - \frac{\pi \epsilon_R}{\omega} \sum_{\ell,m} \left[ \frac{\sqrt{ \uu[\pm 1]{Z}{\ell m} +1 }}{\ell(\ell+1)/\mathscr{B}} \, e^{2 i \delta_\ell } - e^{2 i \delta_\mathrm{N} } \right] \\
+					& \hspace*{2cm}\times \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})
+				\end{align*}
+				
+				\item Superradiance effects masked from higher $\ell$ phase-shifts $\Rightarrow$ separate lower $\ell$ effects
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[width=\columnwidth]{arg2} \\[0.1cm]
+			$\hspace{2.2cm}\xDownarrow{0.3cm}$ \\[0.1cm]
+			\includegraphics[width=\columnwidth]{sumFD2}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Conclusions / Future work}
 	\begin{block}{Conclusions}
 		\begin{itemize}
-			\item Conclusion 1
-			\item Conclusion 2
-			\item Conclusion 3
+			\setlength\itemsep{0.8em}
+			\item Development of computation routine that numerically computes global gain/loss factors and phase shifts
+			\item Superradiant modes with lower $\ell=m$ have larger amplification (max. $4.4\%$ in the EM case)
+			\item Superradiant modes with higher $\ell$ are fully reflected (centrifugal barrier)
+			\item Non-superradiant modes are heaveally absorbed
 		\end{itemize}
 	\end{block}
 	\begin{block}{Future work}
 		\begin{itemize}
-			\item Work 1
-			\item Work 2
+			\setlength\itemsep{0.8em}
+			\item Transition for gravitational perturbations (max. amplification $138\%$)
+			\item Isolate lower $\ell$ modes
 		\end{itemize}
 	\end{block}
 \end{frame}
 
 \begin{frame}[standout]
-	\huge\textsc{ Questions ? }
+	\Huge\textsc{Questions ?}
 \end{frame}
 
 \end{document}
