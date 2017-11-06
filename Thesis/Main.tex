@@ -8,6 +8,8 @@
 
 \documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
 
+\hypersetup{colorlinks=false}
+
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
 \usepackage{notoccite}
@@ -112,7 +114,7 @@
 
 \pagestyle{empty}
 \setcounter{page}{0}
-\includepdf[page={1},pagecommand={},scale=1]{Front/main}
+\includepdf[page={1},pagecommand={},scale=1]{Cover/Front}
 \cleardoublepage
 
 \pagestyle{fancy}
