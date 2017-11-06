@@ -6,7 +6,7 @@
         {
             "taskName": "TeXcount Thesis",
             "type": "shell",
-            "command": "cd Thesis; bash.exe -c 'perl ../.vscode/texcount.pl -merge main.tex'",
+            "command": "cd Thesis && texcount -merge main.tex",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -18,7 +18,7 @@
         {
             "taskName": "Compile Front",
             "type": "shell",
-            "command": "cd Thesis/Front; xelatex -interaction=nonstopmode -file-line-error main",
+            "command": "cd Thesis/Front && xelatex -interaction=nonstopmode -file-line-error main",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -28,9 +28,9 @@
             "problemMatcher": []
         },
         {
-            "taskName": "Compile Thesis",
+            "taskName": "Compile All",
             "type": "shell",
-            "command": "cd Thesis; latexmk -interaction=nonstopmode -file-line-error main",
+            "command": "cd Thesis && pdflatex -interaction=nonstopmode -file-line-error Main; pdflatex -interaction=nonstopmode -file-line-error Print",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -39,6 +39,18 @@
             },
             "problemMatcher": [],
             "dependsOn": ["Compile Front"]
+        },
+        {
+            "taskName": "Compile Presentation",
+            "type": "shell",
+            "command": "cd Presentation; xelatex -interaction=nonstopmode -file-line-error presentation",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
         }
     ]
 }

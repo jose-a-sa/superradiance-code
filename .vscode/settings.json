@@ -12,14 +12,16 @@
         "**/*.bbl": true,
         "**/*.lof": true,
         "**/*.fls": true,
-        "**/*.dvi": true,
         "**/*.lot": true,
         "**/*.toc": true,
         "**/*.out": true,
+        "**/*.snm": true,
+        "**/*.nav": true,
+        "**/*.vrb": true,
         "**/*.fdb_latexmk": true
     },
 
     "editor.minimap.enabled": false,
 
-    "gitlens.blame.line.enabled": true
+    "gitlens.blame.line.enabled": false
 }

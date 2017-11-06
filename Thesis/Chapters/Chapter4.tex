@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../Main.tex
 
 \chapter{Numerical methods} % Main chapter title
 \label{Chapter4}
@@ -196,7 +196,7 @@ We could cancel the relative normalization of $\mathscr{Z}_\mathrm{hole}/\mathsc
 The differential equation obtained from substituting \eref{eq4:numericalRansatz} into \eqref{eq3:radialTeukolskyAdimensional} is identically zero for $x=0$.
 Therefore, no matter what initial conditions set for $f_{\pm}{\!}'$, the system would not evolve due to stiffness, which makes the step size of the integrator effectively zero.
 The usual solution for stiff differential equations is to start the solver at a small distance from the horizon $\epsilon>0$.
-We adjust the initial conditions by substituting the series expansion of $f_{\pm}(x) = \sum_{n=0}^{N_H} a_n x^n$ in the radial equation, discarding terms higher than $\mathscr{O}(x^{N_H})$ and obtaining the coefficients $a_n \propto a_0$, $1 \le n \le N_H$, like is done in \cite{Rosa2016}. 
+We adjust the initial conditions by substituting the series expansion of $f_{\pm}(x) = \sum_{n=0}^{N_H} a_n x^n$ in the radial equation, discarding terms higher than $\mathscr{O}(x^{N_H})$ and obtaining the coefficients $a_n \propto a_0$, $1 \le n \le N_H$, like is done in \cite{Rosa2017}. 
 Therefore we may set the initial conditions as
 \begin{align}
 	f_{\pm}(\epsilon) = f_{\pm}(0) \sum_{n=0}^{N_H} \left(\frac{a_n}{a_0}\right) \epsilon^n ~,\qquad f_{\pm}{\!}'(\epsilon) = f_{\pm}(0) \sum_{n=1}^{N_H} \left(\frac{a_n}{a_0}\right) \epsilon^n ~,
@@ -209,7 +209,7 @@ This previous method requires us to call the integrator twice which is not very 
 Exploring the conservation of the Wronskian (conserved current) of \eqref{eq3:D2PlusVeff}, we can obtain \cite{Teukolsky1974}
 \begin{align}
 	\label{eq4:InOutHole}
-	\frac{\dd E_\mathrm{out}}{\dd t} - \frac{\dd E_\mathrm{in}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t} ~,
+	\frac{\dd E_\mathrm{in}}{\dd t} - \frac{\dd E_\mathrm{out}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t} ~,
 \end{align}
 which simply states total energy conservation.
 Therefore we can rewrite \eqref{eq3:Zdef} using only the \emph{hole-in} ratio, thus we are able to get the amplification factor with just with the $s=+1$ solution,
@@ -238,7 +238,7 @@ This in no surprising fact because as $\omega$ increases so does the ingoing wav
 
 Thus we have three ways of computing $\uu[\pm 1]{Z}{\ell m}$, but only two of them are independent.
 We rename these different forms in Eqs. \eref{eq4:ZFPlusPlus}, \eref{eq4:ZFMinusMinus}, \eref{eq4:ZFPlusMinus} as $Z^{(1)}$, $Z^{(2)}$, $Z^{(3)}$, respectively.
-We can rearrange the expressions, so that we have
+We can rearrange the RHS of the expressions so that we have
 \begin{align}
 	Z^{(3)} = Z^{(1)} \left[ 1 + \frac{1}{Z^{(2)}} \right] - 1 ~.
 \end{align}
@@ -293,7 +293,7 @@ This particular plot reveals information which most relevent when considering a 
 	\begin{subfigure}[c]{0.9\textwidth}
         \includegraphics[width=\textwidth]{precisionLogZ}
 	\end{subfigure}
-	\caption{Log plot of $\uu[\pm 1]{Z}{\ell m}$ as a function of $\bar{\omega}/m\bar{\omega}_H$ \cite{TeukolskyPress1973b}. Each color represents the same value of $\ell$, while different dashing corresponds to grouping the modes as $|\ell-m|=0,1,2$. Each element group with a similar order of magnitude.}
+	\caption{Log plot of $\uu[\pm 1]{Z}{\ell m}$ as a function of $\bar{\omega}/m\bar{\omega}_H$ \cite{TeukolskyPress1973b}. Each color represents the same value of $\ell$, while different dashing corresponds to grouping the modes as $|\ell-m|=0,1,2$.}
 	\label{fig4:logZ}
 \end{figure}
 
