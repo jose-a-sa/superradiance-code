@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../Main.tex
 
 \chapter{Superradiant scattering of plane waves} % Main chapter title
 \label{Chapter5}
@@ -148,7 +148,7 @@ An argument could be made that the latter expression for the coefficient is the 
 
 %----------------------------------------------------------------------------------------
 
-\section{Phase shifts}
+\section{Phase-shifts}
 
 If wo assume co-rotation of the source with incidence along the axis at $\theta_0=\varphi_0=0$ we will only need to compute $f(\theta,\varphi)$, since $\epsilon_L^*=0$.
 This assumption eases the need to compute modes other than $m=1$.
@@ -164,7 +164,7 @@ Proceeding with the sum over multipoles, using the numerically obtained results 
 	\caption{Plot of the scattering function $|f(\theta,0)|^2$ truncated at different $\ell_\mathrm{max}$, for values of $\mathscr{J}=0.99$ and $\bar{\omega}=0.4$, showing divergence in $\theta=\theta_0=0$.} 
 	\label{fig5:sumF}
 \end{figure}
-This problem is due to the long-range effect of the gravitational potential of BHs. Central potentials falling as $1/r$ (check \eref{eq3:asymptoticVeff}) do not have an effect on the global amplitude of the wave but the scattered wave has phase shifts in each of the mode coefficients, producing a divergence at $(\theta,\varphi)=(\theta_0,\varphi_0)$.
+This problem is due to the long-range effect of the gravitational potential of BHs. Central potentials falling as $1/r$ (check \eref{eq3:asymptoticVeff}) do not have an effect on the global amplitude of the wave but the scattered wave has phase-shifts in each of the mode coefficients, producing a divergence at $(\theta,\varphi)=(\theta_0,\varphi_0)$.
 This problem was also studied in classical Coloumb scattering, where $f(\theta,0)$ is known to diverge at $\theta=\theta_0$.
 This result appears strange at first, but we must remember that, being a complete space of functions, the harmonics obey $\sum_{\ell m} \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) = \delta(\cos\theta - \cos\theta_0) \delta(\varphi - \varphi_0)$.
 
@@ -180,7 +180,7 @@ It can be written as
     \sum_{\ell,m} \left( e^{2 i \delta_N } - 1 \right)
     \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}}) ~,
 \end{align}
-where the phase shifts are \cite{Futterman1988}
+where the phase-shifts are \cite{Futterman1988}
 \begin{align}
     \label{eq5:phaseShiftN}
     e^{2 i \delta_N } = \frac{\Gamma(\ell + 1 - 2 i M \omega)}{\Gamma(\ell+1 + 2 i M \omega)} ~.
@@ -205,7 +205,7 @@ First, absolute value \eref{eq5:phaseFactor} must go to $1$.
 Numerically, we find that in the limit of $\ell/\omega\to \infty$ mode amplitudes are not significantly affected by the BH, $\uu[\pm 1]{Z}{\ell m}\to 0$ (check \fref{fig4:logZ}).
 Also, from \eqref{eq3:Bdefinition} we know that for $c=a\omega$ constant, increasing $\ell$ leads to the eigenvalue $\mathscr{B}\sim \uu[\pm 1]{\mathscr{E}}{\ell m} \sim \ell(\ell+1)$, which cancels the factor in \eref{eq5:fD}.
 
-Secondly, the numerically computed phases using \eref{eq5:phaseShiftD} must converge to the Newtonian phase shifts \eref{eq5:phaseShiftN}, $\delta_\ell \to\delta_N$.
+Secondly, the numerically computed phases using \eref{eq5:phaseShiftD} must converge to the Newtonian phase-shifts \eref{eq5:phaseShiftN}, $\delta_\ell \to\delta_N$.
 Results appear to indicate that these phases, like $\delta_N$, are independent of $m$.
 Also they appear to have the same asymptotic form, apart from a constant offset $\delta_0$. 
 We attribute this difference to an ambiguity in the definition of the tortoise coordinate, given by
@@ -224,7 +224,7 @@ which is needed to extract the complex asymptotic coefficients of \eref{eq3:asym
         \includegraphics[width=\textwidth]{arg3}
     \end{subfigure}
     \hfill
-	\caption{Plots of the phase shifts $\delta_\ell$ compared with the newtonian shifts $\delta_N$ summed with a given adjustment constant $\delta_0$ (fitted), for two given BH configurations and modes.}
+	\caption{Plots of the phase-shifts $\delta_\ell$ compared with the newtonian shifts $\delta_N$ summed with a given adjustment constant $\delta_0$ (fitted), for two given BH configurations and modes.}
 	\label{fig5:argZoutZin}
 \end{figure}
 It is expect for this integration constant to be dependent only on $a$ and $M$, which implies that for constant $\bar{\omega}$ the value of $\delta_0$ depends only on $\mathscr{J}$.
@@ -237,7 +237,7 @@ The correspondent partial wave sums for the phases presented above are shown in 
 The truncation of the series \eref{eq5:fD} at $\ell=\ell_\mathrm{max}$ leads to interference oscillations of characteristic length $2\pi/\ell_\mathrm{max}$.
 Comparing with \fref{fig5:sumF} it seams that the partial wave expansion for $|f_\mathrm{D}(\theta,0)|^2$ is now converging in the range $32 \le \ell_\mathrm{max} \le 48$.
 We expected that the computation of $f_D(\theta, \varphi)$ would give us a clean channel to identify superradiance phenomena in scattering of plane waves, but \fref{fig5:fD} shows that performing the mode sum from $\ell=16$ through $\ell=24$, which we know to have effectively $\uu[\pm 1]{Z}{\ell 1}=0$ ($<10^{-85}$), still has a great impact on the value of $|f_D(\theta,0)|^2$.
-Even tough these modes are fully reflected, effects of amplification/absorption are masked by the mode interference introduced by the phase shifts in each mode.
+Even tough these modes are fully reflected, effects of amplification/absorption are masked by the mode interference introduced by the phase-shifts in each mode.
 Thus we must find other ways of isolating these effects from relevant superradiant modes with lower $\ell$ values.
 \begin{figure}[h]
 	\centering

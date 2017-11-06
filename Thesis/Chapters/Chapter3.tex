@@ -1,4 +1,4 @@
-% !TEX root = ../main.tex
+% !TEX root = ../Main.tex
 
 \chapter{Teukolsky's master equation} % Main chapter title
 \label{Chapter3}
@@ -133,8 +133,8 @@ The Maxwell tensor $F_{\mu\nu}$ has a total of six components which encodes the 
 \begin{align}
     \label{eq3:maxwellNPphi}
     \begin{split}
-        \phi_0 &= F_{13} = F_{\alpha\beta} \,\mathfrak{l}^\alpha \mathfrak{m}^\beta ~,\qquad
-        \phi_1 = \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} \,(\mathfrak{l}^\alpha \mathfrak{n}^\beta + \bar{\mathfrak{m}}^\alpha \mathfrak{m}^\beta) ~,\\
+        \phi_0 &= F_{13} = F_{\alpha\beta} \,\mathfrak{l}^\alpha \mathfrak{m}^\beta ~,\\
+        \phi_1 &= \tfrac{1}{2} (F_{12} + F_{43}) = \tfrac{1}{2} F_{\alpha\beta} \,(\mathfrak{l}^\alpha \mathfrak{n}^\beta + \bar{\mathfrak{m}}^\alpha \mathfrak{m}^\beta) ~,\\
         \phi_2 &= F_{42} = F_{\alpha\beta} \,\bar{\mathfrak{m}}^\alpha \mathfrak{n}^\beta ~.
     \end{split}
 \end{align}
@@ -273,14 +273,14 @@ This yield
     \label{eq3:DDLLPhi2}
     \left[ \Delta \mathscr{D}^\dagger_0 \mathscr{D}_0 + \mathscr{L}_0 \mathscr{L}^\dagger_1 - 2 i \omega (r+i a \cos\theta) \right] \Phi_2 = 0 ~.
 \end{align}
-Still, there is another way of combining equations, \emph{i.e} \eqref{eq3:Dd0Phi1Ld1Phi2} with \eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two form the set
+Still, there is another way of combining equations, \emph{i.e.} \eqref{eq3:Dd0Phi1Ld1Phi2} with \eref{eq3:Dd1Phi0Ld0Phi1} and the remaining two form the set
 \begin{align}
     \label{eq3:LLPhi0DDPhi2}
     \mathscr{L}_0 \mathscr{L}_1 \Phi_0 &= \mathscr{D}_0 \mathscr{D}_0 \Phi_2 ~,\\
     \label{eq3:LLPhi2DDPhi0}
     \mathscr{L}^\dagger_0 \mathscr{L}^\dagger_1 \Phi_2 &= \Delta \mathscr{D}^\dagger_0 \mathscr{D}^\dagger_0 \Delta \Phi_0 ~.
 \end{align}
-Thus, we went from four first-order differential equations relating three NP scalars to four second-order differential equations, two of each decoupled, eliminating the need for the scalar $\Phi_1$.
+Thus, we went from four first-order differential equations relating three NP scalars to four second-order differential equations, two of each decoupled, eliminating the need for the scalar $\phi_1$.
 The last two equations imply that each of the complex NP scalars contains all the information necessary to describe an EM wave (two polarizations).
 One may think that we only need one of each group of equations to solve all perturbations, but no closed form solution has yet been found.
 Thus the problem has to be tackled using approximations or numerical methods, recurring to all last four equations (\ref{eq3:DDLLPhi0}\textendash\ref{eq3:LLPhi2DDPhi0}), as we will see below.
@@ -400,7 +400,7 @@ The azimuthal wave number $m$ must be an integer, due to periodic boundary condi
 We may separate all perturbations in a completely general mode decomposition
 \begin{align}
     \label{eq3:multipoleExpansion}
-    \Upsilon_s = \int\dd\omega \, e^{-i \omega t} \left( \,\sum_{\ell,m} e^{i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) \right) ~.
+    \Upsilon_s = \int\dd\omega \, \,\sum_{\ell,m} e^{-i \omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta) {}_{s}R_{\ell m}(r) ~.
 \end{align}
 The integer $\ell$ plays a role in labelling all possible solutions for the eigenvalue problem of both radial and angular equations,
 \begin{align}
@@ -506,7 +506,7 @@ Since $r\ge 0$, then we must have $\ell\ge\max\{|m|,|s|\}$, \emph{i.e.} the lead
 Changing $r$ for $\ell$ corresponds simply to a relabeling of the eigenfunctions in order to match the values of the spectra with know cases ($c=0$).
 
 It will be useful to expand ${}_{s}\mathscr{A}_{\ell m}$ in high order terms in order to obtain the series coefficients for the eigenvalue (see \aref{AppendixEigenvalues}).
-Up to sixth order, only the zero-order term depends on the sign of the spin weight, in agreement with \eqref{eq3:relationEVs} \cite{Fackerell1977,Seidel1989}.
+Up to sixth order, only the zero-order term depends on the sign of the spin weight \cite{Fackerell1977,Seidel1989}, in agreement with \eqref{eq3:relationEVs}.
 In the general angular equation, inversion of spin corresponds to inversion of poles, \emph{i.e.} stays invariant under the transformation $(s,z)\to(-s,-z)$.
 Under this transformation, the eigenvalue must obey $s+ {}_{s}\mathscr{A}_{\ell m} = -s + {}_{-s}\mathscr{A}_{\ell m}$, thus it is beneficial to define 
 \begin{align}
@@ -542,7 +542,7 @@ In this limit, $\mathscr{K}\simeq\varpi$.
 The resultant equation remains singular at the horizons $x=0$ and $x=-\tau$. Thus, making the substitution ${}_{s}R_{\ell m}(x)\simeq x^\alpha (x+\tau)^\beta F(x)$, the function $F(x)$ is analytical if $\alpha+\beta=-s$ and also if $\alpha=-\tfrac{1}{2} s \pm \left(\tfrac{1}{2} s + i \varpi/\tau \right)$.
 Boundary conditions at the horizon requires that a physical observer measures a negative radial group velocity of the signal.
 In order words, we require the wave to travel into the black hole and never outwards.
-Since $x^{\pm i \varpi/\tau} \simeq e^{\pm i \kappa r_{*}}$, where $\kappa=\omega - m \Omega_H$, then the ingoing solution requires $\alpha=-s-i\varpi/\tau$. The near-horizon solution gives
+Since $x^{\pm i \varpi/\tau} \simeq e^{\pm i \kappa r_{*}}$, where $\kappa \equiv \omega - m \Omega_H$, then the ingoing solution requires $\alpha=-s-i\varpi/\tau$. The near-horizon solution gives
 \begin{align}
     \label{eq3:RnearSolution}
     {}_{s}R_{\ell m}(x) \simeq A \, x^{-s-i\varpi/\tau} (x+\tau)^{i\varpi/\tau} \,{}_{2}F_1\left( -\ell, \,\ell+1, \,1-s-\frac{2i\varpi}{\tau}; \,-\frac{x}{\tau}\right) ~,
@@ -561,7 +561,7 @@ allows to substitute a power law ${}_{s}R_{\ell m}(x)\sim x^\alpha e^{- i \bar{\
     \end{split}
     \label{eq3:RfarSolution}
 \end{align}
-where ${}_{1}F_1(a,b;x)$ are Olver's confluent hypergeometric functions and $B$, $C$ are integration constants.
+where ${}_{1}F_1(a,b;x)$ are Olver's confluent hypergeometric functions and $C$, $D$ are integration constants.
 
 Altought useful, these solutions do not provide enough physical insight. Another way of obtaining the same assympotic behavior is by transforming the radial equation into a Schrodinger-like potential problem
 \begin{align}
@@ -603,7 +603,7 @@ A way to circumvent this problem is to consider Euler's reflection formula for a
     \lim_{\ell\in\mathbbl{Z}} \frac{\Gamma(-2\ell)}{\Gamma(-\ell\pm s)} &= \frac{\Gamma(\ell\mp s+1)}{\Gamma(2\ell+1)} \, \lim_{\ell\in\mathbbl{Z}} \frac{\sin(\ell\pi)\cos(\mp s \pi)}{\sin(2\ell\pi)} = \frac{(-1)^{\ell+s}}{2} \frac{(\ell \mp s)!}{(2\ell)!} ~.
 \end{align}
  
-At the event horizon $r=r_+$, $r_*\to-\infty$ and $\Delta=0$.
+At the event horizon $r=r_+$, where $r_*\to-\infty$ and $\Delta=0$.
 The effective radial potential is simplified to a constant
 \begin{align}
     V_\mathrm{eff} \simeq \left( \kappa- i s \frac{r_+ - M}{2 M r_+} \right)^2 ~.
@@ -691,7 +691,7 @@ In addition, we shall use the ingoing EF coordinates, defined in \eqref{eq2:InEF
     \bm{\tilde{\mathfrak{l}}} = \left(1, \,\frac{\Delta}{2(r^2+a^2)}, \,0, \,\frac{a}{r^2 + a^2} \right) ~,\qquad \bm{\tilde{\mathfrak{n}}} = \left(0, -\frac{r^2+a^2}{\rho^2}, \,0, \,0\right) ~.
 \end{align}
 If we set $r=r_{+}$, we obtain that $\bm{\tilde{\mathfrak{l}}} = \bm{\xi}$.
-This implies that $\bm{\tilde{\mathfrak{l}}}$ is the normal vector to the event horizon, just like $\bm{n}$, but they are opposite to each other as $n^v = g^{rv}<0$.
+This implies that $\bm{\tilde{\mathfrak{l}}}$ is a normal vector to the event horizon, just like $(\dd r)^\sharp$, but they are opposite to each other as $g^{rv}<0$.
 
 The radial 3-surface element cannot be of the form in \eqref{eq3:radial3SurfaceElement}, since the induced metric at the horizon is now singular, $\sqrt{\det{\bm{h}}}=\Delta \rho^2 \sin\theta = 0$.
 Special considerations must be taken when taking the induced metric of a null hypersurface.
@@ -746,7 +746,7 @@ Naturally, in order to give use to the $D/C$ ratio from the matching of coeffici
         $\uu[-1]{R}{\ell m}$ & $\mathscr{Z}_\mathrm{in}\,\cfrac{e^{-i \omega r_*}}{r} + \mathscr{Z}_\mathrm{out}\, r \,e^{i \omega r_*}$ & $\mathscr{Z}_\mathrm{hole} \,\Delta \,e^{-i \kappa r_{*}}$ \\
         \hline
     \end{tabu}
-    \caption{Solutions near horzion far horizon}
+    \caption{Radial function solutions ($\phi_0$ and $\phi_2$) for near-horizon and far-horizon approximations}
     \label{tb3:approximatedRsolutionsYZ}
 \end{table}
 Using \eqref{eq3:separationB}, we can relate the \emph{ingoing} integration constants from both $\phi_0$ and $\phi_2$.

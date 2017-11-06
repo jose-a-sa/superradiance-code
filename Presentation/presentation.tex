@@ -97,21 +97,21 @@ July\or August\or September\or October\or November\or December\fi
 		\begin{itemize}
 			\setlength\itemsep{1em}
 			
-			\item Any radiation enhancement processes: scalar, fermionic, electromagnetic, gravitational
+			\item Any radiation ``enhancement'' processes: scalar, electromagnetic, gravitational
 			
-			\item First examples being examples spontaneous pair creation: Klein paradox 
+			\item First cases being spontaneous pair creation: Klein paradox 
 			
-			\item \emph{Rotational superradiance:} Zeldovich absoving cylinder $\Rightarrow \omega(\omega - m \Omega) < 0$\\
+			\item \emph{Rotational superradiance:} Zeldovich absorbing cylinder 
+			$$\color{orange} \omega < m \Omega $$
 			{\small ($~\Omega$ angular velocity, $~m$ azimuthal quantum number )}
 		\end{itemize}
 	\end{block}
 	\begin{block}{Motivation}
 		\begin{itemize}
 			\setlength\itemsep{1em}
-			\item Gravitational wave emissions by merger systems (2016)
-			\item Kerr BH can amplify radiation $\,\Rightarrow\,$ General Relativity test and way of probing rotating BHs
-			\item Focus on EM waves $\,\Rightarrow\,$ same mode equation, similar results
-			\item Directional observations of superradiant scattering of radiation
+			\item Kerr BHs can amplify EM and gravitational radiation
+			\item Focus on EM wave scattering
+			\item Future observational tests of BH superradiance and GR
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -139,7 +139,7 @@ July\or August\or September\or October\or November\or December\fi
         \item Horizons at $g^{rr}=0 ~\Rightarrow~ \Delta=0 ~\Rightarrow~ r = r_{\pm} \equiv M \pm \sqrt{M^2-a^2}$ \\
         \emph{Cosmic censorship} conjecture $~\Rightarrow~$ $|a| \le M$
         
-        \item Infinite redshift boundary $g_{tt}=0 ~\Rightarrow$ \alert{Ergoregion} $(g_{tt}<0)$
+        \item \alert{Ergoregion} $(g_{tt}<0)$ $~\Rightarrow~$ negative energy states
         $$r_+<r<r_\mathrm{ergo}(\theta) \equiv M + \sqrt{M^2 - a^2 \cos^2\theta}$$
     \end{itemize}
 \end{frame}
@@ -169,7 +169,7 @@ July\or August\or September\or October\or November\or December\fi
         \vspace{0.3cm}
         \item We may have $E_1 = \bm{k} \cdot \bm{p_1} < 0 ~\Rightarrow E_2 = E + |E_1| > E $
         \item Local energy condition $\bm{\xi}\cdot\bm{p_1}>0$ at $r=r_{+} ~\Rightarrow E_1 - \Omega_H \, L_1 > 0$
-        $$ \psi \sim e^{-i \omega t + i m \varphi} ~\Rightarrow~ \frac{\delta J}{\delta M} = \frac{\hbar m}{\hbar \omega} ~\Rightarrow~ \boxed{~\delta M < 0 ~\land~ \omega( \omega - \Omega_H \,m) < 0~} $$\\
+        $$ \psi \sim e^{-i \omega t + i m \varphi} ~\Rightarrow~ \frac{\delta J}{\delta M} = \frac{\hbar m}{\hbar \omega} ~\Rightarrow~ \boxed{~\delta M < 0 ~\land~ \omega( {\color{orange} \omega - m \Omega_H } ) < 0~} $$\\
         \hspace*{6.0cm}\alert{Energy extraction !}
     \end{itemize}
 \end{frame}
@@ -177,9 +177,9 @@ July\or August\or September\or October\or November\or December\fi
 \begin{frame}{Newman-Penrose formalism}    
     \begin{itemize}
         \setlength\itemsep{1.2em}
-        \item EM perturbations $A^\mu \ll 1 ~\Rightarrow~ R_{\mu\nu} = \mathcal{O}(A^2)  ~\Rightarrow\text{fixed background} $
+        \item EM waves on a fixed Kerr background spacetime
 
-        \item Projection of tensors onto a tetrad frame of complex vectors
+        \item Projection of Maxwell tensor onto a complex null tetrad
         $(\bm{\mathfrak{l}},\bm{\mathfrak{n}},\bm{\mathfrak{m}},\bar{\bm{\mathfrak{m}}})$
         %with $\bm{\mathfrak{l}}\cdot\bm{\mathfrak{m}} = \bm{\mathfrak{n}}\cdot\bm{\mathfrak{m}} = 0 ~,~~ \bm{\mathfrak{l}}\cdot\bm{\mathfrak{n}} = 1 ~,~~ \bm{\mathfrak{m}}\cdot\bar{\bm{\mathfrak{m}}} = -1$
         \begin{equation*}
@@ -202,11 +202,12 @@ July\or August\or September\or October\or November\or December\fi
 		\hspace*{1.6cm} {\scriptstyle [\,\bar{\rho} = r + i \,a \cos\theta \,]}
 		\end{alignat*}
 	
-        Tetrad particularly suitable for the study of incoming and outgoing radiation $ \Rightarrow $ \alert{equations decouple}
-        \begin{align*}
-            \bm{\mathfrak{l}} \sim \partial_t + \partial_r \quad\qquad
-            2\,\bm{\mathfrak{n}} \sim \partial_t - \partial_r
-        \end{align*}
+		Tetrad suitable for the study of incoming and outgoing radiation\\ $ \Rightarrow $ 
+		\alert{decoupled and separable wave equations for $\phi_0$ and $\phi_2$}
+        % \begin{align*}
+        %     \bm{\mathfrak{l}} \sim \partial_t + \partial_r \quad\qquad
+        %     2\,\bm{\mathfrak{n}} \sim \partial_t - \partial_r
+        % \end{align*}
 
         % \item Equations written using tetrad derivatives $(\mathbbl{D}, \mathbbl{\Delta}, \bbdelta, \bar{\bbdelta})$ and spin connection $\gamma_{cab} = (e_c)^\mu (e_b){}^\nu \nabla_\nu (e_a)_{\mu} ~\Rightarrow~ \lambda, \pi, \tau, \varrho, \varepsilon, \sigma,\kappa, \gamma ,\mu, \nu, \alpha,\beta$
         % \begin{equation*}
@@ -240,7 +241,7 @@ July\or August\or September\or October\or November\or December\fi
 	\end{equation*}
 
 	\begin{equation*}
-		\hspace*{3.5cm}\scriptstyle\text{(decouple from $\phi_1$)}\quad\xDownarrow{0.8cm}
+	 	\hspace*{2.5cm}\scriptstyle\boxed{\Upsilon_{+1} = \phi_0 \qquad \Upsilon_{-1} = 2 (\bar{\rho}^*)^2 \phi_2 }\quad\xDownarrow{0.6cm} 
 	\end{equation*}
 	\metroset{block=fill}
 	\begin{block}{Teukolsky's equation}
@@ -255,6 +256,8 @@ July\or August\or September\or October\or November\or December\fi
 		- (s^2 \cot^2\theta - s) \Upsilon_s = 0 
 		\end{align*}
 	\end{block}
+
+	\emph{Note:} valid for scalar ($s=0$) and gravitational waves ($s=\pm 2$)  
 	
 \end{frame}
 
@@ -290,13 +293,9 @@ July\or August\or September\or October\or November\or December\fi
 % \end{frame}
 
 \begin{frame}{Teukolsky equation}
-	\begin{block}{General perturbation solution $\displaystyle 
-			\quad\Rightarrow~ \Upsilon_s = \int\dd\omega \,\sum_{\ell,m} e^{-i\omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta)\, {}_{s}R_{\ell m}(r)$}
-		\begin{itemize}
-			\item Scalar $(s=0)$
-			\item Electromagnetic $(s=\pm1)$ \hspace*{1cm}$\boxed{\Upsilon_{+1} = \phi_0 \qquad \Upsilon_{-1} = 2 (\bar{\rho}^*)^2 \phi_2 }$
-			\item Gravitational $(s=\pm 2)$
-		\end{itemize}
+	
+	\begin{block}{General mode decomposition}
+		$$\Upsilon_s = \int\dd\omega \,\sum_{\ell,m} e^{-i\omega t + i m \varphi} \, {}_{s}S_{\ell m}(\theta)\, {}_{s}R_{\ell m}(r)$$
 	\end{block}
 
 	\begin{block}{Angular equation $\hfill\scriptstyle [\, z = \cos\theta ~,~ c = a \omega \,]$}
@@ -345,7 +344,7 @@ July\or August\or September\or October\or November\or December\fi
 		
 			\item Obtain loss/gain factor $~\boxed{\displaystyle ~{}_{\pm 1}Z_{\ell m} = \frac{\dd E_\mathrm{out}}{\dd t}\bigg/\frac{\dd E_\mathrm{in}}{\dd t} - 1~}$
 			\begin{align*}
-				\uu[\pm1]{Z}{\ell m} \simeq  - 4 \bar{\omega} (\bar{\omega} - m \bar{\Omega}_H) \underbrace{(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right)}_\text{always $\ge 0$}
+				\uu[\pm1]{Z}{\ell m} \simeq  - 4 \bar{\omega} ({\color{orange}\bar{\omega} - m \bar{\Omega}_H}) \underbrace{(2-\tau)(2\bar{\omega} \tau)^{2\ell} \left[\frac{(\ell-1)! (\ell+1)!}{(2\ell)! (2\ell+1)!}\right]^2 \prod_{n=1}^{\ell} \left(n^2 + \frac{4 \varpi^2}{\tau^2} \right)}_\text{always $\ge 0$}
 			\end{align*}
 			
 			\item Mode amplification $\uu[\pm1]{Z}{\ell m}>0 ~~{\color{orange}\Rightarrow}~ \omega (\omega - m \Omega_H) < 0$  
@@ -357,18 +356,17 @@ July\or August\or September\or October\or November\or December\fi
 
 \begin{frame}{Numerical methods}
 	\begin{itemize}
-		\setlength\itemsep{0.8em}
-
-		\item Dependent variables $(\mathscr{J} = a/M, \,\bar{\omega}, \, \ell, \, m)$
+		\setlength\itemsep{1em}
 		
 		\item $\uu[\pm 1]{R}{\ell m} = (r_+)^{\mp 1} \, x^{ \mp 1 - i \varpi / \tau} f_{\pm}(x) \Rightarrow$ removes singular points of the eq.
 		
 		\item
-		Integrate from $\epsilon\ll 1$ (stiffness) 
+		Integrate from $\epsilon\ll 1$ (stiffness) up to $x_\infty = 2\pi/\bar{\omega} \times 200$
 		$$ f_{\pm}(\epsilon) = \sum_{n=0}^{N_H} \left(\frac{a_n}{a_0}\right)
 		\,\epsilon^n ~~\Rightarrow~ f_{\pm}{}(\epsilon) \simeq 1 ~,~~ f_{\pm}{}'(\epsilon) \simeq 0$$
-		up to $x_\infty = 2\pi/\bar{\omega} \times 200$
 		
+		\item Different asymptotic behavior: $~\phi_0 \to A_\mathrm{in} ~,~ \phi_2 \to A_\mathrm{out}$
+
 		\item
 		Using conservation of energy $~\frac{\dd E_\mathrm{in}}{\dd t} - \frac{\dd E_\mathrm{out}}{\dd t} = \frac{\dd E_\mathrm{hole}}{\dd t}$
 		\\[0.2cm]
@@ -405,11 +403,11 @@ July\or August\or September\or October\or November\or December\fi
 				$$\sim \mathbf{4.4\%}$$
 				for $\ell=m=1 ~,~  \omega M \simeq 0.436$
 
-				\item Non-superradiant modes $$|\omega|\gg|m\Omega_h| ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to 1 $$ (fully reflected)
-
 				\item Superradiant modes
 				$$ \text{increase } \ell ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to 0 $$
 				(potential centrifugal barrier)
+
+				\item Non-superradiant modes $$|\omega|\gg|m\Omega_h| ~\Rightarrow {}_{\pm 1}{Z}_{\ell m} \to -1 $$ (fully absorbed)
 			\end{itemize}
 			\vfill
 		\end{column}
@@ -426,7 +424,7 @@ July\or August\or September\or October\or November\or December\fi
 		\begin{column}{0.6\textwidth}
 			\begin{itemize}
 				\setlength\itemsep{1em}
-				\item Astrophysical source: neutron star binary system with magnetic moment
+				\item Realistic astrophysical source: pulsar-BH binary [Rosa, 2017]
 				\begin{align*}
 					\phi_2{}^\text{(pl)} &\sim 2 \pi \epsilon_R e^{-i \omega t} \sum_{\ell,m} \left(
 						a_\mathrm{out} \frac{e^{i \omega r}}{r} 
@@ -462,18 +460,18 @@ July\or August\or September\or October\or November\or December\fi
 		\begin{column}{0.73\textwidth}
 			\begin{itemize}
 				\setlength\itemsep{1.2em}
-				\item Separate long-range $V_\mathrm{eff} \sim 1/r~$ effects $ ~\Rightarrow$ only phase-shifts, no effect on the amplitutes
+				\item Separate long-range $V_\mathrm{eff} \sim 1/r~$ effects\\ $\Rightarrow$ only phase-shifts, no effect on the amplitutes
 				$$ f(\theta,\varphi) = f_N(\theta,\varphi) + f_D(\theta,\varphi) $$
 
 				\item \textbf{Newtonian phase-shifts} $\delta_N = \arg\Gamma(\ell+1-2 i M \omega)$
 				\begin{alignat*}{3}
-					&\delta_\ell = \arg\left[(-1)^{\ell+1}\frac{A_\mathrm{out}}{A_\mathrm{in}}\right] \longrightarrow \delta_N \qquad&(\ell\to\infty) \\
-					&|f_N(\theta,0)|^2 \sim 1/\sin^4(\theta/2) & (\theta_0=0)
+					&|f_N(\theta,0)|^2 \sim 1/\sin^4(\theta/2) & (\theta_0=0) \\
+					&\delta_\ell = \tfrac{1}{2}\arg\left[(-1)^{\ell+1}\frac{A_\mathrm{out}}{A_\mathrm{in}}\right] \longrightarrow \delta_N \qquad&(\ell\to\infty)
 				\end{alignat*}
 
-				\item Dispertion wave sum
+				\item Dispersed wave
 				\begin{align*}
-					f_D(\theta,\varphi) &\simeq - \frac{\pi \epsilon_R}{\omega} \sum_{\ell,m} \left[ \frac{\sqrt{ \uu[\pm 1]{Z}{\ell m} +1 }}{\ell(\ell+1)/\mathscr{B}} \, e^{2 i \delta_\ell } - e^{2 i \delta_\mathrm{N} } \right] \\
+					f_D(\theta,\varphi) &= - \frac{\pi \epsilon_R}{\omega} \sum_{\ell,m} \left[ \frac{\sqrt{ \uu[\pm 1]{Z}{\ell m} +1 }}{\ell(\ell+1)/\mathscr{B}} \, e^{2 i \delta_\ell } - e^{2 i \delta_\mathrm{N} } \right] \\
 					& \hspace*{2cm}\times \uu[-1]{Y}{\ell m}(\mathbf{\hat{k}})^{*} \uu[-1]{Y}{\ell m}(\mathbf{\hat{r}})
 				\end{align*}
 				
@@ -492,17 +490,18 @@ July\or August\or September\or October\or November\or December\fi
 	\begin{block}{Conclusions}
 		\begin{itemize}
 			\setlength\itemsep{0.8em}
-			\item Development of computation routine that numerically computes global gain/loss factors and phase shifts
+			\item Development of computation routine that numerically computes global gain/loss factors and phase-shifts
 			\item Superradiant modes with lower $\ell=m$ have larger amplification (max. $4.4\%$ in the EM case)
-			\item Superradiant modes with higher $\ell$ are fully reflected (centrifugal barrier)
-			\item Non-superradiant modes are heaveally absorbed
+			\item Modes with higher $\ell$ are fully reflected (centrifugal barrier)
+			\item Non-superradiant modes (higher frequencies) are fullly absorbed
+			\item Phase-shifts for high $\ell$ modes mask superradiance
 		\end{itemize}
 	\end{block}
 	\begin{block}{Future work}
 		\begin{itemize}
 			\setlength\itemsep{0.8em}
-			\item Transition for gravitational perturbations (max. amplification $138\%$)
 			\item Isolate lower $\ell$ modes
+			\item Generalize to gravitational waves (max. amplification $138\%$)
 		\end{itemize}
 	\end{block}
 \end{frame}

@@ -110,12 +110,11 @@
 
 \begin{document}
 
-
 \pagestyle{empty}
+\setcounter{page}{0}
 \includepdf[page={1},pagecommand={},scale=1]{Front/main}
 \cleardoublepage
-\includepdf[page={2},pagecommand={},scale=1]{Front/main}
-\cleardoublepage
+
 \pagestyle{fancy}
 
 
@@ -127,7 +126,7 @@
 
 \maketitle
 
- 
+	
 %----------------------------------------------------------------------------------------
 %	QUOTATION PAGE
 %----------------------------------------------------------------------------------------
@@ -315,6 +314,5 @@
 
 %\nocite{*}
 \bibliography{../Bibliography.bib} % The references are stored in the file "Bibliography.bib"
-
 
 \end{document}
