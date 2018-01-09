@@ -23,5 +23,24 @@
 
     "editor.minimap.enabled": false,
 
-    "gitlens.blame.line.enabled": false
+    "gitlens.blame.line.enabled": false,
+    "cSpell.enabled": true,
+    "cSpell.language": "en,en-GB",
+    "cSpell.enabledLanguageIds": [
+        "cpp",
+        "csharp",
+        "go",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "latex",
+        "markdown",
+        "php",
+        "plaintext",
+        "python",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yml"
+    ]
 }

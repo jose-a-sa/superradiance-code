@@ -1,0 +1,96 @@
+
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------------------------------------------
+%   PACKAGES
+%------------------------------------------------------------------------------------
+
+%%% JHEP
+\usepackage{jheppub}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@fpheader}{}{}{}
+\makeatother
+
+%%% FONTS
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%%% MATH
+\usepackage{xfrac}
+\usepackage{bm}
+\usepackage{stackrel}
+\usepackage{textcomp}
+\usepackage{tabu}
+
+%%% SECTIONING
+\usepackage{sectsty}
+\sectionfont{\LARGE\selectfont}
+\subsubsectionfont{\normalfont\bfseries\selectfont}
+
+
+%------------------------------------------------------------------------------------
+%   DEFINITIONS
+%------------------------------------------------------------------------------------
+
+
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+
+%------------------------------------------------------------------------------------
+%	NOTATION VARIABLES
+%------------------------------------------------------------------------------------
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\uu}[3][]{\,{}_{#1} #2_{#3}}
+
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+
+%------------------------------------------------------------------------------------
+%   TITLEPAGE
+%------------------------------------------------------------------------------------
+
+
+\title{Testing fundamental physics with astrophysical and cosmological observations}
+
+\author[a]{José Sá}
+\author[a]{\!, João G. Rosa}
+
+\affiliation[a]{Departamento de Física, Universidade de Aveiro,\\ 
+    Campus de Santiago, 3810-183 Aveiro, Portugal}
+
+\emailAdd{jose.a.sa@ua.pt}
+\emailAdd{joao.rosa@ua.pt}
+
+
+%\abstract{Abstract test...}
+
+
+%------------------------------------------------------------------------------------
+%   DOCUMENT
+%------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\input{Sections/Section1}
+\input{Sections/Section2}
+
+
+%%% BILBIOGRAPHY
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apsrev4-1-etal}
+\bibliography{../Bibliography.bib}
+
+
+\end{document}

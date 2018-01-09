@@ -26,16 +26,16 @@ Clear[\[Beta]1,\[Beta]2];
 
 
 Clear[SpectralSWSH]
-SpectralSWSH[\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptC]_]:=Module[{l0,nC,m,sp},
-	l0=Max[Abs[\[ScriptS]],Abs[\[ScriptM]]];
-	nC=Ceiling[5 Sqrt[Log[Abs[\[ScriptC]]^2+1]Abs[\[ScriptC]]]+5];
-	m=\[ScriptL]-l0+1+nC;
+SpectralSWSH[\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptC]_]:=Module[{l0,m,nC,sp},
+	nC=Ceiling[8Sqrt[Log[Abs[\[ScriptC]]^2+1] Abs[\[ScriptC]]]+8];
+	m=nC+3;
+	l0=Max[\[ScriptL]-Ceiling[m/2],Max[Abs[\[ScriptS]],Abs[\[ScriptM]]]-1];
 	sp=SparseArray[{
-		{i_,i_}:>-(i+l0)(i+l0-1)-2 \[ScriptC] \[ScriptS] \[Beta]1[l0-1+i,l0-1+i,\[ScriptS],\[ScriptM]]+ \[ScriptC]^2 \[Beta]2[l0-1+i,l0-1+i,\[ScriptS],\[ScriptM]],
-		{i_,j_}/;Abs[j-i]==1:>-2 \[ScriptC] \[ScriptS] \[Beta]1[l0-1+i,l0-1+j,\[ScriptS],\[ScriptM]]+ \[ScriptC]^2 \[Beta]2[l0-1+i,l0-1+j,\[ScriptS],\[ScriptM]],
-		{i_,j_}/;Abs[j-i]==2:>\[ScriptC]^2 \[Beta]2[l0-1+i,l0-1+j,\[ScriptS],\[ScriptM]]
-	},{m,m}];
-	SortBy[{-#1,Sign[First@MaximalBy[#2,Abs]]#2}&@@@Transpose@Eigensystem[sp],Re@*First][[\[ScriptL]-l0+1]]
+		{i_,i_}:>-(i+l0)(i+l0+1)-2\[ScriptC] \[ScriptS] \[Beta]1[l0+i,l0+i,\[ScriptS],\[ScriptM]]+\[ScriptC]^2 \[Beta]2[l0+i,l0+i,\[ScriptS],\[ScriptM]],
+		{i_,j_}/;Abs[j-i]==1:>-2\[ScriptC] \[ScriptS] \[Beta]1[l0+i,l0+j,\[ScriptS],\[ScriptM]]+\[ScriptC]^2 \[Beta]2[l0+i,l0+j,\[ScriptS],\[ScriptM]],
+		{i_,j_}/;Abs[j-i]==2:>\[ScriptC]^2 \[Beta]2[l0+i,l0+j,\[ScriptS],\[ScriptM]]},
+	{m,m}];
+	SortBy[{-#1,Sign[First@MaximalBy[#2,Abs]]#2}&@@@Transpose@Eigensystem[sp],Re@*First][[\[ScriptL]-l0]]
 ];
 
 
@@ -51,7 +51,10 @@ SpinWeightedSpheroidalHarmonicS[\[ScriptS]_Integer,\[ScriptL]_Integer,\[ScriptM]
 
 
 Rule\[Kappa]pm = {kp -> Abs[m + s]/2, km -> Abs[-m + s]/2};
+
+
 Rule\[ScriptH] = {\[ScriptH][l_] -> ((l^2 - (kp + km)^2)*(l^2 - (kp - km)^2)*(l^2 - s^2))/(2*(l^2 - 1/4)*l^3)};
+
 
 (* \[Alpha][0]a[1]+\[Beta][0]a[0]=0 *)
 (* \[Alpha][p]a[p+1]+\[Beta][p]a[p]+\[Gamma][p]a[p-1]=0 *)

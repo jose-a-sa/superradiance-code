@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "TeXcount Thesis",
+            "label": "TeXcount Thesis",
             "type": "shell",
             "command": "cd Thesis && texcount -merge Main.tex",
             "presentation": {
@@ -16,7 +16,7 @@
             "problemMatcher": []
         },
         {
-            "taskName": "Compile Cover",
+            "label": "Compile Cover",
             "type": "shell",
             "command": "cd Thesis/Cover && xelatex -interaction=nonstopmode -file-line-error -pdf Front",
             "presentation": {
@@ -28,7 +28,7 @@
             "problemMatcher": []
         },
         {
-            "taskName": "Compile All",
+            "label": "Compile All",
             "type": "shell",
             "command": "cd Thesis && latexmk -interaction=nonstopmode -file-line-error -pdf Main; latexmk -interaction=nonstopmode -file-line-error -pdf Print",
             "presentation": {
@@ -41,7 +41,7 @@
             "dependsOn": ["Compile Cover"]
         },
         {
-            "taskName": "Compile Presentation",
+            "label": "Compile Presentation",
             "type": "shell",
             "command": "cd Presentation; xelatex -interaction=nonstopmode -file-line-error presentation",
             "presentation": {
