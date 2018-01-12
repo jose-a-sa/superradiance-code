@@ -1,42 +1,12 @@
 % !TEX root = ../Main.tex
 
-\section{Superradiant scattering}
+\section{Numerical methods and results}
 \label{Section2}
 
-The general scattering theory of perturbations off rotating black holes (BH) has long been known in General Relativity (GR) \cite{Futterman1988}.
-We will take particular focus on neutral BHs since any intrinsic charge would increase electromagnetic (EM) forces on opposite-charged  plasma 
-The Kerr BH is a vacuum solution for the Einstein's field equations, which generalized the well-known Schwarzschild spherical geometry.
+\subsection{Eigenvalues}
 
-In this work we use the Boyer-Linquist coordinates \cite{Boyer1967}, where the metric takes the form
-\begin{align}
-\begin{split}
-    ds^2 =& \left(1 - \frac{2 M r}{\rho^2} \right) \dd t^2 - 2 a \sin^2\theta \frac{(r^2+a^2-\Delta)}{\rho^2} \dd t \dd \varphi \\
-    &- \frac{(r^2+a^2)^2- \Delta a^2 \sin^2\theta }{\rho^2} \sin^2\theta \dd\varphi^2 - \frac{\rho^2}{\Delta} \dd r^2 - \rho^2 \dd \theta^2
-\end{split}
-\end{align}
-where $\Delta=r^2-2 M r +a^2$, $\bar{\rho} = r + i a \cos\theta$ and $\rho^2 \equiv |\bar{\rho}|^2$.
+\subsection{Mode amplification factor}
 
-It was Newman and Penrose that develop the necessary formalism of spinor calculus for the study of perturbations \cite{Newman1962}.
-The NP formalism focus on choosing a non-local tetrad $(\bm{l},\bm{n},\bm{m},\bm{\bar{m}})$ of complex null vectors and projecting the relevant tensors in this basis.
-For example, for electromagnetic waves we use the Faraday to define the relevant NP scalars
-\begin{align}
-    \phi_0 = F_{\mu\nu} l^\mu m^\nu ~,\qquad \phi_2 = F_{\mu\nu} \bar{m}^\mu n^\nu ~,
-\end{align}
-while for gravitational perturbations we use the Weyl tensor
-\begin{align}
-    \psi_0 = - C_{\mu\nu\sigma\rho} l^\mu m^\nu l^\sigma m^\rho ~,\qquad
-    \psi_4 = - C_{\mu\nu\sigma\rho} n^\mu \bar{m}^\nu n^\sigma \bar{m}^\rho ~.
-\end{align}
-Choosing a suitable tetrad \cite{Kinnersley1969}, Teukolsky showed that is possible to obtain a separable wave equation for all types of massless perturbations (scalar, electromagnetic, gravitational) that are characterized by a \emph{spin-weight} parameter $s$ \cite{Teukolsky1972, Teukolsky1973a, TeukolskyPress1973b, Teukolsky1974}.
-Due to the underlying symmetries of the geometry we can perform a mode decomposition of the form 
-\begin{align}
-    \Upsilon_s = \int \dd \omega \,\sum_{\ell, m} e^{ - i \omega t + i m \varphi } \uu[s]{S}{\ell m}(\theta) \uu[s]{R}{\ell m}(r) ~,
-\end{align}
-where $\Upsilon_0$ obeys the Klein-Gordon wave equation in curved spacetime, $g^{\mu\nu} \nabla_\mu \partial_\nu \Upsilon_0 = 0$.
-The other bosonic perturbations are characterized by two polarizations mixed differently in the corresponding complex NP quantities $\Upsilon_{+1}=\phi_0$ and $\Upsilon_{-1}=2(\bar{\rho}^*)^2 \phi_2$ for electromagnetic waves and $\Upsilon_{+2}=\psi_0$ and $\Upsilon_{-2}=4(\bar{\rho}^*)^4 \psi_4$ for gravitational waves.
-
-
-
-
+\subsection{Phase-shifts}
 
 \clearpage

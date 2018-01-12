@@ -16,6 +16,27 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage[mathscr]{euscript}
+
+%%% MMACELLS
+\usepackage{mmacells}
+\mmaDefineMathReplacement[≤]{<=}{\leq}
+\mmaDefineMathReplacement[≥]{>=}{\geq}
+\mmaDefineMathReplacement[≠]{!=}{\neq}
+\mmaDefineMathReplacement[→]{->}{\to}[2]
+\mmaDefineMathReplacement[⧴]{:>}{:\hspace{-.2em}\to}[2]
+\mmaDefineMathReplacement{∉}{\notin}
+\mmaDefineMathReplacement{∞}{\infty}
+\mmaDefineMathReplacement{𝕕}{\mathbbm{d}}
+\mmaSet{
+    morefv={gobble=2},
+    linklocaluri=mma/symbol/definition:#1,
+    morecellgraphics={yoffset=1.9ex},
+    leftmargin=2.5em,
+    labelsep=-1em,
+    fv={formatcom*=\footnotesize\ttfamily},
+    linkstyle=\color{blue!50!black}
+}
 
 %%% MATH
 \usepackage{xfrac}
@@ -23,17 +44,24 @@
 \usepackage{stackrel}
 \usepackage{textcomp}
 \usepackage{tabu}
+\usepackage{subeqspatch}
 
 %%% SECTIONING
 \usepackage{sectsty}
 \sectionfont{\LARGE\selectfont}
 \subsubsectionfont{\normalfont\bfseries\selectfont}
 
+%%% HYPERLINKS
+\hypersetup{pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
+   bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
+   colorlinks,citecolor=green,urlcolor=blue,linkcolor=red,
+   pdfstartview={FitV},unicode,breaklinks=true}
+
+
 
 %------------------------------------------------------------------------------------
 %   DEFINITIONS
 %------------------------------------------------------------------------------------
-
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
@@ -77,20 +105,25 @@
 %   DOCUMENT
 %------------------------------------------------------------------------------------
 
-
 \begin{document}
 
 \maketitle
 \clearpage
 
+
 \input{Sections/Section1}
 \input{Sections/Section2}
 
+\appendix
 
-%%% BILBIOGRAPHY
+\input{Sections/AppendixA}
+
+
+%%% BIBLIOGRAPHY
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{apsrev4-1-etal}
-\bibliography{../Bibliography.bib}
+\bibliography{../Bibliography}
+
 
 
 \end{document}
