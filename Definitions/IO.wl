@@ -3,7 +3,7 @@
 GetZFile[s_Integer, (l_Integer)?NonNegative, m_Integer, diff_String:""] := 
     StringJoin["Data/", "Z-Factor/", StringRiffle[{"Z", s, l, m, diff}/.{""->Nothing}, "_"], ".csv"] /; 
      l >= Max[Abs[s], Abs[m]]
-GetZFile[]:=SortBy[FileNames["Z_*",{"Data","Z-Factor"}],(Last@StringSplit[#,"_"]&)];
+GetZFile[]:=SortBy[FileNames["Z_*",{"Data/Z-Factor"}],(Last@StringSplit[#,"_"]&)];
 
 
 GetZFileBCP[(s_Integer)?NonPositive, (l_Integer)?NonNegative, m_Integer] := 
