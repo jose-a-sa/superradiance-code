@@ -6,7 +6,7 @@
         {
             "label": "TeXcount Thesis",
             "type": "shell",
-            "command": "cd Thesis && texcount -merge Main.tex",
+            "command": "cd Thesis; texcount -merge Main.tex",
             "presentation": {
                 "echo": true,
                 "reveal": "always",

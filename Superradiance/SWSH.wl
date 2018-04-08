@@ -7,7 +7,7 @@
 BeginPackage["Superradiance`SWSH`"];
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Usage*)
 
 
@@ -21,6 +21,9 @@ SpinWeightedSpheroidalHarmonicS::usage = "Returns the solution to the general Te
 
 
 SpinWeightedSpheroidalE::usage = "Returns the eigenvalue of the general Teukolsky angular equation"
+
+
+Spectral::usage="";
 
 
 (* ::Section:: *)
@@ -80,7 +83,7 @@ SWSHEigenCoef = {
 (* to complete *)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Spectral method*)
 
 
@@ -92,16 +95,17 @@ Clear[\[Beta]1,\[Beta]2];
 
 
 Clear[Spectral];
-Spectral[\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptC]_]:=Module[{l0,m,nC,sp},
-	nC=Ceiling[8Sqrt[Log[Abs[\[ScriptC]]^2+1] Abs[\[ScriptC]]]+8];
-	m=nC+3;
-	l0=Max[\[ScriptL]-Ceiling[m/2],Max[Abs[\[ScriptS]],Abs[\[ScriptM]]]-1];
+Spectral[\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptC]_]:=Module[{l0,delta,lf,nC,sp},
+	nC=Ceiling[5*Sqrt[Log[Abs[\[ScriptC]]^3+1] Abs[\[ScriptC]]]+14];
+	delta=Ceiling[(nC+\[ScriptL]-MaxAbs[\[ScriptM],\[ScriptS]])/2];
+	lf=delta+\[ScriptL];
+	l0=Max[\[ScriptL]-delta,MaxAbs[\[ScriptM],\[ScriptS]]]-1;
 	sp=SparseArray[{
 		{i_,i_}:>-(i+l0)(i+l0+1)-2\[ScriptC] \[ScriptS] \[Beta]1[l0+i,l0+i,\[ScriptS],\[ScriptM]]+\[ScriptC]^2 \[Beta]2[l0+i,l0+i,\[ScriptS],\[ScriptM]],
 		{i_,j_}/;Abs[j-i]==1:>-2\[ScriptC] \[ScriptS] \[Beta]1[l0+i,l0+j,\[ScriptS],\[ScriptM]]+\[ScriptC]^2 \[Beta]2[l0+i,l0+j,\[ScriptS],\[ScriptM]],
 		{i_,j_}/;Abs[j-i]==2:>\[ScriptC]^2 \[Beta]2[l0+i,l0+j,\[ScriptS],\[ScriptM]]},
-	{m,m}];
-	SortBy[{-#1,Sign[First@MaximalBy[#2,Abs]]#2}&@@@Transpose@Eigensystem[sp],Re@*First][[\[ScriptL]-l0]]
+	{lf-l0,lf-l0}];
+	{#1,{Range[l0+1,lf],Sign@Echo[#2[[\[ScriptL]-l0]]]#2}\[Transpose]}&@@(SortBy[{-#1,#2}\[Transpose],First][[\[ScriptL]-l0]]&@@Eigensystem[sp])
 ];
 
 
@@ -138,8 +142,8 @@ SetAttributes[SpinWeightedSpheroidalHarmonicS, {NumericFunction, Listable}];
 
 
 SpinWeightedSpheroidalHarmonicS[\[ScriptS]_Integer,\[ScriptL]_Integer,\[ScriptM]_Integer, \[ScriptC]_?NumericQ]/;(Max[Abs[\[ScriptM]],Abs[\[ScriptS]]]<=\[ScriptL]):=Function[{\[Theta],\[Phi]},Evaluate@SpinWeightedSpheroidalHarmonicS[\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptC],\[Theta],\[Phi]]];
-SpinWeightedSpheroidalHarmonicS[\[ScriptS]_Integer,\[ScriptL]_Integer,\[ScriptM]_Integer,\[ScriptC]_?NumericQ, \[Theta]_, \[Phi]_]/;(Max[Abs[\[ScriptM]],Abs[\[ScriptS]]]<=\[ScriptL]):=With[{coef=Last@Spectral[\[ScriptS],\[ScriptL],\[ScriptM],N@\[ScriptC]],l0=MaxAbs[\[ScriptM],\[ScriptS]]},
-	coef.Table[SpinWeightedSphericalHarmonicY[\[ScriptS],j,\[ScriptM],\[Theta],\[Phi]],{j,l0,l0-1+Length[coef]}]//Expand//Chop
+SpinWeightedSpheroidalHarmonicS[\[ScriptS]_Integer,\[ScriptL]_Integer,\[ScriptM]_Integer,\[ScriptC]_?NumericQ, \[Theta]_, \[Phi]_]/;(Max[Abs[\[ScriptM]],Abs[\[ScriptS]]]<=\[ScriptL]):=With[{coefs=Transpose@Last@Spectral[\[ScriptS],\[ScriptL],\[ScriptM],N@\[ScriptC]]},
+	Chop[coefs[[2]]].Table[SpinWeightedSphericalHarmonicY[\[ScriptS],j,\[ScriptM],\[Theta],\[Phi]],{j,coefs[[1]]}]//Expand
 ];
 
 
