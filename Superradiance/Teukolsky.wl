@@ -50,6 +50,14 @@ PhaseDeltaFormat::usage = "";
 PhaseDeltaFormat::solvererr = "Solver option value \"`1`\" is not valid. Using \"Both\" solver formatter."
 
 
+\[CapitalDelta]::usage = "";
+\[CapitalSigma]::usage = "";
+\[Rho]::usage = "";
+\[ScriptCapitalK]::usage = "";
+\[ScriptCapitalQ]::usage = "";
+RuleParameters::usage = "";
+
+
 (* ::Section:: *)
 (*Private*)
 
@@ -68,7 +76,7 @@ RuleParameters={
 	\!\(\*OverscriptBox[\(\[CapitalOmega]\), \(_\)]\)->\[ScriptCapitalJ]/2, 
 	\[Chi]->(2-\[Tau])(\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)-m \!\(\*OverscriptBox[\(\[CapitalOmega]\), \(_\)]\)),
 	c->\[ScriptCapitalJ] \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)/rp,
-	\[ScriptCapitalE]\[ScriptV]->SpinWeightedSpheroidalE[s,l,m,c], (* NEEDS Superrradiance`SWSH` *) 
+	\[ScriptCapitalE]\[ScriptV]->SpinWeightedSpheroidalEigenvalueE[s,l,m,c], (* NEEDS Superrradiance`SWSH` *) 
 	\[Xi]->c^2-2m c+\[ScriptCapitalE]\[ScriptV], 
 	\[Lambda]->\[Xi]-s(s+1),
 	\[ScriptCapitalB]->Sqrt[\[Xi]^2-4c^2+4m c],
@@ -76,8 +84,16 @@ RuleParameters={
 };
 
 
+Unprotect[ReplaceParams];
+Clear[ReplaceParams];
+SyntaxInformation[ReplaceParams]={"ArgumentsPattern" -> {_, _, _, _, _.}};
+ReplaceParams[\[ScriptJ]_,\[ScriptS]_,\[ScriptL]_,\[ScriptM]_]=(#1//. RuleParameters\[Union]{s->\[ScriptS],l->\[ScriptL],m->\[ScriptM],\[ScriptCapitalJ]->\[ScriptJ]})&;
+ReplaceParams[\[ScriptJ]_,\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptW]_]=(#1//.RuleParameters\[Union]{s->\[ScriptS],l->\[ScriptL],m->\[ScriptM],\[ScriptCapitalJ]->\[ScriptJ],\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)->\[ScriptW]})&;
+Protect[ReplaceParams];
+
+
 (* ::Subsection:: *)
-(*Functions*)
+(*Kerr functions*)
 
 
 Clear[\[CapitalDelta],\[CapitalSigma],\[Rho],\[ScriptCapitalK],\[ScriptCapitalQ]];
@@ -88,14 +104,7 @@ Clear[\[CapitalDelta],\[CapitalSigma],\[Rho],\[ScriptCapitalK],\[ScriptCapitalQ]
 \[ScriptCapitalQ][\[Theta]_]=a \[Omega] Sin[\[Theta]]-m Csc[\[Theta]];
 
 
-Unprotect[ReplaceParams];
-Clear[ReplaceParams];
-ReplaceParams[\[ScriptJ]_,\[ScriptS]_,\[ScriptL]_,\[ScriptM]_]=(#1//. RuleParameters\[Union]{s->\[ScriptS],l->\[ScriptL],m->\[ScriptM],\[ScriptCapitalJ]->\[ScriptJ]})&;
-ReplaceParams[\[ScriptJ]_,\[ScriptS]_,\[ScriptL]_,\[ScriptM]_,\[ScriptW]_]=(#1//.RuleParameters\[Union]{s->\[ScriptS],l->\[ScriptL],m->\[ScriptM],\[ScriptCapitalJ]->\[ScriptJ],\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)->\[ScriptW]})&;
-Protect[ReplaceParams];
-
-
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Equations*)
 
 
@@ -129,10 +138,10 @@ Rule\[ScriptCapitalF]Horizon={\[ScriptCapitalF]->Function[x,\!\(
 (* Coeficients to estimate Ain and Aout at infinity *)
 Clear[nCoefInf,Rule\[ScriptCapitalR]inInf,Rule\[ScriptCapitalR]outInf];
 nCoefInf=6;
-Rule\[ScriptCapitalR]inInf={\[ScriptCapitalR]->Function[x,x^-1 E^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x)^(-I (2-\[Tau]) \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)) \!\(
+Rule\[ScriptCapitalR]inInf={\[ScriptCapitalR]->Function[x,x^-1 E^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 Abs[\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)] x)^(-I (2-\[Tau]) \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)) \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(n = 0\), \(nCoefInf\)]\(\[ScriptI][n]\ 
 \*SuperscriptBox[\(x\), \(-n\)]\)\)]};
-Rule\[ScriptCapitalR]outInf={\[ScriptCapitalR]->Function[x,x^(-1-2 s) E^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x)^(+I (2-\[Tau]) \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)) \!\(
+Rule\[ScriptCapitalR]outInf={\[ScriptCapitalR]->Function[x,x^(-1-2 s) E^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 Abs[\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)] x)^(+I (2-\[Tau]) \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)) \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(n = 0\), \(nCoefInf\)]\(\[ScriptO][n]\ 
 \*SuperscriptBox[\(x\), \(-n\)]\)\)]};
 
@@ -157,7 +166,10 @@ Protect[IncreasePrecision];
 
 Unprotect[SolveMode];
 Clear[SolveMode];
-Options[SolveMode]={"Solver"->Automatic,"Parallelize"->True,"Verbose"->False};
+Options[SolveMode]={"Solver"->Automatic,"Parallelize"->False,"Verbose"->False};
+
+
+SyntaxInformation[SolveMode]={"ArgumentsPattern" -> {_, _, _, _, _,OptionsPattern[]}};
 
 
 SolveMode[\[ScriptJ]s:({__?NumberQ}|_?NumberQ),\[ScriptS]_?IntegerQ,\[ScriptL]s_:({__?IntegerQ}|_?IntegerQ),\[ScriptM]_?IntegerQ,\[ScriptW]s:({__?NumberQ}|_?NumberQ),opts:OptionsPattern[]]:=
@@ -185,7 +197,7 @@ len
 Protect[SolveMode];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Method using both equations*)
 
 
@@ -197,22 +209,22 @@ SolveModeBoth[\[ScriptJ]_?NumberQ,\[ScriptS]_?IntegerQ,\[ScriptL]_?IntegerQ,\[Sc
 Module[{eqF,f0,fp0,coefInInf,coefOutInf,in,out,ev,x0,xINF,l0,res,time=AbsoluteTime[]},
 	x0=10.^(-5);
 	xINF=2 \[Pi] 22.(1+\[ScriptL]/4)/Abs[\[ScriptW]];
-	ev=SpinWeightedSpheroidalE[\[ScriptS],\[ScriptL],\[ScriptM],(\[ScriptJ] \[ScriptW])/(1+Sqrt[1-\[ScriptJ]^2])];
+	ev=SpinWeightedSpheroidalEigenvalueE[\[ScriptS],\[ScriptL],\[ScriptM],(\[ScriptJ] \[ScriptW])/(1+Sqrt[1-\[ScriptJ]^2])];
 	eqF=ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]][Equation\[ScriptCapitalF]];
 	{f0,fp0}={\[ScriptCapitalF][x0],\[ScriptCapitalF]'[x0]}/. Rule\[ScriptCapitalF]Horizon/. First@Solve[CoefficientList[eqF/. Rule\[ScriptCapitalF]Horizon,x][[2;;nCoefH+1]]==0,Evaluate@Table[\[ScriptA][n],{n,1,nCoefH}]];
 	coefInInf=First@Solve[
-		(0==Simplify@SeriesCoefficient[ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]]@Series[E^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x)^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) (2-\[Tau])) EqTeukolsky/. Rule\[ScriptCapitalR]inInf,{x,\[Infinity],nCoefInf}],#1]&)/@Range[nCoefInf],
+		(0==Simplify@SeriesCoefficient[ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]]@Series[E^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 Abs[\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)] x)^(I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) (2-\[Tau])) EqTeukolsky/. Rule\[ScriptCapitalR]inInf,{x,\[Infinity],nCoefInf}],#1]&)/@Range[nCoefInf],
 		Evaluate@Table[\[ScriptI][n],{n,1,nCoefInf}]
 	];
 	coefOutInf=First@Solve[
-		(0==Simplify@SeriesCoefficient[ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]]@Series[x^(2 s) E^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x)^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) (2-\[Tau])) EqTeukolsky/. Rule\[ScriptCapitalR]outInf,{x,\[Infinity],nCoefInf}],#1]&)/@Range[nCoefInf],
+		(0==Simplify@SeriesCoefficient[ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]]@Series[x^(2 s) E^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) x) (2 Abs[\!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\)] x)^(-I \!\(\*OverscriptBox[\(\[Omega]\), \(_\)]\) (2-\[Tau])) EqTeukolsky/. Rule\[ScriptCapitalR]outInf,{x,\[Infinity],nCoefInf}],#1]&)/@Range[nCoefInf],
 		Evaluate@Table[\[ScriptO][n],{n,1,nCoefInf}]
 	];
 	{in,out}=Total@ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]][{\[ScriptCapitalR][x]/. Rule\[ScriptCapitalR]inInf/. coefInInf,\[ScriptCapitalR][x]/. Rule\[ScriptCapitalR]outInf/. coefOutInf}]//
 		({\[ScriptI][0],\[ScriptO][0]}/. First@Solve[{#1==\[ScriptCapitalR]Inf,\!\(
-\*SubscriptBox[\(\[PartialD]\), \(x\)]#1\)==\[ScriptCapitalR]pInf}/. {x->xINF,SpinWeightedSpheroidalE[__]->ev},{\[ScriptI][0],\[ScriptO][0]}]&);
-	res={\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],in,out}/. ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]][{\[ScriptCapitalR]Inf->\[ScriptCapitalR][xINF],\[ScriptCapitalR]pInf->Derivative[1][\[ScriptCapitalR]][xINF]}/. Rule\[ScriptCapitalR]Horizon]/. First@NDSolve[
-		{eqF==0,f0==\[ScriptCapitalF][x0],fp0==Derivative[1][\[ScriptCapitalF]][x0]}/. {SpinWeightedSpheroidalE[__]->ev,\[ScriptA][0]->1},
+\*SubscriptBox[\(\[PartialD]\), \(x\)]#1\)==\[ScriptCapitalR]pInf}/. {x->xINF,SpinWeightedSpheroidalEigenvalueE[__]->ev},{\[ScriptI][0],\[ScriptO][0]}]&);
+	res={\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],in,out}/.ReplaceParams[\[ScriptJ],\[ScriptS],l0,\[ScriptM],\[ScriptW]][{\[ScriptCapitalR]Inf->\[ScriptCapitalR][xINF],\[ScriptCapitalR]pInf->Derivative[1][\[ScriptCapitalR]][xINF]}/.Rule\[ScriptCapitalR]Horizon]/. First@NDSolve[
+		{eqF==0,f0==\[ScriptCapitalF][x0],fp0==Derivative[1][\[ScriptCapitalF]][x0]}/. {SpinWeightedSpheroidalEigenvalueE[__]->ev,\[ScriptA][0]->1},
 		\[ScriptCapitalF],{x,x0,xINF},
 		Sequence@@FilterRules[{opts},Options[NDSolve]]
 	];
@@ -264,24 +276,26 @@ Clear[FactorZFormat];
 Options[FactorZFormat]={"Solver"->Automatic};
 
 
-FactorZFormat[x__,opts:OptionsPattern[]]:=Switch[
+FactorZFormat[{x__},opts:OptionsPattern[]]:=FactorZFormat[x,opts];
+
+
+FactorZFormat[\[ScriptJ]_?NumberQ,\[ScriptS]_?IntegerQ,\[ScriptL]_?IntegerQ,\[ScriptM]_?IntegerQ,\[ScriptW]_?NumberQ,Ain_?NumberQ,Aout_?NumberQ,opts:OptionsPattern[]]/;(\[ScriptL]>=MaxAbs[\[ScriptS],\[ScriptM]]):=Switch[
 	OptionValue[{FactorZFormat},{opts},"Solver"],
-	"Both",FactorZFormatBoth[x],
-	"Single",FactorZFormatSingle[x],
-	Automatic,FactorZFormatBoth[x],
-	_,Message[FactorZFormat::solverund,OptionValue[{FactorZFormat},{opts},"Solver"]];FactorZFormatBoth[x]]
+	"Both",FactorZFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout],
+	"Single",FactorZFormatSingle[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout],
+	Automatic,FactorZFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout],
+	_,Message[FactorZFormat::solverund,OptionValue[{FactorZFormat},{opts},"Solver"]];FactorZFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout]];
 
 
 Protect[FactorZFormat];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Z factor for Both method*)
 
 
 Unprotect[FactorZFormatBoth];
 Clear[FactorZFormatBoth];
-FactorZFormatBoth[{x__}]:=FactorZFormatBoth[x];
 
 
 FactorZFormatBoth[\[ScriptJ]_?NumberQ,1,\[ScriptL]_?IntegerQ,\[ScriptM]_?IntegerQ,\[ScriptW]_?NumberQ,Yin_?NumberQ,Yout_?NumberQ]:=
@@ -323,7 +337,7 @@ Protect[FactorZFormatSingle];
 (*Phase Delta*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Handle methods*)
 
 
@@ -332,23 +346,25 @@ Clear[PhaseDeltaFormat];
 Options[PhaseDeltaFormat]={"Solver"->Automatic};
 
 
-PhaseDeltaFormat[x__,opts:OptionsPattern[]]:=Switch[
+PhaseDeltaFormat[{x__},opts:OptionsPattern[]]:=FactorZFormat[x,opts];
+
+
+PhaseDeltaFormat[\[ScriptJ]_?NumberQ,\[ScriptS]_?IntegerQ,\[ScriptL]_?IntegerQ,\[ScriptM]_?IntegerQ,\[ScriptW]_?NumberQ,Ain_?NumberQ,Aout_?NumberQ,opts:OptionsPattern[]]/;\[ScriptL]>=MaxAbs[\[ScriptS],\[ScriptM]]:=Switch[
 	OptionValue[{PhaseDeltaFormat},{opts},"Solver"],
-	"Both",PhaseDeltaFormatBoth[x],
-	Automatic,PhaseDeltaFormatBoth[x],
-	_,Message[PhaseDeltaFormat::solverund,OptionValue[{PhaseDeltaFormat},{opts},"Solver"]];PhaseDeltaFormatBoth[x]]
+	"Both",PhaseDeltaFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout],
+	Automatic,PhaseDeltaFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout],
+	_,Message[PhaseDeltaFormat::solverund,OptionValue[{PhaseDeltaFormat},{opts},"Solver"]];PhaseDeltaFormatBoth[\[ScriptJ],\[ScriptS],\[ScriptL],\[ScriptM],\[ScriptW],Ain,Aout]];
 
 
 Protect[PhaseDeltaFormat];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Phase Delta for Both method*)
 
 
 Unprotect[PhaseDeltaFormatBoth];
 Clear[PhaseDeltaFormatBoth];
-PhaseDeltaFormatBoth[{x__}]:=PhaseDeltaFormatBoth[x];
 
 
 PhaseDeltaFormatBoth[\[ScriptJ]_?NumberQ,+1,\[ScriptL]_?IntegerQ,\[ScriptM]_?IntegerQ,\[ScriptW]_?NumberQ,Yin_?NumberQ,Yout_?NumberQ]:=
